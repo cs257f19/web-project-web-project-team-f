@@ -15,8 +15,24 @@ class Nutrek:
         food = food.upper()
         food = self.getFoodAvailable(food)
         food = food.iloc[10]
-        nutrients = self.data.loc[self.data['long_name'] == food]
+        nutrients = self.data.loc[self.data['ingredients_english'] == food]
         return nutrients
+
+    def getIngredientBreakDown(self, food):
+        food = food.upper()
+        foods = self.getFoodAvailable(food)
+        foods = self.getFoodAvailable(food).iloc[0]
+        if len(foods) == 0:
+            return None
+        nutrients = self.data['ingredients_english']
+        food = self.data['long_name']
+        new_data = pd.DataFrame(self.data, columns=['long_name', 'ingredients_english'])
+        rows = {}
+        for index, row in new_data.iterrows():
+            rows[row.long_name] = [row.ingredients_english]
+        for item in rows:
+            if foods in item or item in foods:
+                return rows[foods]
 
     def getFoodAvailable(self, food):
         '''returns all types of said food in our database'''
@@ -32,31 +48,27 @@ class Nutrek:
         return nutrients
 
 
-    def containsAllergy(self, food, allergy):
+    def containsAllergy(self, food, allergen):
         '''returns True if food can cause allergic reactions
             and false otherwise'''
-        food = food.upper()
-        food = self.getFoodAvailable(food)
-        pass
-
+        ingredients = list(self.getIngredientBreakDown(food))
+        allergen = allergen.upper()
+        if ingredients == []:
+            return False
+        elif allergen in ingredients:
+            return True
+        else:
+            for ingredient in ingredients:
+                if allergen in ingredient:
+                    return True
+            return False
 
 
     def getNutrientThreshold(self, food, nutrient, goal):
         '''check if a given nutrient in a given
             food is meeting the goal for the person'''
-
-    def getIngredientBreakDown(self, food):
-        '''Get all ingredients in a food '''
         pass
 
-
-
-
-
-
-'''Testing '''
-N = Nutrek()
-print(N.getFoodAvailable('beef'))
-#print(N.containsAllergy('beef', 'lactose'))
-print(N.getNutrients('beef'))
-print(N.getAllNutrients())
+# N = Nutrek()
+# print(N.getIngredientBreakDown('granola'))
+# print(N.containsAllergy('granola', 'peanuts'))
