@@ -51,5 +51,5 @@ CREATE TABLE Nutrek(
   Vitamin_K_phylloquinone_mcg real,
   Water_g real,
   Xylitol_g real,
-  Zinc_Zn_mg real,
+  Zinc_Zn_mg real
 );
