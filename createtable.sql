@@ -38,7 +38,7 @@ CREATE TABLE Nutrek(
   Selenium_Se_mcg real,
   Sodium_Na_mg real,
   Sugars_added_g real,
-  Sugars total g real,
+  Sugars_total_g real,
   Thiamin_mg real,
   Total_lipid_fat_g real,
   Total_sugar_alcohols_g real,
