@@ -3,7 +3,7 @@ CREATE TABLE Nutrek(
   long_name text,
   manufacturer text,
   ingredients_english text,
-  Serving_Size real,
+  Serving_Size integer,
   Serving_Size_UOM text,
   Household_Serving_Size real,
   Household_Serving_Size_UOM text,
