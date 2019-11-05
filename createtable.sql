@@ -7,7 +7,7 @@ CREATE TABLE Nutrek(
   Serving_Size_UOM text,
   Household_Serving_Size real,
   Household_Serving_Size_UOM text,
-  Ash (g) real,
+  Ash_(g) real,
   Biotin (mcg) real,
   Caffeine (mg) real,
   Calcium, Ca (mg) real,
