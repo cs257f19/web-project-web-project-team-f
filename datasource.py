@@ -10,8 +10,8 @@ class Nutrek:
 
 
     def __init__(self):
-        self.user = 'mukherjia'
-        self.password = 'barn689mango'
+        self.user = 'odoome'
+        self.password = 'blue622spring'
 
     def connect(self):
         '''
