@@ -2,23 +2,36 @@ import psycopg2
 import getpass
 
 class Nutrek:
-    ''' Nutrek executes all of the queries on the database and formats the data to send back to the front end'''
+    '''
+    Nutrek executes all of the queries on the database
+    and formats the data to send back to the front end'''
+
+    # ***QUESTION 1: UNABLE TO GET INTO DATABASE (USED SLACK PASSWORD)
+
 
     def connect(self, user, password):
-    ''' Establishes a connection to the database with the following credentials: user - username, which is also the name of the database,password - the password for this database on perlman. Note: exits if a connection cannot be established.'''
-
-    try:
-        self.connection = psycopg2.connect(host="localhost", database=user, user=user, password=password)
-    except Exception as e:
-        print("Connection error: ", e)
-        exit()
+        '''
+        Establishes a connection to the database with the following credentials:
+            user - username, which is also the name of the database
+            password - the password for this database on perlman
+            Note: exits if a connection cannot be established.
+        '''
+        try:
+            self.connection = psycopg2.connect(host="localhost", database=user, user=user, password=password)
+        except Exception as e:
+            print("Connection error: ", e)
+            exit()
 
     def disconnect(self):
-        '''Breaks the connection to the database'''
+        '''
+        Breaks the connection to the database
+        '''
         self.connection.close()
 
     def getNutrients(self, food):
-        '''returns all nutrients and the amount of each nutrient in a given food'''
+        '''
+        returns all nutrients and the amount of each nutrient in a given food
+        '''
         # ***QUESTION 2 - Syntax okay? i.e. <> operator, we don't need dictionary anymore? We were initially thinking of
         # doing nutrient, nutrient amount (key, value pair in dict, and if all values added was 0, there was insufficient information in database
         # on the nutritional breakdown of food). How can we deal with this issue?
