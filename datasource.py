@@ -51,7 +51,7 @@ class Nutrek:
         food = food.upper()
         try:
             cursor = self.connection.cursor()
-            query = "SELECT ingredients_english FROM Nutrek WHERE food_name LIKE  '%' + str(food)+ '%'"
+            query = "SELECT ingredients_english FROM Nutrek WHERE food_name LIKE '%' + food+ '%'"
             cursor.execute(query)
             results = cursor.fetchall()
             return str(results[0])
@@ -123,9 +123,9 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-    print(N.getNutrients('granola'))
+    #print(N.getNutrients('granola'))
     print(N.getIngredientBreakDown('granola'))
-    print(N.containsAllergen('granola', 'peanuts'))
+    #print(N.containsAllergen('granola', 'peanuts'))
 
 
     # Disconnect from database
