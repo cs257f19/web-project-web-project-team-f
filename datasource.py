@@ -2,11 +2,12 @@ import psycopg2
 import getpass
 
 class Nutrek:
-    def __init__(self):
-        pass
     '''
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
+
+    def __init__(self):
+        pass
 
     def connect(self, user, password):
         '''
@@ -50,7 +51,7 @@ class Nutrek:
         food = food.upper()
         try:
             cursor = self.connection.cursor()
-            query = "SELECT ingredients_english FROM Nutrek WHERE CONTAINS(food_name, " + str(food)+ ")"
+            query = "SELECT ingredients_english FROM Nutrek WHERE food_name LIKE  '%' + str(food)+ '%'"
             cursor.execute(query)
             results = cursor.fetchall()
             return str(results[0])
@@ -129,5 +130,6 @@ def main():
 
     # Disconnect from database
     N.disconnect()
+
 if __name__ == "__main__":
     main()
