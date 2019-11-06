@@ -1,8 +1,6 @@
 import psycopg2
 import getpass
-import pandas as pd
-'''Our dataset was too big to upload on github so we used the pandas, a data science library for
-our manipulation purposed. The dataset is zipped on github now.'''
+
 class Nutrek:
 
     # ***QUESTION 1: UNABLE TO GET INTO DATABASE (USED SLACK PASSWORD)
@@ -11,7 +9,7 @@ class Nutrek:
         '''
         Nutrek executes all of the queries on the database
             and formats the data to send back to the front end'''
-        self.data  = pd.read_csv("FullDataSet.csv")
+        #self.data  = pd.read_csv("FullDataSet.csv")
 
     def connect(self, user, password):
         '''
