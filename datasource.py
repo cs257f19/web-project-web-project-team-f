@@ -6,9 +6,6 @@ class Nutrek:
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
 
-    # ***QUESTION 1: UNABLE TO GET INTO DATABASE (USED SLACK PASSWORD)
-
-
     def connect(self, user, password):
         '''
         Establishes a connection to the database with the following credentials:
@@ -32,9 +29,6 @@ class Nutrek:
         '''
         returns all nutrients and the amount of each nutrient in a given food
         '''
-        # ***QUESTION 2 - Syntax okay? i.e. <> operator, we don't need dictionary anymore? We were initially thinking of
-        # doing nutrient, nutrient amount (key, value pair in dict, and if all values added was 0, there was insufficient information in database
-        # on the nutritional breakdown of food). How can we deal with this issue?
         food = food.upper()
         try:
             cursor = connection.cursor()
@@ -76,15 +70,6 @@ class Nutrek:
             print ("Something went wrong when executing the query: ", e)
             return None
 
-    def getAllNutrients(self):
-        '''returns all nutrients available in our database '''
-        # ***thinking is a potentially deletable function?
-        nutrients = list(self.data.columns.values)
-        nutrients = nutrients[7:]
-        #return nutrients
-        results = cursor.fetchall()
-        return str(results[0])
-
 
     def containsAllergen(self, food, allergen):
         '''returns True if food contains allergen (could cause allergic reaction) and false if otherwise '''
@@ -104,7 +89,6 @@ class Nutrek:
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
-
 
 
     def getNutrientThreshold(self, food, nutrient, nutritionTarget):
@@ -138,7 +122,7 @@ def main():
     N.connect(user, password)
     print(N.getNutrients('granola'))
     print(N.getIngredientBreakDown('granola'))
-    print(N.containsAllergy('granola', 'peanuts'))
+    print(N.containsAllergen('granola', 'peanuts'))
 
 
     # Disconnect from database
