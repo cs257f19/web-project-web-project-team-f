@@ -5,19 +5,19 @@ class Nutrek:
     '''
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
-    
-        def connect(self, user, password):
-        '''
-        Establishes a connection to the database with the following credentials:
-            user - username, which is also the name of the database
-            password - the password for this database on perlman
-            Note: exits if a connection cannot be established.
-        '''
-        try:
-            self.connection = psycopg2.connect(host="localhost", database=user, user=user, password=password)
-        except Exception as e:
-            print("Connection error: ", e)
-            exit()
+
+    def connect(self, user, password):
+    '''
+    Establishes a connection to the database with the following credentials:
+        user - username, which is also the name of the database
+        password - the password for this database on perlman
+        Note: exits if a connection cannot be established.
+    '''
+    try:
+        self.connection = psycopg2.connect(host="localhost", database=user, user=user, password=password)
+    except Exception as e:
+        print("Connection error: ", e)
+        exit()
 
     def disconnect(self):
         '''
