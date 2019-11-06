@@ -143,5 +143,5 @@ def main():
 
     # Disconnect from database
     ds.disconnect()
-if __name__ == "__main__"
+if __name__ == "__main__":
     main()
