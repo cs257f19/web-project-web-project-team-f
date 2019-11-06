@@ -2,6 +2,8 @@ import psycopg2
 import getpass
 
 class Nutrek:
+    def __init__(self):
+        pass
     '''
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
@@ -126,6 +128,6 @@ def main():
 
 
     # Disconnect from database
-    ds.disconnect()
+    N.disconnect()
 if __name__ == "__main__":
     main()
