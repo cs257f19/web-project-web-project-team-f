@@ -5,9 +5,8 @@ class Nutrek:
     '''
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
-                                                                                                                                                                                                                                                                            def __init__(self):
-
-    def connect(self, user, password):
+    
+        def connect(self, user, password):
         '''
         Establishes a connection to the database with the following credentials:
             user - username, which is also the name of the database
