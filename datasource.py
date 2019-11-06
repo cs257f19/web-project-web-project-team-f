@@ -2,16 +2,11 @@ import psycopg2
 import getpass
 
 class Nutrek:
-    ''' Nutrek executes all of the queries on the database
-        and formats the data to send back to the front end'''
-
-    # ***QUESTION 1: UNABLE TO GET INTO DATABASE (USED SLACK PASSWORD)
+    '''
+    Nutrek executes all of the queries on the database
+    and formats the data to send back to the front end'''
 
     def __init__(self):
-        self.user = 'odoome'
-        self.password = 'blue622spring'
-
-        #self.data  = pd.read_csv("FullDataSet.csv")
 
     def connect(self, user, password):
         '''
@@ -131,10 +126,14 @@ class Nutrek:
 
 def main():
     # ***NOT WORKING!!
+    user = 'odoome'
+    # blue622spring
+    password = 'blue622spring'
+    #password = getpass.getpass()
 
     # Connect to the database
     ds = Nutrek()
-    connection = ds.connect()
+    ds.connect(user, password)
     N = Nutrek()
     print(N.getNutrients('granola'))
     print(N.getIngredientBreakDown('granola'))
