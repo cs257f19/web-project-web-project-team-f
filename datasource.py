@@ -131,7 +131,8 @@ def main():
     # ***NOT WORKING!!
     user = 'odoome'
     # blue622spring
-    password = getpass.getpass()
+    password = 'blue622spring'
+    #password = getpass.getpass()
 
     # Connect to the database
     ds = Nutrek()
