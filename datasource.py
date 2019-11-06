@@ -129,13 +129,12 @@ def main():
     # ***NOT WORKING!!
     user = 'odoome'
     # blue622spring
-    #password = 'blue622spring'
-    password = getpass.getpass()
+    password = 'blue622spring'
+    #password = getpass.getpass()
 
     # Connect to the database
-    ds = Nutrek()
-    ds.connect(user, password)
     N = Nutrek()
+    N.connect(user, password)
     print(N.getNutrients('granola'))
     print(N.getIngredientBreakDown('granola'))
     print(N.containsAllergy('granola', 'peanuts'))
