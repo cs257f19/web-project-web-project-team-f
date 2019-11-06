@@ -127,10 +127,11 @@ class Nutrek:
 
 def main():
     # ***NOT WORKING!!
-    user = 'odoome'
+    user = 'mukherjia'
+    password = 'barn689mango'
+    # Aishee's: barn689mango
     # blue622spring
-    password = 'blue622spring'
-    #password = getpass.getpass()
+   #  password = getpass.getpass()
 
     # Connect to the database
     N = Nutrek()
