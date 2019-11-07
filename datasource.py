@@ -8,7 +8,6 @@ class Nutrek:
 
     # ***QUESTION 1: UNABLE TO GET INTO DATABASE (USED SLACK PASSWORD)
 
-
     def connect(self, user, password):
         '''
         Establishes a connection to the database with the following credentials:
@@ -21,6 +20,8 @@ class Nutrek:
         except Exception as e:
             print("Connection error: ", e)
             exit()
+
+        return connection
 
     def disconnect(self):
         '''
