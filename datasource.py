@@ -51,7 +51,7 @@ class Nutrek:
         food = food.upper()
         try:
             cursor = self.connection.cursor()
-            query = "SELECT ingredients_english FROM food_name WHERE description " + str(%food%)
+            query = "SELECT ingredients_english FROM food_name WHERE description " + '%' + str(food) + '%'
             cursor.execute(query)
             results = cursor.fetchall()
             return str(results[0])
