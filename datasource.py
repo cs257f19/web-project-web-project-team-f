@@ -6,8 +6,8 @@ class Nutrek:
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
 
-    def __init__(self):
-        pass
+    # ***QUESTION 1: UNABLE TO GET INTO DATABASE (USED SLACK PASSWORD)
+
 
     def connect(self, user, password):
         '''
@@ -32,12 +32,16 @@ class Nutrek:
         '''
         returns all nutrients and the amount of each nutrient in a given food
         '''
+        # ***QUESTION 2 - Syntax okay? i.e. <> operator, we don't need dictionary anymore? We were initially thinking of
+        # doing nutrient, nutrient amount (key, value pair in dict, and if all values added was 0, there was insufficient information in database
+        # on the nutritional breakdown of food). How can we deal with this issue?
         food = food.upper()
         try:
-            cursor = self.connection.cursor()
+            cursor = connection.cursor()
             query = "SELECT Ash_grams, Biotin_mcg, Caffeine_mg, Calcium_Ca_mg, Carbohydrate_by_difference_g, Carbohydrate_other_g, Cholesterol_mg, Chromium_Cr_mcg, Copper_Cu_mg, Fatty_acids_total_monounsaturated_g, Fatty_acids_total_polyunsaturated_g, Fatty_acids_total_saturated_g, Fatty_acids_total_trans_g, Fiber_insoluble_g, Fiber_soluble_g, Fiber_total_dietary_g, Folic_acid_mcg, Iodine_I_mcg, Iron_Fe_mg, Lactose_g, Magnesium_Mg_mg, Manganese_Mn_mg, Niacin_mg, Pantothenic_acid_mg, Phosphorus_P_mg, Potassium_K_mg, Protein_g, Riboflavin_mg, Selenium_Se_mcg, Sodium_Na_mg, Sugars_added_g, Sugars_total_g, Thiamin_mg, Total_lipid_fat_g, Total_sugar_alcohols_g, Vitamin_A_IU, Vitamin_B12_mcg, Vitamin_B6_mg, Vitamin_C_total_ascorbic_acid_mg, Vitamin_D_IU, Vitamin_E_label_entry_primarily_IU, Vitamin_K_phylloquinone_mcg, Water_g, Xylitol_g, Zinc_Zn_mg" + "FROM Nutrek" + "WHERE (food_name =" + str(food) + ") AND (Ash_grams <> 0 OR Biotin_mcg <> 0 OR Caffeine_mg <> 0 OR Calcium_Ca_mg <> 0 OR Carbohydrate_by_difference_g <> 0 OR Carbohydrate_other_g <> 0 OR Cholesterol_mg <> 0 OR Chromium_Cr_mcg <> 0 OR Copper_Cu_mg <> 0 OR Fatty_acids_total_monounsaturated_g <> 0 OR Fatty_acids_total_polyunsaturated_g <> 0 OR Fatty_acids_total_saturated_g <> 0 OR Fatty_acids_total_trans_g <> 0 OR Fiber_insoluble_g <> 0 OR Fiber_soluble_g <> 0 OR Fiber_total_dietary_g <> 0 OR Folic_acid_mcg <> 0 OR Iodine_I_mcg <> 0 OR Iron_Fe_mg <> 0 OR Lactose_g <> 0 OR Magnesium_Mg_mg <> 0 OR Manganese_Mn_mg <> 0 OR Niacin_mg <> 0 OR Pantothenic_acid_mg <> 0 OR Phosphorus_P_mg <> 0 OR Potassium_K_mg <> 0 OR Protein_g <> 0 OR Riboflavin_mg <> 0 OR Selenium_Se_mcg <> 0 OR Sodium_Na_mg <> 0 OR Sugars_added_g <> 0 OR Sugars_total_g <> 0 OR Thiamin_mg <> 0 OR Total_lipid_fat_g <> 0 OR Total_sugar_alcohols_g <> 0 OR Vitamin_A_IU  <> 0 OR Vitamin_B12_mcg <> 0 OR Vitamin_B6_mg <> 0 OR Vitamin_C_total_ascorbic_acid_mg <> 0 OR Vitamin_D_IU <> 0 OR Vitamin_E_label_entry_primarily_IU <> 0 OR Vitamin_K_phylloquinone_mcg <> 0 OR Water_g <> 0 OR Xylitol_g <> 0 OR Zinc_Zn_mg <> 0)"
             cursor.execute(query)
             results = cursor.fetchall()
+            #results is list of tuples, and then filter information according to predicate(convert to ints), iterate through and make a new list
             return str(results[0])
 
         except Exception as e:
@@ -50,8 +54,8 @@ class Nutrek:
         # i.e. user types in milk and query finds the rows containing milk in the food name column.
         food = food.upper()
         try:
-            cursor = self.connection.cursor()
-            query = "SELECT ingredients_english FROM Nutrek WHERE CONTAINS(long_name, " + str(food)+ ")"
+            cursor = connection.cursor()
+            query = "SELECT ingredients_english FROM Nutrek WHERE CONTAINS(food_name, " + str(food)+ ")"
             cursor.execute(query)
             results = cursor.fetchall()
             return str(results[0])
@@ -63,7 +67,7 @@ class Nutrek:
     def getFoodAvailable(self):
         '''returns all foods in database'''
         try:
-            cursor = self.connection.cursor()
+            cursor = connection.cursor()
             query = "SELECT food_name FROM Nutrek"
             cursor.execute(query)
             results = cursor.fetchall()
@@ -72,6 +76,15 @@ class Nutrek:
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
+
+    def getAllNutrients(self):
+        '''returns all nutrients available in our database '''
+        # ***thinking is a potentially deletable function?
+        nutrients = list(self.data.columns.values)
+        nutrients = nutrients[7:]
+        #return nutrients
+        results = cursor.fetchall()
+        return str(results[0])
 
 
     def containsAllergen(self, food, allergen):
@@ -83,8 +96,9 @@ class Nutrek:
         #is now using query
         food = food.upper()
         try:
-            cursor = self.connection.cursor()
+            cursor = connection.cursor()
             query = "SELECT ingredients_english FROM Nutrek WHERE CONTAINS(food_name, " + str(food) + ")"
+            #try using like instead of containsc
             cursor.execute(query)
             results = cursor.fetchall()
             return str(results[0])
@@ -94,13 +108,14 @@ class Nutrek:
             return None
 
 
+
     def getNutrientThreshold(self, food, nutrient, nutritionTarget):
         '''check if the amount of nutrients in a given food is meeting the indicated goal for a user'''
         # ***Conditions we are trying to apply to SQL: 1. nutrition columns each need to be above the nutrition target otherwise, it will output false. also
         # 2. the name of the food has to be valid and 3. the sum of the nutritents cannot be 0.
         food = food.upper()
         try:
-            cursor = self.connection.cursor()
+            cursor = connection.cursor()
             query = "SELECT Ash_grams, Biotin_mcg, Caffeine_mg, Calcium_Ca_mg, Carbohydrate_by_difference_g, Carbohydrate_other_g, Cholesterol_mg, Chromium_Cr_mcg, Copper_Cu_mg, Fatty_acids_total_monounsaturated_g, Fatty_acids_total_polyunsaturated_g, Fatty_acids_total_saturated_g, Fatty_acids_total_trans_g, Fiber_insoluble_g, Fiber_soluble_g, Fiber_total_dietary_g, Folic_acid_mcg, Iodine_I_mcg, Iron_Fe_mg, Lactose_g, Magnesium_Mg_mg, Manganese_Mn_mg, Niacin_mg, Pantothenic_acid_mg, Phosphorus_P_mg, Potassium_K_mg, Protein_g, Riboflavin_mg, Selenium_Se_mcg, Sodium_Na_mg, Sugars_added_g, Sugars_total_g, Thiamin_mg, Total_lipid_fat_g, Total_sugar_alcohols_g, Vitamin_A_IU , Vitamin_B12_mcg, Vitamin_B6_mg, Vitamin_C_total_ascorbic_acid_mg, Vitamin_D_IU, Vitamin_E_label_entry_primarily_IU, Vitamin_K_phylloquinone_mcg, Water_g, Xylitol_g, Zinc_Zn_mg" + "FROM Nutrek" + "WHERE (food_name == " + str(food) + ") AND (Ash_grams <> 0 OR Biotin_mcg <> 0 OR Caffeine_mg <> 0 OR Calcium_Ca_mg <> 0 OR Carbohydrate_by_difference_g <> 0 OR Carbohydrate_other_g <> 0 OR Cholesterol_mg <> 0 OR Chromium_Cr_mcg <> 0 OR Copper_Cu_mg <> 0 OR Fatty_acids_total_monounsaturated_g <> 0 OR Fatty_acids_total_polyunsaturated_g <> 0 OR Fatty_acids_total_saturated_g <> 0 OR Fatty_acids_total_trans_g <> 0 OR Fiber_insoluble_g <> 0 OR Fiber_soluble_g <> 0 OR Fiber_total_dietary_g <> 0 OR Folic_acid_mcg <> 0 OR Iodine_I_mcg <> 0 OR Iron_Fe_mg <> 0 OR Lactose_g <> 0 OR Magnesium_Mg_mg <> 0 OR Manganese_Mn_mg <> 0 OR Niacin_mg <> 0 OR Pantothenic_acid_mg <> 0 OR Phosphorus_P_mg <> 0 OR Potassium_K_mg <> 0 OR Protein_g <> 0 OR Riboflavin_mg <> 0 OR Selenium_Se_mcg <> 0 OR Sodium_Na_mg <> 0 OR Sugars_added_g <> 0 OR Sugars_total_g <> 0 OR Thiamin_mg <> 0 OR Total_lipid_fat_g <> 0 OR Total_sugar_alcohols_g <> 0 OR Vitamin_A_IU  <> 0 OR Vitamin_B12_mcg <> 0 OR Vitamin_B6_mg <> 0 OR Vitamin_C_total_ascorbic_acid_mg <> 0 OR Vitamin_D_IU <> 0 OR Vitamin_E_label_entry_primarily_IU <> 0 OR Vitamin_K_phylloquinone_mcg <> 0 OR Water_g <> 0 OR Xylitol_g <> 0 OR Zinc_Zn_mg <> 0)"
             cursor.execute(query)
             results = cursor.fetchall()
@@ -114,22 +129,21 @@ class Nutrek:
 
 def main():
     # ***NOT WORKING!!
-    user = 'mukherjia'
-    password = 'barn689mango'
-    # Aishee's: barn689mango
+    user = 'chaul'
     # blue622spring
-   #  password = getpass.getpass()
+    #password = 'blue622spring'
+    password = getpass.getpass()
 
     # Connect to the database
+    ds = Nutrek()
+    ds.connect(user, password)
     N = Nutrek()
-    N.connect(user, password)
-    #print(N.getNutrients('granola'))
+    print(N.getNutrients('granola'))
     print(N.getIngredientBreakDown('granola'))
-    #print(N.containsAllergen('granola', 'peanuts'))
+    print(N.containsAllergy('granola', 'peanuts'))
 
 
     # Disconnect from database
-    N.disconnect()
-
+    ds.disconnect()
 if __name__ == "__main__":
     main()
