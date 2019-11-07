@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS Nutrek;
 CREATE TABLE Nutrek(
-  long_name text,
+  food_name text,
   manufacturer text,
   ingredients_english text,
   Serving_Size varchar(100),
