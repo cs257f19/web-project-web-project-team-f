@@ -21,7 +21,7 @@ class Nutrek:
             print("Connection error: ", e)
             exit()
 
-        return connection
+        return self.connection
 
     def disconnect(self):
         '''
