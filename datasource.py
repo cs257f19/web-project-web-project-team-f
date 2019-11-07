@@ -92,8 +92,9 @@ class Nutrek:
         # ***how do we work with booleans in SQL? For example, we could find the food that contains key word of food enterered by user
         # but then we need to see if the ingredients adjacent to that food contain an allergen and output true OR false accordingly
         # if allergen in ingredients, then return True. Else (allergen not in ingredients list), return False.
-        ingredients = list(self.getIngredientBreakDown(food)) # how can we call the getIntredientBreakdown method to use here now if it
+        # how can we call the getIntredientBreakdown method to use here now if it
         #is now using query
+        ingredients = list(self.getIngredientBreakDown(food))
         food = food.upper()
         try:
             cursor = connection.cursor()
