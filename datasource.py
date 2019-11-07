@@ -134,7 +134,7 @@ def main():
 
     # Connect to the database
     ds = Nutrek()
-    connection = ds.connect(user, password)
+    ds.connect(user, password)
 
     print(ds.getNutrients('granola'))
     print(ds.getIngredientBreakDown('granola'))
