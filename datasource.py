@@ -94,7 +94,7 @@ class Nutrek:
         # if allergen in ingredients, then return True. Else (allergen not in ingredients list), return False.
         # how can we call the getIntredientBreakdown method to use here now if it
         #is now using query
-        ingredients = list(self.getIngredientBreakDown(food))
+        ingredients = list(self.getIngredientBreakDown(connection,food))
         food = food.upper()
         try:
             cursor = connection.cursor()
