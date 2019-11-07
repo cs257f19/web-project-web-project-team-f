@@ -130,19 +130,20 @@ class Nutrek:
 def main():
     # ***NOT WORKING!!
     user = 'chaul'
-    # blue622spring
-    #password = 'blue622spring'
-    password = getpass.getpass()
+    password = 'paper936paper'
 
     # Connect to the database
-    N = Nutrek()
-    N.connect(user, password)
-    print(N.getNutrients('granola'))
-    print(N.getIngredientBreakDown('granola'))
-    print(N.containsAllergy('granola', 'peanuts'))
+    ds = Nutrek()
+    ds.connect(user, password)
+
+
+    print(ds.getNutrients('granola'))
+    print(ds.getIngredientBreakDown('granola'))
+    print(ds.containsAllergen('granola', 'peanuts'))
 
 
     # Disconnect from database
     ds.disconnect()
+
 if __name__ == "__main__":
     main()
