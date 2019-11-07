@@ -28,7 +28,7 @@ class Nutrek:
         '''
         self.connection.close()
 
-    def getNutrients(self, food):
+    def getNutrients(self, connection, food):
         '''
         returns all nutrients and the amount of each nutrient in a given food
         '''
@@ -48,7 +48,7 @@ class Nutrek:
             print ("Something went wrong when executing the query: ", e)
             return None
 
-    def getIngredientBreakDown(self, food):
+    def getIngredientBreakDown(self, connection, food):
         ''' returns all the ingredients in a given food item'''
         # ***contains method doesn't seem to be working - we want to see if the "food_name" OR branded food name contains the user input
         # i.e. user types in milk and query finds the rows containing milk in the food name column.
@@ -64,7 +64,7 @@ class Nutrek:
             print ("Something went wrong when executing the query: ", e)
             return None
 
-    def getFoodAvailable(self):
+    def getFoodAvailable(self, connection):
         '''returns all foods in database'''
         try:
             cursor = connection.cursor()
@@ -87,7 +87,7 @@ class Nutrek:
         return str(results[0])
 
 
-    def containsAllergen(self, food, allergen):
+    def containsAllergen(self, connection,food, allergen):
         '''returns True if food contains allergen (could cause allergic reaction) and false if otherwise '''
         # ***how do we work with booleans in SQL? For example, we could find the food that contains key word of food enterered by user
         # but then we need to see if the ingredients adjacent to that food contain an allergen and output true OR false accordingly
@@ -109,7 +109,7 @@ class Nutrek:
 
 
 
-    def getNutrientThreshold(self, food, nutrient, nutritionTarget):
+    def getNutrientThreshold(self, connection,food, nutrient, nutritionTarget):
         '''check if the amount of nutrients in a given food is meeting the indicated goal for a user'''
         # ***Conditions we are trying to apply to SQL: 1. nutrition columns each need to be above the nutrition target otherwise, it will output false. also
         # 2. the name of the food has to be valid and 3. the sum of the nutritents cannot be 0.
@@ -134,11 +134,11 @@ def main():
 
     # Connect to the database
     ds = Nutrek()
-    ds.connect(user, password)
+    connection = ds.connect(user, password)
 
-    print(ds.getNutrients('granola'))
-    print(ds.getIngredientBreakDown('granola'))
-    print(ds.containsAllergen('granola', 'peanuts'))
+    print(ds.getNutrients(connection,'granola'))
+    print(ds.getIngredientBreakDown(connection,'granola'))
+    print(ds.containsAllergen(connection,'granola', 'peanuts'))
 
 
     # Disconnect from database
