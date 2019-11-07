@@ -133,12 +133,12 @@ def main():
     password = 'paper936paper'
 
     # Connect to the database
-    ds = Nutrek()
-    connection = ds.connect(user, password)
+    
+    connection = connect(user, password)
 
-    print(ds.getNutrients('granola'))
-    print(ds.getIngredientBreakDown('granola'))
-    print(ds.containsAllergen('granola', 'peanuts'))
+    print(getNutrients('granola'))
+    print(getIngredientBreakDown('granola'))
+    print(containsAllergen('granola', 'peanuts'))
 
 
     # Disconnect from database
