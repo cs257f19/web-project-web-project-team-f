@@ -122,7 +122,7 @@ def main():
     N.connect(user, password)
     print(N.getNutrients('granola'))
     print(N.getIngredientBreakDown('granola'))
-    print(N.containsAllergy('granola', 'peanuts'))
+    print(N.containsAllergen('granola', 'peanuts'))
 
 
     # Disconnect from database
