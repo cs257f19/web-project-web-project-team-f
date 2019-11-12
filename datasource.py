@@ -5,9 +5,6 @@ class Nutrek:
     '''
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
-
-    # ***QUESTION 1: UNABLE TO GET INTO DATABASE (USED SLACK PASSWORD)
-
     def connect(self, user, password):
         '''
         Establishes a connection to the database with the following credentials:
@@ -74,14 +71,6 @@ class Nutrek:
             print ("Something went wrong when executing the query: ", e)
             return None
 
-    def getAllNutrients(self):
-        '''returns all nutrients available in our database '''
-        # ***thinking is a potentially deletable function?
-        nutrients = list(self.data.columns.values)
-        nutrients = nutrients[7:]
-        #return nutrients
-        results = cursor.fetchall()
-        return str(results[0])
 
 
     def containsAllergen(self, food, allergen):
@@ -124,7 +113,6 @@ class Nutrek:
         pass
 
 def main():
-    # ***NOT WORKING!!
     user = 'odoome'
     password = 'tiger672carpet'
     #password = getpass.getpass()
@@ -133,8 +121,8 @@ def main():
     N = Nutrek()
     N.connect(user, password)
     print(N.getNutrients('granola'))
-    #print(N.getIngredientBreakDown('granola'))
-    #print(N.containsAllergy('granola', 'peanuts'))
+    print(N.getIngredientBreakDown('granola'))
+    print(N.containsAllergy('granola', 'peanuts'))
 
 
     # Disconnect from database
