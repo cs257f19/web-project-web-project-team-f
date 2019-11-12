@@ -63,8 +63,7 @@ class Nutrek:
         food = food.upper()
         try:
             cursor = self.connection.cursor()
-            query = "SELECT ingredients_english FROM Nutrek WHERE CONTAINS(food_name, " + str(food)+ ")"
-            cursor.execute(query)
+            cursor.execute("SELECT ingredients_english FROM Nutrek WHERE food_name ~ (%s)",(food,))
             results = cursor.fetchall()
             return str(results[0])
 
@@ -97,8 +96,7 @@ class Nutrek:
         food = food.upper()
         try:
             cursor = connection.cursor()
-            query = "SELECT ingredients_english FROM Nutrek WHERE CONTAINS(food_name, " + str(food) + ")"
-            cursor.execute(query)
+            cursor.execute("SELECT ingredients_english FROM Nutrek WHERE food_name ~ (%s)",(food,))
             results = cursor.fetchall()
             return str(results[0])
 
