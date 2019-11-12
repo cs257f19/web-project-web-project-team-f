@@ -45,10 +45,10 @@ class Nutrek:
         # ***QUESTION 2 - Syntax okay? i.e. <> operator, we don't need dictionary anymore? We were initially thinking of
         # doing nutrient, nutrient amount (key, value pair in dict, and if all values added was 0, there was insufficient information in database
         # on the nutritional breakdown of food). How can we deal with this issue?
-        food = food.upper()
+        food = str(food.upper())
         try:
             cursor = self.connection.cursor()
-            cursor.execute("SELECT * FROM Nutrek WHERE CONTAINS(food_name,(%s);",(food,))
+            cursor.execute("SELECT * FROM Nutrek WHERE food_name = ?",food)
             results = cursor.fetchall()
             return results
 
