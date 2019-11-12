@@ -48,7 +48,7 @@ class Nutrek:
         food = str(food.upper())
         try:
             cursor = self.connection.cursor()
-            cursor.execute("SELECT * FROM Nutrek WHERE (%s) LIKE food_name",(food,))
+            cursor.execute("SELECT * FROM Nutrek WHERE food_name ~ (%s)",(food,))
             results = cursor.fetchall()
             return results
 
