@@ -23,6 +23,20 @@ class Nutrek:
         Breaks the connection to the database
         '''
         self.connection.close()
+    
+    def getAllColumns(self):
+        '''
+        returns all columns - WILL DELETE (foundation of PSQL queries)
+        '''
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT * FROM Nutrek")
+            results = cursor.fetchall()
+            return results
+
+        except Exception as e:
+            print ("Something went wrong when executing the query: ", e)
+            return None
 
     def getNutrients(self, food):
         '''
@@ -34,7 +48,7 @@ class Nutrek:
         food = food.upper()
         try:
             cursor = self.connection.cursor()
-            cursor.execute("SELECT * FROM Nutrek")
+            cursor.execute("SELECT * FROM Nutrek WHERE CONTAINS(food_name,(%s)",(food))
             results = cursor.fetchall()
             return results
 
@@ -120,6 +134,7 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
+    print(N.getAllColumns())
     print(N.getNutrients('granola'))
     print(N.getIngredientBreakDown('granola'))
     print(N.containsAllergen('granola', 'peanuts'))
