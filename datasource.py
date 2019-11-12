@@ -48,7 +48,7 @@ class Nutrek:
         food = food.upper()
         try:
             cursor = self.connection.cursor()
-            cursor.execute("SELECT * FROM Nutrek WHERE CONTAINS(food_name,(%s)",(food))
+            cursor.execute("SELECT * FROM Nutrek WHERE CONTAINS(food_name,(%s)",(food,))
             results = cursor.fetchall()
             return results
 
