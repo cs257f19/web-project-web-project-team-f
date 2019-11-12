@@ -48,7 +48,7 @@ class Nutrek:
         food = str(food.upper())
         try:
             cursor = self.connection.cursor()
-            cursor.execute("SELECT Ash_grams,Biotin_mcg,Caffeine_mg,Calcium_Ca_mg,Carbohydrate_by_difference_g,Carbohydrate_other_g,Cholesterol_mg,Chromium_Cr_mcg,Copper_Cu_mg,Fatty_acids_total_monounsaturated_g,Fatty_acids_total_polyunsaturated_g,Fatty_acids_total_saturated_g,Fatty_acids_total_trans_g,Fiber_insoluble_g,Fiber_soluble_g,Fiber_total_dietary_g,Folic_acid_mcg,Iodine_I_mcg,Iron_Fe_mg,Lactose_g,Magnesium_Mg_mg,Manganese_Mn_mg,Niacin_mg,Pantothenic_acid_mg,Phosphorus_P_mg,Potassium_K_mg,Protein_g,Riboflavin_mg,Selenium_Se_mcg,Sodium_Na_mg,Sugars_added_g,Sugars_total_g,Thiamin_mg,Total_lipid_fat_g,Total_sugar_alcohols_g,Vitamin_A_IU,Vitamin_B12_mcg,Vitamin_B6_mg,Vitamin_C_total_ascorbic_acid_mg,Vitamin_D_IU,Vitamin_E_label_entry_primarily_IU,Vitamin_K_phylloquinone_mcg,Water_g,Xylitol_g,Zinc_Zn_mg FROM Nutrek WHERE food_name ~ (%s)",(food,))
+            cursor.execute("SELECT food_name,Ash_grams,Biotin_mcg,Caffeine_mg,Calcium_Ca_mg,Carbohydrate_by_difference_g,Carbohydrate_other_g,Cholesterol_mg,Chromium_Cr_mcg,Copper_Cu_mg,Fatty_acids_total_monounsaturated_g,Fatty_acids_total_polyunsaturated_g,Fatty_acids_total_saturated_g,Fatty_acids_total_trans_g,Fiber_insoluble_g,Fiber_soluble_g,Fiber_total_dietary_g,Folic_acid_mcg,Iodine_I_mcg,Iron_Fe_mg,Lactose_g,Magnesium_Mg_mg,Manganese_Mn_mg,Niacin_mg,Pantothenic_acid_mg,Phosphorus_P_mg,Potassium_K_mg,Protein_g,Riboflavin_mg,Selenium_Se_mcg,Sodium_Na_mg,Sugars_added_g,Sugars_total_g,Thiamin_mg,Total_lipid_fat_g,Total_sugar_alcohols_g,Vitamin_A_IU,Vitamin_B12_mcg,Vitamin_B6_mg,Vitamin_C_total_ascorbic_acid_mg,Vitamin_D_IU,Vitamin_E_label_entry_primarily_IU,Vitamin_K_phylloquinone_mcg,Water_g,Xylitol_g,Zinc_Zn_mg FROM Nutrek WHERE food_name ~ (%s)",(food,))
             results = cursor.fetchall()
             return results
 
@@ -63,7 +63,7 @@ class Nutrek:
         food = str(food.upper())
         try:
             cursor = self.connection.cursor()
-            cursor.execute("SELECT ingredients_english FROM Nutrek WHERE food_name ~ (%s)",(food,))
+            cursor.execute("SELECT food_name,ingredients_english FROM Nutrek WHERE food_name ~ (%s)",(food,))
             results = cursor.fetchall()
             return str(results[0])
 
@@ -96,7 +96,7 @@ class Nutrek:
         food = str(food.upper())
         try:
             cursor = self.connection.cursor()
-            cursor.execute("SELECT ingredients_english FROM Nutrek WHERE food_name ~ (%s)",(food,))
+            cursor.execute("SELECT food_name,ingredients_english FROM Nutrek WHERE food_name ~ (%s)",(food,))
             results = cursor.fetchall()
             return str(results[0])
 
