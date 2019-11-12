@@ -60,7 +60,7 @@ class Nutrek:
         ''' returns all the ingredients in a given food item'''
         # ***contains method doesn't seem to be working - we want to see if the "food_name" OR branded food name contains the user input
         # i.e. user types in milk and query finds the rows containing milk in the food name column.
-        food = food.upper()
+        food = str(food.upper())
         try:
             cursor = self.connection.cursor()
             cursor.execute("SELECT ingredients_english FROM Nutrek WHERE food_name ~ (%s)",(food,))
@@ -93,7 +93,7 @@ class Nutrek:
         # if allergen in ingredients, then return True. Else (allergen not in ingredients list), return False.
         ingredients = list(self.getIngredientBreakDown(food)) # how can we call the getIntredientBreakdown method to use here now if it
         #is now using query
-        food = food.upper()
+        food = str(food.upper())
         try:
             cursor = self.connection.cursor()
             cursor.execute("SELECT ingredients_english FROM Nutrek WHERE food_name ~ (%s)",(food,))
