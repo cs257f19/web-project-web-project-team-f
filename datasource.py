@@ -59,7 +59,8 @@ class Nutrek:
             proportionsList = []
             for item in proportions:
                 proportionsList.append(float(item))
-            print(proportionsList)
+            if sum(proportionsList) == 0:
+                return "We do not have enough data on this food item."
             return nutrientDictionary
 
         except Exception as e:
