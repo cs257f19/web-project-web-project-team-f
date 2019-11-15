@@ -60,7 +60,7 @@ class Nutrek:
             for item in proportions:
                 proportionsList.append(item)
             for j in proportionsList:
-                print(int(j))
+                print(float(j))
             return nutrientDictionary
 
         except Exception as e:
