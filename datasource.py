@@ -58,9 +58,8 @@ class Nutrek:
             proportions = list(nutrientDictionary.values())
             proportionsList = []
             for item in proportions:
-                proportionsList.append(item)
-            for j in proportionsList:
-                print(float(j))
+                proportionsList.append(float(item))
+            print(proportionsList)
             return nutrientDictionary
 
         except Exception as e:
