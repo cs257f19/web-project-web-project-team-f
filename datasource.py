@@ -62,7 +62,7 @@ class Nutrek:
             return None
 
     def getIngredientBreakDown(self, food):
-        ''' returns all the ingredients in a given food item'''
+        ''' returns all the ingredients within a given food item'''
         food = food.upper()
         try:
             cursor = self.connection.cursor()
@@ -86,7 +86,7 @@ class Nutrek:
             return None
 
     def getFoodAvailable(self, food):
-        '''returns food names in database containing specified food in name'''
+        '''returns official food names in database containing keyword of desired food. i.e. 'milk' will return 'whole milk','2% milk' '''
         try:
             cursor = connection.cursor()
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
@@ -99,7 +99,7 @@ class Nutrek:
             return None
 
     def containsAllergen(self, food, allergen):
-        '''returns True if food contains allergen (could cause allergic reaction) and false if otherwise '''
+        '''returns True if food contains specified allergen (could cause allergic reaction) and false if otherwise '''
 
         ingredients = self.getIngredientBreakDown(food)
         FullIngredientList = []
@@ -114,8 +114,8 @@ class Nutrek:
             FullIngredientList.append(item)
         food = food.upper()
         try:
-            for ing in FullIngredientList:
-                if allergen in ing:
+            for ingredient in FullIngredientList:
+                if allergen in ingredient:
                     return True
             return False
         except Exception as e:
@@ -125,8 +125,7 @@ class Nutrek:
 
 
     def checkNutrientThreshold(self, food, nutrient):
-        '''check if the amount of nutrients in a given food is meeting the indicated goal for a user
-        we need to define this. Greater or Less than?'''
+        '''checks if the amount of nutrients in a given food is meeting the indicated goal for a user (units and greater than or less than will be predetermined/defined for user)'''
         food = food.upper()
         nutrient = nutrient.lower()
         try:
@@ -145,6 +144,8 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
+    print(N.getFoodAvailable('granola'))
+    print("\n")
     print(N.getNutrients('granola'))
     print("\n")
     print(N.getIngredientBreakDown('granola'))
