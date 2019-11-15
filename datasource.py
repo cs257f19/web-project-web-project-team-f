@@ -54,7 +54,10 @@ class Nutrek:
                 results.append(j)
             nutrientDictionary = {}
             for nutrient, proportion in zip(nutrientList, results):
-                nutrientDictionary[nutrient] = proportion
+                nutrientDictionary[nutrient] = int(proportion)
+            proportionsList = nutrientDictionary.values()
+            if sum(proportionsList) == 0:
+                return "We have inadequate data on this food item."
             return nutrientDictionary
 
         except Exception as e:
@@ -62,11 +65,11 @@ class Nutrek:
             return None
 
     def getIngredientBreakDown(self, food):
-        ''' returns all the ingredients within a given food item'''
+        ''' returns all the ingredients in a given food item'''
         food = food.upper()
         try:
             cursor = self.connection.cursor()
-            query = ("SELECT ingredients_english FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
+            query = ("SELECT ingredients_english FROM Nutrek WHERE  food_name LIKE " + str("'%"+food+"%'") +";")
             cursor.execute(query)
             results = cursor.fetchall()
             results = results[0]
@@ -86,7 +89,8 @@ class Nutrek:
             return None
 
     def getFoodAvailable(self, food):
-        '''returns official food names in database containing keyword of desired food. i.e. 'milk' will return 'whole milk','2% milk' '''
+        '''returns all foods in database'''
+        food = food.upper()
         try:
             cursor = self.connection.cursor()
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
@@ -99,7 +103,7 @@ class Nutrek:
             return None
 
     def containsAllergen(self, food, allergen):
-        '''returns True if food contains specified allergen (could cause allergic reaction) and false if otherwise '''
+        '''returns True if food contains allergen (could cause allergic reaction) and false if otherwise '''
 
         ingredients = self.getIngredientBreakDown(food)
         FullIngredientList = []
@@ -114,8 +118,8 @@ class Nutrek:
             FullIngredientList.append(item)
         food = food.upper()
         try:
-            for ingredient in FullIngredientList:
-                if allergen in ingredient:
+            for ing in FullIngredientList:
+                if allergen in ing:
                     return True
             return False
         except Exception as e:
@@ -125,7 +129,8 @@ class Nutrek:
 
 
     def checkNutrientThreshold(self, food, nutrient):
-        '''checks if the amount of nutrients in a given food is meeting the indicated goal for a user (units and greater than or less than will be predetermined/defined for user)'''
+        '''check if the amount of nutrients in a given food to enable them see if
+         they are meeting a nutritional goal.'''
         food = food.upper()
         nutrient = nutrient.lower()
         try:
@@ -140,11 +145,12 @@ class Nutrek:
 def main():
     user = 'odoome'
     password = 'tiger672carpet'
+    #password = getpass.getpass()
 
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-    print(N.getFoodAvailable('granola'))
+    print(N.getFoodAvailable('yoghurt'))
     print("\n")
     print(N.getNutrients('granola'))
     print("\n")
