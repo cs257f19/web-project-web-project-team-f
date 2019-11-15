@@ -54,10 +54,8 @@ class Nutrek:
                 results.append(j)
             nutrientDictionary = {}
             for nutrient, proportion in zip(nutrientList, results):
-                nutrientDictionary[nutrient] = int(proportion)
-            proportionsList = nutrientDictionary.values()
-            if sum(proportionsList) == 0:
-                return "We have inadequate data on this food item."
+                nutrientDictionary[nutrient] = proportion
+
             return nutrientDictionary
 
         except Exception as e:
@@ -150,7 +148,7 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-    print(N.getFoodAvailable('yoghurt'))
+    print(N.getFoodAvailable('chicken'))
     print("\n")
     print(N.getNutrients('granola'))
     print("\n")
