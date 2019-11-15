@@ -92,7 +92,7 @@ class Nutrek:
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
             cursor.execute(query)
             results = cursor.fetchall()
-            return str(results[0])
+            return results
 
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
