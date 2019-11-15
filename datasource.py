@@ -88,7 +88,7 @@ class Nutrek:
     def getFoodAvailable(self, food):
         '''returns official food names in database containing keyword of desired food. i.e. 'milk' will return 'whole milk','2% milk' '''
         try:
-            cursor = connection.cursor()
+            cursor = self.connection.cursor()
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
             cursor.execute(query)
             results = cursor.fetchall()
