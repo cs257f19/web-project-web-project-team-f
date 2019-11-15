@@ -57,7 +57,7 @@ class Nutrek:
                 nutrientDictionary[nutrient] = proportion
             proportions = nutrientDictionary.values()
             proportionsList = []
-            for proportion in proportions:
+            for proportion in list(proportions):
                 proportionsList.append(int(proportion))
             print(proportionsList)
             return nutrientDictionary
