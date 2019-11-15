@@ -140,7 +140,7 @@ class Nutrek:
             nutrientDictionary = self.getNutrients(food)
             for item in nutrientDictionary:
                 if nutrient in item:
-                    return item, nutrientDictionary[item]
+                    return item + ' ' + nutrientDictionary[item]
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
@@ -153,7 +153,7 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-    print(N.getFoodAvailable('chicken'))
+    print(N.getFoodAvailable('noodles'))
     print("\n")
     print(N.getNutrients('granola'))
     print("\n")
