@@ -7,7 +7,7 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def nutrek():
-    return "STARK INDUSTRIES"
+    return render_template('nutrek.html')
 
 
 
