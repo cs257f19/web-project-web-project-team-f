@@ -5,8 +5,8 @@ import sys
 
 app = flask.Flask(__name__)
 
-@app.route('/')
-def boring():
+@app.route('/nutrek/')
+def nutrek():
     return render_template('nutrek.html')
 
 
