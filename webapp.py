@@ -2,17 +2,22 @@ import flask
 from flask import render_template
 import json
 import sys
+import datasource
 
 app = flask.Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
-@app.route('/')
-def nutrek():
-    #return render_template('nutrekPrototype.html')
-    return render_template('nutrekPrototype.html')
+@app.route('/', methods = ['Apply'])
+def getNutritionInfo():
+    if request.method == 'Apply':
+        ds = datasource.Nutrek()
+        description = "Showing all the nutrients in food and their proportions"
+        result = request.form
+        result = ds.getNutrients(result.get("Letter"))
+        return render_template('nutrekPrototype.html', result=result, description=description)
 
-
+    # return render_template('nutrekPrototype.html')
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
