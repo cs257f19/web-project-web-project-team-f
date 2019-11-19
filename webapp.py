@@ -12,9 +12,9 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 def getNutritionInfo():
     if request.method == "POST":
         #fetch form data
-        details = request.form
-        food = details['food']
-        enquiry = details['enquiry']
+        result = request.form
+        food = result['food']
+        enquiry = result['enquiry']
         ds = datasource.Nutrek()
         description = "displaying all nutrients in food and their proportions"
         result = ds.getNutrients(food)
