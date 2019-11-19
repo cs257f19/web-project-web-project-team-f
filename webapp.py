@@ -1,5 +1,5 @@
 import flask
-from flask import render_template
+from flask import render_template, request
 import json
 import sys
 import datasource
@@ -8,16 +8,18 @@ app = flask.Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
-@app.route('/', methods = ['Apply'])
+@app.route('/', methods = ["GET", "POST"])
 def getNutritionInfo():
-    if request.method == 'Apply':
+    if request.method == "POST":
+        #fetch form data
+        details = request.form
+        food = details['food']
+        enquiry = details['enquiry']
         ds = datasource.Nutrek()
-        description = "Showing all the nutrients in food and their proportions"
-        result = request.form
-        result = ds.getNutrients(result.get("Letter"))
+        description = "displaying all nutrients in food and their proportions"
+        result = ds.getNutrients(food)
         return render_template('nutrekPrototype.html', result=result, description=description)
 
-    # return render_template('nutrekPrototype.html')
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
