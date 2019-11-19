@@ -149,20 +149,9 @@ def main():
     user = 'odoome'
     password = 'tiger672carpet'
     #password = getpass.getpass()
-
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-    print(N.getFoodAvailable('noodles'))
-    print("\n")
-    print(N.getNutrients('granola'))
-    print("\n")
-    print(N.getIngredientBreakDown('granola'))
-    print("\n")
-    print(N.containsAllergen('granola', 'peanut'))
-    print("\n")
-    print(N.checkNutrientThreshold('granola', 'protein'))
-
     # Disconnect from database
-    N.disconnect()
+    #N.disconnect()
 main()
