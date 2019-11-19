@@ -8,9 +8,15 @@ app = flask.Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
-@app.route('/')
+@app.route('/', methods = ["GET", "POST"])
 def getNutritionInfo():
-    return render_template('nutrekPrototype.html')
+    if request.method == "POST":
+        #fetch form data
+        result = request.form
+        ds = datasource.Nutrek()
+        description = "displaying all nutrients in food and their proportions"
+        result = ds.getNutrients(result.get("food"))
+    return render_template('nutrekPrototype.html', result=result, description=description)
 
 
 if __name__ == '__main__':
