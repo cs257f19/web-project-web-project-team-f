@@ -17,7 +17,7 @@ def getNutritionInfo():
         ds = datasource.Nutrek()
         description = "displaying all nutrients in food and their proportions"
         result = ds.getNutrients(food)
-    return render_template('nutrekPrototype.html',result,description)
+    return render_template('nutrekPrototype.html')
 
 
 if __name__ == '__main__':
