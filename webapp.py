@@ -13,9 +13,10 @@ def getNutritionInfo():
     if request.method == "POST":
         #fetch form data
         result = request.form
+        food = result['food']
         ds = datasource.Nutrek()
         description = "displaying all nutrients in food and their proportions"
-        result = ds.getNutrients(result.get("food"))
+        result = ds.getNutrients(food)
     return render_template('nutrekPrototype.html', result=result, description=description)
 
 
