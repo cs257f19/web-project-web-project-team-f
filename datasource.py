@@ -155,6 +155,6 @@ def main():
     print(N.containsAllergen("granola", "peanuts"))
     print(N.containsAllergen("milk", "lactose"))
     print(N.containsAllergen("fried rice", "oil"))
-    Disconnect from database
+#     Disconnect from database
     N.disconnect()
 main()
