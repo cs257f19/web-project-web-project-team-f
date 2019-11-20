@@ -7,14 +7,18 @@ import datasource
 app = flask.Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 @app.route('/', methods = ["GET", "POST"])
-def getNutritionInfo():
+def home():
+    return render_template('nutrekPrototype.html')
+
+@app.route('/results', methods = ["GET", "POST"])
+def getResults():
     if request.method == "POST":
         result = request.form
         food = result['food']
         ds = datasource.Nutrek()
         description = "displaying all nutrients in food and their proportions"
         result = ds.getNutrients(food)
-    return render_template('nutrekPrototype.html', result=result, description=description)
+    return render_template('results.html', result=result, description=description)
 
 
 if __name__ == '__main__':
