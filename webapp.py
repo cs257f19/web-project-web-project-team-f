@@ -13,8 +13,7 @@ def home():
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
     food = request.args.get('food')
-    ds = datasource.Nutrek.getNutrients(food)
-    return food, ds 
+    return food
 #     if request.method == "POST":
 #         result = request.form
 #         food = result['food']
