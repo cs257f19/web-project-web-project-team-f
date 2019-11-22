@@ -12,8 +12,8 @@ def home():
 
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
-    food = request.args.get('food')
-    return '<h1>the food is : {}</h1>'.format(food)
+    food = request.form['food']
+    return food 
 #     if request.method == "POST":
 #         result = request.form
 #         food = result['food']
