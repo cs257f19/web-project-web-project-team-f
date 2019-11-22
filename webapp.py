@@ -12,7 +12,9 @@ def home():
 
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
-    return 'Granola' 
+    ds = datasource.Nutrek()
+    res = ds.getNutrients('granola')
+    return res 
 #     food = request.form-style-5['food']
 #     return food 
 #     if request.method == "POST":
