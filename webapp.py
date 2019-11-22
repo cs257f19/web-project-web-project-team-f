@@ -12,14 +12,17 @@ def home():
 
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
-    if request.method == "POST":
-        result = request.form
-        food = result['food']
-        ds = datasource.Nutrek()
-        description = "displaying all nutrients in food and their proportions"
-#         result = ds.getNutrients(food)
-#         return render_template('results.html')
-        return description  
+    food = request.args.get('food')
+    ds = datasource.Nutrek.getNutrients(food)
+    return food, ds 
+#     if request.method == "POST":
+#         result = request.form
+#         food = result['food']
+#         ds = datasource.Nutrek()
+#         description = "displaying all nutrients in food and their proportions"
+# #         result = ds.getNutrients(food)
+# #         return render_template('results.html')
+#         return description  
 
 
 if __name__ == '__main__':
