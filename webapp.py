@@ -12,8 +12,9 @@ def home():
 
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
-    food = request.form-style-5['food']
-    return food 
+    return 'Granola' 
+#     food = request.form-style-5['food']
+#     return food 
 #     if request.method == "POST":
 #         result = request.form
 #         food = result['food']
