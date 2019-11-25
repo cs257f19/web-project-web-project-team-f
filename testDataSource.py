@@ -6,6 +6,9 @@ class DataSourceTester(unittest.TestCase):
 
     def setUp(self) -> None:
         self.nutrek = Nutrek()
+        user = 'odoome'
+        password = 'tiger672carpet'
+        self.nutrek.connect(user, password)
 
     def test_containsAllergen_bothValidInputs(self):
         food1 = 'granola'
