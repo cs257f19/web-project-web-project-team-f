@@ -109,6 +109,7 @@ class Nutrek:
         '''returns True if food contains allergen (could cause allergic reaction) and false if otherwise '''
 
         ingredients = self.getIngredientBreakDown(food)
+        print(food, allergen, ingredients)
         FullIngredientList = []
         allergen = allergen.upper()
         for item in ingredients:
