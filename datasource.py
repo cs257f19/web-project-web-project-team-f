@@ -152,7 +152,7 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-#     print(N.containsAllergen("granola", "peanuts"))
+    print(N.containsAllergen("granola", "peanuts"))
 #     print(N.containsAllergen("milk", "lactose"))
 #     print(N.containsAllergen("fried rice", "oil"))
 #     Disconnect from database
