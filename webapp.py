@@ -16,7 +16,6 @@ def home():
 
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
-    ds = datasource.Nutrek()
     res = ds.getNutrients('granola')
     return res 
 #     food = request.form-style-5['food']
