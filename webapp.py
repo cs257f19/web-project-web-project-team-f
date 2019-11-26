@@ -20,9 +20,11 @@ def getResults():
     res = ''
     for item in resList:
         res += item 
-        res += '\n' 
-        res += ',' 
-    return res  
+    newRes = res.split(' ')
+    result = ''
+    for item in newRes:
+        result += item + '\n'
+    return result   
 #     if request.method == "POST":
 #         result = request.form
 #         food = result['food']
