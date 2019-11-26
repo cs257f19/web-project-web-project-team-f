@@ -21,6 +21,7 @@ def getResults():
     for item in resList:
         res += item 
         res += '\n' 
+        res += ',' 
     return res  
 #     if request.method == "POST":
 #         result = request.form
