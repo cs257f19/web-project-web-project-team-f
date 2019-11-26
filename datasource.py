@@ -85,7 +85,7 @@ class Nutrek:
                 if ")" in item:
                     item = item.replace(")","")
                 FullIngredientList.append(item)
-            return str(FullIngredientList)
+            return FullIngredientList
 
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
