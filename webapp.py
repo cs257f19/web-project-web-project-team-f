@@ -16,10 +16,9 @@ def home():
 
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
-    res = ds.getNutrients('granola')
-    return res 
-#     food = request.form-style-5['food']
-#     return food 
+    #res = ds.getNutrients('granola') 
+    food = request.form['food']
+    return food 
 #     if request.method == "POST":
 #         result = request.form
 #         food = result['food']
