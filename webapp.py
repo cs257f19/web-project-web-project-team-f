@@ -16,7 +16,7 @@ def home():
 
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
-    res = ds.getIngredientBreakdown('granola') 
+    res = ds.getIngredientBreakDown('granola') 
     return res  
 #     if request.method == "POST":
 #         result = request.form
