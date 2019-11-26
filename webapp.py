@@ -4,6 +4,10 @@ import json
 import sys
 import datasource
 
+ds = datasource.Nutrek()
+user = 'odoome'
+password = 'tiger672carpet'
+ds.connect(user, password)
 app = flask.Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 @app.route('/', methods = ["GET", "POST"])
