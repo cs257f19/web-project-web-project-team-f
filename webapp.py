@@ -19,7 +19,7 @@ def getResults():
     resList = ds.getIngredientBreakDown('granola')
     res = ''
     for item in resList:
-        res += item + ','
+        res += item + '\n'
     return res  
 #     if request.method == "POST":
 #         result = request.form
