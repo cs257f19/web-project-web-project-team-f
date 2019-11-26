@@ -18,7 +18,7 @@ def home():
 def getResults():
     #res = ds.getNutrients('granola') 
     food = request.form['food']
-    return food 
+    return food  
 #     if request.method == "POST":
 #         result = request.form
 #         food = result['food']
