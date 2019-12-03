@@ -23,7 +23,6 @@ def home():
 def resultNutrients():
     if request.method == 'POST':
         result = request.form
-        ds = datasource.Nutrek()
         description = "Displaying nutrient breakdown for" + result.get("food")
         result = ds.getNutrients(result.get("food"))
         return render_template('result.html', result = result, description = description)'''
