@@ -17,6 +17,17 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 def home():
     return render_template('nutrekPrototype.html')
 
+'''Translating HTML form data into a database query and then into a results page
+
+@app.route('/resultnutrients', methods = ['POST', 'GET'])
+def resultNutrients():
+    if request.method == 'POST':
+        result = request.form
+        ds = datasource.Nutrek()
+        description = "Displaying nutrient breakdown for" + result.get("food")
+        result = ds.getNutrients(result.get("food"))
+        return render_template('result.html', result = result, description = description)'''
+
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
     resList = ds.getIngredientBreakDown('granola')
@@ -32,17 +43,7 @@ def getResults():
 # #         result = ds.getNutrients(food)
 # #         return render_template('results.html')
 #         return description  
-'''Translating HTML form data into a database query and then into a results page
 
-@app.route('/resultnutrients', methods = ['POST', 'GET'])
-def resultNutrients():
-    if request.method == 'POST':
-        result = request.form
-        ds = datasource.Nutrek()
-        description = "Displaying nutrient breakdown for" + result.get("food")
-        result = ds.getNutrients(result.get("food"))
-        return render_template('result.html', result = result, description = description)'''
-    
 if __name__ == '__main__':
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
