@@ -27,7 +27,7 @@ def resultNutrients():
         description = "Displaying nutrient breakdown for" + result.get("food")
         result = ds.getNutrients(result.get("food"))
         return render_template('result.html', result = result, description = description)
-
+'''
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
     resList = ds.getIngredientBreakDown('granola')
@@ -43,7 +43,7 @@ def getResults():
 # #         result = ds.getNutrients(food)
 # #         return render_template('results.html')
 #         return description  
-
+'''
 if __name__ == '__main__':
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
