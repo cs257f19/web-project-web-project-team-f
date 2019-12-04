@@ -45,10 +45,11 @@
       <form action = "/results" method = "POST">
         <p>
           <label for="Food">Enter Food: </label>
-            <input type = "text" name = "Food"><br><br>
+          <input type = "text" name = "Food"><br><br>
           <input type="radio" name="query" value="nutritionfacts"> Nutrition Breakdown<br>
-          <input type="radio" name="query" value="allergens"> Allergens<br>
-          <input type="radio" name="query" value="ingredients"> Ingredient<br><br></p>
+          <input type="radio" name="query" value="ingredients"> Ingredient<br>
+          <input type="radio" name="query" value="allergy"> Allergen: <input type = "text" name = "allergen">
+          <br></p>
       <p><input type = "submit" value = "Submit" /><input type="reset"></p>
     </form>
       
