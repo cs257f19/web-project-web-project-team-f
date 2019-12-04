@@ -60,7 +60,7 @@ input[type=text]:focus {
 width: 70%;
 }
 
-.form-style-5{
+/* .form-style-5{
   max-width: 500px;
   position: absolute;
   transform: translateX(-10%);
@@ -154,7 +154,7 @@ width: 70%;
 {
   background: #109177;
 }
-
+ */
 
 h1 {
   font-size: 5rem;
