@@ -11,7 +11,7 @@
   --background-color: #ffffff;
   --search-bg-color: #242628;
   --icon-color: #00FEDE;
-  --transition: all .5s ease;
+/*   --transition: all .5s ease; */
   * {
     box-sizing: border-box;
   }
