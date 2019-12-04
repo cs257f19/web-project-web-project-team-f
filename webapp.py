@@ -25,7 +25,7 @@ def resultNutrients():
         result = request.form
         description = "Displaying nutrient breakdown for" + result.get("food")
         result = ds.getNutrients(result.get("food"))
-        return render_template('result.html', result = result, description = description)
+        return render_template('results.html', result = result, description = description)
 '''
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
