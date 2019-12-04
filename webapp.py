@@ -38,7 +38,7 @@ def resultNutrients():
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
             result = ds.containsAllergen(food, allergen)
-            return result 
+            return str(result) 
 #             if result is True:
 #                 return food + " contains the allergen: " + allergen
 #             else:
