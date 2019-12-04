@@ -33,8 +33,14 @@ class DataSourceTester(unittest.TestCase):
         food4 = ""
         allergen4 = "Lactose"
         result4 = self.nutrek.containsAllergen(food4, allergen4)
-       
-        
+        self.assertIsNone(result4)
+    
+    def test_containsAllergen_emptyInput2(self):
+        food5 = "chicken"
+        allergen5 = ""
+        result5 = self.nutrek.containsAllergen(food5, allergen5)
+        self.assertIsNone(result5) 
+                   
 
 if __name__ == '__main__':
     unittest.main()
