@@ -19,7 +19,6 @@ def home():
     return render_template('nutrekPrototype.html')
 
 '''Translating HTML form data into a database query and then into a results page'''
-
 @app.route('/resultnutrients', methods = ['POST', 'GET'])
 def resultNutrients():
     if request.method == 'POST':
