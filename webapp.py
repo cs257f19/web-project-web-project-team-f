@@ -29,10 +29,9 @@ def resultNutrients():
             result = ds.getNutrients(food)
             return render_template("results.html", result = result)
         elif querySelection == "ingredients":
-            result = ds.getIngredientBreakDown(food)
-            result = result.split(" ")
+            ingredients = ds.getIngredientBreakDown(food)
             allIngredients = {}
-            for item,index in enumerate(result):
+            for item,index in enumerate(ingredients):
                 allIngredients[index] = item
             return render_template("results.html", result=allIngredients)
         elif querySelection == "allergy":
