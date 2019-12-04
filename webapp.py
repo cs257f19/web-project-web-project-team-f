@@ -24,9 +24,10 @@ def home():
 def resultNutrients():
     if request.method == "POST":
         result = request.form["Food"]
+        foodName = ds.getFoodAvailable(result)
         description = "Nutrient breakdown"
         result = ds.getNutrients(result)
-        return render_template("results.html", result = result, description = description)
+        return render_template("results.html", result = result, description = foodName)
 
 
 if __name__ == "__main__":
