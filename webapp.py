@@ -38,7 +38,10 @@ def resultNutrients():
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
             result = ds.containsAllergen(food, allergen)
-#         return render_template("results.html", result = result)
+            if result is True:
+                return render_template("results.html", result=food + " contains the allergen: " + allergen)
+            else:
+                return render_template("results.html", result = "No known allergens according to our database.")
 
 
 if __name__ == "__main__":
