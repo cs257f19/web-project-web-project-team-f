@@ -24,10 +24,14 @@ def home():
 def resultNutrients():
     querySelection = request.form['query']
     if request.method == "POST":
-        result = request.form["Food"]
-        foodName = ds.getFoodAvailable(result)
-        description = "Nutrient breakdown"
-        result = ds.getNutrients(result)
+        food = request.form["Food"]
+        allergen = request.form["allergens"]
+        if querySelection == "nutritionfacts":
+            result = ds.getNutrients(food)
+         elif querySelection == "allergens":
+            result = ds.containsAllergen(food, allergen)
+         elif querySelection == "ingredients":
+            result = ds.getIngredientBreakDown(food)
         return render_template("results.html", result = result, description = foodName)
 
 
