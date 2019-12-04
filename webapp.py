@@ -29,7 +29,7 @@ def resultNutrients():
             result = ds.getNutrients(food)
         elif querySelection == "ingredients":
             result = ds.getIngredientBreakDown(food)
- 
+            result = result.split(" ")
             allIngredients = {}
             for item,index in enumerate(result):
                 allIngredients[index] = item
