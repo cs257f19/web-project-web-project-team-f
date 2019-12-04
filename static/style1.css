@@ -281,7 +281,7 @@ a.current:link, a.current:visited {
   left: 50%;
   top: 70%;
   height: 2.5rem;
-  padding-top: 1.3rem;
+  padding-top: .5rem;
   width: 15rem;
   text-align: center;
   color: #4ccf9d;
