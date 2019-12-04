@@ -24,7 +24,7 @@ def home():
 def resultNutrients():
     if request.method == "POST":
         result = request.form["Food"]
-        description = "Displaying nutrient breakdown for" + result.get("Food")
+        description = "Displaying nutrient breakdown for"
         result = ds.getNutrients(result.get("Food"))
         return render_template("results.html", result = result, description = description)
     
