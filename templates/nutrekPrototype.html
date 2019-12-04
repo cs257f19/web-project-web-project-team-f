@@ -46,13 +46,12 @@
       <h2>Let's get started.</h2>
   
       <form action = "/results" method = "POST">
-      <p>Food <input type = "text" name = "Food" /></p>
-       <div>
-        <input type="radio" name="options" id="option1" value="option1"> Option1 </input>
-        <label for="m">Option1</label><br>
+      <p>
+       <label for ="Food">Enter Food: </label>
+       Food <input type = "text" name = "Food" />
+       <input type="radio" name="options" id="option1" value="option1"> Option1 </input><br>
        <input type="radio" name="options" id="option2" value="option2"> Option2 </input><br>
-       <input type="radio" name="options" id="option3" value="option3"> Option3 </input><br>
-       </div>
+       <input type="radio" name="options" id="option3" value="option3"> Option3 </input><br></p>
       <p><input type = "submit" value = "submit" /></p>
       <a href="http://perlman.mathcs.carleton.edu:5219/results">Submit Request</a>
     </form>
