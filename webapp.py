@@ -3,7 +3,7 @@ from flask import render_template, request
 import json
 import sys
 import datasource
-
+#python3 webapp.py perlman.mathcs.carleton.edu 5219
 # Connect to database
 ds = datasource.Nutrek()
 user = 'odoome'
