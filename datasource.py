@@ -30,6 +30,8 @@ class Nutrek:
         '''
         returns all nutrients and the amount of each nutrient in a given food
         '''
+        if food == "":
+            return None 
         food = food.upper()
         nutrientList = ["ash(g)", "biotin(mcg)", "caffeine(mg)", "calcium(mg)", "carbohydrate by difference(g)", "carbohydrate_other(g)", "cholesterol(mg)",
         "chromium(mcg)", "copper(mg)", "fatty acids total monounsaturated(g)", "fatty acids total polyunsaturated (g)", "fatty acids total saturated(g)", "fatty acids total trans(g)",
@@ -69,6 +71,8 @@ class Nutrek:
 
     def getIngredientBreakDown(self, food):
         ''' returns all the ingredients in a given food item'''
+        if food == "":
+            return None 
         food = food.upper()
         try:
             cursor = self.connection.cursor()
@@ -96,6 +100,8 @@ class Nutrek:
 
     def getFoodAvailable(self, food):
         '''returns all foods in database containing or like input food name'''
+        if food == "":
+            return None 
         food = food.upper()
         try:
             cursor = self.connection.cursor()
@@ -110,6 +116,8 @@ class Nutrek:
 
     def containsAllergen(self, food, allergen):
         '''returns True if food contains allergen (could cause allergic reaction) and false if otherwise '''
+        if food == "" or allergen == "":
+            return None 
         food = food.upper()
         ingredients = self.getIngredientBreakDown(food)
         FullIngredientList = []
@@ -139,6 +147,8 @@ class Nutrek:
     def checkNutrientThreshold(self, food, nutrient):
         '''check if the amount of nutrients in a given food to enable them see if
          they are meeting a nutritional goal.'''
+        if food == "" or nutrient == "":
+            return None 
         food = food.upper()
         nutrient = nutrient.lower()
         try:
