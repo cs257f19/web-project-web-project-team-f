@@ -4,6 +4,7 @@ import json
 import sys
 import datasource
 #python3 webapp.py perlman.mathcs.carleton.edu 5219
+
 # Connect to database
 ds = datasource.Nutrek()
 user = 'odoome'
@@ -17,7 +18,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 def home():
     return render_template('nutrekPrototype.html')
 
-'''Translating HTML form data into a database query and then into a results page
+'''Translating HTML form data into a database query and then into a results page'''
 
 @app.route('/resultnutrients', methods = ['POST', 'GET'])
 def resultNutrients():
@@ -25,7 +26,7 @@ def resultNutrients():
         result = request.form
         description = "Displaying nutrient breakdown for" + result.get("food")
         result = ds.getNutrients(result.get("food"))
-        return render_template('result.html', result = result, description = description)'''
+        return render_template('result.html', result = result, description = description)
 
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
