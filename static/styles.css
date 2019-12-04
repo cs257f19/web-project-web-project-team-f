@@ -108,7 +108,7 @@ a{
   background-image:url('logo2.png');
   padding-bottom: 18px;
 }
-.search-box{
+/* .search-box{
   position:absolute;
   top: 46%;
   left:50%;
@@ -177,7 +177,7 @@ a{
   transition: 0.4s;
   line-height: 40px;
   width: 240px;
-}
+} */
 
 .body3{
   margin: 0;
