@@ -33,7 +33,7 @@ html, body {
 
 }
 
-/* input[type=text], select {
+input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -72,9 +72,9 @@ div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-} */
+} 
 
-input[type=text] {
+/* input[type=text] {
   position: relative;
   left:-20px;
   top: -70px;
@@ -84,7 +84,6 @@ input[type=text] {
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-/*   -webkit-border-radius: 20px; */
   -moz-border-radius: 20px;
   border-color: #006060;
   font-size: 16px;
@@ -92,9 +91,7 @@ input[type=text] {
   background-repeat:
   no-repeat;
   padding: 12px 20px 12px 40px;
-/*   -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out; */
-}
+} */
 
 input[type=text]:focus {
 width: 70%;
