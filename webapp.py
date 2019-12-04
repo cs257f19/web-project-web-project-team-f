@@ -19,7 +19,7 @@ def home():
     return render_template('nutrekPrototype.html')
 
 '''Translating HTML form data into a database query and then into a results page'''
-@app.route('/results', methods = ['POST', 'GET'])
+@app.route('/results', methods = ["GET", "POST"])
 def resultNutrients():
     return render_template('results.html')
 #     if request.method == 'POST':
