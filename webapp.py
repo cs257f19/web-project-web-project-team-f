@@ -27,6 +27,7 @@ def resultNutrients():
         food = request.form["food"]
         if querySelection == "nutritionfacts":
             result = ds.getNutrients(food)
+            return render_template("results.html", result = result)
         elif querySelection == "ingredients":
             result = ds.getIngredientBreakDown(food)
             result = result.split(" ")
