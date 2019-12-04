@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/static/style1.css">
-    <title>Nutrek</title>
+    <title>Results</title>
 </head>
 
 <body>
@@ -18,6 +18,7 @@
             <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
             <a href="Data.html">About Food Database</a>
         </div>
+    <div>
     <table border = 1>
       {% for key, value in result.items() %}
         <tr>
@@ -26,6 +27,7 @@
         </tr>
       {% endfor %}
     </table>
+        </div>
   </body>
 
   
