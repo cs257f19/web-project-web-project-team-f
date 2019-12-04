@@ -24,29 +24,11 @@ def home():
 def resultNutrients():
     if request.method == "POST":
         result = request.form["Food"]
-        description = "Displaying nutrient breakdown for"
+        description = "Nutrient breakdown"
         result = ds.getNutrients(result)
-        #return render_template("results.html", result = result, description = description)
-        return result
+        return render_template("results.html", result = result, description = description)
 
-    
-'''
-@app.route('/results', methods = ["GET", "POST"])
-def getResults():
-    resList = ds.getIngredientBreakDown('granola')
-    res = ''
-    for item in resList:
-        res += item 
-    return res  
-#     if request.method == "POST":
-#         result = request.form
-#         food = result['food']
-#         ds = datasource.Nutrek()
-#         description = "Displaying nutrient breakdown of food"
-# #         result = ds.getNutrients(food)
-# #         return render_template('results.html')
-#         return description  
-'''
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
