@@ -34,7 +34,7 @@ html, body {
 }
 
 input[type=text] {
-  position: relative;
+  position: absolute;
   left:-20px;
   top: -70px;
   display:block;
