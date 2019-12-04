@@ -21,7 +21,7 @@ def home():
 '''Translating HTML form data into a database query and then into a results page'''
 @app.route('/results', methods = ['POST', 'GET'])
 def resultNutrients():
-    if request.method == 'POST':
+    if request.method == 'GET':
         result = request.form
         description = "Displaying nutrient breakdown for" + result.get("food")
         result = ds.getNutrients(result.get("food"))
