@@ -94,7 +94,7 @@ div {
 } */
 
 input[type=text]:focus {
-width: 70%;
+width: 100%;
 }
 
 /* .form-style-5{
