@@ -1,6 +1,5 @@
 import flask
-from flask import render_template, flash, request
-#from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+from flask import render_template, request
 import json
 import sys
 import datasource
