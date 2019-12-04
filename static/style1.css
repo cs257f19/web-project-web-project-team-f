@@ -341,9 +341,9 @@ a.current:link, a.current:visited {
   background: var(--right-bg-color);
 }
 
-.split.left, .split.right, .split.right:before, .split.left:before {
+/* .split.left, .split.right, .split.right:before, .split.left:before {
   transition: var(--speed) all ease-in-out;
-}
+} */
 /* 
 .hover-left .left {
   width: var(--hover-width);
