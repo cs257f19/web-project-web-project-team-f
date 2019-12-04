@@ -43,7 +43,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-nput[type="radio"] {
+input[type="radio"] {
     background-color: #ddd;
     background-image: -webkit-linear-gradient(0deg, transparent 20%, hsla(0,0%,100%,.7), transparent 80%),
                       -webkit-linear-gradient(90deg, transparent 20%, hsla(0,0%,100%,.7), transparent 80%);
