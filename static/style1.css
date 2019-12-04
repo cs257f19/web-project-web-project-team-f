@@ -52,7 +52,7 @@ input[type=submit] {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
-  margin: 175px 0;
+  margin: 200px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -62,7 +62,7 @@ input[type=reset] {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
-  margin: 175px 0;
+  margin: 200px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
