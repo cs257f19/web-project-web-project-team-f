@@ -32,7 +32,7 @@ def resultNutrients():
  
             allIngredients = {}
             for item,index in enumerate(result):
-                allIngredients[item] = index
+                allIngredients[index] = item
             return allIngredients
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
