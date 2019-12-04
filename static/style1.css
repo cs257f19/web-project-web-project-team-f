@@ -60,6 +60,10 @@ input[type=text]:focus {
 width: 70%;
 }
 
+left-split{
+  left: 10%;
+}
+
 /* .form-style-5{
   max-width: 500px;
   position: absolute;
