@@ -370,7 +370,7 @@ a.current:link, a.current:visited {
   z-index: 2;
 }
  */
-@media(max-width: 800px) {
+/* @media(max-width: 800px) {
   h1 {
     font-size: 5rem;
   }
@@ -384,4 +384,4 @@ a.current:link, a.current:visited {
   .button2 {
     top: 70%;
   }
-}
+} */
