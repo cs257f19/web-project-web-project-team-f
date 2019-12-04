@@ -76,7 +76,7 @@ class Nutrek:
             cursor.execute(query)
             results = cursor.fetchall()
             results = results[0]
-            FullIngredientList = []
+            FullIngredientList = " "
             if results is None:
                 return "No known ingredients."
             for item in results:
@@ -86,7 +86,7 @@ class Nutrek:
                     item = item.replace(",", "")
                 if ")" in item:
                     item = item.replace(")","")
-                FullIngredientList.append(item)
+                FullIngredientList += item + ","
             return FullIngredientList
 
         except Exception as e:
