@@ -21,13 +21,14 @@ def home():
 '''Translating HTML form data into a database query and then into a results page'''
 @app.route('/results', methods = ['POST', 'GET'])
 def resultNutrients():
-    if request.method == 'POST':
-        result = request.form
-        description = "Displaying nutrient breakdown for" + result.get("food")
-        result = ds.getNutrients(result.get("food"))
-        return render_template('results.html', result = result, description = description)
-    else:
-        return render_template('results.html')
+    return render_template('results.html')
+#     if request.method == 'POST':
+#         result = request.form
+#         description = "Displaying nutrient breakdown for" + result.get("food")
+#         result = ds.getNutrients(result.get("food"))
+#         return render_template('results.html', result = result, description = description)
+#     else:
+#        return render_template('results.html')
 '''
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
