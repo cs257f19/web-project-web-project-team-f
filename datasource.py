@@ -114,8 +114,8 @@ class Nutrek:
         FullIngredientList = []
         allergen = allergen.upper()
         if ingredients is None:
-            return "No known allergens."
-            
+            return "No known allergens"
+     
         for item in ingredients:
             if "(" in item:
                 item = item.replace("(", "")
