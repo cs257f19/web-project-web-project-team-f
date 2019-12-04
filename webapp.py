@@ -39,7 +39,7 @@ def resultNutrients():
             allergen = request.form["allergen"]
             result = ds.containsAllergen(food, allergen)
             if result is True:
-                return "WARNING! " food + " contains the allergen: " + allergen
+                return "WARNING! " + food + " contains the allergen: " + allergen
             else:
                 return "No known " + allergen + " allergen in " + food + " according to USDA Food database."
 
