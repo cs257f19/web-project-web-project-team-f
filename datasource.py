@@ -95,7 +95,7 @@ class Nutrek:
             return None
 
     def getFoodAvailable(self, food):
-        '''returns all foods in database'''
+        '''returns all foods in database containing or like input food name'''
         food = food.upper()
         try:
             cursor = self.connection.cursor()
