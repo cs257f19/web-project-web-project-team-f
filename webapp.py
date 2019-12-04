@@ -29,9 +29,10 @@ def resultNutrients():
             result = ds.getNutrients(food)
         elif querySelection == "ingredients":
             result = ds.getIngredientBreakDown(food)
+ 
             allIngredients = {}
-            for item in result:
-                allIngredients[item] = 0 
+            for item,index in enumerate(result):
+                allIngredients[item] = index
             return allIngredients
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
