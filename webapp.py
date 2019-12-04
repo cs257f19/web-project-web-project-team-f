@@ -29,10 +29,14 @@ def resultNutrients():
             result = ds.getNutrients(food)
         elif querySelection == "ingredients":
             result = ds.getIngredientBreakDown(food)
+            allIngredients = ""
+            for item in result:
+                allIngredients += item 
+            return allIngredients 
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
             result = ds.containsAllergen(food, allergen)
-        return render_template("results.html", result = result)
+#         return render_template("results.html", result = result)
 
 
 if __name__ == "__main__":
