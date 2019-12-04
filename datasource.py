@@ -79,16 +79,16 @@ class Nutrek:
             FullIngredientList = []
             if results is None:
                 return "No known ingredients."
-            return results 
-#             for item in results:
-#                 if "(" in item:
-#                     item = item.replace("(", "")
-#                 if "," in item:
-#                     item = item.replace(",", "")
-#                 if ")" in item:
-#                     item = item.replace(")","")
-#                 FullIngredientList.append(item)
-#             return FullIngredientList
+            
+            for item in results:
+                if "(" in item:
+                    item = item.replace("(", "")
+                if "," in item:
+                    item = item.replace(",", "")
+                if ")" in item:
+                    item = item.replace(")","")
+                FullIngredientList.append(item)
+            return FullIngredientList
 
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
