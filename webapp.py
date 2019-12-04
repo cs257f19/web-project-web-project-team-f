@@ -15,15 +15,15 @@ app = flask.Flask(__name__)
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 
 
-@app.route("/", methods = ["GET", "POST"])
+@app.route("/", methods = ["POST", "GET"])
 def home():
     return render_template("nutrekPrototype.html")
 
 '''Translating HTML form data into a database query and then into a results page'''
-@app.route("/results", methods = ["GET", "POST"])
+@app.route("/results", methods = ["POST", "GET"])
 def resultNutrients():
     if request.method == "POST":
-        result = request.form["food"]
+        result = request.form
         description = "Displaying nutrient breakdown for" + result.get("food")
         result = ds.getNutrients(result.get("food"))
         return render_template("results.html", result = result, description = description)
