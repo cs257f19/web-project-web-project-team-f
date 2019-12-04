@@ -39,9 +39,9 @@ def resultNutrients():
             allergen = request.form["allergen"]
             result = ds.containsAllergen(food, allergen)
             if result is True:
-                return result=food + " contains the allergen: " + allergen
+                return food + " contains the allergen: " + allergen
             else:
-                return result = "No known allergens according to our database."
+                return "No known allergens according to our database."
 
 
 if __name__ == "__main__":
