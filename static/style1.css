@@ -294,7 +294,7 @@ a.current:link, a.current:visited {
 }
 
 
-.split.left .button1:hover {
+/* .split.left .button1:hover {
   background-color: var(--left-button1-hover-color);
   border-color: var(--left-button1-hover-color);
 }
@@ -303,7 +303,7 @@ a.current:link, a.current:visited {
   background-color: var(--right-button2-hover-color);
   border-color: var(--right-button2-hover-color);
   color: #4ccf9d;
-}
+} */
 
 
 .split {
