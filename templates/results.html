@@ -7,10 +7,38 @@
         <link rel="stylesheet" href="/static/styles.css">
       <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/livs/font-awesome/5.11.2/css/all.css">
       <script defer src = "https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  
-</html>
-  
- <body>
+      <link rel="stylesheet" href="/static/style1.css">
+   <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <title>Nutrek</title>
+</head>
+<body>
+  <div class = "container">
+    <img width = "100" height = "100" src="/static/Nutrek.png" alt="Image cannot be found" >
+    <form>
+      <input type="text" name="search" placeholder="Search..">
+    </form>
+
+      <!-- The navigation menu -->
+  <div class="navbar">
+    <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
+    <div class="subnav">
+      <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="Data.html">About the Food Database</a>
+      </div>
+    </div>
+    <div class="subnav">
+      <button class="subnavbtn">Food Allergies <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="#nuts">Nuts</a>
+        <a href="#eggs">Eggs</a>
+        <a href="#kiwi">Kiwi</a>
+        <a href="#shellfish">Shellfish </a>
+        <a href="#lactose">Lactose Intolerance</a>
+      </div>
+    </div>
+     <body>
     <table border = 1>
       {% for key, value in result.items() %}
         <tr>
@@ -20,3 +48,9 @@
       {% endfor %}
     </table>
   </body>
+  </div>
+    
+
+  
+</html>
+  
