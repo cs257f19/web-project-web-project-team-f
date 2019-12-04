@@ -1,6 +1,6 @@
 import flask
 from flask import render_template, flash, request
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+#from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 import json
 import sys
 import datasource
@@ -15,13 +15,9 @@ ds.connect(user, password)
 app = flask.Flask(__name__)
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 
-class ReusableForm(Form):
-    name = TextField('Name:', validators=[validators.required()])
-    surname = TextField('Surname:', validators=[validators.required()])
 
 @app.route("/", methods = ["GET", "POST"])
 def home():
-    form = ReusableForm(request.form)
     return render_template("nutrekPrototype.html")
 
 '''Translating HTML form data into a database query and then into a results page'''
