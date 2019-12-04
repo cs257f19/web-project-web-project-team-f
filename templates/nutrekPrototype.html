@@ -19,14 +19,24 @@
     </div>
   <div class="left-half">
     <article>
-      <h1>Left Half</h1>
-      <p>Weekends don't count unless you spend them doing something completely pointless.</p>
+      <h1>Nutrek.</h1>
+      <p><br>Learn if your food contains something you are allergic to.</br> <br>Know the nutritional components of your meal. </br><br>See if you are meeting your nutritional goals.</br> </p>
+      <a href = "Data.html" class = "button1"> Our Food Database </a>
     </article>
   </div>
   <div class="right-half">
     <article>
-      <h1>Right Half</h1>
-      <p>If your knees aren't green by the end of the day, you ought to seriously re-examine your life.</p>
+      <h2>Let's get started.</h2>
+      <form action = "/results" method = "POST">
+        <p>
+          <label for="food">Enter Food: </label>
+          <input type = "text" name = "food"><br><br>
+          <input type="radio" name="query" value="nutritionfacts"> Nutrition Breakdown</input><br>
+          <input type="radio" name="query" value="ingredients"> Ingredients</input><br>
+          <input type="radio" name="query" value="allergy"> Enter Allergen:</input><input type = "text" name = "allergen">
+          <br><br></p>
+      <p><input type = "submit" value = "Submit" /><input type="reset"></p>
+    </form>
     </article>
   </div>
   </div>
