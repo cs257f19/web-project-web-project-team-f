@@ -44,7 +44,7 @@ input[type=text], select {
 }
 
 input[type="radio"] {
-    padding: 12px 20px;
+     text-align: left;
 }
 
 input[type=submit] {
@@ -221,7 +221,7 @@ p {
   left: 50%;
   top: 40%;
   transform: translateX(-50%);
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
 }
 
