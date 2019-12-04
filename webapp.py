@@ -22,12 +22,11 @@ def home():
 @app.route('/results', methods = ["GET", "POST"])
 def resultNutrients():
     if request.method == 'POST':
-        result = request.form
+        result = request.form["food"]
         description = "Displaying nutrient breakdown for" + result.get("food")
         result = ds.getNutrients(result.get("food"))
         return render_template('results.html', result = result, description = description)
-    else:
-       return render_template('results.html')
+    
 '''
 @app.route('/results', methods = ["GET", "POST"])
 def getResults():
