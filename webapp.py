@@ -33,7 +33,7 @@ def resultNutrients():
             allIngredients = {}
             for item,index in enumerate(result):
                 allIngredients[index] = item
-            return render_template("results.html, result=result)
+            return render_template("results.html", result=result)
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
             result = ds.containsAllergen(food, allergen)
