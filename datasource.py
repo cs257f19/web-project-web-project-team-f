@@ -109,7 +109,7 @@ class Nutrek:
 
     def containsAllergen(self, food, allergen):
         '''returns True if food contains allergen (could cause allergic reaction) and false if otherwise '''
-
+        food = food.upper()
         ingredients = self.getIngredientBreakDown(food)
         FullIngredientList = []
         allergen = allergen.upper()
@@ -124,7 +124,6 @@ class Nutrek:
             if ")" in item:
                 item = item.replace(")","")
             FullIngredientList.append(item)
-        food = food.upper()
         try:
             for ing in FullIngredientList:
                 if allergen in ing:
