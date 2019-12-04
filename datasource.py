@@ -77,6 +77,8 @@ class Nutrek:
             results = cursor.fetchall()
             results = results[0]
             FullIngredientList = []
+            if results is None:
+                return "No known ingredients."
             for item in results:
                 if "(" in item:
                     item = item.replace("(", "")
@@ -111,6 +113,9 @@ class Nutrek:
         ingredients = self.getIngredientBreakDown(food)
         FullIngredientList = []
         allergen = allergen.upper()
+        if ingredients is None:
+            return "No known allergens."
+            
         for item in ingredients:
             if "(" in item:
                 item = item.replace("(", "")
@@ -152,7 +157,7 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-    print(N.containsAllergen("granola", "peanuts"))
+#     print(N.containsAllergen("granola", "peanuts"))
 #     print(N.containsAllergen("milk", "lactose"))
 #     print(N.containsAllergen("fried rice", "oil"))
 #     Disconnect from database
