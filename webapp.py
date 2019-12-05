@@ -32,6 +32,8 @@ def resultNutrients():
             return render_template("results.html", result = result)
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
+            if ingredients is None:
+                return "We do not have any data on " + food 
             allIngredients = {}
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
