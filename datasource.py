@@ -58,12 +58,12 @@ class Nutrek:
             resultsLength = len(results)
             allFood = self.getFoodAvailable(food)
             specificFood = allFood[0]
-            nutrientDictionary[100] = specificFood
             if resultsLength == 0 :
                 return None 
             nutrientDictionary = {}
             for nutrient, proportion in zip(nutrientList, results):
                 nutrientDictionary[nutrient] = proportion
+            nutrientDictionary[100] = specificFood
             proportions = list(nutrientDictionary.values())
             proportionsList = []
             for item in proportions:
