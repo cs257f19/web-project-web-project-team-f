@@ -54,6 +54,8 @@ class Nutrek:
                 results.append(i)
             for j in results2[0]:
                 results.append(j)
+            if len(results) == 0 :
+                return None 
             nutrientDictionary = {}
             for nutrient, proportion in zip(nutrientList, results):
                 nutrientDictionary[nutrient] = proportion
@@ -83,15 +85,15 @@ class Nutrek:
             FullIngredientList = []
             if results is None:
                 return "No known ingredients."
-            
-            for item in results:
-                if "(" in item:
-                    item = item.replace("(", "")
-                if "," in item:
-                    item = item.replace(",", "")
-                if ")" in item:
-                    item = item.replace(")","")
-                FullIngredientList.append(item) 
+            else:
+                for item in results:
+                    if "(" in item:
+                        item = item.replace("(", "")
+                    if "," in item:
+                        item = item.replace(",", "")
+                    if ")" in item:
+                        item = item.replace(")","")
+                    FullIngredientList.append(item) 
             return FullIngredientList
 
         except Exception as e:
@@ -108,6 +110,8 @@ class Nutrek:
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
             cursor.execute(query)
             results = cursor.fetchall()
+            if results is None:
+                return None 
             return results
 
         except Exception as e:
