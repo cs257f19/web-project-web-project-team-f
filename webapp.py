@@ -28,10 +28,11 @@ def resultNutrients():
 #         while food[0] == " ":
 #             food = food.replace(food[0],"")
         if querySelection == "nutritionfacts":
+            currentFood = ds.getFoodAvailable(food)
             result = ds.getNutrients(food)
             if result is None:
                 return "This item "+ food + " does not exist in our database."
-            return result
+            return currentFood
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
             if ingredients is None:
