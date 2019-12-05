@@ -50,13 +50,14 @@ class Nutrek:
             results2 = cursor2.fetchall()
             fullNutrientList = []
             results = []
-   
             for i in results1[0]:
                 results.append(i)
             for j in results2[0]:
                 results.append(j)
             resultsLength = len(results)
             allFood = self.getFoodAvailable(food)
+            nutrientlist.append(allFood)
+            results.append(0)
             if resultsLength == 0 :
                 return None 
             nutrientDictionary = {}
@@ -73,10 +74,10 @@ class Nutrek:
                     results.append(i)
                 for j in results2[rehashed]:
                     results.append(j)
-                specificFood = allFood[rehashed]
                 if resultsLength == 0 :
                    return None 
                 nutrientDictionary = {}
+                results.append(0)
                 for nutrient, proportion in zip(nutrientList, results):
                     nutrientDictionary[nutrient] = proportion
                 proportions = list(nutrientDictionary.values())
@@ -84,10 +85,8 @@ class Nutrek:
                 for item in proportions:
                     proportionsList.append(float(item))
                 if sum(proportionsList) > 0:
-                    nutrientDictionary[allFood] = 100
                     return nutrientDictionary
                 resultsLength -=1
-            nutrientDictionary[allFood] = 100
             return nutrientDictionary
 
         except Exception as e:
