@@ -1,6 +1,6 @@
 import psycopg2
 import getpass
-
+import random 
 class Nutrek:
     '''
     Nutrek executes all of the queries on the database
@@ -54,7 +54,8 @@ class Nutrek:
                 results.append(i)
             for j in results2[0]:
                 results.append(j)
-            if len(results) == 0 :
+            resultsLength = len(results)
+            if resultsLength == 0 :
                 return None 
             nutrientDictionary = {}
             for nutrient, proportion in zip(nutrientList, results):
@@ -63,8 +64,21 @@ class Nutrek:
             proportionsList = []
             for item in proportions:
                 proportionsList.append(float(item))
-            if sum(proportionsList) == 0:
-                return "We do not have enough data on this food item."
+            while sum(proportionsList) == 0:
+                rehashed = random.randint(0,resultsLength+1)
+                for i in results1[rehashed]:
+                    results.append(i)
+                for j in results2[rehashed]:
+                    results.append(j)
+                if resultsLength == 0 :
+                   return None 
+                nutrientDictionary = {}
+                for nutrient, proportion in zip(nutrientList, results):
+                    nutrientDictionary[nutrient] = proportion
+                proportions = list(nutrientDictionary.values())
+                proportionsList = []
+                for item in proportions:
+                    proportionsList.append(float(item))   
             return nutrientDictionary
 
         except Exception as e:
