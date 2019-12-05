@@ -79,8 +79,8 @@ class Nutrek:
                 proportionsList = []
                 for item in proportions:
                     proportionsList.append(float(item))
-                 if sum(proportionsList) > 0:
-                    return nutrientDictionary
+                if sum(proportionsList) > 0:
+                   return nutrientDictionary
                 resultsLength -=1
             return nutrientDictionary
 
