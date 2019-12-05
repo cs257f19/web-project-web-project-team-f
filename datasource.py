@@ -85,9 +85,9 @@ class Nutrek:
                 for item in proportions:
                     proportionsList.append(float(item))
                 if sum(proportionsList) > 0:
-                   return nutrientDictionary, specificFood
+                   return specificFood
                 resultsLength -=1
-            return nutrientDictionary
+            return specificFood
 
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
