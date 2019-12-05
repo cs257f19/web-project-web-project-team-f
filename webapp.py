@@ -17,7 +17,7 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 
 @app.route("/", methods = ["POST", "GET"])
 def home():
-    return render_template("nutrekPrototype.html")
+    return render_template("nutrek.html")
 
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
