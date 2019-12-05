@@ -25,15 +25,14 @@ def resultNutrients():
     querySelection = request.form["query"]
     if request.method == "POST":
         food = request.form["food"]
-#         while food[0] == " ":
-#             food = food.replace(food[0],"")
+        while food[0] == " ":
+            food = food.replace(food[0],"")
         if querySelection == "nutritionfacts":
             currentFood = ds.getFoodAvailable(food)
-            result1 = " ".join(currentFood)
             result = ds.getNutrients(food)
             if result is None:
                 return "This item "+ food + " does not exist in our database."
-            return result1
+            return result
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
             if ingredients is None:
@@ -44,8 +43,8 @@ def resultNutrients():
             return render_template("results.html", result=allIngredients)
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
-#             while allergen[0] == " ":
-#                  allergen = allergen.replace(allergen[0],"")
+            while allergen[0] == " ":
+                 allergen = allergen.replace(allergen[0],"")
             result = ds.containsAllergen(food, allergen)
             if result is True:
                 return "WARNING! " + food + " contains the allergen: " + allergen
