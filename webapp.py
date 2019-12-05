@@ -27,6 +27,8 @@ def resultNutrients():
         food = request.form["food"]
         if querySelection == "nutritionfacts":
             result = ds.getNutrients(food)
+            if result is None:
+                return "This item "+ food + " does not exist in our database."
             return render_template("results.html", result = result)
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
