@@ -43,7 +43,7 @@ def resultNutrients():
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
             while allergen[0] == " ":
-            allergen = allergen.replace(allergen[0],"")
+                 allergen = allergen.replace(allergen[0],"")
             result = ds.containsAllergen(food, allergen)
             if result is True:
                 return "WARNING! " + food + " contains the allergen: " + allergen
