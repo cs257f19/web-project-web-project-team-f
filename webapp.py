@@ -25,6 +25,8 @@ def resultNutrients():
     querySelection = request.form["query"]
     if request.method == "POST":
         food = request.form["food"]
+        if querySelection is None:
+            return "Please select from the options provided."
         if querySelection == "nutritionfacts":
             result = ds.getNutrients(food)
             return render_template("results.html", result = result)
