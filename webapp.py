@@ -29,10 +29,13 @@ def resultNutrients():
 #             food = food.replace(food[0],"")
         if querySelection == "nutritionfacts":
             currentFood = ds.getFoodAvailable(food)
+            result1 = ""
+            for i in currentFood:
+                result1 += i 
             result = ds.getNutrients(food)
             if result is None:
                 return "This item "+ food + " does not exist in our database."
-            return currentFood
+            return result1
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
             if ingredients is None:
