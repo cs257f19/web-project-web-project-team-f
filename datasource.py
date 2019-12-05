@@ -58,6 +58,7 @@ class Nutrek:
             resultsLength = len(results)
             allFood = self.getFoodAvailable(food)
             specificFood = allFood[0]
+            nutrientDictionary[specificFood] = 100
             if resultsLength == 0 :
                 return None 
             nutrientDictionary = {}
@@ -85,9 +86,10 @@ class Nutrek:
                 for item in proportions:
                     proportionsList.append(float(item))
                 if sum(proportionsList) > 0:
-                   return specificFood
+                    nutrientDictionary[specificFood] = 100
+                   return nutrientDictionary
                 resultsLength -=1
-            return specificFood
+            return nutrientDictionary
 
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
