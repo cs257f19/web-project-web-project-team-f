@@ -133,19 +133,9 @@ class Nutrek:
             results = cursor.fetchall()
             if results is None:
                 return None
-            finalFood = ""
             if results is None:
                 return "No known ingredients."
-            else:
-                for item in results:
-                    if "(" in item:
-                        item = item.replace("(", "")
-                    if "," in item:
-                        item = item.replace(",", "")
-                    if ")" in item:
-                        item = item.replace(")","")
-                    finalFood += item 
-            return finalFood
+            return results
 
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
