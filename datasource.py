@@ -80,8 +80,6 @@ class Nutrek:
                 for item in proportions:
                     proportionsList.append(float(item)) 
                 resultsLength -=1
-            if sum(proportionsList) == 0:
-               return "We have no data on this food item."
             return nutrientDictionary
 
         except Exception as e:
