@@ -64,7 +64,7 @@ class Nutrek:
             proportionsList = []
             for item in proportions:
                 proportionsList.append(float(item))
-            while sum(proportionsList) == 0:
+            while sum(proportionsList) == 0 and resultsLength > 0:
                 rehashed = random.randint(0,resultsLength+1)
                 for i in results1[rehashed]:
                     results.append(i)
@@ -78,7 +78,8 @@ class Nutrek:
                 proportions = list(nutrientDictionary.values())
                 proportionsList = []
                 for item in proportions:
-                    proportionsList.append(float(item))   
+                    proportionsList.append(float(item)) 
+                resultsLength -=1
             return nutrientDictionary
 
         except Exception as e:
