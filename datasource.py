@@ -57,14 +57,14 @@ class Nutrek:
             resultsLength = len(results)
             if resultsLength == 0 :
                 return None 
-#             nutrientDictionary = {}
-#             for nutrient, proportion in zip(nutrientList, results):
-#                 nutrientDictionary[nutrient] = proportion
-#             proportions = list(nutrientDictionary.values())
-#             proportionsList = []
-#             for item in proportions:
-#                 proportionsList.append(float(item))
-            while resultsLength > 0:
+            nutrientDictionary = {}
+            for nutrient, proportion in zip(nutrientList, results):
+                nutrientDictionary[nutrient] = proportion
+            proportions = list(nutrientDictionary.values())
+            proportionsList = []
+            for item in proportions:
+                proportionsList.append(float(item))
+            while resultsLength > 0 and sum(proportionsList) == 0:
                 results = []
                 rehashed = random.randint(1,resultsLength)
                 for i in results1[rehashed]:
