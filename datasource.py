@@ -65,6 +65,7 @@ class Nutrek:
 #             for item in proportions:
 #                 proportionsList.append(float(item))
             while resultsLength > 0:
+                results = []
                 rehashed = random.randint(1,resultsLength)
                 for i in results1[rehashed]:
                     results.append(i)
