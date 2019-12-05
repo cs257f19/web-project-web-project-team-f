@@ -25,6 +25,8 @@ def resultNutrients():
     querySelection = request.form["query"]
     if request.method == "POST":
         food = request.form["food"]
+        while food[0] == " ":
+            food = food.replace(food[0],"")
         if querySelection == "nutritionfacts":
             result = ds.getNutrients(food)
             if result is None:
