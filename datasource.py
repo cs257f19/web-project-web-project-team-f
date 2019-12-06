@@ -28,7 +28,12 @@ class Nutrek:
 
     def getNutrients(self, food):
         '''
-        returns all nutrients and the amount of each nutrient in a given food
+        Returns all nutrients and the amount of each nutrient in a specified food product
+        Parameters:
+            food - USDA Branded Food Product name of interest
+        Return:
+            a dictionary with pairs of nutrient and amount of that nutrient in the specified food product.
+            If sum of nutrient amounts is 0, no nutrition data available for specified food.
         '''
         if food == "":
             return None 
@@ -91,7 +96,13 @@ class Nutrek:
             return None
 
     def getIngredientBreakDown(self, food):
-        ''' returns all the ingredients in a given food item'''
+        ''' 
+        Returns all the ingredients in a specified food product.
+        Parameters:
+            food - USDA Branded Food Product name of interest
+        Return:
+            a list of ingredients in the specified food product (cleaned of redundant characters in csv)
+        '''
         if food == "":
             return None 
         food = food.upper()
@@ -120,7 +131,13 @@ class Nutrek:
             return None
 
     def getFoodAvailable(self, food):
-        '''returns all foods in database containing or like input food name'''
+        '''
+        Returns all foods in database containing/resembling specified food name.
+        Parameters:
+            food - USDA Branded Food Product name of interest
+        Return:
+            first food product in database containing/resembling specified food name.
+            '''
         if food == "":
             return None 
         food = food.upper()
@@ -140,7 +157,15 @@ class Nutrek:
             return None
 
     def containsAllergen(self, food, allergen):
-        '''returns True if food contains allergen (could cause allergic reaction) and false if otherwise '''
+        '''
+        Returns True if food contains allergen and false if otherwise
+        Parameters:
+            food - USDA Branded Food Product name of interest
+            allergen - an ingredient that could cause allergic reaction if an ingredient within food
+        Return:
+            True if specified food contains allergen in its ingredient and 
+            false if food is missing allergen as ingredient.
+        '''
         if food == "" or allergen == "":
             return None 
         food = food.upper()
@@ -169,7 +194,8 @@ class Nutrek:
 
 
     def checkNutrientThreshold(self, food, nutrient):
-        '''check if the amount of nutrients in a given food to enable them see if
+        '''
+        Checks if the amount of nutrients in a given food to enable them see if
          they are meeting a nutritional goal.'''
         if food == "" or nutrient == "":
             return None 
