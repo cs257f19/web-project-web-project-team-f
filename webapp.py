@@ -5,7 +5,7 @@ import sys
 import datasource
 # Command Line: python3 webapp.py perlman.mathcs.carleton.edu 5219
 
-# Connect to database
+'''Connect to database'''
 ds = datasource.Nutrek()
 user = "odoome"
 password = "tiger672carpet"
