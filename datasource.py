@@ -1,6 +1,6 @@
 import psycopg2
 import getpass
-import random 
+import random
 class Nutrek:
     '''
     Nutrek executes all of the queries on the database
@@ -9,7 +9,7 @@ class Nutrek:
 
     def connect(self, user, password):
         '''
-        Establishes a connection to the database with the following credentials:
+        Establishes a connection to the database with the following credentials (parameters):
             user - username, which is also the name of the database
             password - the password for this database on perlman
             Note: exits if a connection cannot be established.
@@ -29,14 +29,14 @@ class Nutrek:
     def getNutrients(self, food):
         '''
         Returns all nutrients and the amount of each nutrient in a specified food product
-        Parameters:
+        PARAMETERS:
             food - USDA Branded Food Product name of interest
-        Return:
+        RETURN:
             a dictionary with pairs of nutrient and amount of that nutrient in the specified food product.
             If sum of nutrient amounts is 0, no nutrition data available for specified food.
         '''
         if food == "":
-            return None 
+            return None
         food = food.upper()
         nutrientList = ["ash(g)", "biotin(mcg)", "caffeine(mg)", "calcium(mg)", "carbohydrate by difference(g)", "carbohydrate_other(g)", "cholesterol(mg)",
         "chromium(mcg)", "copper(mg)", "fatty acids total monounsaturated(g)", "fatty acids total polyunsaturated (g)", "fatty acids total saturated(g)", "fatty acids total trans(g)",
@@ -62,7 +62,7 @@ class Nutrek:
             resultsLength = len(results)
             allFood = self.getFoodAvailable(food)
             if resultsLength == 0 :
-                return None 
+                return None
             nutrientDictionary = {}
             for nutrient, proportion in zip(nutrientList, results):
                 nutrientDictionary[nutrient] = proportion
@@ -78,7 +78,7 @@ class Nutrek:
                 for j in results2[rehashed]:
                     results.append(j)
                 if resultsLength == 0 :
-                   return None 
+                   return None
                 nutrientDictionary = {}
                 for nutrient, proportion in zip(nutrientList, results):
                     nutrientDictionary[nutrient] = proportion
@@ -96,15 +96,15 @@ class Nutrek:
             return None
 
     def getIngredientBreakDown(self, food):
-        ''' 
+        '''
         Returns all the ingredients in a specified food product.
-        Parameters:
+        PARAMETERS:
             food - USDA Branded Food Product name of interest
-        Return:
+        RETURN:
             a list of ingredients in the specified food product (cleaned of redundant characters in csv)
         '''
         if food == "":
-            return None 
+            return None
         food = food.upper()
         try:
             cursor = self.connection.cursor()
@@ -123,7 +123,7 @@ class Nutrek:
                         item = item.replace(",", "")
                     if ")" in item:
                         item = item.replace(")","")
-                    FullIngredientList.append(item) 
+                    FullIngredientList.append(item)
             return FullIngredientList
 
         except Exception as e:
@@ -133,13 +133,13 @@ class Nutrek:
     def getFoodAvailable(self, food):
         '''
         Returns all foods in database containing/resembling specified food name.
-        Parameters:
+        PARAMETERS:
             food - USDA Branded Food Product name of interest
-        Return:
+        RETURN:
             first food product in database containing/resembling specified food name.
             '''
         if food == "":
-            return None 
+            return None
         food = food.upper()
         try:
             cursor = self.connection.cursor()
@@ -159,15 +159,15 @@ class Nutrek:
     def containsAllergen(self, food, allergen):
         '''
         Returns True if food contains allergen and false if otherwise
-        Parameters:
+        PARAMETERS:
             food - USDA Branded Food Product name of interest
             allergen - an ingredient that could cause allergic reaction if an ingredient within food
-        Return:
-            True if specified food contains allergen in its ingredient and 
+        RETURN:
+            True if specified food contains allergen in its ingredient and
             false if food is missing allergen as ingredient.
         '''
         if food == "" or allergen == "":
-            return None 
+            return None
         food = food.upper()
         ingredients = self.getIngredientBreakDown(food)
         FullIngredientList = []
@@ -191,29 +191,9 @@ class Nutrek:
             print ("Something went wrong when executing the query: ", e)
             return None
 
-
-
-    def checkNutrientThreshold(self, food, nutrient):
-        '''
-        Checks if the amount of nutrients in a given food to enable them see if
-         they are meeting a nutritional goal.'''
-        if food == "" or nutrient == "":
-            return None 
-        food = food.upper()
-        nutrient = nutrient.lower()
-        try:
-            nutrientDictionary = self.getNutrients(food)
-            for item in nutrientDictionary:
-                if nutrient in item:
-                    return item + ' ' + nutrientDictionary[item]
-        except Exception as e:
-            print ("Something went wrong when executing the query: ", e)
-            return None
-
 def main():
-    user = 'odoome'
-    password = 'tiger672carpet'
-    #password = getpass.getpass()
+    user = "odoome"
+    password = "tiger672carpet"
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
