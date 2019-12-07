@@ -15,7 +15,9 @@
             <a href="Data.html">About Food Database</a>
         </div>
         <table border=1>
-            result
+            {% for result in results %}
+         <p>{{ result }}</p>
+             {% endfor %}
         </table>
 </body>
 
