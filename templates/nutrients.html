@@ -23,7 +23,7 @@
               </tr>
               <tr>
                 <td>
-                  <div class="serving">Per <span class="highlighted">180.0g</span> Serving Size</div>
+                  <div class="serving">Amount Per Serving Size</div>
                 </td>
               </tr>
               <tr style="height: 7px">
@@ -34,56 +34,12 @@
                   <div class="line">Amount Per Serving</div>
                 </td>
               </tr>
-              <tr>
-                <td>
+                {% for key, value in result.items() %}
                   <div class="line">
-                    <div class="label">Calories <div class="weight">230</div>
-                    </div>
-                    <div style="padding-top: 1px; float: right;" class="labellight">Calories from Fat <div class="weight">56</div>
-                    </div>
+                    <div class="label"> {{ key }}</div>
+                    <div class="dv">{{value}}</div>
                   </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="line">
-                    <div class="dvlabel">% Daily Value<sup>*</sup></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="line">
-                    <div class="label">Total Fat <div class="weight">6.2g</div>
-                    </div>
-                    <div class="dv">10%</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="indent">
-                  <div class="line">
-                    <div class="labellight">Saturated Fat <div class="weight">3.5g</div>
-                    </div>
-                    <div class="dv">17%</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="indent">
-                  <div class="line">
-                    <div class="labellight"><i>Trans</i> Fat <div class="weight">0.0g</div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="line">
-                    <div class="label">Cholesterol <div class="weight">22mg</div>
-                    </div>
-                    <div class="dv">7%</div>
-                  </div>
+                {% endfor %}
                 </td>
               </tr>
               <tr>
@@ -98,7 +54,7 @@
               <tr>
                 <td>
                   <div class="line">
-                    <div class="label">Total Carbohydrates <div class="weight">32.2g</div>
+                    <div class="label">Total Carbohydrates <div class="weight">{{value}}</div>
                     </div>
                     <div class="dv">11%</div>
                   </div>
