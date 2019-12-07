@@ -31,8 +31,8 @@ def resultNutrients():
             currentFood = ds.getFoodAvailable(food)
             result = ds.getNutrients(food)
             if result is None:
-                return "This item "+ food + " does not exist in our database."
-            return result
+                result = "This item "+ food + " does not exist in our database."
+            return render_template("results.html", result=result)
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
             if ingredients is None:
