@@ -48,7 +48,7 @@ def resultNutrients():
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
             if len(allergen) == 0:
-                result = "You entered nothing."
+                result = {"You entered nothing.":0}
             else:
                 while allergen[0] == " ":
                     allergen = allergen.replace(allergen[0],"")
