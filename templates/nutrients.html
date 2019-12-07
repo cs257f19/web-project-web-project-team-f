@@ -15,6 +15,10 @@
             <a href="Data.html">About Food Database</a>
         </div>
         <table border=1>
+            <tr>
+                <th>Nutrient</th>
+                <th>Amount Per Serving</th>
+            </tr>
             {% for key, value in result.items() %}
             <tr>
                 <th> {{ key }} </th>
