@@ -156,10 +156,10 @@
  p {
      color: #555555;
      font-family: Georgia, serif;
-     font-size: 18px;
+     font-size: 20px;
      position: absolute;
      left: 50%;
-     top: 30%;
+     top: 25%;
      transform: translateX(-50%);
      text-align: center;
      white-space: nowrap;
