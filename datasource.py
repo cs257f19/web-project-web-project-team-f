@@ -38,14 +38,14 @@ class Nutrek:
         if food == "":
             return None
         food = food.upper()
-        nutrientList = ["ash(g)", "biotin(mcg)", "caffeine(mg)", "calcium(mg)", "carbohydrate by difference(g)", "carbohydrate_other(g)", "cholesterol(mg)",
-        "chromium(mcg)", "copper(mg)", "fatty acids total monounsaturated(g)", "fatty acids total polyunsaturated (g)", "fatty acids total saturated(g)", "fatty acids total trans(g)",
-        "fiber insoluble(g)", "fiber soluble(g)", "fiber total dietary(g)", "folic acid(mcg)", "iodine(mcg)", "iron(mg)", "lactose(g)",
-         "magnesium(mg)", "manganese(mg)", "niacin(mg)", "pantothenic acid(mg)", "phosphorus (mg)", "potassium(mg)",
-         "protein(g)", "riboflavin(mg)", "selenium(mcg)", "sodium(mg)", "sugars added(g)", "sugars total(g)", "thiamin(mg)", "total lipid fat(g)",
-         "total sugar alcohols(g)", "vitamin a IU" , "vitamin b 12(mcg)", "vitamin b-6(mg)", "vitamin c total ascorbic acid(mg)",
-         "vitamin d IU", "vitamin e label entry primarily IU", "vitamin K phylloquinone(mcg)", "water(g)",
-         "xylitol(g)", "zinc(mg)"]
+        nutrientList = ["ash (g)", "biotin (mcg)", "caffeine (mg)", "calcium (mg)", "carbohydrate by difference (g)", "carbohydrate other (g)", "cholesterol (mg)",
+        "chromium (mcg)", "copper (mg)", "fatty acids total monounsaturated (g)", "fatty acids total polyunsaturated (g)", "fatty acids total saturated (g)", "fatty acids total trans (g)",
+        "fiber insoluble (g)", "fiber soluble (g)", "fiber total dietary (g)", "folic acid (mcg)", "iodine (mcg)", "iron (mg)", "lactose (g)",
+         "magnesium (mg)", "manganese (mg)", "niacin (mg)", "pantothenic acid (mg)", "phosphorus (mg)", "potassium (mg)",
+         "protein (g)", "riboflavin (mg)", "selenium (mcg)", "sodium (mg)", "sugars added (g)", "sugars total (g)", "thiamin (mg)", "total lipid fat (g)",
+         "total sugar alcohols (g)", "vitamin a IU" , "vitamin b 12(mcg)", "vitamin b-6(mg)", "vitamin c total ascorbic acid (mg)",
+         "vitamin d IU", "vitamin e label entry primarily IU", "vitamin K phylloquinone (mcg)", "water (g)",
+         "xylito l(g)", "zinc (mg)"]
         try:
             cursor1 = self.connection.cursor()
             cursor1.execute("SELECT Ash_grams, Biotin_mcg, Caffeine_mg, Calcium_Ca_mg, Carbohydrate_by_difference_g, Carbohydrate_other_g, Cholesterol_mg, Chromium_Cr_mcg, Copper_Cu_mg, Fatty_acids_total_monounsaturated_g, Fatty_acids_total_polyunsaturated_g, Fatty_acids_total_saturated_g, Fatty_acids_total_trans_g, Fiber_insoluble_g, Fiber_soluble_g, Fiber_total_dietary_g, Folic_acid_mcg, Iodine_I_mcg, Iron_Fe_mg, Lactose_g, Magnesium_Mg_mg, Manganese_Mn_mg, Niacin_mg, Pantothenic_acid_mg FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") + ";")
