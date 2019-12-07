@@ -38,8 +38,6 @@
                         </tr>
                     <!--Outputting data from dictionary-->
                     {% for key, value in result.items() %}
-                        {% for i in range(11) %}
-                        {{ i }}
                         <tr>
                             <td class="indent">
                                 <div class="line">
@@ -49,7 +47,6 @@
                                 </div>
                             </td>
                         </tr>
-                        {% endfor %}
                     {% endfor %}
                     </tbody>
                 </table>
