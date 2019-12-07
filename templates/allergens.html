@@ -15,10 +15,9 @@
             <a href="Data.html">About Food Database</a>
         </div>
         <table border=1>
-            {% for key, value in result.items() %}
+            {% for key in result %}
             <tr>
                 <th> {{ key }} </th>
-                <td> {{ value }} </td>
             </tr>
             {% endfor %}
         </table>
