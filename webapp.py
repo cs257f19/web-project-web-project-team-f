@@ -38,7 +38,7 @@ def resultNutrients():
                 result = "This item "+ food + " does not exist in our database."
                 result = {result:0}
                 return render_template("nutrients.html", result=result)
-            return render_template("nutrients.html", result=result)
+            return render_template("nutrients.html", result=result, description = food)
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
             if ingredients is None:
