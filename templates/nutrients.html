@@ -25,41 +25,35 @@
                         <div class="line"></div>
                     </tr>
                     <tr style="height: 7px">
-                  <td bgcolor="#000000"></td>
+                        <td bgcolor="#000000"></td>
                     </tr>
                     <tr>
-                <td>
-                  <div class="line">
-                    <div class="label">Calories</div>
-                    </div>
-                    <div style="padding-top: 1px; float: right;" class="labellight"><div class="weight">56</div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
+                        <td>
+                            <div class="line">
+                                <div class="label">Nutrient</div>
+                            </div>
+                            <div style="padding-top: 1px; float: right;" class="labellight">
+                                <div class="weight">Amount Per Serving</div>
+                            </div>
+        </div>
+        </td>
+        </tr>
         {% for key, value in result.items() %}
-             <tr>
-                <td class="indent">
-                  <div class="line">
+        <tr>
+            <td class="indent">
+                <div class="line">
                     <div class="labellight">{{ key }}
                     </div>
                     <div class="dv">{{value}}</div>
-                  </div>
-                </td>
-              </tr>
-              {% endfor %}
-                    
-                    {% for key, value in result.items() %}
-                    <tr>
-                        <th> {{ key }} </th>
-                        <td> {{value}} </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>      
-        </div>
-                   
-               
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+        </table>
+    </div>
+
 </body>
 
 </html>
