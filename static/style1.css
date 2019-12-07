@@ -283,3 +283,71 @@ p4 {
   height: 100%;
   background: var(--right-bg-color);
 }
+#nutritionfacts {
+  background-color: white;
+  border: 5px solid black;
+  padding: 5px;
+  width: 425px;
+  margin-left: 300px;
+  margin-top: 160px;
+}
+
+/* label content of left side directly affecting right */
+#nutritionfacts td {
+  color: black;
+  font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
+  font-size: 16pt;
+  padding-top: 6px;
+  top: 200px;
+}
+
+/* "Nutrition Facts Heading" */
+#nutritionfacts td.header {
+  font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
+  font-size: 50px;
+  white-space: nowrap;
+}
+
+/* "Right side of label" */
+#nutritionfacts div.label {
+  float: left;
+  font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
+}
+
+/* "Per serving size" */
+#nutritionfacts div.serving {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+  text-align: center;
+}
+
+#nutritionfacts div.weight {
+  display: inline;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 2px;
+}
+
+#nutritionfacts div.dv {
+  display: inline;
+  float: right;
+  font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
+}
+
+#nutritionfacts table.vitamins td {
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  width: 66%;
+}
+
+#nutritionfacts div.line {
+  border-top: 2px solid black;
+}
+
+#nutritionfacts div.labellight {
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#nutritionfacts .highlighted {
+  padding: 3px;
+}
