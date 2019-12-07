@@ -22,13 +22,10 @@
                         <td align="center" class="header">Nutrition Facts</td>
                     </tr>
                     <tr>
-                        <div class="line">
-                         </div>
-                    </div>
-                  </div>
+                        <div class="line"></div>
                     </tr>
                     <tr style="height: 7px">
-                        <td bgcolor="#000000"></td>
+                  <td bgcolor="#000000"></td>
                     </tr>
                     {% for key, value in result.items() %}
                     <tr>
@@ -37,20 +34,10 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-            </table>
+            </table>      
         </div>
-        <table border=1>
-            <tr>
-                <th>Nutrient</th>
-                <th>Amount Per Serving</th>
-            </tr>
-            {% for key, value in result.items() %}
-            <tr>
-                <th> {{ key }} </th>
-                <td> {{value}} </td>
-            </tr>
-            {% endfor %}
-        </table>
+                   
+               
 </body>
 
 </html>
