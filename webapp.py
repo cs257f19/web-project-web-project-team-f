@@ -19,10 +19,6 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 def home():
     return render_template("nutrek.html")
 
-@app.route("/data", methods = ["POST", "GET"])
-def aboutData():
-    return render_template("Data.html")
-
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
 def resultNutrients():
@@ -54,7 +50,8 @@ def resultNutrients():
                 result =  "WARNING! " + food + " contains the allergen: " + allergen
             else:
                 result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
-            return result
+            result = {result:0}
+            return render_template("results.html", result=result)
 
 
 if __name__ == "__main__":
