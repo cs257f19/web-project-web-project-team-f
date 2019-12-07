@@ -14,11 +14,12 @@
             <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
             <a href="Data.html">About Food Database</a>
         </div>
+        
+        <!-- Result of query -->
         <table border=1>
             {% for key, value in result.items() %}
             <tr>
                 <th> {{ key }} </th>
-<!--                 <td> {{ value }} </td> -->
             </tr>
             {% endfor %}
         </table>
