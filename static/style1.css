@@ -1,10 +1,11 @@
 :root {
      --container-bg-color: #ffffff;
-     --left-bg-color: #ffffff;
+     --left-bg-color: #093145;
      --left-button1-hover-color: #006060;
      --right-bg-color: #005a9b;
      --right-legend-bg-color: #000;
-     --right-button2-hover-color: #0095c2;
+     --right-button2-hover-color: #107896;
+     --radio-checked-highlight-color: #f9a602;
      --other-width: 25%;
      --speed: 1000ms;
      --background-color: #ffffff;
@@ -70,7 +71,7 @@
 }
 /* appearance for checked radiobutton */
  input[type="radio"]:checked {
-     background-color: lightgoldenrodyellow;
+     background-color: var(--radio-checked-highlight-color);
 }
 /* Centering radiobuttons */
  .flex {
@@ -159,7 +160,7 @@
      font-size: 18px;
      position: absolute;
      left: 50%;
-     top: 30%;
+     top: 20%;
      transform: translateX(-50%);
      text-align: center;
      white-space: nowrap;
@@ -214,12 +215,12 @@
      display: block;
      position: absolute;
      left: 50%;
-     top: 60%;
+     top: 40%;
      height: 2.5rem;
      padding-top: 1.3rem;
      width: 15rem;
      text-align: center;
-     color: #013366;
+     color: var(--left-bg-color: #093145);
      border: #006060 solid 0.2rem;
      font-size: 1rem;
      font-weight: bold;
