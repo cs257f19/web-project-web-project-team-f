@@ -34,7 +34,7 @@ def resultNutrients():
         if querySelection == "nutritionfacts":
             currentFood = ds.getFoodAvailable(food)
             result = ds.getNutrients(food)
-            result[food] = 0
+            result["food name"] = food
             if result is None:
                 result = "This item "+ food + " does not exist in our database."
                 result = {result:0}
