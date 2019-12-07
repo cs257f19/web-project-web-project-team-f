@@ -57,7 +57,6 @@ def resultNutrients():
                 result =  "WARNING! " + food + " contains the allergen: " + allergen
             else:
                 result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
-            result = {result:0}
             return render_template("allergens.html", result=result)
 
 
