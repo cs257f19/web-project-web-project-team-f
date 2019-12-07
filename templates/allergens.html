@@ -16,16 +16,11 @@
         </div>
         
         <!-- Result of query -->
-<!--         <table border=1>
-            {% for key, value in result.items() %}
-            <tr>
-                <th> {{ key }} </th>
-            </tr>
-            {% endfor %}
-        </table> -->
+        <h3>
         {% for key, value in result.items() %}
             {{ key }} 
         {% endfor %}
+        </h3>
 </body>
 
 </html>
