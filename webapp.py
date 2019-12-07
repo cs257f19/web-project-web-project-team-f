@@ -47,18 +47,19 @@ def resultNutrients():
             return render_template("ingredients.html", result=allIngredients)
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
-            while allergen[0] == " ":
-                 allergen = allergen.replace(allergen[0],"")
             if len(allergen) == 0:
                 result = "You entered nothing."
             else:
+                while allergen[0] == " ":
+                    allergen = allergen.replace(allergen[0],"")
+            
                 result = ds.containsAllergen(food, allergen)
                 if result is True:
                    result =  "WARNING! " + food + " contains the allergen: " + allergen
                 else:
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
-            result = {result:0}
-            return render_template("allergens.html", result=result)
+                result = {result:0}
+                return render_template("allergens.html", result=result)
 
 
 if __name__ == "__main__":
