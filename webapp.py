@@ -19,6 +19,10 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 def home():
     return render_template("nutrek.html")
 
+@app.route("/data", methods = ["POST", "GET"])
+def aboutData():
+    return render_template("Data.html")
+
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
 def resultNutrients():
