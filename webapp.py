@@ -49,7 +49,10 @@ def resultNutrients():
             allergen = request.form["allergen"]
             while allergen[0] == " ":
                  allergen = allergen.replace(allergen[0],"")
-            result = ds.containsAllergen(food, allergen)
+            if len(allergen) == 0:
+                result = "You entered nothing."
+             else:
+                result = ds.containsAllergen(food, allergen)
             if result is True:
                 result =  "WARNING! " + food + " contains the allergen: " + allergen
             else:
