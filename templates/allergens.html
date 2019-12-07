@@ -15,9 +15,12 @@
             <a href="Data.html">About Food Database</a>
         </div>
         <table border=1>
-            {% for result in results %}
-         <p>{{ result }}</p>
-             {% endfor %}
+            {% for key, value in result.items() %}
+            <tr>
+                <th> {{ key }} </th>
+<!--                 <td> {{ value }} </td> -->
+            </tr>
+            {% endfor %}
         </table>
 </body>
 
