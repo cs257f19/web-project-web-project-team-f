@@ -44,17 +44,7 @@ input[type=text], select {
 
 input[type="radio"] {
   position: relative;
-  left: -5%;
-  width:100% /* Width */
-  /* Text and background colour, blue on light gray */
-  color:#00f;
-  background-color:#ddd;
-  border-width:6px /* Border width */
-  border:2px dotted #00f /* Border width, style and colour */
-  padding:1em} /* Increase padding */
-  /* Change width and height */
-  width:4em;
-  height:4em;
+  left: 50%;
 }
 
 input[type=submit] {
