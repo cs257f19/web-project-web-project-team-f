@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/static/style1.css">
+    <link rel="stylesheet" href="style1.css">
     <title>Nutrek</title>
 </head>
 
 <body>
     <div class="container">
-       <a href="http://perlman.mathcs.carleton.edu:5219">
-            <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
+        <a href="http://perlman.mathcs.carleton.edu:5219">
+            <img width="100" height="100" src="Nutrek.png" alt="img description: Nutrek Site Logo">
         </a>
 
         <!-- Navigation menu -->
@@ -24,35 +24,47 @@
         <div class="split left">
             <h1>Nutrek.</h1>
             <p>
-                <br>Learn if your food contains something you are allergic to.</br>
-                <br>Know the nutritional components of your meal. </br>
-                <br>See if you are meeting your nutritional goals.</br>
+                <br>Know the nutritional facts of your food.
+                <br>
+                <br>See all of the ingredients that are in your food.
+                <br>
+                <br>Learn if your food contains something you are allergic to.
+                <br>
             </p>
             <a href="http://perlman.mathcs.carleton.edu:5219/data" class="button1"> Our Food Database </a>
         </div>
         <div class="split right">
+
             <h2>Let's get started.</h2>
             <form action="/results" method="POST">
+                <fieldset>
+                    <legend>1. Enter Food</legend>
+                    <input style="font-size:25px;" type="text" name="food" required>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>2. Choose an option.</legend>
 
-                <p2>
-                    <label for="food">Enter Food: </label>
-                    <input type="text" name="food" required>
-                    <br>
-                    <input type="radio" name="query" value="nutritionfacts" required> Nutrition Breakdown</input>
-                    <br>
-                    <input type="radio" name="query" value="ingredients"> Ingredients</input>
-                    <br>
-                    <input type="radio" name="query" value="allergy"> Enter Allergen:</input>
-                    <input type="text" name="allergen">
-                    <br>
-                    <br>
-                </p2>
-                <p2>
+                    <input type="radio" name="query" value="nutritionfacts" required>
+                    <label for="nutritionfacts">Nutrition Breakdown</label>
+                    <br/>
+
+                    <input type="radio" name="query" value="ingredients">
+                    <label for="ingredients">Ingredients</label>
+                    <br/>
+
+                    <input type="radio" name="query" value="allergy">
+                    <label for="allergy">Enter Allergen:</label>
+                    <input input style="font-size:25px;" type="text" name="allergen">
+                </fieldset>
+                <fieldset>
                     <input type="submit" value="Submit">
-                    <input type="reset">
-                </p2>
+                    <input type="reset" value="Start Over">
+                </fieldset>
             </form>
+
         </div>
+    </div>
 </body>
 
 </html>
