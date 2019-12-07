@@ -36,7 +36,7 @@ def resultNutrients():
             result = ds.getNutrients(food)
             if result is None:
                 result = "This item "+ food + " does not exist in our database."
-            return render_template("results.html", result=result)
+            return render_template("nutrients.html", result=result)
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
             if ingredients is None:
@@ -44,7 +44,7 @@ def resultNutrients():
             allIngredients = {}
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
-            return render_template("results.html", result=allIngredients)
+            return render_template("ingredients.html", result=allIngredients)
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
             while allergen[0] == " ":
@@ -58,7 +58,7 @@ def resultNutrients():
             else:
                 result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
             result = {result:0}
-            return render_template("results.html", result=result)
+            return render_template("allergens.html", result=result)
 
 
 if __name__ == "__main__":
