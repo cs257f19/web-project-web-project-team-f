@@ -29,6 +29,12 @@
                     <tr style="height: 7px">
                         <td bgcolor="#000000"></td>
                     </tr>
+                    {% for key, value in result.items() %}
+                    <tr>
+                        <th> {{ key }} </th>
+                        <td> {{value}} </td>
+                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
