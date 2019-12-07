@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 <html>
-
-<link rel="stylesheet" href="/static/style1.css">
-
-<body>
-    <div class="container">
-        <a href="http://perlman.mathcs.carleton.edu:5219">
+    <link rel="stylesheet" href="/static/style1.css">
+    <body>
+        <div class="container">
+            <a href="http://perlman.mathcs.carleton.edu:5219">
             <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
-        </a>
-
-        <!-- Navigation menu -->
-        <div class="navbar">
-            <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
-            <a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
-        </div>
-        <h3>Your Nutritional Facts</h3>
-        <div id="nutritionfacts">
-            <table width="400" cellspacing="0" cellpadding="0">
-                <tbody>
-                    <tr>
-                        <td align="center" class="header">Nutrition Facts</td>
-                    </tr>
-                    <tr>
-                        <div class="line"></div>
-                    </tr>
-                    <tr style="height: 7px">
-                        <td bgcolor="#000000"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="line">
-                                <div class="label">Nutrient</div>
-                            </div>
-                            <div style="padding-top: 1px; float: right;" class="labellight">
-                                <div class="weight">Amount Per Serving</div>
-                            </div>
-        </div>
-        </td>
-        </tr>
-        {% for key, value in result.items() %}
-        <tr>
-            <td class="indent">
-                <div class="line">
-                    <div class="labellight">{{ key }}
-                    </div>
-                    <div class="dv">{{value}}</div>
-                </div>
-            </td>
-        </tr>
-        {% endfor %}
-
-        </tbody>
-        </table>
-    </div>
-
-</body>
-
+            </a>
+            <!-- Navigation menu -->
+            <div class="navbar">
+                <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
+                <a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
+            </div>
+            <h3>Your Nutritional Facts</h3>
+            <div id="nutritionfacts">
+                <table width="400" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td align="center" class="header">Nutrition Facts</td>
+                        </tr>
+                        <tr>
+                            <div class="line"></div>
+                        </tr>
+                        <tr style="height: 7px">
+                            <td bgcolor="#000000"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="line">
+                                    <div class="label">Nutrient</div>
+                                </div>
+                                <div style="padding-top: 1px; float: right;" class="labellight">
+                                    <div class="weight">Amount Per Serving</div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% for key, value in result.items() %}
+                        <tr>
+                            <td class="indent">
+                                <div class="line">
+                                <div class="labellight">{{ key }}
+                                </div>
+                                <div class="dv">{{value}}</div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+         </div>
+    </body>
 </html>
