@@ -51,7 +51,7 @@ def resultNutrients():
                  allergen = allergen.replace(allergen[0],"")
             if len(allergen) == 0:
                 result = "You entered nothing."
-             else:
+            else:
                 result = ds.containsAllergen(food, allergen)
             if result is True:
                 result =  "WARNING! " + food + " contains the allergen: " + allergen
