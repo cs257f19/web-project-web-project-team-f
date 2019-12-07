@@ -59,7 +59,7 @@ def resultNutrients():
                 else:
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 result = {result:0}
-                return render_template("allergens.html", result=result)
+            return render_template("allergens.html", result=result)
 
 
 if __name__ == "__main__":
