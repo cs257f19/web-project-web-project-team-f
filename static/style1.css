@@ -34,7 +34,7 @@ html, body {
 /* Form field attributes */
 input[type=text], select {
   width: 100%;
-  padding: 12px 20px;
+  padding: 15px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -45,7 +45,9 @@ input[type=text], select {
 input[type="radio"] {
   position: relative;
   left: -5%;
-  
+  border: 0px;
+  width: 100%;
+  height: 2em;
 }
 
 input[type=submit] {
