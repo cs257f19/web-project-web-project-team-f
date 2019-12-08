@@ -90,7 +90,7 @@
 }
 /*Submit button*/
  input[type=submit] {
-     font: 1rem 'Fira Sans', sans-serif;
+     font-family: Georgia, serif;
      font-size: 30px;
      position: relative;
      width: 30%;
@@ -103,7 +103,7 @@
 }
 /*Reset button*/
  input[type=reset] {
-     font: 1rem 'Fira Sans', sans-serif;
+     font-family: Georgia, serif;
      font-size: 30px;
      position: relative;
      width: 30%;
@@ -121,7 +121,7 @@
      padding: 3px 3px;
 }
  .output {
-     font: 1rem 'Fira Sans', sans-serif;
+     font-family: Georgia, serif;
 }
  input {
      margin-top: 20px;
