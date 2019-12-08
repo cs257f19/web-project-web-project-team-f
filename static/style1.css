@@ -1,7 +1,8 @@
 :root {
      --container-bg-color: #ffffff;
      --left-bg-color: #ffffff;
-     --left-button1-hover-color: #006060;
+	 --left-button1-color: #006060;
+     --left-button1-hover-color: #091832;
      --right-bg-color: #005a9b;
      --right-legend-bg-color: #000;
      --right-button2-hover-color: #0095c2;
