@@ -183,8 +183,8 @@ class Nutrek:
                 item = item.replace(")","")
             FullIngredientList.append(item)
         try:
-            for ing in FullIngredientList:
-                if allergen in ing:
+            for ingredient in FullIngredientList:
+                if allergen in ingredient:
                     return True
             return False
         except Exception as e:
