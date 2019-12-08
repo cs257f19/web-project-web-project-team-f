@@ -119,8 +119,8 @@ class Nutrek:
                 for item in results:
                     if "(" in item:
                         item = item.replace("(", "")
-                    if "," in item:
-                        item = item.replace(",", "")
+#                     if "," in item:
+#                         item = item.replace(",", "")
                     if ")" in item:
                         item = item.replace(")","")
                     FullIngredientList.append(item)
