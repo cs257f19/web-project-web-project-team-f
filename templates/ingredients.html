@@ -15,6 +15,7 @@
             <a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
         </div>
         <h3>Ingredients in your Recipe</h3>
+        <div id="nutritionfacts">
         <table border=1>
             {% for key, value in result.items() %}
             <tr>
@@ -23,6 +24,7 @@
             </tr>
             {% endfor %}
         </table>
+        </div>
 </body>
 
 </html>
