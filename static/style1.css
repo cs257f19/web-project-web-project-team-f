@@ -120,6 +120,10 @@
      color: #fff;
      padding: 3px 3px;
 }
+
+fieldset {
+ 	border-color:gold;
+}
  .output {
      font-family: Georgia, serif;
 }
