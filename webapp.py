@@ -36,12 +36,12 @@ def resultNutrients():
             result = ds.getNutrients(food)
             finalResult = {}
             finalResult["food name"] = food
+            if result is None:
+               result = "This item "+ food + " does not exist in our database."
+               result = {result:0}
+               return render_template("nutrients.html", result=result)
             for key in result:
                 finalResult[key] = result[key]
-            if result is None:
-                result = "This item "+ food + " does not exist in our database."
-                result = {result:0}
-                return render_template("nutrients.html", result=result)
             return render_template("nutrients.html", result=finalResult)
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
