@@ -410,3 +410,11 @@ p4 {
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+table, th, td {
+	border: 5px solid black;
+	padding: 5px;
+     	width: 425px;
+     	margin-left: 300px;
+     	margin-top: 75px;
+}
