@@ -25,7 +25,7 @@ def aboutData():
 
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
-def resultNutrients():
+def getResults():
     querySelection = request.form["query"]
     if request.method == "POST":
         food = request.form["food"]
