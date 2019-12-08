@@ -320,8 +320,8 @@ p4 {
 .button2 {
   	display: block;
   	position: fixed;
-  	margin-left: 1000px;
-  	margin-top: 20px;
+  	bottom: 0px;
+    	right: 0px; 
   	height: 2.5rem;
   	padding-top: .5rem;
   	width: 10rem;
