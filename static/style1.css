@@ -412,11 +412,11 @@ p4 {
 }
 
 /* INGREDIENT RESULTS PAGE QUERY TABLE */
-table, th, td {
-	border: 5px solid black;
-     	padding: 5px;
-     	width: 1000px;
-     	margin-left: 200px;
-     	margin-top: 75px;
-	font-size: 25px;
+#ingredientstable {
+     border: 5px solid black;
+     padding: 5px;
+     width: 800px;
+     margin-left: 200px;
+     margin-top: 75px;
+     font-size: 25px;
 }
