@@ -80,9 +80,10 @@ class Nutrek:
                 if resultsLength == 0 :
                    return None
                 nutrientDictionary = {}
-                nutrientDictionary[allFood[rehashed]] = 0
+                
                 for nutrient, proportion in zip(nutrientList, results):
                     nutrientDictionary[nutrient] = proportion
+                nutrientDictionary[allFood[rehashed]] = 0
                 proportions = list(nutrientDictionary.values())
                 proportionsList = []
                 for item in proportions:
