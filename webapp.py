@@ -29,7 +29,7 @@ def getProductName(food):
     productList = productName.split(" ")
     result = ""
     for item in productList:
-	result += item + " "
+       result += item + " "
     return result 
 	
 '''Translates HTML form data into a database query and then into a results page'''
