@@ -87,7 +87,7 @@ class Nutrek:
                 for item in allFood[rehashed]:
                     finalFood += item + " "
                
-                nutrientDictionary[finalFood] = rehashed
+                nutrientDictionary[finalFood] = 0
                 proportions = list(nutrientDictionary.values())
                 proportionsList = []
                 for item in proportions:
