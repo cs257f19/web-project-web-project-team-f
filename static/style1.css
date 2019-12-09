@@ -251,7 +251,7 @@ h4 {
 p {
 	color: #333333;
 	font-family: Georgia, serif;
-	font-size: 20px;
+	font-size: 25px;
 	position: absolute;
 	left: 50%;
 	top: 20%;
@@ -259,6 +259,7 @@ p {
 	text-align: center;
 	white-space: nowrap;
 }
+
 
 p2 {
 	color: white;
