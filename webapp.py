@@ -22,11 +22,11 @@ def home():
 @app.route("/data", methods = ["POST", "GET"])
 def aboutData():
     return render_template("Data.html")
+
 def getProductName(food):
     allFood = ds.getFoodAvailable(food)
     productName = allFood[0]
-	
-	return productName
+    return productName
 	
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
