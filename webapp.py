@@ -23,7 +23,7 @@ def home():
 def aboutData():
     return render_template("Data.html")
 def getProductName(food):
-	allFood = getFoodAvailable(food)
+    allFood = ds.getFoodAvailable(food)
 	productName = allFood[0]
 	return productName
 	
