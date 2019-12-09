@@ -3,7 +3,6 @@ from flask import render_template, request
 import json
 import sys
 import datasource
-import random 
 # Command Line: python3 webapp.py perlman.mathcs.carleton.edu 5219
 
 '''Connect to database'''
@@ -26,9 +25,7 @@ def aboutData():
 
 def getProductName(food):
     allFood = ds.getFoodAvailable(food)
-    n = len(allFood)
-    searchIndex = random.randint(0,n)
-    productName = allFood[searchIndex]
+    productName = allFood[0]
     result = ""
     for item in productName:
        result += item + " "
@@ -46,23 +43,22 @@ def getResults():
             food = food.replace(food[0],"")
             
         if querySelection == "nutritionfacts":
-	   currentFood = getProductName(food)
-           result = ds.getNutrients(currentFood)
-           finalResult = {}
+            currentFood = ds.getFoodAvailable(food)
+            result = ds.getNutrients(food)
+            finalResult = {}
             
-           if result is None:
-              result = "This item "+ food + " does not exist in our database."
-              result = {result:0}
-              return render_template("nutrients.html", result=result)
+            if result is None:
+               result = "This item "+ food + " does not exist in our database."
+               result = {result:0}
+               return render_template("nutrients.html", result=result)
             
-           for key in result:
-               finalResult[key] = result[key]
-           return render_template("nutrients.html", result=finalResult)
+            for key in result:
+                finalResult[key] = result[key]
+            return render_template("nutrients.html", result=finalResult)
         
         elif querySelection == "ingredients":
-#             ingredients = ds.getIngredientBreakDown(food)
-            foodName = getProductName(food)
-	    ingredients = ds.getIngredientBreakdown(foodName)
+            ingredients = ds.getIngredientBreakDown(food)
+            
             if ingredients is None:
                 result =  "We do not have any data on " + food 
                 result = {result:0}
