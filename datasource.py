@@ -126,8 +126,6 @@ class Nutrek:
 #                         item = item.replace(",", "")
                     if ")" in item:
                         item = item.replace(")","")
-                    allFood = self.getFoodAvailable(food)
-                    FullIngredientList.append(allFood[0])
                     FullIngredientList.append(item)
             return FullIngredientList
 
