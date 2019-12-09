@@ -296,6 +296,7 @@ h1 {
 h2 {
 	font-size: 2.5rem;
 	color: #ffffff;
+	background-color: black;
 	position: absolute;
 	left: 50%;
 	top: 0%;
