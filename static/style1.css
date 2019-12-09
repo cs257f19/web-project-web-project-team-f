@@ -370,26 +370,7 @@ p4 {
 	color: white;
 }
 
-button {
-	background-color: var(--left-button1-color);
-	/* Green */
-	border: none;
-	color: white;
-	padding: 16px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	-webkit-transition-duration: 0.4s;
-	/* Safari */
-	transition-duration: 0.4s;
-	cursor: pointer;
-}
 
-button:hover {
-  	background-color: var(--left-button1-hover-color);
-  	color: white;
 /* Button on left side of page */
 
 .button {
