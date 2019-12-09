@@ -96,7 +96,7 @@ class Nutrek:
                         if ")" in item:
                             item = item.replace(")","")
                         result += item + " "
-                    nutrientDictionary["food"] = result 
+#                     nutrientDictionary["food"] = result 
                     return nutrientDictionary
                 resultsLength -=1
             foodName = allFood[0]
@@ -107,7 +107,7 @@ class Nutrek:
                     if ")" in item:
                         item = item.replace(")","")
                     result += item + " "
-            nutrientDictionary["food"] = result 
+#             nutrientDictionary["food"] = result 
             return nutrientDictionary
 
         except Exception as e:
