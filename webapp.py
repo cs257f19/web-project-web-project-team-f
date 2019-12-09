@@ -22,7 +22,7 @@ def home():
 @app.route("/data", methods = ["POST", "GET"])
 def aboutData():
     return render_template("Data.html")
-def processNutrient():
+def processNutrient(food):
     currentFood = ds.getFoodAvailable(food)
     result = ds.getNutrients(food)
     finalResult = {}
@@ -42,7 +42,7 @@ def getResults():
         while food[0] == " ":
             food = food.replace(food[0],"")
         if querySelection == "nutritionfacts":
-            processNutrient()
+            processNutrient(food)
 #             currentFood = ds.getFoodAvailable(food)
 #             result = ds.getNutrients(food)
 #             finalResult = {}
