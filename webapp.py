@@ -63,7 +63,7 @@ def getResults():
             
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
-            allIngredients[getProductName(food)]=0
+			allIngredients[getProductName(food)]=0
 			return render_template("ingredients.html", result=allIngredients)
         
         elif querySelection == "allergy":
