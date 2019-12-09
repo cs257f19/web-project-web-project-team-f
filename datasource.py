@@ -91,7 +91,7 @@ class Nutrek:
                      finalNutrientDictionary = {}
                      for key, value in sorted(list(files.items()), key=lambda x:x[0].lower(), reverse=True):
                          finalNutrientDictionary[key] = value
-                    return finalNutrientDictionary
+                     return finalNutrientDictionary
                 resultsLength -=1
             nutrientDictionary[allFood[0]] = 1
             finalNutrientDictionary = {}
