@@ -16,7 +16,8 @@
         </div>
         {% for key, value in result.items() %}
             {% if loop.index == 1 %}
-                <h3>Ingredients in {{ key }}</h3>
+            <h3>Ingredients in</h3>
+            <h4>{{ key }}</h4>
             {% else %}
                 <div id="ingredienttable">
                 <table border=1>
