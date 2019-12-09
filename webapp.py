@@ -61,9 +61,9 @@ def getResults():
                 result = {result:0}
                 return render_template("ingredients.html", result=result)
             allIngredients = {}
+            allIngredients[getProductName(food)]=0
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
-            allIngredients[getProductName(food)]=0
             return render_template("ingredients.html", result=allIngredients)
         
         elif querySelection == "allergy":
@@ -79,7 +79,7 @@ def getResults():
                 result = ds.containsAllergen(food, allergen)
                 
                 if result is True:
-                   result =  "WARNING! " + food + " contains the allergen: " + allergen
+                   result =  "WARNING! " + getProductName(food) + " contains the allergen: " + allergen
                 
                 else:
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
