@@ -287,11 +287,11 @@ p4 {
 button {
 	display: block;
   	position: fixed;
-  	bottom: 20px;
+  	bottom: 50px;
     	right: -75px; 
   	height: 2.5rem;
   	padding-top: .5rem;
-  	width: 10rem;
+  	width: 15rem;
   	text-align: center;
   	color: white;
   	border: solid 0.2rem;
