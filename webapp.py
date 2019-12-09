@@ -32,7 +32,7 @@ def getProductName(food):
     result = ""
     for item in productName:
        result += item + " "
-    return result 
+    return result  
 	
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
