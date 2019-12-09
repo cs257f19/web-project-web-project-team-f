@@ -177,7 +177,7 @@ class Nutrek:
             return None
     
     def getProductName(food):
-        allFood = ds.getFoodAvailable(food)
+        allFood = getFoodAvailable(food)
         productName = allFood[0]
         result = ""
         for item in productName:
