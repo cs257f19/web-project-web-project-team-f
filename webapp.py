@@ -25,6 +25,7 @@ def aboutData():
 def getProductName(food):
     allFood = ds.getFoodAvailable(food)
     productName = allFood[0]
+	
 	return productName
 	
 '''Translates HTML form data into a database query and then into a results page'''
