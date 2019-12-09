@@ -88,17 +88,10 @@ class Nutrek:
                 for item in proportions:
                     proportionsList.append(float(item))
                 if sum(proportionsList) > 0:
-                     finalNutrientDictionary = {}
-                     for key, value in sorted(list(nutrientDictionary.items()), key=lambda x:x[0].lower(), reverse=True):
-                         finalNutrientDictionary[key] = value
-                     return finalNutrientDictionary
+                     return nutrientDictionary
                 resultsLength -=1
-            nutrientDictionary[allFood[0]] = 1
-            finalNutrientDictionary = {}
-            for key, value in sorted(list(nutrientDictionary.items()), key=lambda x:x[0].lower(), reverse=True):
-                finalNutrientDictionary[key] = value
-            
-            return finalNutrientDictionary
+            nutrientDictionary[allFood[0]] = 1 
+            return nutrientDictionary
 
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
