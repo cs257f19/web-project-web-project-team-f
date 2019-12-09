@@ -89,13 +89,13 @@ class Nutrek:
                     proportionsList.append(float(item))
                 if sum(proportionsList) > 0:
                      finalNutrientDictionary = {}
-                     for key, value in sorted(list(files.items()), key=lambda x:x[0].lower(), reverse=True):
+                     for key, value in sorted(list(nutrientDictionary.items()), key=lambda x:x[0].lower(), reverse=True):
                          finalNutrientDictionary[key] = value
                      return finalNutrientDictionary
                 resultsLength -=1
             nutrientDictionary[allFood[0]] = 1
             finalNutrientDictionary = {}
-            for key, value in sorted(list(files.items()), key=lambda x:x[0].lower(), reverse=True):
+            for key, value in sorted(list(nutrientDictionary.items()), key=lambda x:x[0].lower(), reverse=True):
                 finalNutrientDictionary[key] = value
             
             return finalNutrientDictionary
