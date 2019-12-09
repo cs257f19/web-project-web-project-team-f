@@ -157,12 +157,12 @@ select {
 	padding: 10px 20px;
 	margin: 10px 0;
 	display: inline-block;
-	border: 3px solid gray;
+	border: 2px solid gray;
 	border-radius: 4px;
 	box-sizing: border-box;
 }
 input[type=text]:focus {
-  border: 3px solid red;
+  border: 3.5px solid red;
 }
 
 #foodsearchbar {
@@ -195,6 +195,9 @@ input[type="radio"] {
 	border-radius: 50%;
 }
 
+input[type=radio]:focus {
+  	border: 3.5px solid red;
+}
 
 /* appearance for checked radiobutton */
 
@@ -241,6 +244,10 @@ input[type=submit]:hover {
 	background-color: var(--right-button2-hover-color);
 }
 
+input[type=submit]:focus {
+  	border: 3.5px solid red;
+}
+
 
 /*Reset button*/
 
@@ -259,6 +266,9 @@ input[type=reset]:hover {
 	background-color: var(--right-button2-hover-color);
 }
 
+input[type=reset]:focus {
+  	border: 3.5px solid red;
+}
 
 /*Legend in fieldset*/
 
