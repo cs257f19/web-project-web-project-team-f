@@ -12,7 +12,11 @@
 				<a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
 			</div>
 			<!-- Nutritional Facts Table (Results of Query)-->
-			<h3>Your Nutritional Facts</h3>
+			{% for key, value in result.items() %}
+			 {% if loop.index == 1 %}
+			<h3>Nutritional Facts for {{ key }}</h3>
+			 {% endif %}
+ 			{% endfor %}
 			<div id="nutritionfacts">
 				<table width="400" cellspacing="0" cellpadding="0">
 					<tbody>
@@ -37,6 +41,7 @@
 						</tr>
 						<!--Outputting data from dictionary-->
 						{% for key, value in result.items() %}
+						{% if loop.index == 1 %}
 						<tr>
 							<td class="indent">
 								<div class="line">
@@ -46,6 +51,7 @@
 								</div>
 							</td>
 						</tr>
+						{% endif %}
 						{% endfor %}
 					</tbody>
 				</table>
