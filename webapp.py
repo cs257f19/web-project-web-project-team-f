@@ -80,14 +80,13 @@ def getResults():
                     allergen = allergen.replace(allergen[0],"")
             
                 result = ds.containsAllergen(food, allergen)
-                
-                if result is True:
-                   result =  "WARNING! " + getProductName(food) + " contains the allergen: " + allergen
-                elif result is False:
-					result =  "No known " + allergen + " allergen in " + getProductName(food) + " according to USDA Food database."
-                else:
-                    result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
-                result = {result:0}
+				if result is True:
+    				result =  "WARNING! " + getProductName(food) + " contains the allergen: " + allergen
+				elif result is False:
+    				result =  "No known " + allergen + " allergen in " + getProductName(food) + " according to USDA Food database."
+				else:
+    				result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
+				result = {result:0}
             return render_template("allergens.html", result=result)
 
 
