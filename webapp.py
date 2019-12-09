@@ -46,19 +46,19 @@ def getResults():
             food = food.replace(food[0],"")
             
         if querySelection == "nutritionfacts":
-	    currentFood = ds.getProductName(food)
+	   currentFood = ds.getProductName(food)
 #             currentFood = ds.getFoodAvailable(food)
-            result = ds.getNutrients(currentFood)
-            finalResult = {}
+           result = ds.getNutrients(currentFood)
+           finalResult = {}
             
-            if result is None:
-               result = "This item "+ food + " does not exist in our database."
-               result = {result:0}
-               return render_template("nutrients.html", result=result)
+           if result is None:
+              result = "This item "+ food + " does not exist in our database."
+              result = {result:0}
+              return render_template("nutrients.html", result=result)
             
-            for key in result:
-                finalResult[key] = result[key]
-            return render_template("nutrients.html", result=finalResult)
+           for key in result:
+               finalResult[key] = result[key]
+           return render_template("nutrients.html", result=finalResult)
         
         elif querySelection == "ingredients":
 #             ingredients = ds.getIngredientBreakDown(food)
