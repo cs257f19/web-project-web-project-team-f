@@ -17,7 +17,7 @@
         
         <!-- Result of query -->
         {% for key, value in result.items() %}
-        {% if 'WARNING!' in { key } %}
+        {% if 'WARNING!' in key %}
         <h4>
            {{ key }}
         </h4>
