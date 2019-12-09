@@ -440,6 +440,7 @@ p4 {
 #nutritionfacts div.labellight {
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 1px;
 }
 
 /* INGREDIENT RESULTS PAGE QUERY TABLE */
