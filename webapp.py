@@ -73,7 +73,7 @@ def getResults():
             allergen = request.form["allergen"]
             
             if len(allergen) == 0:
-                result = {"You entered nothing.":0}
+                result = {"You did not enter an allergen.":0}
             
             else:
                 while allergen[0] == " ":
