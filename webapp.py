@@ -46,10 +46,9 @@ def getResults():
             food = food.replace(food[0],"")
             
         if querySelection == "nutritionfacts":
-	   currentFood = ds.getProductName(food)
-#             currentFood = ds.getFoodAvailable(food)
-           result = ds.getNutrients(currentFood)
-           finalResult = {}
+	    currentFood = ds.getProductName(food)
+            result = ds.getNutrients(currentFood)
+            finalResult = {}
             
            if result is None:
               result = "This item "+ food + " does not exist in our database."
