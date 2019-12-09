@@ -275,7 +275,7 @@ input[type=reset]:focus {
 legend {
 	background-color: var(--right-bg-color);
 	color: #fff;
-	padding: 1px 3px;
+	padding: 2px 3px;
 }
 
 fieldset {
