@@ -67,12 +67,12 @@ def getResults():
                 result = {result:0}
                 return render_template("ingredients.html", result=result)
 	    else:
-		allIngredients = {}
-	        foodName = getProductName(food)
-	        allIngredients[foodName] = 0 
-                for item,index in enumerate(ingredients):
-                   allIngredients[index] = item
-                return render_template("ingredients.html", result=allIngredients)
+		 allIngredients = {}
+	         foodName = getProductName(food)
+	         allIngredients[foodName] = 0 
+                 for item,index in enumerate(ingredients):
+                    allIngredients[index] = item
+                 return render_template("ingredients.html", result=allIngredients)
         
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
