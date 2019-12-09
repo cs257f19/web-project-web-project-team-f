@@ -152,7 +152,7 @@ input[type=reset]:hover {
 legend {
 	background-color: var(--right-legend-bg-color);
 	color: #fff;
-	padding: 3px 3px;
+	padding: 1px 3px;
 }
 
 fieldset {
