@@ -40,7 +40,7 @@ body {
 
 [data-title]:hover::before {
   content: attr(data-title);
-  position: absolute;
+  position: relative;
   bottom: -26px;
   display: inline-block;
   padding: 3px 6px;
@@ -53,9 +53,9 @@ body {
 }
 [data-title]:hover::after {
   content: '';
-  position: absolute;
+  position: relative;
   bottom: -10px;
-  left: 8px;
+  left: 4px;
   display: inline-block;
   color: black;
   border: 8px solid transparent;	
