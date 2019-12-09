@@ -30,29 +30,33 @@
 			</div>
 			<div class="split right">
 				<h2>Let's get started.</h2>
+				<script type="text/javascript">
+				function yesnoCheck() {
+    				if (document.getElementById('yesCheck').checked) {
+        			document.getElementById('ifYes').style.display = 'block';
+    				}
+    				else document.getElementById('ifYes').style.display = 'none';
+				}
+				</script>
+				
 				<form action="/results" method="POST">
-					<fieldset>
-						<legend><span data-title="Be specific! For example, search fried rice instead of rice.">1. Enter Food</span>
-						</legend>
-						<input style="font-size:25px;" type="text" name="food" placeholder="e.g. granola or cream cheese" required>
+					<fieldset><legend>1) Enter a food: </legend>
+						<input style="font-size:25px;" type="text" name="food" id="foodsearchbar" placeholder="e.g. granola or cream cheese" required><br>
+					</fieldset>	
+					<fieldset><legend>2) Select an option. </legend>
+						<input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required> Nutrient Breakdown<br> 
+						<input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck"> Ingredients<br>
+						<input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck"> Food Allergies?<br>
+					<div id="ifYes" style="display:none">
+					Enter Allergen: <input style="font-size:25px;" type="text" id="yes" name="yes" value="allergy">
+    				</div>
 					</fieldset>
-					<br>
-					<fieldset>
-						<legend>2. Choose an option.</legend>
-						<input type="radio" name="query" value="nutritionfacts" required>
-						<label for="nutritionfacts">Nutrition Breakdown</label>
-						<br>
-						<input type="radio" name="query" value="ingredients">
-						<label for="ingredients">Ingredients</label>
-						<br>
-						<input type="radio" name="query" value="allergy">
-						<label for="allergy">Enter Allergen:</label>
-						<input input style="font-size:25px;" type="text" name="allergen" placeholder="e.g. nut or milk"				</fieldset>
-					<fieldset>
-						<input type="submit" value="Submit">
-						<input type="reset" value="Start Over">
-					</fieldset>
+				<fieldset><legend></legend>
+					<input type="submit" value="Submit">
+					<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
+				</fieldset>	
 				</form>
+        
 			</div>
 		</div>
 	</body>
