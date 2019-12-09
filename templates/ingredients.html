@@ -14,20 +14,17 @@
             <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
             <a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
         </div>
-        {% for key, value in result.items() %}
-            {% if loop.index == 1 %}
-            <h3>Ingredients in</h3>
-            <h4>{{ key }}</h4>
-            {% else %}
-                <div id="ingredienttable">
-                <table border=1>
-                    <tr>
-                        <th>{{ key }} </td>
-                    </tr>
-                </table>
-                </div>
-            {% endif %}
-        {% endfor %}
+        <h3>Ingredients in your Recipe</h3>
+        <div id="ingredienttable">
+        <table border=1>
+            {% for key, value in result.items() %}
+            <tr>
+                <th>{{ key }} </td>
+                 
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
         <a href="http://perlman.mathcs.carleton.edu:5219" class="button button2"> Try Another Food </a>
 </body>
 
