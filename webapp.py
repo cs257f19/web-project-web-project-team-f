@@ -23,16 +23,16 @@ def home():
 def aboutData():
     return render_template("Data.html")
 
-def getProductName(food):
-    nutrients = ds.getNutrients(food)
-    allFood = ds.getFoodAvailable(food)
-    food = list(nutrients.keys())[0]
-    searchIndex = nutrients[food]
-    productName = allFood[searchIndex]
-    result = ""
-    for item in productName:
-       result += item + " "
-    return result  
+# def getProductName(food):
+#     nutrients = ds.getNutrients(food)
+#     allFood = ds.getFoodAvailable(food)
+#     food = list(nutrients.keys())[0]
+#     searchIndex = nutrients[food]
+#     productName = allFood[searchIndex]
+#     result = ""
+#     for item in productName:
+#        result += item + " "
+#     return result  
 	
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
@@ -87,11 +87,11 @@ def getResults():
                 result = ds.containsAllergen(food, allergen)
                 
                 if result is True:
-                   result =  "WARNING! " + getProductName(food) + " contains the allergen: " + allergen
+                   result =  "WARNING! " + food + " contains the allergen: " + allergen
                 elif result is False:
-                    result =  "No known " + allergen + " allergen in " + getProductName(food) + " according to USDA Food database."
+                    result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 else:
-                    result =  "No known " + allergen + " allergen in " + getPorductName(food) + " according to USDA Food database."
+                    result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 result = {result:0}
             return render_template("allergens.html", result=result)
 
