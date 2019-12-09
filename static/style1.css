@@ -395,7 +395,7 @@ p4 {
 
 .split.left {
 	left: 0;
-	width: 35%;
+	width: 40%;
 	background-size: cover;
 }
 
@@ -409,7 +409,7 @@ p4 {
 
 .split.right {
 	right: 0;
-	width: 65%;
+	width: 60%;
 	background-size: cover;
 }
 
