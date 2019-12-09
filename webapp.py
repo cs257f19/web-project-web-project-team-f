@@ -22,14 +22,6 @@ def home():
 @app.route("/data", methods = ["POST", "GET"])
 def aboutData():
     return render_template("Data.html")
-
-def getProductName(food):
-    allFood = ds.getFoodAvailable(food)
-    productName = allFood[0]
-    result = ""
-    for item in productName:
-       result += item + " "
-    return result 
 	
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
@@ -64,7 +56,6 @@ def getResults():
                 result = {result:0}
                 return render_template("ingredients.html", result=result)
             allIngredients = {}
-            allIngredients[getProductName(food)]=0
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
             return render_template("ingredients.html", result=allIngredients)
