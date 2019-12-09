@@ -26,7 +26,11 @@ def aboutData():
 def getProductName(food):
     allFood = ds.getFoodAvailable(food)
     productName = allFood[0]
-    return productName
+    productList = productName.split(" ")
+    result = ""
+    for item in productList:
+	result += item + " "
+    return result 
 	
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
