@@ -25,8 +25,8 @@ def aboutData():
 
 def getProductName(food):
     nutrients = ds.getNutrients(food)
-    food = list(nutrients.keys()[0]
     allFood = ds.getFoodAvailable(food)
+    food = list(nutrients.keys()[0]
     searchIndex = nutrients[food]
     productName = allFood[searchIndex]
     result = ""
