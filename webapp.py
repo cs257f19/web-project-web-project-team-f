@@ -1,3 +1,8 @@
+```python
+from foo import Foo
+
+bar = Foo()
+```
 import flask
 from flask import render_template, request
 import json
