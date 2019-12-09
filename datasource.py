@@ -83,16 +83,10 @@ class Nutrek:
                 
                 for nutrient, proportion in zip(nutrientList, results):
                     nutrientDictionary[nutrient] = proportion
-                finalFood = allFood[rehashed]
+                finalFood = ""
+                for item in allFood[rehashed]:
+                    finalFood += item + " "
                
-                while "'" in finalFood:
-                    finalFood = finalFood.replace("'","")
-                while "(" in finalFood:
-                    finalFood = finalFood.replace("(","")
-                while ")" in finalFood:
-                    finalFood = finalFood.replace(")","")
-                if finalFood[-1] == ",":
-                    finalFood = finalFood[:len(finalFood)-2]
                 nutrientDictionary[finalFood] = 0
                 proportions = list(nutrientDictionary.values())
                 proportionsList = []
