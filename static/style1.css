@@ -4,7 +4,6 @@
 	--left-button1-color: #006060;
 	--left-button1-hover-color: #091832;
 	--right-bg-color: #000;
-	--right-legend-bg-color: #000;
 	--right-button2-hover-color: #0095c2;
 	--other-width: 25%;
 	--speed: 1000ms;
@@ -261,13 +260,14 @@ input[type=reset]:hover {
 /*Legend in fieldset*/
 
 legend {
-	background-color: var(--right-legend-bg-color);
+	background-color: var(--right-bg-color);
 	color: #fff;
 	padding: 1px 3px;
 }
 
 fieldset {
 	border-color: gold;
+	background-color: var(--right-bg-color);
 	
 }
 
@@ -296,7 +296,7 @@ h1 {
 h2 {
 	font-size: 2.5rem;
 	color: #ffffff;
-	background-color: black;
+	background-color: var(--right-bg-color);
 	position: absolute;
 	left: 50%;
 	top: 0%;
