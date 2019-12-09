@@ -26,9 +26,8 @@ def aboutData():
 def getProductName(food):
     allFood = ds.getFoodAvailable(food)
     productName = allFood[0]
-    productList = productName.split(" ")
     result = ""
-    for item in productList:
+    for item in productName:
        result += item + " "
     return result 
 	
