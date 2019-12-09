@@ -285,20 +285,23 @@ p4 {
 /* Button on left side of page */
 
 button {
-	background-color: var(--left-button1-color);
-	/* Green */
-	border: none;
-	color: white;
-	padding: 16px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	-webkit-transition-duration: 0.4s;
-	/* Safari */
-	transition-duration: 0.4s;
-	cursor: pointer;
+	display: block;
+  	position: fixed;
+  	bottom: 20px;
+    	right: -75px; 
+  	height: 2.5rem;
+  	padding-top: .5rem;
+  	width: 10rem;
+  	text-align: center;
+  	color: white;
+  	border: solid 0.2rem;
+  	background-color: var(--left-button1-color); 
+  	border: 2px solid #000;
+  	font-size: 1rem;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  	text-decoration: none;
+  	transform: translateX(-50%);
 	
 }
 .button {
