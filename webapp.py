@@ -3,6 +3,7 @@ from flask import render_template, request
 import json
 import sys
 import datasource
+import random 
 # Command Line: python3 webapp.py perlman.mathcs.carleton.edu 5219
 
 '''Connect to database'''
@@ -25,7 +26,9 @@ def aboutData():
 
 def getProductName(food):
     allFood = ds.getFoodAvailable(food)
-    productName = allFood[0]
+    n = len(allFood)
+    searchIndex = random.randint(0,n)
+    productName = allFood[searchIndex]
     result = ""
     for item in productName:
        result += item + " "
