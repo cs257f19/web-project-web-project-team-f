@@ -13,7 +13,7 @@
 			</div>
 			<!-- Nutritional Facts Table (Results of Query)-->
 			{% for key, value in result.items() %}
-			 {% if loop.index == 1 %}
+			 {% if loop.index == loop.length %}
 			<h3>Nutritional Facts:  {{ key }}</h3>
 			 {% endif %}
  			{% endfor %}
@@ -41,7 +41,7 @@
 						</tr>
 						<!--Outputting data from dictionary-->
 						{% for key, value in result.items() %}
-						{% if loop.index > 1 %}
+						{% if loop.index < loop.length %}
 						<tr>
 							<td class="indent">
 								<div class="line">
