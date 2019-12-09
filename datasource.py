@@ -134,12 +134,12 @@ class Nutrek:
                 return "No known ingredients."
             else:
                 for item in results:
-                    if "(" in item:
-                        item = item.replace("(", "")
-#                     if "," in item:
-#                         item = item.replace(",", "")
-                    if ")" in item:
-                        item = item.replace(")","")
+#                     if "(" in item:
+#                         item = item.replace("(", "")
+# #                     if "," in item:
+# #                         item = item.replace(",", "")
+#                     if ")" in item:
+#                         item = item.replace(")","")
                     FullIngredientList.append(item)
             return FullIngredientList
 
