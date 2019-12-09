@@ -191,7 +191,7 @@ input[type="radio"] {
 	/* background-color only for content */
 	background-clip: content-box;
 	border: 2px solid #bbbbbb;
-	background-color: gray;
+	background-color: #8c8c8c;
 	border-radius: 50%;
 }
 
