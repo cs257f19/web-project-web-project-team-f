@@ -66,7 +66,7 @@ def getResults():
                 result = {result:0}
                 return render_template("ingredients.html", result=result)
             allIngredients = {}
-            allIngredients[getProductName(food)]=0
+            allIngredients[food]=0
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
             return render_template("ingredients.html", result=allIngredients)
