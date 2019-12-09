@@ -46,8 +46,9 @@ def getResults():
             food = food.replace(food[0],"")
             
         if querySelection == "nutritionfacts":
-            currentFood = ds.getFoodAvailable(food)
-            result = ds.getNutrients(food)
+	    currentFood = ds.getProductName(food)
+#             currentFood = ds.getFoodAvailable(food)
+            result = ds.getNutrients(currentFood)
             finalResult = {}
             
             if result is None:
@@ -60,8 +61,9 @@ def getResults():
             return render_template("nutrients.html", result=finalResult)
         
         elif querySelection == "ingredients":
-            ingredients = ds.getIngredientBreakDown(food)
-            
+#             ingredients = ds.getIngredientBreakDown(food)
+            foodName = getProductName(food)
+	    ingredients = ds.getIngredientBreakdown(foodName)
             if ingredients is None:
                 result =  "We do not have any data on " + food 
                 result = {result:0}
