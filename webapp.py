@@ -22,58 +22,60 @@ def home():
 @app.route("/data", methods = ["POST", "GET"])
 def aboutData():
     return render_template("Data.html")
-def processNutrient(food):
-    currentFood = ds.getFoodAvailable(food)
-    result = ds.getNutrients(food)
-    finalResult = {}
-    if result is None:
-        result = "This item "+ food + " does not exist in our database."
-        result = {result:0}
-        return render_template("nutrients.html", result=result)
-    for key in result:
-        finalResult[key] = result[key]
-    return render_template("nutrients.html", result=finalResult)
+
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
 def getResults():
     querySelection = request.form["query"]
+    
     if request.method == "POST":
         food = request.form["food"]
+        
         while food[0] == " ":
             food = food.replace(food[0],"")
+            
         if querySelection == "nutritionfacts":
-            processNutrient(food)
-#             currentFood = ds.getFoodAvailable(food)
-#             result = ds.getNutrients(food)
-#             finalResult = {}
-#             if result is None:
-#                result = "This item "+ food + " does not exist in our database."
-#                result = {result:0}
-#                return render_template("nutrients.html", result=result)
-#             for key in result:
-#                 finalResult[key] = result[key]
-#             return render_template("nutrients.html", result=finalResult)
+            currentFood = ds.getFoodAvailable(food)
+            result = ds.getNutrients(food)
+            finalResult = {}
+            
+            if result is None:
+               result = "This item "+ food + " does not exist in our database."
+               result = {result:0}
+               return render_template("nutrients.html", result=result)
+            
+            for key in result:
+                finalResult[key] = result[key]
+            return render_template("nutrients.html", result=finalResult)
+        
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
+            
             if ingredients is None:
                 result =  "We do not have any data on " + food 
                 result = {result:0}
                 return render_template("ingredients.html", result=result)
             allIngredients = {}
+            
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
             return render_template("ingredients.html", result=allIngredients)
+        
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
+            
             if len(allergen) == 0:
                 result = {"You entered nothing.":0}
+            
             else:
                 while allergen[0] == " ":
                     allergen = allergen.replace(allergen[0],"")
             
                 result = ds.containsAllergen(food, allergen)
+                
                 if result is True:
                    result =  "WARNING! " + food + " contains the allergen: " + allergen
+                
                 else:
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 result = {result:0}
