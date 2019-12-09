@@ -199,13 +199,6 @@ h3 {
 	top: 20%;
 }
 
-h4 {
-	font-size: 2rem;
-	color: #000000;
-	position: absolute;
-	left: 50%;
-	top: 20%;
-}
 
 /* Paragraph */
 
@@ -440,7 +433,6 @@ p4 {
 #nutritionfacts div.labellight {
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
-	padding-top: 1px;
 }
 
 /* INGREDIENT RESULTS PAGE QUERY TABLE */
