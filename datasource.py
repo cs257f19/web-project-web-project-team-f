@@ -34,6 +34,7 @@ class Nutrek:
         RETURN:
             a dictionary with pairs of nutrient and amount of that nutrient in the specified food product.
             If sum of nutrient amounts is 0, no nutrition data available for specified food.
+            Final key,value pair is actual food name.
         '''
         if food == "":
             return None
@@ -125,6 +126,8 @@ class Nutrek:
 #                         item = item.replace(",", "")
                     if ")" in item:
                         item = item.replace(")","")
+                    allFood = self.getFoodAvailable(food)
+                    FullIngredientList.append(allFood[0])
                     FullIngredientList.append(item)
             return FullIngredientList
 
@@ -138,7 +141,7 @@ class Nutrek:
         PARAMETERS:
             food - USDA Branded Food Product name of interest
         RETURN:
-            first food product in database containing/resembling specified food name.
+            food products in database containing/resembling specified food name.
             '''
         if food == "":
             return None
