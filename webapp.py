@@ -22,7 +22,17 @@ def home():
 @app.route("/data", methods = ["POST", "GET"])
 def aboutData():
     return render_template("Data.html")
-
+def processNutrient():
+    currentFood = ds.getFoodAvailable(food)
+    result = ds.getNutrients(food)
+    finalResult = {}
+    if result is None:
+        result = "This item "+ food + " does not exist in our database."
+        result = {result:0}
+        return render_template("nutrients.html", result=result)
+    for key in result:
+        finalResult[key] = result[key]
+    return render_template("nutrients.html", result=finalResult)
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
 def getResults():
@@ -32,16 +42,17 @@ def getResults():
         while food[0] == " ":
             food = food.replace(food[0],"")
         if querySelection == "nutritionfacts":
-            currentFood = ds.getFoodAvailable(food)
-            result = ds.getNutrients(food)
-            finalResult = {}
-            if result is None:
-               result = "This item "+ food + " does not exist in our database."
-               result = {result:0}
-               return render_template("nutrients.html", result=result)
-            for key in result:
-                finalResult[key] = result[key]
-            return render_template("nutrients.html", result=finalResult)
+            processNutrient()
+#             currentFood = ds.getFoodAvailable(food)
+#             result = ds.getNutrients(food)
+#             finalResult = {}
+#             if result is None:
+#                result = "This item "+ food + " does not exist in our database."
+#                result = {result:0}
+#                return render_template("nutrients.html", result=result)
+#             for key in result:
+#                 finalResult[key] = result[key]
+#             return render_template("nutrients.html", result=finalResult)
         elif querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
             if ingredients is None:
