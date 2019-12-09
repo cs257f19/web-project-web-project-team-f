@@ -124,7 +124,7 @@ class Nutrek:
         PARAMETERS:
             food - USDA Branded Food Product name of interest
         RETURN:
-            a list of ingredients in the specified food product (cleaned of redundant characters in csv)
+            a list of ingredients in the specified food product 
         '''
         if food == "":
             return None
@@ -140,12 +140,6 @@ class Nutrek:
                 return "No known ingredients."
             else:
                 for item in results:
-#                     if "(" in item:
-#                         item = item.replace("(", "")
-# #                     if "," in item:
-# #                         item = item.replace(",", "")
-#                     if ")" in item:
-#                         item = item.replace(")","")
                     FullIngredientList.append(item)
             return FullIngredientList
 
