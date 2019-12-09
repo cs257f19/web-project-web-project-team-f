@@ -157,9 +157,12 @@ select {
 	padding: 10px 20px;
 	margin: 10px 0;
 	display: inline-block;
-	border: 3px solid red;
+	border: 3px solid blue;
 	border-radius: 4px;
 	box-sizing: border-box;
+}
+input[type=text]:focus {
+  border: 3px solid red;
 }
 
 #foodsearchbar {
