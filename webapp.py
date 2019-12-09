@@ -46,7 +46,7 @@ def getResults():
             food = food.replace(food[0],"")
             
         if querySelection == "nutritionfacts":
-	    currentFood = ds.getProductName(food)
+	    currentFood = getProductName(food)
             result = ds.getNutrients(currentFood)
             finalResult = {}
             
