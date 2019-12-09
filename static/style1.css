@@ -304,6 +304,10 @@ button {
   	transform: translateX(-50%);
 	
 }
+button:hover {
+	background-color: var(--left-button1-hover-color);
+  	color: white;
+}
 .button {
 	background-color: var(--left-button1-color);
 	/* Green */
