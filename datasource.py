@@ -113,7 +113,7 @@ class Nutrek:
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
-    
+
     def getIngredientBreakDown(self, food):
         '''
         Returns all the ingredients in a specified food product.
@@ -135,7 +135,6 @@ class Nutrek:
             if results is None:
                 return "No known ingredients."
             else:
-                FullIngredientList.append(getProductName(food))
                 for item in results:
                     if "(" in item:
                         item = item.replace("(", "")
@@ -149,7 +148,7 @@ class Nutrek:
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
-    
+
     def getFoodAvailable(self, food):
         '''
         Returns all foods in database containing/resembling specified food name.
@@ -175,15 +174,7 @@ class Nutrek:
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
-    
-    def getProductName(food):
-        allFood = getFoodAvailable(food)
-        productName = allFood[0]
-        result = ""
-        for item in productName:
-            result += item + " "
-        return result 
-    
+
     def containsAllergen(self, food, allergen):
         '''
         Returns True if food contains allergen and false if otherwise
