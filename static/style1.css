@@ -88,7 +88,7 @@ input[type="radio"] {
 /* appearance for checked radiobutton */
 
 input[type="radio"]:checked {
-	background-color: lightgoldenrodyellow;
+	background-color: gold;
 }
 
 
