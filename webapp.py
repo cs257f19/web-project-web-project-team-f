@@ -35,7 +35,6 @@ def getResults():
             currentFood = ds.getFoodAvailable(food)
             result = ds.getNutrients(food)
             finalResult = {}
-            finalResult["food name"] = food
             if result is None:
                result = "This item "+ food + " does not exist in our database."
                result = {result:0}
