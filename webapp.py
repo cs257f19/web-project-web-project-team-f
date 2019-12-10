@@ -3,8 +3,12 @@ from flask import render_template, request
 import json
 import sys
 import datasource
+
 # Command Line: python3 webapp.py perlman.mathcs.carleton.edu 5219
 
+class SearchForm(FlaskForm):
+    search = StringField('search', validators=[DataRequired()])
+    
 '''Connect to database'''
 ds = datasource.Nutrek()
 user = "odoome"
@@ -30,7 +34,7 @@ def getProductName(food):
     for item in productName:
        result += item + " "
     return result 
-	
+
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
 def getResults():
@@ -41,55 +45,75 @@ def getResults():
         
         while food[0] == " ":
             food = food.replace(food[0],"")
-            
-        if querySelection == "nutritionfacts":
-            currentFood = ds.getFoodAvailable(food)
-            result = ds.getNutrients(food)
-            finalResult = {}
-            
-            if result is None:
-               result = "This item "+ food + " does not exist in our database."
-               result = {result:0}
-               return render_template("nutrients.html", result=result)
-            
-            for key in result:
-                finalResult[key] = result[key]
-            return render_template("nutrients.html", result=finalResult)
-        
-        elif querySelection == "ingredients":
-            ingredients = ds.getFoodAvailable(food)
-#             ingredients = ds.getIngredientBreakDown(food)
-            
-            if ingredients is None:
-                result =  "We do not have any data on " + food 
+        searchresults = ds.getFoodAvailable(food)
+        if  searchresults is None:
+		result =  "We do not have any data on " + food 
                 result = {result:0}
                 return render_template("ingredients.html", result=result)
-            allIngredients = {}
-            allIngredients[getProductName(food)]=0
-            for item,index in enumerate(ingredients):
-                allIngredients[index] = item
-            return render_template("ingredients.html", result=allIngredients)
+            allProducts = {}
+            for item,index in enumerate( searchresults):
+                allProducts[index] = item
+            return render_template("searchResults.html", result=allProducts)
         
-        elif querySelection == "allergy":
-            allergen = request.form["allergen"]
+
+# '''Translates HTML form data into a database query and then into a results page'''
+# @app.route("/results", methods = ["POST", "GET"])
+# def getResults():
+#     querySelection = request.form["query"]
+    
+#     if request.method == "POST":
+#         food = request.form["food"]
+        
+#         while food[0] == " ":
+#             food = food.replace(food[0],"")
             
-            if len(allergen) == 0:
-                result = {"You did not enter an allergen.":0}
+#         if querySelection == "nutritionfacts":
+#             currentFood = ds.getFoodAvailable(food)
+#             result = ds.getNutrients(food)
+#             finalResult = {}
             
-            else:
-                while allergen[0] == " ":
-                    allergen = allergen.replace(allergen[0],"")
+#             if result is None:
+#                result = "This item "+ food + " does not exist in our database."
+#                result = {result:0}
+#                return render_template("nutrients.html", result=result)
             
-                result = ds.containsAllergen(food, allergen)
+#             for key in result:
+#                 finalResult[key] = result[key]
+#             return render_template("nutrients.html", result=finalResult)
+        
+#         elif querySelection == "ingredients":
+#             ingredients = ds.getIngredientBreakDown(food)
+            
+#             if ingredients is None:
+#                 result =  "We do not have any data on " + food 
+#                 result = {result:0}
+#                 return render_template("ingredients.html", result=result)
+#             allIngredients = {}
+#             allIngredients[getProductName(food)]=0
+#             for item,index in enumerate(ingredients):
+#                 allIngredients[index] = item
+#             return render_template("ingredients.html", result=allIngredients)
+        
+#         elif querySelection == "allergy":
+#             allergen = request.form["allergen"]
+            
+#             if len(allergen) == 0:
+#                 result = {"You did not enter an allergen.":0}
+            
+#             else:
+#                 while allergen[0] == " ":
+#                     allergen = allergen.replace(allergen[0],"")
+            
+#                 result = ds.containsAllergen(food, allergen)
                 
-                if result is True:
-                   result =  "WARNING! " + getProductName(food) + " contains the allergen: " + allergen
-                elif result is False:
-                    result =  "No known " + allergen + " allergen in " + getProductName(food) + " according to USDA Food database."
-                else:
-                    result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
-                result = {result:0}
-            return render_template("allergens.html", result=result)
+#                 if result is True:
+#                    result =  "WARNING! " + getProductName(food) + " contains the allergen: " + allergen
+#                 elif result is False:
+#                     result =  "No known " + allergen + " allergen in " + getProductName(food) + " according to USDA Food database."
+#                 else:
+#                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
+#                 result = {result:0}
+#             return render_template("allergens.html", result=result)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
