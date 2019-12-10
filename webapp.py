@@ -35,7 +35,7 @@ def getSearchResults():
             foodsearched = foodsearched.replace(foodsearched[0],"")
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
-            result =  "We do not have any data on " + foodsearched 
+            result =  "No food containing" + foodsearched + "was found."
             result = {result:0}
             return render_template("searchResults.html", result=result)
         allProducts = {}
