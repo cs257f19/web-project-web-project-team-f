@@ -35,7 +35,7 @@ def getProductName(food):
 
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/search", methods = ["POST", "GET"])
-def getResults():
+def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         while foodsearched[0] == " ":
