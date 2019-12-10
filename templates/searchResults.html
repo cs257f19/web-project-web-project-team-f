@@ -34,13 +34,16 @@
 		</fieldset>
 		<fieldset>
             {% for key, value in result.items() %}
+		{% if 'do not have any data' in key %}
+			<h3>{{ key }}</h3>
+		{% else %}
                 <input type="radio" name="food" value="{{ value }}"> {{ value }} </input><br>
+		{% endif %}
 	     {% endfor %}
 		</fieldset>
 	    	<input type="submit" value="Submit">
 		<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">	
 		</form>
-  
         <a href="http://perlman.mathcs.carleton.edu:5219" class="button button2"> Try Another Food </a>
 </body>
 
