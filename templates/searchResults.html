@@ -38,7 +38,8 @@
 		<fieldset>
             {% for key, value in result.items() %}
 		{% if "not" in key %}
-			<legend>{{ key }}</legend>
+<!-- 			<legend>{{ key }}</legend> -->
+			<th>{{ key }} </td>
 		{% else %}
                 <input type="radio" name="food" value="{{ value }}"> {{ value }} </input><br>
 		{% endif %}
