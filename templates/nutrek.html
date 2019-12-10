@@ -43,8 +43,17 @@
     				else document.getElementById('ifYes').style.display = 'none';
 				}
 				</script>
+				<form action="/search" method="POST">
+					<fieldset><legend><span data-tooltip="Be specific. E.g. type 'Fried rice' instead of 'rice'" data-tooltip-position="right">1) Enter a food:</span></legend>
+						<input style="font-size:25px;" type="text" name="food" id="foodsearchbar" placeholder="e.g. granola or cream cheese" required><br>
+					</fieldset>	
+					<fieldset><legend>2) Select an option. </legend>
+					<input type="submit" value="Submit">
+					<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
+				</fieldset>	
+				</form>
 				
-				<form action="/results" method="POST">
+<!-- 				<form action="/results" method="POST">
 					<fieldset><legend><span data-tooltip="Be specific. E.g. type 'Fried rice' instead of 'rice'" data-tooltip-position="right">1) Enter a food:</span></legend>
 						<input style="font-size:25px;" type="text" name="food" id="foodsearchbar" placeholder="e.g. granola or cream cheese" required><br>
 					</fieldset>	
@@ -60,7 +69,7 @@
 					<input type="submit" value="Submit">
 					<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
 				</fieldset>	
-				</form>
+				</form> -->
         
 			</div>
 		</div>
