@@ -69,7 +69,7 @@ h3 {
   width: 240px;
 }
 
-form {
+#form1 {
 	border: 10px solid lightgray;
 	background: var(--nav-background-hover-color);
 	width:75%;
@@ -78,12 +78,12 @@ form {
 	padding-bottom:70px;
 }
 fieldset {
-	border: none;
+   border: none;
     width: auto;
     margin:auto;
 }
 
-input[type=search] {
+#form1 input[type=search] {
 	-webkit-appearance: textfield;
 	color: black;
 	background: white;
@@ -98,7 +98,7 @@ input[type=search] {
 	display: block;
 }
 
-input[type=search]:focus {
+#form1 input[type=search]:focus {
   border: 1.5px solid red;
   outline: none
 }
@@ -113,7 +113,7 @@ input[type=search]:focus {
 	margin-left: 15%;
 	resize: vertical;
 }
-input[type=button], input[type=submit], input[type=reset] {
+#form1 input[type=button], input[type=submit], input[type=reset] {
   -webkit-transition-duration: 0.4s; /* Safari */
   background-color: lightgray; /* Green */
   border: none;
@@ -128,7 +128,7 @@ input[type=button], input[type=submit], input[type=reset] {
   padding: 10px;
 }
 
-input[type=submit]:hover {
+#form1 input[type=submit]:hover {
   background-color:gold;
 }
 
