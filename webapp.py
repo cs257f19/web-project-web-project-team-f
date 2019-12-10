@@ -50,30 +50,30 @@ def getResults():
             allProducts[index] = item
         return render_template("searchResults.html", result=allProducts)
 
-# '''Translates HTML form data into a database query and then into a results page'''
-# @app.route("/results", methods = ["POST", "GET"])
-# def getResults():
-#     querySelection = request.form["query"]
+'''Translates HTML form data into a database query and then into a results page'''
+@app.route("/results", methods = ["POST", "GET"])
+def getResults():
+    querySelection = request.form["query"]
     
-#     if request.method == "POST":
-#         food = request.form["food"]
+    if request.method == "POST":
+        food = request.form["food"]
         
-#         while food[0] == " ":
-#             food = food.replace(food[0],"")
+        while food[0] == " ":
+            food = food.replace(food[0],"")
             
-#         if querySelection == "nutritionfacts":
-#             currentFood = ds.getFoodAvailable(food)
-#             result = ds.getNutrients(food)
-#             finalResult = {}
+        if querySelection == "nutritionfacts":
+            currentFood = ds.getFoodAvailable(food)
+            result = ds.getNutrients(food)
+            finalResult = {}
             
-#             if result is None:
-#                result = "This item "+ food + " does not exist in our database."
-#                result = {result:0}
-#                return render_template("nutrients.html", result=result)
+            if result is None:
+               result = "This item "+ food + " does not exist in our database."
+               result = {result:0}
+               return render_template("nutrients.html", result=result)
             
-#             for key in result:
-#                 finalResult[key] = result[key]
-#             return render_template("nutrients.html", result=finalResult)
+            for key in result:
+                finalResult[key] = result[key]
+            return render_template("nutrients.html", result=finalResult)
         
 #         elif querySelection == "ingredients":
 #             ingredients = ds.getIngredientBreakDown(food)
