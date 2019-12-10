@@ -56,8 +56,9 @@ def getResults():
                 finalResult[key] = result[key]
             return render_template("nutrients.html", result=finalResult)
         
-        elif querySelection == "ingredients":
-            ingredients = ds.getIngredientBreakDown(food)
+        elif querySelection == "ingredients"
+			ingredients = ds.getFoodAvailable(food)
+#             ingredients = ds.getIngredientBreakDown(food)
             
             if ingredients is None:
                 result =  "We do not have any data on " + food 
