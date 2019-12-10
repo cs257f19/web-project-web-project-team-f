@@ -37,7 +37,6 @@ def getProductName(food):
 @app.route("/results", methods = ["POST", "GET"])
 def getResults():
     querySelection = request.form["query"]
-    
     if request.method == "POST":
         food = request.form["food"]
         
