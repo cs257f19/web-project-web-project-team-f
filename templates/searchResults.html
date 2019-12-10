@@ -15,18 +15,28 @@
             <a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
         </div>
         <h3>Search Results</h3>
+	<script type="text/javascript">
+		function yesnoCheck() {
+    		if (document.getElementById('yesCheck').checked) {
+        		document.getElementById('ifYes').style.display = 'block';
+    		}
+    		else document.getElementById('ifYes').style.display = 'none';
+		}
+	</script>
         <form action="/results" method="POST">
 	<fieldset>
-	    <input type="radio" name="query" value="nutritionfacts" required><strong> Nutrient Breakdown</strong>
-	    <input type="radio" name="query" value="ingredients"><strong> Ingredients</strong>
-	    <input type="radio" name="query" value="allergy"><strong> Food Allergies?</strong>
-	    <input type="text" name="allergen"><strong> Allergen:</strong><br>
+	    <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required><strong> Nutrient Breakdown</strong>
+	    <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck"><strong> Ingredients</strong>
+	    <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck"><strong> Food Allergies?</strong>
+	    <div id="ifYes" style="display:none">
+	        Enter Allergen: <input style="font-size:25px;" type="text" id="yes" type="text" name="allergen" placeholder="e.g. nut or milk">
+    	     </div><br>
             {% for key, value in result.items() %}
                 <input type="radio" name="food" value="{{ key }}"> {{ key }} </input><br>
 	     {% endfor %}
 		</fieldset>
 	    	<input type="submit" value="Submit">
-		<input type="reset" value="Start Over">		
+		<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">	
 		</form>
   
         <a href="http://perlman.mathcs.carleton.edu:5219" class="button button2"> Try Another Food </a>
