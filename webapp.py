@@ -48,8 +48,8 @@ def getSearchResults():
         allProducts = {}
         for item,index in enumerate(searchresults):
             finalProduct = ""
-            for i in item:
-                finalProduct += str(i) + " "
+            for i in index:
+                finalProduct += i + " "
             allProducts[index] = finalProduct
         return render_template("searchResults.html", result=allProducts)
 
