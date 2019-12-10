@@ -34,7 +34,7 @@ def getProductName(food):
     return result 
 
 '''Translates HTML form data into a database query and then into a results page'''
-@app.route("/results", methods = ["POST", "GET"])
+@app.route("/search", methods = ["POST", "GET"])
 def getResults():
     querySelection = request.form["query"]
     if request.method == "POST":
