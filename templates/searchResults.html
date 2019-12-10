@@ -14,7 +14,6 @@
             <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
             <a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
         </div>
-        <h3>Search Results</h3>
 	<script type="text/javascript">
 		function yesnoCheck() {
     		if (document.getElementById('yesCheck').checked) {
@@ -23,6 +22,11 @@
     		else document.getElementById('ifYes').style.display = 'none';
 		}
 	</script>
+	{% for key, value in result.items() if loop.index == 1 %}
+		{% if "No food containing" in key %}
+	    	<h3>{{ key }}</h3>
+		{% else %}
+	    <h3>Search Results</h3>
         <form action="/results" method="POST">
 	<fieldset>
 	    <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required><strong> Nutrient Breakdown</strong>
@@ -37,15 +41,14 @@
 		</fieldset>
 		<fieldset>
             {% for key, value in result.items() %}
-		{% if "not" in key %}
-			<legend>{{ key }}</legend>
-			<th>{{ key }} </th>
-		{% else %}
+		{% if "No food containing" in key %}
                 <input type="radio" name="food" value="{{ value }}"> {{ value }} </input><br>
 		{% endif %}
 	     {% endfor %}
 		</fieldset>
 		</form>
+	{% endif %}
+	{% endfor %}
         <a href="http://perlman.mathcs.carleton.edu:5219" class="button button2"> Try Another Food </a>
 </body>
 
