@@ -51,7 +51,6 @@ def getSearchResults():
             productList = finalProduct.split(" ")
             finalProduct = " ".join(productList)
             allProducts[item] = finalProduct 
-#             print(finalProduct)
         return render_template("searchResults.html", result=allProducts)
 
 '''Translates HTML form data into a database query and then into a results page'''
@@ -69,7 +68,6 @@ def getResults():
             currentFood = ds.getFoodAvailable(food)
             result = ds.getNutrients(food)
             finalResult = {}
-            
             if result is None:
                result = "This item "+ food + " does not exist in our database."
                result = {result:0}
