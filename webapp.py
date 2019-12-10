@@ -44,7 +44,11 @@ def getSearchResults():
             productList = finalProduct.split(" ")
             finalProduct = " ".join(productList)
             allProducts[item] = finalProduct 
-        return render_template("searchResults.html", result=allProducts)
+        removedDuplicates = {}    
+        for key in allProducts:
+            if key[value] not in removedDuplicates.values():
+                removedDuplicates[key] = value 
+        return render_template("searchResults.html", result=removedDuplicates)
 
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
