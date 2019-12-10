@@ -46,8 +46,8 @@ def getSearchResults():
             allProducts[item] = finalProduct 
         removedDuplicates = {}    
         for key in allProducts:
-            if key[value] not in removedDuplicates.values():
-                removedDuplicates[key] = value 
+            if allProducts[key] not in removedDuplicates.values():
+                removedDuplicates[key] = allProducts[key] 
         return render_template("searchResults.html", result=removedDuplicates)
 
 '''Translates HTML form data into a database query and then into a results page'''
