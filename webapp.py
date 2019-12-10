@@ -48,14 +48,7 @@ def getSearchResults():
         allProducts = {}
         for item,index in enumerate(searchresults):
             finalProduct = ""
-            while "(" in index:
-                index = index.replace("(","")
-            while ")" in index:
-                index = index.replace(")","")
-            while "," in index:
-                index = index.replace(",","")
-            while "'" in index:
-                index = index.replace("'","")
+            index = index + str(item)
             allProducts[index] = item
         return render_template("searchResults.html", result=allProducts)
 
