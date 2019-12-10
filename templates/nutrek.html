@@ -1,59 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="stylesheet" href="/static/style1.css">
-		<title>Nutrek</title>
-	</head>
-	<body>
-		<div class="container">
-			<a href="http://perlman.mathcs.carleton.edu:5219">
-			<img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
-			</a>
-			<!-- Navigation menu -->
-			<div class="navbar">
-				<a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
-				<a href="http://perlman.mathcs.carleton.edu:5219/data">About Our Database</a>
-			</div>
-			<div class="split left">
-				<h1>Nutrek.</h1>
-				<p>
-					<br><strong>Know what you want to eat.</strong>
-					<br>
-					<br><strong>Nutrients.</strong><br> 
-					Get the real nutritional facts.
-					<br>
-					<br><strong>Ingredients.</strong><br>
-					Know what's in your food
-					<br>
-					<br><strong>Food Allergies</strong><br>
-					Does your food contain something you're allergic to?
-					<br>
-				</p>
-			</div>
-			<div class="split right">
-				<h2>Let's get started.</h2>
-				<script type="text/javascript">
-				function yesnoCheck() {
-    				if (document.getElementById('yesCheck').checked) {
-        			document.getElementById('ifYes').style.display = 'block';
-    				}
-    				else document.getElementById('ifYes').style.display = 'none';
-				}
-				</script>
-				<form action="/search" method="POST">
-					<fieldset><legend><span data-tooltip="Be specific. E.g. type 'Fried rice' instead of 'rice'" data-tooltip-position="right">1) Enter a food:</span></legend>
-						<input style="font-size:25px;" type="text" name="foodsearch" id="foodsearchbar" placeholder="e.g. granola or cream cheese" required><br>
-					</fieldset>	
-					<fieldset>
-					<input type="submit" value="Submit">
-					<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
-				</fieldset>	
-				</form>
-        
-			</div>
-		</div>
-	</body>
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutrek</title>
+<link href="/static/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container"> 
+  <!-- Navigation -->
+  <header> 
+    <h4 class="logo"> <a href="http://perlman.mathcs.carleton.edu:5219"></a><img width="125" height="125" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a></h4>
+   
+    <nav>
+      <ul>
+        <li><a href="http://perlman.mathcs.carleton.edu:5219">HOME</a></li>
+        <li><a href="http://perlman.mathcs.carleton.edu:5219/data">ABOUT OUR DATABASE</a></li>
+<!--         <div class="search-boxY">
+          <div class="gcse-search" enableAutoComplete="true"></div>
+          <input class = "search-txt" type="text" name="foodsearch" value="" id="topnavsearch" placeholder="Search a food">
+          <a class = "search-btn" href="results.html"><img src="https://img.icons8.com/android/24/000000/search.png"> </a> </div> -->
+      </ul>
+    </nav>
+  </header>
+  <!-- Search Section -->
+  <section class="sect" id="sect">
+    
+    <form action="/search" method="POST">
+		<fieldset><h3 class="sect_header">Enter a food</h3>
+      <input style="font-size:25px;" type="search" name="foodsearch" id="foodSearchBarHome" placeholder="e.g. granola or cream cheese" required>
+			</fieldset>
+		<fieldset><input type="submit" value="Submit"></fieldset>
+    </form>
+  </section>
+  
+  <!-- About Site Features -->
+  <div class="aboutsite">
+    <div class="thumbnail">
+      <h1 class="stats">Nutrition</h1>
+      <h4>Get the real nutritional facts.</h4>
+      <p>Find out what nutrients are in your food, and how much.</p>
+    </div>
+    <div class="thumbnail">
+      <h1 class="stats">Ingredients</h1>
+      <h4>Know what's in your meal.</h4>
+      <p>See a full list of ingredients that are in a specific food product.</p>
+    </div>
+    <div class="thumbnail">
+      <h1 class="stats">Food Allergies</h1>
+      <h4>Avoid food allergens.</h4>
+      <p>Got food allegies? Find out if a food has your food allergen.</p>
+    </div>
+  </div>
+  
+  <!-- Copyrights Section -->
+  <div class="copyright">&copy;2019- <strong>Nutrek.</strong></div>
+</div>
+<!-- Main Container Ends -->
+</body>
 </html>
