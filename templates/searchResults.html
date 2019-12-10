@@ -34,7 +34,7 @@
 		</fieldset>
 		<fieldset>
             {% for key, value in result.items() %}
-                <input type="radio" name="food" value="{{ key }}"> {{ key }} </input><br>
+                <input type="radio" name="food" value="{{ value }}"> {{ value }} </input><br>
 	     {% endfor %}
 		</fieldset>
 	    	<input type="submit" value="Submit">
