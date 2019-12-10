@@ -44,14 +44,13 @@ def getResults():
             food = food.replace(food[0],"")
         searchresults = ds.getFoodAvailable(food)
         if  searchresults is None:
-			result =  "We do not have any data on " + food 
-			result = {result:0}
-			return render_template("ingredients.html", result=result)
-		allProducts = {}
-		for item,index in enumerate( searchresults):
-			allProducts[index] = item
-		return render_template("searchResults.html", result=allProducts)
-        
+            result =  "We do not have any data on " + food 
+            result = {result:0}
+            return render_template("ingredients.html", result=result)
+        allProducts = {}
+        for item,index in enumerate( searchresults):
+            allProducts[index] = item
+        return render_template("searchResults.html", result=allProducts)
 
 # '''Translates HTML form data into a database query and then into a results page'''
 # @app.route("/results", methods = ["POST", "GET"])
