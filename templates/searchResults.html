@@ -16,13 +16,17 @@
         </div>
         <h3>Search Results</h3>
         <form action="/results" method="POST">
+	<fieldset>
+	    <input type="radio" name="query" value="nutritionfacts" id="noCheck" required><strong> Nutrient Breakdown</strong><br> 
+	    <input type="radio" name="query" value="ingredients" id="noCheck"><strong> Ingredients</strong><br>
+	    <input type="radio" name="query" value="allergy" id="yesCheck"><strong> Food Allergies?</strong><br>
             {% for key, value in result.items() %}
-                <input type="radio" name="food" value={{ key }}> {{ key }} </input><br>
-            
-					{% endfor %}
+                <input type="radio" name="food" value="{{ key }}"> {{ key }} </input><br>
+	     {% endfor %}
+		</fieldset>
 					
-					<input type="submit" value="Submit">
-					<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
+		<input type="submit" value="Submit">
+		<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
 				
 		</form>
   
