@@ -39,7 +39,6 @@ def getResults():
     querySelection = request.form["query"]
     if request.method == "POST":
         food = request.form["food"]
-        
         while food[0] == " ":
             food = food.replace(food[0],"")
         searchresults = ds.getFoodAvailable(food)
