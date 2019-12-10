@@ -63,7 +63,7 @@ def getResults():
             finalResult = {}
             if result is None:
                result = food + " does not have any nutritional data in database."
-               result = {0:result}
+               result = {result:0}
                return render_template("nutrients.html", result=result)
             
             for key in result:
