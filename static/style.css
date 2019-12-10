@@ -217,6 +217,12 @@ h1 {
 
 /* Hero Section */
 
+.sect1 {
+	font-weight: bold;
+	background-color: white;
+	padding-top: auto;
+	padding-bottom: auto;
+}
 .sect {
 	font-weight: bold;
 	background-image: url("food.png");
