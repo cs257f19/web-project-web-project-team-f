@@ -48,9 +48,15 @@ def getSearchResults():
         allProducts = {}
         for item,index in enumerate(searchresults):
             finalProduct = ""
-            for i in index:
-                finalProduct += i + " "
-            allProducts[index] = finalProduct
+            if "(" in index:
+                index = index.replace("(","")
+            if ")" in index:
+                index = index.replace(")","")
+            if "," in index:
+                index = index.replace(",","")
+            if "'" in index:
+                index = index.replace("'","")
+            allProducts[index] = item
         return render_template("searchResults.html", result=allProducts)
 
 '''Translates HTML form data into a database query and then into a results page'''
