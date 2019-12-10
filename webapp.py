@@ -47,7 +47,9 @@ def getSearchResults():
             return render_template("searchResults.html", result=result)
         allProducts = {}
         for item,index in enumerate(searchresults):
-            finalProduct = "".join(index)
+            finalProduct = " ".join(index)
+            productList = finalProduct.split(" ")
+            finalProduct = " ".join(productList)
             allProducts[finalProduct] = item
         return render_template("searchResults.html", result=allProducts)
 
