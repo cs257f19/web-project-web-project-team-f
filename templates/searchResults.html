@@ -37,10 +37,10 @@
 		</fieldset>
 		<fieldset>
             {% for key, value in result.items() %}
-		{% if 'No food containing' in key %}
-			<legend>{{ key }}</legend>
+		{% if 'No food containing' in value %}
+			<legend>{{ value }}</legend>
 		{% else %}
-                <input type="radio" name="food" value="{{ value }}"> {{ value }} </input><br>
+                <input type="radio" name="food" value="{{ key }}"> {{ key }} </input><br>
 		{% endif %}
 	     {% endfor %}
 		</fieldset>
