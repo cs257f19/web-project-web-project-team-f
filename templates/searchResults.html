@@ -37,7 +37,7 @@
 		</fieldset>
 		<fieldset>
             {% for key, value in result.items() %}
-		{% if 'No food containing' in value %}
+		{% if 'no food containing' in value %}
 			<legend>{{ value }}</legend>
 		{% else %}
                 <input type="radio" name="food" value="{{ value }}"> {{ value }} </input><br>
