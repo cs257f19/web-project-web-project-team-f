@@ -25,13 +25,6 @@ def home():
 def aboutData():
     return render_template("Data.html")
 
-def getProductName(food):
-    allFood = ds.getFoodAvailable(food)
-    productName = allFood[0]
-    result = ""
-    for item in productName:
-       result += item + " "
-    return result 
 
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/search", methods = ["POST", "GET"])
@@ -65,7 +58,7 @@ def getResults():
             result = ds.getNutrients(food)
             finalResult = {}
             if result is None:
-               result = food + " does not have any nutritional data in our database. Go back and look at its ingredients instead."
+               result = food + " does not have any nutritional data in database."
                result = {result:0}
                return render_template("nutrients.html", result=result)
             
