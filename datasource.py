@@ -214,8 +214,6 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-    print(N.getFoodAvailable("fried rice"))
-    print(type(N.getFoodAvailable("fried rice")))
 #     print(N.containsAllergen("granola", "peanuts"))
 #     print(N.containsAllergen("milk", "lactose"))
 #     print(N.containsAllergen("fried rice", "oil"))
