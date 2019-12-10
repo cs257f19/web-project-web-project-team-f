@@ -30,19 +30,20 @@
 	    <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck"><strong> Food Allergies?</strong>
 	    <div id="ifYes" style="display:none">
 	        Enter Allergen: <input style="font-size:25px;" type="text" id="yes" type="text" name="allergen" placeholder="e.g. nut or milk">
-    	     </div><br>
+    	     </div>
+		<input type="submit" value="Submit">
+		<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
+		<br>
 		</fieldset>
 		<fieldset>
             {% for key, value in result.items() %}
 		{% if 'do not have any data' in key %}
-			{{ key }}
+			<p>{{ key }}</p>
 		{% else %}
                 <input type="radio" name="food" value="{{ value }}"> {{ value }} </input><br>
 		{% endif %}
 	     {% endfor %}
 		</fieldset>
-	    	<input type="submit" value="Submit">
-		<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">	
 		</form>
         <a href="http://perlman.mathcs.carleton.edu:5219" class="button button2"> Try Another Food </a>
 </body>
