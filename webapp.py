@@ -65,7 +65,7 @@ def getResults():
             result = ds.getNutrients(food)
             finalResult = {}
             if result is None:
-               result = "This item "+ food + " does not exist in our database."
+               result = food + " does not have any nutritional data in our database. Go back and look at its ingredients instead."
                result = {result:0}
                return render_template("nutrients.html", result=result)
             
