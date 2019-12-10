@@ -13,6 +13,10 @@
 		box-sizing: border-box;
 	}
 }
+
+h3 {
+	font-size: 35px;
+}
 .search-box{
   position:absolute;
   top: 46%;
@@ -207,9 +211,10 @@ ul li:hover a {
 	margin-left: auto;
 	letter-spacing: 4px;
 }
-h3 {
+h1 {
 	font-size: 40px;
 }
+
 /* Hero Section */
 
 .sect {
