@@ -36,7 +36,7 @@ def getSearchResults():
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
             result =  "No food containing" + foodsearched + "was found."
-            result = {result:0}
+            result = {result:result}
             return render_template("searchResults.html", result=result)
         allProducts = {}
         for item,index in enumerate(searchresults):
@@ -75,7 +75,7 @@ def getResults():
             
             if ingredients is None:
                 result =  "We do not have any data on " + food 
-                result = {result:0}
+                result = {result:result}
                 return render_template("ingredients.html", result=result)
             allIngredients = {}
             allIngredients[food]=0
@@ -101,7 +101,7 @@ def getResults():
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 else:
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
-                result = {result:0}
+                result = {result:result}
             return render_template("allergens.html", result=result)
 
 if __name__ == "__main__":
