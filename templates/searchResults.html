@@ -40,7 +40,7 @@
 		{% if 'No food containing' in value %}
 			<legend>{{ value }}</legend>
 		{% else %}
-                <input type="radio" name="food" value="{{ key }}"> {{ key }} </input><br>
+                <input type="radio" name="food" value="{{ value }}"> {{ value }} </input><br>
 		{% endif %}
 	     {% endfor %}
 		</fieldset>
