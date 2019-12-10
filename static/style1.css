@@ -195,7 +195,7 @@ input[type=submit] {
 	font-family: Georgia, serif;
 	font-size: 25px;
 	text-align: center;
-	position: fixed;
+	position: relative;
 	width: 25%;
 	background-color: ghostwhite;
 	color: black;
@@ -217,7 +217,7 @@ input[type=reset] {
 	font-family: Georgia, serif;
 	font-size: 25px;
 	text-align: center;
-	position: fixed;
+	position: relative;
 	width: 25%;
 	background-color: ghostwhite;
 	color: black;
