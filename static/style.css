@@ -183,7 +183,7 @@ fieldset {
 	margin-left: 15%;
 	resize: vertical;
 }
-#form1 input[type=button], input[type=submit], input[type=reset] {
+#form1 input[type=button], #form1 input[type=submit], #form1 input[type=reset] {
   -webkit-transition-duration: 0.4s; /* Safari */
   background-color: lightgray; /* Green */
   border: none;
