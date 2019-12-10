@@ -49,7 +49,7 @@ def getSearchResults():
         for item,index in enumerate(searchresults):
             finalProduct = ""
             for line in index:
-                finalProduct += " " + line
+                finalProduct += line + " "
             allProducts[finalProduct] = item
         return render_template("searchResults.html", result=allProducts)
 
