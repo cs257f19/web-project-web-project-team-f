@@ -60,10 +60,7 @@ def getResults():
     
     if request.method == "POST":
         food = request.form["food"]
-        
-        while food[0] == " ":
-            food = food.replace(food[0],"")
-            
+       
         if querySelection == "nutritionfacts":
             result = ds.getNutrients(food)
             finalResult = {}
@@ -84,7 +81,7 @@ def getResults():
                 result = {result:0}
                 return render_template("ingredients.html", result=result)
             allIngredients = {}
-            allIngredients[getProductName(food)]=0
+            allIngredients[food]=0
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
             return render_template("ingredients.html", result=allIngredients)
@@ -102,9 +99,9 @@ def getResults():
                 result = ds.containsAllergen(food, allergen)
                 
                 if result is True:
-                   result =  "WARNING! " + getProductName(food) + " contains the allergen: " + allergen
+                   result =  "WARNING! " + food + " contains the allergen: " + allergen
                 elif result is False:
-                    result =  "No known " + allergen + " allergen in " + getProductName(food) + " according to USDA Food database."
+                    result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 else:
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 result = {result:0}
