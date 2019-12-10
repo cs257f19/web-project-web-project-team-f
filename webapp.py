@@ -45,7 +45,7 @@ def getResults():
         if  searchresults is None:
             result =  "We do not have any data on " + food 
             result = {result:0}
-            return render_template("ingredients.html", result=result)
+            return render_template("searchResults.html", result=result)
         allProducts = {}
         for item,index in enumerate( searchresults):
             allProducts[index] = item
