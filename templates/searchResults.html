@@ -36,8 +36,8 @@
     		else document.getElementById('ifYes').style.display = 'none';
 		}
 	</script>
-      <form action="/results" method="POST">
         <div class="LeftContent">
+	<form action="/results" method="POST">
           <fieldset div class="fieldset1">
             <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required>
             <strong> Nutrient Breakdown</strong><br>
@@ -52,8 +52,11 @@
             <input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
             <br>
           </fieldset>
+	</form>
         </div>
-        <div class="RightContent"> {% for key, value in result.items() %}
+        <div class="RightContent"> 
+	<form action="/results" method="POST">
+	  {% for key, value in result.items() %}
           {% if "food containing" in value %}
           {{ value }}<br>
           {% else %}
