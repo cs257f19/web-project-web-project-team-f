@@ -75,6 +75,10 @@ ul li:hover a {
   position: fixed;
 }
 
+.fixed-nav-bar {
+  position: fixed;
+}
+
 .search-box{
   position:absolute;
   top: 46%;
