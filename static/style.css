@@ -13,65 +13,57 @@
     box-sizing: border-box;
   }
 }
-
-div.scroll { 
-                margin:4px, 4px; 
-                padding:4px; 
-                background-color: green; 
-                width: 500px; 
-                height: 110px; 
-                overflow-x: hidden; 
-                overflow-x: auto; 
-                text-align:justify; 
-            } 
-.Header
-{
-    margin-bottom: 10px;
-    background-color: #6ea364;
+div.scroll {
+  margin: 4px, 4px;
+  padding: 6.5px;
+  background-color: green;
+  width: 100%;
+  height: 110px;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: justify;
 }
-.Content
-{
-    position: relative;
-    z-index: 1;
-	display: flex;
-    overflow: hidden;
-    height: calc(100vh - 200px);
-    position: relative;
-    width: 100%;
+.Header {
+  margin-bottom: 10px;
+  background-color: #6ea364;
 }
-    .Content:after
-    {
-        content: '';
-        clear: both;
-        display: block;
-    }
-
-.Wrapper
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.Content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  overflow: hidden;
+  height: calc(100vh - 200px);
+  position: relative;
+  width: 100%;
 }
-    .Wrapper > div
-    {
-        height: 100%;
-    }
-
-.LeftContent
-{
-    background-color: lightblue;
-    float: left;
- 	margin-right: 10px;
-	padding-right: 5%;
+.Content:after {
+  content: '';
+  clear: both;
+  display: block;
 }
-
-.RightContent
-{
-    background-color: white;
-    overflow: auto;
-	margin-right: 10px;
+.Wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
-
+.Wrapper > div {
+  height: 100%;
+}
+.LeftContent {
+  background-color: lightblue;
+  float: left;
+  left: 0;
+  width: 40%;
+  height: 100%;
+}
+.RightContent {
+  background-color: white;
+  overflow: auto;
+  margin: auto;
+  right: 0;
+  width: 60%;
+  height: 100%;
+}
 #form1 {
   border: 1px solid;
   box-shadow: 0px 0px 8px 1px black;
@@ -93,8 +85,7 @@ div.scroll {
 .fieldset1 {
   padding-top: 0px;
   z-index: 1000;
-  font-size:20px;
-  
+  font-size: 20px;
 }
 .fieldset1 legend {
   background-color: #000;
@@ -169,7 +160,7 @@ header {
   border-bottom: 1px solid #2C9AB7;
 }
 .logo {
-	z-index: 2;
+  z-index: 2;
   text-align: undefined;
   width: 10%;
   float: left;
@@ -177,7 +168,6 @@ header {
   margin-left: 5px;
 }
 nav {
-	
   float: left;
   width: 50%;
   text-align: center;
@@ -241,7 +231,6 @@ body {
   font-style: normal;
   font-weight: 200;
 }
-
 /* Banner and Form Section */
 .sect1 {
   font-weight: bold;
