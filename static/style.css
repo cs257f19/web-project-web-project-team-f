@@ -71,14 +71,6 @@ ul li:hover a {
 	color: white;
 }
 
-.fixed-header {
-  position: fixed;
-}
-
-.fixed-nav-bar {
-  position: fixed;
-}
-
 .search-box{
   position:absolute;
   top: 46%;
