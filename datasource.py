@@ -103,6 +103,8 @@ class Nutrek:
 #                         result += item + " "
 #                     return nutrientDictionary
 #                 resultsLength -=1
+            if sum(proportionsList) == 0:
+                return None
             foodName = allFood[0]
             result = ""
             for item in foodName:
