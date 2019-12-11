@@ -13,6 +13,11 @@
     box-sizing: border-box;
   }
 }
+
+#topnavsearch {
+	font-size: 40px;
+	
+}
 #form1 {
   border: 1px solid;
   box-shadow: 0px 0px 8px 1px black;
@@ -29,7 +34,9 @@
   background: white;
   margin: auto;
   width: auto;
-  padding-top: 10px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  
 }
 .fieldsetQ {
   position: fixed;
@@ -37,11 +44,15 @@
   left: 0px;
   padding-top: 0px;
   z-index: 1000;
+  padding-right: -10px;
+  background-color:grey;
 }
-.fieldsetQ legend {
+legend {
+  position:fixed;
   background-color: #000;
   color: #fff;
   padding: 3px 6px;
+  top:125px;
 }
 .fieldsetQ .output {
   font: 1rem 'Fira Sans', sans-serif;
@@ -49,6 +60,68 @@
 .fieldsetQ input {
   margin: .4rem;
 }
+
+
+input[type="radio"] {
+	/* remove standard background appearance */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	/* create custom radiobutton appearance */
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin-bottom: -8px;
+	padding: 4px;
+	/* background-color only for content */
+	background-clip: content-box;
+	border: 3px solid black;
+	background-color: white;
+	border-radius: 50%;
+	margin-right: 0px;
+}
+
+input[type=radio]:focus {
+  	border: 2px solid #0079bf;
+}
+input[type=radio]:hover {
+  	border: 2px solid #0079bf;
+}
+
+/* appearance for checked radiobutton */
+
+input[type="radio"]:checked {
+	background-color: black;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 3px 3px;
+  box-sizing: border-box;
+}
+
+
+/* Centering radiobuttons */
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+input[type=radio]:checked+label {
+	background-color: var(--right-button2-hover-color);
+	color: white;
+}
+
+input[type=radio]+label {
+	padding: 0px;
+}
+
+label {
+	background-color: var(--right-bg-color);
+}
+
+
 .search-boxY {
   position: absolute;
   top: 4%;
