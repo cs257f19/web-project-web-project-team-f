@@ -167,8 +167,8 @@ class Nutrek:
             results = cursor.fetchall()
             if results is None:
                 return None
-            if results is None:
-                return "No known ingredients."
+#             if results is None:
+#                 return "No known ingredients."
             return results
 
         except Exception as e:
