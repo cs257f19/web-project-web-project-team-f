@@ -70,39 +70,39 @@ class Nutrek:
             proportionsList = []
             for item in proportions:
                 proportionsList.append(float(item))
-            while resultsLength > 0 and sum(proportionsList) == 0:
-                results = []
-                rehashed = random.randint(1,resultsLength)
-                for i in results1[rehashed]:
-                    results.append(i)
-                for j in results2[rehashed]:
-                    results.append(j)
-                if resultsLength == 0 :
-                   return None
-                nutrientDictionary = {}
+#             while resultsLength > 0 and sum(proportionsList) == 0:
+#                 results = []
+#                 rehashed = random.randint(1,resultsLength)
+#                 for i in results1[rehashed]:
+#                     results.append(i)
+#                 for j in results2[rehashed]:
+#                     results.append(j)
+#                 if resultsLength == 0 :
+#                    return None
+#                 nutrientDictionary = {}
                 
-                for nutrient, proportion in zip(nutrientList, results):
-                    nutrientDictionary[nutrient] = proportion
-                finalFood = ""
-                for item in allFood[rehashed]:
-                    finalFood += item + " "
+#                 for nutrient, proportion in zip(nutrientList, results):
+#                     nutrientDictionary[nutrient] = proportion
+#                 finalFood = ""
+#                 for item in allFood[rehashed]:
+#                     finalFood += item + " "
                
-                nutrientDictionary[finalFood] = 0
-                proportions = list(nutrientDictionary.values())
-                proportionsList = []
-                for item in proportions:
-                    proportionsList.append(float(item))
-                if sum(proportionsList) > 0:
-                    foodName = allFood[0]
-                    result = ""
-                    for item in foodName:
-                        if "(" in item:
-                            item = item.replace("(", "")
-                        if ")" in item:
-                            item = item.replace(")","")
-                        result += item + " "
-                    return nutrientDictionary
-                resultsLength -=1
+#                 nutrientDictionary[finalFood] = 0
+#                 proportions = list(nutrientDictionary.values())
+#                 proportionsList = []
+#                 for item in proportions:
+#                     proportionsList.append(float(item))
+#                 if sum(proportionsList) > 0:
+#                     foodName = allFood[0]
+#                     result = ""
+#                     for item in foodName:
+#                         if "(" in item:
+#                             item = item.replace("(", "")
+#                         if ")" in item:
+#                             item = item.replace(")","")
+#                         result += item + " "
+#                     return nutrientDictionary
+#                 resultsLength -=1
             foodName = allFood[0]
             result = ""
             for item in foodName:
