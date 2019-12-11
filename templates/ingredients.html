@@ -1,20 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutrek: Nutrient Results</title>
+<link href="/static/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" href="/static/style1.css">
-
+</head>
 <body>
-    <div class="container">
-        <a href="http://perlman.mathcs.carleton.edu:5219">
-            <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
-        </a>
-
-        <!-- Navigation menu -->
-        <div class="navbar">
-            <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
-            <a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
-        </div>
-        <h3>Ingredients in your food</h3>
+<div class="container"> 
+  <!-- Navigation -->
+  <header> 
+    <h4 class="logo"> 
+	    <a href="http://perlman.mathcs.carleton.edu:5219">
+		<img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
+		</a>
+	  </h4>
+	       
+    <nav>
+      <ul>
+        <li><a href="http://perlman.mathcs.carleton.edu:5219">HOME</a></li>
+        <li><a href="http://perlman.mathcs.carleton.edu:5219/data">ABOUT OUR DATABASE</a></li>
+        <div class="search-boxY">
+      </ul>
+	    <form class="search-boxY" action="/search" method="POST">
+          <input type="search" name="foodsearch" placeholder="Search..">
+  	<button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </nav>
+  </header>
+  <!-- Search Section -->
+  <section class="sect1" id="sect1">
+      <h2>Ingredients in your food</h2>
         <div id="ingredienttable">
         <table border=1>
             {% for key, value in result.items() %}
@@ -25,7 +44,12 @@
             {% endfor %}
         </table>
         </div>
-        <a href="http://perlman.mathcs.carleton.edu:5219" class="button button2"> Try Another Food </a>
+  </section>
+  
+  
+  <!-- Copyrights Section -->
+  <div class="copyright">&copy;2019- <strong>Nutrek.</strong></div>
+</div>
+<!-- Main Container Ends -->
 </body>
-
 </html>
