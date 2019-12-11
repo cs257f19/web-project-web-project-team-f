@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nutrek: Search Results</title>
 <link href="/static/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <div class="container"> 
@@ -28,6 +30,10 @@
           <a class = "search-btn" type="submit"><img src="https://img.icons8.com/android/24/000000/search.png"> </a> </div>
 	</form>
       </ul>
+	    <form class="search-boxY" action="/search" method="POST">
+          <input type="search" name="foodsearch" placeholder="Search..">
+  	<button type="submit"><i class="fa fa-search"></i></button>
+        </form>
     </nav>
   </header>
   <!-- Search Section -->
