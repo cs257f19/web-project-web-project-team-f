@@ -59,7 +59,7 @@
 		{% if "food containing" in value %}
 			{{ value }}<br>
 		{% else %}
-                <input type="radio" name="food" value="{{ value }}"> {{ value }} <br>
+                <input type="radio" name="food" value="{{ value }}" required> {{ value }} <br>
 		{% endif %}
 	     {% endfor %}
 		</fieldset>
