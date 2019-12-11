@@ -12,13 +12,8 @@
 <body>
 <div class="container"> 
   <!-- Navigation -->
-  <header> 
-    <h4 class="logo"> 
-	    <a href="http://perlman.mathcs.carleton.edu:5219">
-		<img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
-		</a>
-	  </h4>
-	       
+  <header>
+    <h4 class="logo"> <a href="http://perlman.mathcs.carleton.edu:5219"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
     <nav>
       <ul>
         <li><a href="http://perlman.mathcs.carleton.edu:5219">HOME</a></li>
@@ -30,10 +25,10 @@
       </form>
     </nav>
   </header>
-    <!-- Search Section -->
-  <section class="sect1" id="sect1">
-    <h2>Search Results</h2>
-	<script type="text/javascript">
+  <h2>What do you want to know about this food?</h2>
+  <div class="Content">
+    <div class="Wrapper"> 
+      <script type="text/javascript">
 		function yesnoCheck() {
     		if (document.getElementById('yesCheck').checked) {
         		document.getElementById('ifYes').style.display = 'block';
@@ -41,53 +36,36 @@
     		else document.getElementById('ifYes').style.display = 'none';
 		}
 	</script>
-        <form action="/results" id="form2" method="POST">
-	<fieldset class="fieldsetQ"><legend>Pick an option.</legend>
-	    <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required><strong> Nutrient Breakdown</strong>
-	    <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck"><strong> Ingredients</strong>
-	    <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck"><strong> Food Allergies?</strong>
-	    <div id="ifYes" style="display:none">
-	        Enter Allergen: <input style="font-size:25px;" type="text" id="yes" name="allergen" placeholder="e.g. nut or milk">
-    	     </div>
-		<input type="submit" value="Submit">
-		<input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
-		<br>
-		</fieldset>
-		<fieldset><legend>Select a food.</legend>
-            {% for key, value in result.items() %}
-		{% if "food containing" in value %}
-			{{ value }}<br>
-		{% else %}
-                <input type="radio" name="food" value="{{ value }}" required> {{ value }} <br>
-		{% endif %}
-	     {% endfor %}
-		</fieldset>
-		</form>
-  </section>
-  <script>
-//Get the button
-var mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
-	  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <form action="/results" method="POST">
+        <div class="LeftContent">
+          <fieldset div class="fieldset1">
+            <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required>
+            <strong> Nutrient Breakdown</strong><br>
+            <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck">
+            <strong> Ingredients</strong><br>
+            <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck">
+            <strong> Food Allergies?</strong><br>
+            <div id="ifYes" style="display:none"> Enter Allergen:
+              <input style="font-size:25px;" type="text" id="yes" name="allergen" placeholder="e.g. nut or milk">
+            </div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Start Over" onclick="javascript:yesnoCheck();">
+            <br>
+          </fieldset>
+        </div>
+        <div class="RightContent"> {% for key, value in result.items() %}
+          {% if "food containing" in value %}
+          {{ value }}<br>
+          {% else %}
+          <input type="radio" name="food" value="{{ value }}" required>
+          {{ value }} <br>
+          {% endif %}
+          {% endfor %} </div>
+      </form>
+    </div>
+  </div>
   
-   <!-- Copyrights Section -->
+  <!-- Copyrights Section -->
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
 </div>
 <!-- Main Container Ends -->
