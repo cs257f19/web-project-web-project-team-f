@@ -54,7 +54,7 @@
           </fieldset>
         </div>
         <div class="RightContent"> 
-	<form action="/results" method="POST">
+	<div class="scroll">
 	  {% for key, value in result.items() %}
           {% if "food containing" in value %}
           {{ value }}<br>
@@ -62,7 +62,9 @@
           <input type="radio" name="food" value="{{ value }}" required>
 		<p>{{ value }}</p> <br>
           {% endif %}
-          {% endfor %} </div>
+          {% endfor %} 
+		</div>
+		</div>
       </form>
     </div>
   </div>
