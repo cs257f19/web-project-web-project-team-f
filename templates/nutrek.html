@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nutrek</title>
 <link href="/static/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="container"> 
@@ -28,12 +29,12 @@
   <!-- Search Section -->
   <section class="sect" id="sect">
     <span class="background-image" role="img" aria-label="banner image of food"> </span>
-    <form action="/search" id="form1" method="POST">
-		<fieldset><h3 class="sect_header">Enter a food</h3>
-	<label for="foodSearchBarHome"></label>
-      <input style="font-size:25px;" type="search" name="foodsearch" id="foodSearchBarHome" placeholder="e.g. granola or cream cheese" required>
-			</fieldset>
-		<fieldset><input type="submit" value="Submit"></fieldset>
+    <form class="example" action="/search" id="form1" method="POST">
+		<h1>Hungry? Enter a food below.</h1>
+		<fieldset>
+			<input type="search" placeholder="Search.." name="search2">
+  			<button type="submit"><i class="fa fa-search"></i></button>
+		</fieldset>	
     </form>
   </section>
   
