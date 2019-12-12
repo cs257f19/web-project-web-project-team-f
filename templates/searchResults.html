@@ -45,7 +45,8 @@
         {% for key, value in result.items() %}
 	{% if loop.index > 1 %}
         {% if 'containing' in value %}
-       <input type="radio" name="food" value="{{ value }}" required> {{ value }} <br>
+       <input type="radio" name="food" value="{{ value }}" required>
+        {{ value }} <br>      
         {% else %}
         <input type="radio" name="food" value="{{ value }}" required>
         {{ value }} <br>
