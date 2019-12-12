@@ -14,27 +14,27 @@
   }
 }
 div.scroll {
-	 margin: auto;
+  margin: auto;
   width: 100%;
-  height: 500px;
+  height: 400px;
   overflow-x: hidden;
   overflow-x: auto;
   text-align: justify;
 }
+div.scroll::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+div.scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+div.scroll::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 
-.TopContent {
-  background-color: lightblue;
-  float: left;
-  left: 0;
-  width: 100%;
-  height: 25%;
-}
-.BottomContent {
-  background-color: white;
-  margin: auto;
-  width: 100%;
-  height: auto;
-}
+
 #form1 {
   border: 1px solid;
   box-shadow: 0px 0px 8px 1px black;
@@ -47,11 +47,16 @@ div.scroll {
   padding-right: 50px;
 }
 #form2 {
+  position:auto;
+  width:100%;
+  height:100%;
   border: 1px solid black;
   background: white;
   margin: auto;
-  width: auto;
-  padding-top: 10px;
+  padding-top:0px;
+  padding-bottom:0px;
+  float: left;
+  left: 0;
 }
 .fieldset1 {
   z-index: 1000;
@@ -63,8 +68,8 @@ div.scroll {
   padding-left: 0px;
   padding-right: auto;
   border: 2px groove;
-  background-color:aliceblue;
-  font-size: 25px;
+  background-color:white;
+  font-size: 20px;
 }
 
 .fieldset1 legend {
@@ -185,7 +190,8 @@ h1 {
   text-align: center;
 }
 h2 {
-  font-size: 40px;
+  font-size: 35px;
+  margin-top: 2.5px;
 }
 h3 {
   font-size: 35px;
@@ -203,7 +209,7 @@ h3 {
 /* Body */
 body {
   font-family: Georgia, serif;
-  background-color: #f2f2f2;
+  background-color: white;
   margin-top: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
@@ -357,9 +363,12 @@ footer .footer_column p {
   cursor: pointer;
 }
 .copyright {
+  position:fixed;
+  bottom:0;
   text-align: center;
-  padding-top: 7px;
-  padding-bottom: 6px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:100%;
   background-color: #717070;
   color: #FFFFFF;
   text-transform: uppercase;
