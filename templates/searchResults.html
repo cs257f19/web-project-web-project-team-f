@@ -25,8 +25,9 @@
       </form>
     </nav>
   </header>
-	{% if result|length == 1%}
+	{% if {}|length == 1%}
 	<h2> No results. Try new query </h2>
+	{% endif %}
 	{% for key, value in result.items()%}
 	{% if loop.index == 1 %}
       <h2>Results: {{value}}</h2>
