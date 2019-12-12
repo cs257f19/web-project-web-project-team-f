@@ -28,7 +28,7 @@
 	{% for key, value in result.items()%}
 	{% if result|length == 1%}
 	<h2>Results: No results for {{ key }} Try new query </h2>
-	{% elif if loop.index == 1 %}
+	{% elif loop.index == 1 %}
 	 <h2> {{value}} </h2>
 	{% endif %}
 	{% endfor %}
