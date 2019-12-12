@@ -27,14 +27,15 @@
   </header>
 	{% for key, value in result.items()%}
 	{% if result|length == 1%}
-	<h2> No results for {{ key }} Try new query </h2>
+	<h2>Results: No results for {{ key }} Try new query </h2>
+	{%else%}
 	{% endif %}
-	{% endfor %}
-	{% for key, value in result.items()%}
+<!-- 	{% endfor %} -->
+<!-- 	{% for key, value in result.items()%}
 	{% if loop.index == 1 %}
-      <h2>Results: {{value}}</h2>
+      <h2> {{value}}</h2>
 	 {% endif %}
-	{% endfor %}
+	{% endfor %} -->
   <script type="text/javascript">
 		function yesnoCheck() {
     		if (document.getElementById('yesCheck').checked) {
