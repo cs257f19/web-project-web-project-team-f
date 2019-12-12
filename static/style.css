@@ -16,24 +16,6 @@
 
 
 /* FORMS */
-input[type=button], input[type=submit], input[type=reset] {
-  background-color: #008CBA;
-  color: black;
-  border: 2px solid black;
-  width: 25%;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  margin: 2px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
-  background-color: #0056a6;
-  color: white;
-}
 
 #form1 {
   border: 1px solid;
@@ -124,6 +106,24 @@ fieldset {
   padding-left: 40%;
 }
 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: var(--nav-background-color);
+  color: black;
+  border: 2px solid black;
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 2px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+  background-color: var(--nav-background-hover-color);
+  color: white;
+}
 /* SEARCH RESULTS SCROLLABLE SECTION */
 div.scroll {
   margin: auto;
@@ -213,6 +213,18 @@ ul li:hover a {
   border-radius: 40px;
   padding: 10px;
 }
+
+.search-boxY input[type=search] {
+	-webkit-appearance: none;
+    height: 25.5px;
+}
+.search-boxY .fa {
+	-webkit-appearance: none;
+    padding-top: 5px;
+	padding-bottom: 4px;
+	cursor:pointer;
+}
+
 
 /* Body */
 body {
