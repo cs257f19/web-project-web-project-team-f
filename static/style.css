@@ -217,6 +217,7 @@ ul li:hover a {
 .search-boxY input[type=search] {
 	-webkit-appearance: none;
     height: 25.5px;
+	padding-right: 20px;
 }
 .search-boxY .fa {
 	-webkit-appearance: none;
