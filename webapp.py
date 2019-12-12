@@ -43,7 +43,7 @@ def getSearchResults():
         for item,index in enumerate(searchresults):
             finalProduct = " ".join(index)
             productList = finalProduct.split(" ")
-            finalProduct = " ".join(productList)
+            finalProduct = " ".join(productList) 
             allProducts[item] = finalProduct 
         removedDuplicates = {}    
         for key in allProducts:
