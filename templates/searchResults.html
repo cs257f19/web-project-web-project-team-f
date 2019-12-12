@@ -44,8 +44,8 @@
       <div class="scroll">
         {% for key, value in result.items() %}
 	{% if loop.index > 1 %}
-        <input type="radio" name="food" value="{{ value }}" required>
-        {{ value }} <br>
+        <input type="radio" name="food" value="{{ key }}" required>
+        {{ key }} <br>
         {% endif %}
         {% endfor %} 
     </div>
