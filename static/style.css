@@ -140,6 +140,59 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: var(--nav-background-hover-color);
   color: white;
 }
+
+input[type="radio"] {
+	/* remove standard background appearance */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	/* create custom radiobutton appearance */
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin-bottom: -8px;
+	padding: 4px;
+	/* background-color only for content */
+	background-clip: content-box;
+	border: 2px solid gray;
+	background-color: lightgray;
+	border-radius: 50%;
+}
+
+input[type=radio]:focus {
+  	border: 2px solid red;
+}
+input[type=radio]:hover {
+  	border: 2px solid blue;
+}
+
+/* appearance for checked radiobutton */
+
+input[type="radio"]:checked {
+	background-color: blue;
+	border:2px solid black;
+}
+
+
+/* Centering radiobuttons */
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+input[type=radio]:checked+label {
+	background-color: blue;
+	color: white;
+}
+
+input[type=radio]+label {
+	padding: 0px;
+}
+
+
+
+
 /* SEARCH RESULTS SCROLLABLE SECTION */
 div.scroll {
   margin: auto;
@@ -154,7 +207,7 @@ div.scroll::-webkit-scrollbar {
 }
 /* Buttons */
 div.scroll::-webkit-scrollbar-button {
-  background-color: #bbbbbb;
+  background-color: #3c3c3c;
   display: block;
   border-style: solid;
   height: 18px;
