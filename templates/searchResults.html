@@ -46,9 +46,9 @@
       <legend>1) Select the best match</legend>
       <div class="scroll">
         {% for key, value in result.items() %}
-<!-- 	{% if loop.index > 1 %} -->
+	{% if loop.index > 1 %}
         <input type="radio" name="food" value="{{ value }}" required> {{ value }} <br>
-<!--         {% endif %} -->
+        {% endif %}
         {% endfor %} 
     </div>
     </fieldset>
