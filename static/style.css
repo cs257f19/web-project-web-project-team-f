@@ -33,7 +33,6 @@ div.scroll {
   display: flex;
   overflow: hidden;
   height: calc(100vh - 200px);
-  position: relative;
   width: 100%;
 }
 .Content:after {
@@ -49,18 +48,17 @@ div.scroll {
 .Wrapper > div {
   height: 100%;
 }
-.LeftContent {
+.TopContent {
   background-color: lightblue;
   float: left;
   left: 0;
   width: 100%;
-  height: 25%;
+  height: 20%;
 }
-.RightContent {
+.BottomContent {
   background-color: white;
   overflow: auto;
   margin: auto;
-  right: 0;
   width: 100%;
   height: 75%;
 }
