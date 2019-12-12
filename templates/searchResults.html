@@ -27,9 +27,9 @@
   </header>
 	{% for key, value in result.items()%}
 	{% if result|length == 1%}
-	<h2>Results: No results for {{ key }} Try new query </h2>
+	<h2>No results for {{ key }}. Search new food. </h2>
 	{% elif loop.index == 1 %}
-	 <h2> {{value}} </h2>
+	 <h2> Results: {{value}} </h2>
 	{% endif %}
 	{% endfor %}
 	
