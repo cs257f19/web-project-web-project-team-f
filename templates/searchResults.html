@@ -28,6 +28,13 @@
 	{% for key, value in result.items()%}
 	{% if result|length == 1%}
 	<h2>No results for "{{ key }}". Search new food. </h2>
+    	<form class="example" action="/search" id="form1" method="POST">
+		<h1>Hungry? Enter a food below.</h1>
+		<fieldset>
+			<input type="search" placeholder="Search.." name="foodsearch">
+  			<button type="submit"><i class="fa fa-search"></i></button>
+		</fieldset>	
+    	</form>
 	{% elif loop.index == 1 %}
 	 <h2> Search results for "{{value}}" </h2>
 	{% endif %}
