@@ -53,16 +53,16 @@ div.scroll {
   background-color: lightblue;
   float: left;
   left: 0;
-  width: 40%;
-  height: 1000px;
+  width: 100%;
+  height: 25%;
 }
 .RightContent {
   background-color: white;
   overflow: auto;
   margin: auto;
   right: 0;
-  width: 60%;
-  height: 100%;
+  width: 100%;
+  height: 75%;
 }
 #form1 {
   border: 1px solid;
@@ -83,10 +83,19 @@ div.scroll {
   padding-top: 10px;
 }
 .fieldset1 {
-  padding-top: 0px;
   z-index: 1000;
   font-size: 20px;
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 0px;
+  padding-left: 0px;
+  padding-right: auto;
+  border: 2px groove;
+  background-color:aliceblue;
+  font-size: 25px;
 }
+
 .fieldset1 legend {
   background-color: #000;
   color: #fff;
