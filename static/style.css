@@ -39,7 +39,7 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
 div.scroll {
   margin: auto;
   width: 100%;
-  height: 400px;
+  height: 300px;
   overflow-x: hidden;
   overflow-x: auto;
   text-align: justify;
@@ -74,7 +74,7 @@ div.scroll::-webkit-scrollbar-thumb {
   width:100%;
   height:100%;
   border: 3px solid black;
-  background: white;
+  background: lightgray;
   margin: auto;
   padding-top:0px;
   padding-bottom:10px;
