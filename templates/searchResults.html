@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<script type="text/javascript">
+		function yesnoCheck() {
+    		if (document.getElementById('yesCheck').checked) {
+        		document.getElementById('ifYes').style.display = 'block';
+    		}
+    		else document.getElementById('ifYes').style.display = 'none';
+		}
+	</script>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,17 +55,10 @@
     	</form>
 	{% elif loop.index == 1 %}
 	 <h2> Search results for "{{value}}" </h2>
+	<input id="myInput" type="text" placeholder="Search.."><br>
 	{% endif %}
 	{% endfor %}
-	
-  <script type="text/javascript">
-		function yesnoCheck() {
-    		if (document.getElementById('yesCheck').checked) {
-        		document.getElementById('ifYes').style.display = 'block';
-    		}
-    		else document.getElementById('ifYes').style.display = 'none';
-		}
-	</script>
+
   {% if result|length > 1 %}
 <form action="/results" id="form2" method="POST">
     <fieldset div class="fieldset1">
@@ -54,7 +66,9 @@
       <div class="scroll">
         {% for key, value in result.items() %}
 	{% if loop.index > 1 %}
-        <input type="radio" name="food" value="{{ value }}" required> {{ value }} <br>
+	<ul id="myList">
+        <li><input type="radio" name="food" value="{{ value }}" required> {{ value }}</li>
+        </ul>
         {% endif %}
         {% endfor %} 
     </div>
