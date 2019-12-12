@@ -363,12 +363,9 @@ footer .footer_column p {
   cursor: pointer;
 }
 .copyright {
-  position:fixed;
-  bottom:0;
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width:100%;
+  padding-top: 7px;
+  padding-bottom: 6px;
   background-color: #717070;
   color: #FFFFFF;
   text-transform: uppercase;
