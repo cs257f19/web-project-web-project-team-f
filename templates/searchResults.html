@@ -37,7 +37,7 @@
 		}
 	</script>
 	<form action="/results" method="POST">
-        <div class="LeftContent">
+        <div class="TopContent">
           <fieldset div class="fieldset1">
             <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required>
             <strong> Nutrient Breakdown</strong><br>
@@ -53,7 +53,7 @@
             <br>
           </fieldset>
         </div>
-        <div class="RightContent"> 
+        <div class="BottomContent"> 
 	<div class="scroll">
 	  {% for key, value in result.items() %}
           {% if "food containing" in value %}
