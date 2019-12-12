@@ -38,7 +38,8 @@ def getSearchResults():
             result =  "No food containing " + foodsearched + " was found."
             results = {}
             results[result]=result
-            return render_template("searchResults.html", result=results)
+            return results
+#             return render_template("searchResults.html", result=results)
         allProducts = {foodsearched:foodsearched}
         for item,index in enumerate(searchresults):
             finalProduct = " ".join(index)
