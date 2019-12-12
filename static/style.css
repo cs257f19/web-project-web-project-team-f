@@ -14,11 +14,13 @@
   }
 }
 
+
+/* FORMS */
 input[type=button], input[type=submit], input[type=reset] {
-  background-color: #008CBA; 
-  color: black; 
+  background-color: #008CBA;
+  color: black;
   border: 2px solid black;
-  width:25%;
+  width: 25%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -28,33 +30,9 @@ input[type=button], input[type=submit], input[type=reset] {
   transition-duration: 0.4s;
   cursor: pointer;
 }
-
-
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: #0056a6;
   color: white;
-}
-
-
-div.scroll {
-  margin: auto;
-  width: 100%;
-  height: 300px;
-  overflow-x: hidden;
-  overflow-x: auto;
-  text-align: justify;
-}
-div.scroll::-webkit-scrollbar {
-    width: 1em;
-}
- 
-div.scroll::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
- 
-div.scroll::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
 }
 
 #form1 {
@@ -69,61 +47,18 @@ div.scroll::-webkit-scrollbar-thumb {
   padding-right: 50px;
 }
 #form2 {
-  position:auto;
-  width:100%;
-  height:100%;
+  position: auto;
+  width: 100%;
+  height: 100%;
   border: 3px solid black;
   background: lightgray;
   margin: auto;
-  padding-top:0px;
-  padding-bottom:10px;
+  padding-top: 0px;
+  padding-bottom: 10px;
   float: left;
   left: 0;
 }
-.fieldset1 {
-  z-index: 1000;
-  font-size: 20px;
-  display: block;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-top: 0px;
-  padding-left: 0px;
-  padding-right: auto;
-  border: 1px groove;
-  background-color:white;
-  font-size: 20px;
-}
 
-.fieldset1 legend {
-  background-color: #000;
-  color: #fff;
-  padding: 3px 6px;
-}
-.fieldset1 .output {
-  font: 1rem 'Fira Sans', sans-serif;
-}
-.fieldset1 input {
-  margin: .4rem;
-}
-
-.fieldset2 {
-	padding-left:  40%;
-
-}
-.search-boxY {
-  position: absolute;
-  top: 4%;
-  right: 0%;
-  transform: translate(-50%, -50%);
-  height: 30px;
-  border-radius: 40px;
-  padding: 10px;
-}
-fieldset {
-  border: none;
-  width: auto;
-  margin: auto;
-}
 form.example input[type=search] {
   -webkit-appearance: textfield;
   padding: 10px;
@@ -156,6 +91,62 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+fieldset {
+  border: none;
+  width: auto;
+  margin: auto;
+}
+.fieldset1 {
+  z-index: 1000;
+  font-size: 20px;
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 0px;
+  padding-left: 0px;
+  padding-right: auto;
+  border: 1px groove;
+  background-color: white;
+}
+.fieldset1 legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+.fieldset1 .output {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+.fieldset1 input {
+  margin: .4rem;
+}
+.fieldset2 {
+  padding-left: 40%;
+}
+
+/* SEARCH RESULTS SCROLLABLE SECTION */
+div.scroll {
+  margin: auto;
+  width: 100%;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: justify;
+}
+div.scroll::-webkit-scrollbar {
+  width: 1em;
+}
+div.scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+div.scroll::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+
+
+
 /* CONTAINER */
 .container {
   width: 100%;
@@ -211,6 +202,31 @@ ul li:hover a {
   background-color: var(--nav-background-hover-color);
   color: white;
 }
+
+/*Search box in navigation*/
+.search-boxY {
+  position: absolute;
+  top: 4%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+/* Body */
+body {
+  font-family: Georgia, serif;
+  background-color: white;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-style: normal;
+  font-weight: 200;
+}
+
+/* HEADING STYLES  */
 h1 {
   font-size: 40px;
   color: white;
@@ -224,6 +240,7 @@ h3 {
   font-size: 35px;
   margin-top: -5px;
 }
+
 .sect_header {
   color: white;
   text-align: center;
@@ -233,17 +250,7 @@ h3 {
   margin-left: auto;
   letter-spacing: 4px;
 }
-/* Body */
-body {
-  font-family: Georgia, serif;
-  background-color: white;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  font-style: normal;
-  font-weight: 200;
-}
+
 /* Banner and Form Section */
 .sect1 {
   font-weight: bold;
@@ -289,7 +296,7 @@ body {
   background-color: white;
   margin-top: 0px;
 }
-/* Stats Gallery */
+/* ABOUT SITE FEATURES (HOME PAGE) */
 .stats {
   color: black;
   margin-bottom: 5px;
@@ -318,7 +325,7 @@ body {
   margin-right: 5px;
   margin-bottom: 5px;
   margin-left: 5px;
-  color: #205493;
+  color: #004080;
   font-size: 20px;
 }
 .aboutsite .thumbnail p {
@@ -330,40 +337,8 @@ body {
   color: #112e51;
   font-size: 18px;
 }
-/* More info */
-footer {
-  background-color: #FFFFFF;
-  padding-bottom: 35px;
-}
-.footer_column {
-  width: 50%;
-  text-align: center;
-  padding-top: 30px;
-  float: left;
-}
-footer .footer_column h3 {
-  color: #B3B3B3;
-  text-align: center;
-}
-footer .footer_column p {
-  color: #717070;
-  background-color: #FFFFFF;
-}
-.cards {
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-  max-height: 200px;
-}
-footer .footer_column p {
-  padding-left: 30px;
-  padding-right: 30px;
-  text-align: justify;
-  line-height: 25px;
-  font-weight: lighter;
-  margin-left: 20px;
-  margin-right: 20px;
-}
+
+
 .button {
   width: 200px;
   margin-top: 40px;
@@ -389,13 +364,15 @@ footer .footer_column p {
   color: #C4C4C4;
   cursor: pointer;
 }
+
+/*COPYRIGHT*/
 .copyright {
-  position:fixed;
-  bottom:0;
+  position: fixed;
+  bottom: 0;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
-  width:100%;
+  width: 100%;
   background-color: #717070;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -404,20 +381,12 @@ footer .footer_column p {
   letter-spacing: 2px;
   border-top-width: 2px;
 }
-.footer_banner {
-  background-color: #B3B3B3;
-  padding-top: 60px;
-  padding-bottom: 60PX;
-  margin-bottom: 0px;
-  background-image: url(../images/pattern.png);
-  background-repeat: repeat;
-}
-footer {
-  display: inline-block;
-}
+
 .hidden {
   display: none;
 }
+
+
 /* NUTRITIONAL FACTS LABEL FOR NUTRIENTS.HTML RESULTS PAGE */
 #nutritionfacts {
   background-color: white;
@@ -463,7 +432,7 @@ footer {
   float: left;
   font-family: Arial, Helvetica, sans-serif;
 }
-/* INGREDIENT RESULTS PAGE QUERY TABLE */
+/* INGREDIENT RESULTS TABLE */
 #ingredienttable {
   border: 5px solid black;
   padding: 10px;
@@ -512,9 +481,7 @@ footer {
   .thumbnail {
     width: 100%;
   }
-  .footer_column {
-    width: 100%;
-    margin-top: 0px;
+  
   }
   .banner {
     background-color: #2D9AB7;
@@ -524,7 +491,7 @@ footer {
     margin-top: 20px;
     line-height: 22px;
   }
-  .hero_header {
+  .sect_header {
     padding-left: 10px;
     padding-right: 10px;
     line-height: 22px;
@@ -578,19 +545,13 @@ footer {
   .thumbnail {
     width: 100%;
   }
-  .footer_column {
-    width: 100%;
-    margin-top: 0px;
-  }
+  
   . .thumbnail {
     width: 50%;
   }
   .banner {
     padding-left: 20px;
     padding-right: 20px;
-  }
-  .footer_column {
-    width: 100%;
   }
 }
 /* Small Desktops */
