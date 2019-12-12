@@ -26,7 +26,7 @@
     </nav>
   </header>
 	{% if result|length == 1%}
-	<h2> No results. Try new query {{ result }} </h2>
+	<h2> No results for {{value}}. Try new query </h2>
 	{% endif %}
 	{% for key, value in result.items()%}
 	{% if loop.index == 1 %}
