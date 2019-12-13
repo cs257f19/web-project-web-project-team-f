@@ -29,6 +29,7 @@ $(document).ready(function(){
 
 </head>
 <body>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="container"> 
   <!-- Navigation -->
   <header>
@@ -63,7 +64,7 @@ $(document).ready(function(){
     <fieldset div class="fieldset1">
 	    <legend><strong>1) Select the best match.</strong> <input id="myInput" type="text" placeholder="Narrow search results.."></legend>
       <div class="scroll">
-	      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	      
 
         {% for key, value in result.items() %}
 	{% if loop.index > 1 %}
