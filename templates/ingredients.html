@@ -37,18 +37,16 @@
 	  {% if loop.index == 1 %}
 	  <h5>{{ key }} </h5>
 	{% else %}
+	<input type="text" id="myInput2" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 	<div style="overflow-x:auto;">  
         <div id="ingredienttable">
-        <table>
-            
-            <tr>
-                <th>{{ key }} </td>
-                 
+        <table id="myTable">
+            <tr class="header">
+                <th>{{ key }} </th>
             </tr>
-            
         </table>
         </div>
-	  </div>
+	</div>
 	  {% endif %}
 	  {% endfor %} 
 
@@ -59,5 +57,25 @@
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
 </div>
 <!-- Main Container Ends -->
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 </body>
 </html>
