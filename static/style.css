@@ -389,6 +389,14 @@ h6 {
   color: black;
   text-align: center;
 }
+
+p1 {
+	font-size: 25px;
+  	color: black;
+  	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
+}
 .sect_header {
   color: white;
   text-align: center;
