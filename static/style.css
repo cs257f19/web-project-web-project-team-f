@@ -88,6 +88,8 @@ ul {
   padding-bottom: 10px;
   float: left;
   left: 0;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 form.example input[type=search] {
