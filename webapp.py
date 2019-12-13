@@ -84,8 +84,16 @@ def getResults():
 #             if len(ingredients) == 1:
 #                 allIngredients[ingredients] = 1
 #                 return render_template("ingredients.html", result=allIngredients)
-            ingredients = ingredients.split(",")
-            for item,index in enumerate(ingredients):
+#             ingredients = ingredients.split(",")
+            opening = "({["
+            closing = ")}]"
+            ingredientPart = ""
+            fullList = []
+            for item in ingredients:
+                if item[0] in opening:
+                    ingredientPart = item[1:len(item)-2]
+                fullList.append(ingredientPart)
+            for item,index in enumerate(fullList):
                 allIngredients[index] = item
             return render_template("ingredients.html", result=allIngredients)
         
