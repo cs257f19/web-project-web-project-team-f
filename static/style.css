@@ -55,6 +55,10 @@ ul {
 	
 }
 
+#myList2 li:hover {
+ background-color: #eee;	
+}
+
 /* Removes default styling of list  */
 
 /* FORMS */
