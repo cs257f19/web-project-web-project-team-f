@@ -33,9 +33,9 @@ def getSearchResults():
         foodsearched = request.form["foodsearch"]
         if len(foodsearched) == 0:
             result = "You entered nothing."
-        while foodsearched[0] == " ":
-            foodsearched = foodsearched.replace(foodsearched[0],"")
-            return render_template("searchResults.html", result=result)
+#         while foodsearched[0] == " ":
+#             foodsearched = foodsearched.replace(foodsearched[0],"")
+#             return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
             result =  "No food containing " + foodsearched + " was found."
