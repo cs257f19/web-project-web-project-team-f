@@ -434,8 +434,8 @@ p1 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .tagline {
   text-align: center;
