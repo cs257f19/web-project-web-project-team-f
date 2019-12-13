@@ -89,17 +89,7 @@ def getResults():
             closing = ")}]"
             newNutrient = ""
             for item,index in enumerate(ingredients):
-                for char in index:
-                    if char in opening:
-                        newNutrient += index + " "
-                        for j in ingredients[item:]:
-                            for char in j:
-                                if char in closing:
-                                    allIngredients[newNutrient] = item 
-                                else:
-                                    newNutrient += j
-                    else:
-                        allIngredients[index] = item
+                allIngredients[index] = item
             return render_template("ingredients.html", result=allIngredients)
         
         elif querySelection == "allergy":
