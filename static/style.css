@@ -156,11 +156,17 @@ fieldset {
   padding-left: 40%;
 }
 
+.fieldset1 input[type=submit] {
+  margin-right:250px;
+}
+
+.fieldset1 input[type=reset] {
+  margin-left:250px;
+}
 input[type=button], input[type=submit], input[type=reset] {
   background-color: var(--nav-background-color);
   color: white;
   border: 2px solid black;
-  width: 25%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
