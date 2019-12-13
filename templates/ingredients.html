@@ -61,13 +61,13 @@ $(document).ready(function(){
         		<ul id="ingredientList">
 			{% if '(' in key %}
 				{% set x = key.split('(') %}
-				<li> {{ x[0] if x }} </li>
+				<li>{{ x[0] if x }}</li>
 			{% elif ')' in key %}
 				{% set y = key.split(')') %}
-				<li> {{ y[0] if y }} </li>
+				<li>{{ y[0] if y }}</li>
 			{% elif '.' in key %}
 				{% set z = key.split('.') %}
-				<li> {{ z[0] if z }} </li>
+				<li>{{ z[0] if z }}</li>
 			{% else %}
 				<li>{{ key }}</li>
 			{% endif %}
