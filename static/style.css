@@ -542,6 +542,7 @@ p2 {
 /* INGREDIENTS DISPLAY */
 ul {
   list-style-type: none;
+  margin-bottom:10px;
 }
 
 #ingredientList {
@@ -554,7 +555,6 @@ ul {
 
 #ingredientList ul {
   list-style-type: none;
-  margin-bottom:10px;
 }
 
 #ingredientList li {
