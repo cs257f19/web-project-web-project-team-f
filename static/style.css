@@ -129,6 +129,7 @@ fieldset {
   margin: auto;
 }
 .fieldset1 {
+  border-top: 1px solid black;
   z-index: 1000;
   font-size: 20px;
   display: block;
