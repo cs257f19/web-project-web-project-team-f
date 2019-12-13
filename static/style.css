@@ -552,8 +552,9 @@ h3 {
   font-size: 25px;
 }
 
-#ingredienttable th {
+#ingredienttable th, td {
   border:none;
+  width:1000px;
 }
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
