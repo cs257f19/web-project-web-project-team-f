@@ -47,11 +47,10 @@ ul {
 
 #ingredientList li {
   border: 1px solid #ddd;
-  margin-top: 0px; /* Prevent double borders */
-  margin-bottom: 0px;
+  margin: -1px; /* Prevent double borders */
   text-align:center;
   background-color: #f6f6f6;
-  padding: 12px;
+  padding: 10px;
   text-decoration: none;
   font-size: 18px;
   color: black;
