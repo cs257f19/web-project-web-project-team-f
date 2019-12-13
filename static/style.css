@@ -25,10 +25,10 @@ h5 {
 
 }
 
-/* ul {
+ul {
   list-style-type: none;
 }
- */
+
 #inputSearchFilter  {
   width: 100%;
   padding: 12px 20px;
@@ -395,15 +395,29 @@ h3 {
 }
 
 /* Banner and Form Section */
+/* Homepage */
+.sect {
+  font-weight: bold;
+  background-image: url("AdobeStock_234241545.jpeg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
 .sect1 {
   font-weight: bold;
   background-color: white;
   padding-top: auto;
   padding-bottom: auto;
 }
-.sect {
+
+.sect3 {
   font-weight: bold;
-  background-image: url("AdobeStock_234241545.jpeg");
+  background-image: url("AdobeStock_270367156.jpeg");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
