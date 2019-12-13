@@ -363,7 +363,7 @@ body {
 /* HEADING STYLES  */
 h1 {
   font-size: 40px;
-  color: black;
+  color: white;
   text-align: center;
 }
 h2 {
@@ -384,7 +384,11 @@ h5 {
 	margin-right: 10%;
 }
 
-
+h6 {
+  font-size: 40px;
+  color: black;
+  text-align: center;
+}
 .sect_header {
   color: white;
   text-align: center;
