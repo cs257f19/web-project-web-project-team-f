@@ -61,13 +61,13 @@ $(document).ready(function(){
         <ul id="myList2">
 		{% if '(' in key %}
 		{% set list1 = key.split('(') %}
-		{% for it in list1 %}
-		<li> item1 </li>
+		{% for x in list1 %}
+		<li> {{ x }} </li>
 		{% endfor %}
 		{% elif ')' in key %}
 		{% set list2 = key.split(')') %}
-		{% for item2 in list2 %}
-		<li> item2 </li>
+		{% for y in list2 %}
+		<li> {{ y }} </li>
 		{% endfor %}
 		{% else %}
 		<li>{{ key }}</li>
