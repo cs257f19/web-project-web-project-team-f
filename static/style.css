@@ -329,6 +329,17 @@ p1 {
 	text-align: center;
   	margin-top: 0em;
   	margin-bottom: 1em;
+  	margin-left: 10em;
+ 	margin-right: 10em;
+	font-size: 15px;
+  	color: black;
+  	
+}
+p2 {
+	display: block;
+	text-align: center;
+  	margin-top: 0em;
+  	margin-bottom: 1em;
   	margin-left: 30em;
  	margin-right: 30em;
 	font-size: 20px;
