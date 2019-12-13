@@ -85,8 +85,6 @@ def getResults():
                 allIngredients[ingredients] = 1
                 return render_template("ingredients.html", result=allIngredients)
             ingredients = ingredients.split(",")
-            ingredients = ingredients.split("(")
-            ingredients = ingredients.split(")")
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
             return render_template("ingredients.html", result=allIngredients)
