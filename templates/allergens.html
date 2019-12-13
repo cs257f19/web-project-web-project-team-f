@@ -36,13 +36,13 @@
       <!-- Result of query -->
         {% for key, value in result.items() %}
         {% if 'WARNING!' in key %}
-        <h2>
+        <h5>
            {{ key }}
-        </h2>
+        </h5>
         {% else %}
-        <h2>
+        <h5>
             {{ key }}
-        </h2>
+        </h5>
         {% endif %}
         {% endfor %}
   </section>
