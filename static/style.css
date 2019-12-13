@@ -503,9 +503,10 @@ h3 {
   border: 5px solid black;
   padding: 5px;
   width: 500px;
-  margin-left: 300px;
+  margin: 0 auto;
+/*   margin-left: 300px;
   margin-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
 }
 /* label content of left side directly affecting right */
 #nutritionfacts td {
