@@ -59,7 +59,20 @@ $(document).ready(function(){
 	  <input id="myInput" type="text" placeholder="Search ingredients list.."><br>
 	{% else %}
         <ul id="myList2">
-                <li>{{ key }}</li>
+		{% if '(' in key %}
+		{% set list1 = key.split('(') %}
+		{% for it in list1 %}
+		<li> item1 </li>
+		{% endfor %}
+		{% elif ')' in key %}
+		{% set list2 = key.split(')') %}
+		{% for item2 in list2 %}
+		<li> item2 </li>
+		{% endfor %}
+		{% endif %}
+		{% else %}
+		<li>{{ key }}</li>
+		{% endif %}
         </ul>
 	  {% endif %}
 	  {% endfor %} 
