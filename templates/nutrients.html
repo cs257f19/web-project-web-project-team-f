@@ -35,10 +35,11 @@
   </header>
   <!-- Search Section -->
   <section class="sect1" id="sect1">
+	  <h2>Nutrient Breakdown Results</h2><br>
     <!-- Nutritional Facts Table (Results of Query)-->
 			{% for key, value in result.items() %}
 			 {% if loop.index == loop.length %}
-			<h2>Nutritional Facts:  {{ key }}</h2>
+			<h2>{{ key }}</h2>
 			 {% endif %}
  			{% endfor %}
 	  {% if result|length > 1 %}
