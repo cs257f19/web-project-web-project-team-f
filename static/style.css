@@ -79,8 +79,9 @@ ul {
 }
 #form2 {
   position: auto;
+  width: 100%;
   height: 100%;
-  border: none;
+  border: 3px solid black;
   background-color: white;
   margin: auto;
   padding-top: 0px;
@@ -129,7 +130,6 @@ fieldset {
   margin: auto;
 }
 .fieldset1 {
-  border-top: 1px solid black;
   z-index: 1000;
   font-size: 20px;
   display: block;
@@ -138,6 +138,7 @@ fieldset {
   margin-top: 0px;
   padding-left: 0px;
   padding-right: auto;
+  border: 1px groove;
   background-color: white;
 }
 .fieldset1 legend {
@@ -154,17 +155,6 @@ fieldset {
 }
 .fieldset2 {
   padding-left: 40%;
-}
-
-#form2 input[type=submit] {
-    width: 200px;
-    margin-left: auto;
-    
-}
-
-#form2 input[type=reset] {
-  width: 200px;
-    margin-right: auto;
 }
 input[type=button], input[type=submit], input[type=reset] {
   background-color: var(--nav-background-color);
