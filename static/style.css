@@ -545,7 +545,7 @@ h3 {
 /* INGREDIENT RESULTS TABLE */
 #ingredienttable {
   border: 5px solid black;
-  padding: 10px;
+  padding: 5px;
   width: 1000px;
   margin-left: 200px;
   margin-top: 5px;
@@ -553,6 +553,7 @@ h3 {
 }
 
 #ingredienttable th, td {
+  margin-top:1px;
   border:none;
   width:1000px;
 }
