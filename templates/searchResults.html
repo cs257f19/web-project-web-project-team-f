@@ -45,7 +45,7 @@ $(document).ready(function(){
     </nav>
   </header>
 	{% for key, value in result.items()%}
-	{% if result|length == 2%}
+	{% if result|length == 1%}
 	<h2>No results for "{{ key }}". Search new food. </h2>
     	<form class="example" action="/search" method="POST">
 		<fieldset>
