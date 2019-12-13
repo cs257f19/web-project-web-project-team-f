@@ -42,7 +42,6 @@ ul {
 #ingredientList {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 10px;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -524,6 +523,7 @@ h3 {
   font-size: 12px;
   letter-spacing: 2px;
   border-top-width: 2px;
+  margin-top:5px;
 }
 
 .hidden {
