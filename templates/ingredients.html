@@ -53,14 +53,14 @@ function myFunction() {
   <!-- Search Section -->
   <section class="sect1" id="sect1">
       <h2>Ingredients Results</h2> 
-     <input type="text" id="myInput2" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
  	  {% for key, value in result.items() %}
 	  {% if loop.index == 1 %}
 	  <h5>{{ key }} </h5>
 	{% else %}
+	<input type="text" id="myInput2" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
         <table id="myTable">
             <tr class="header">
-                <td>{{ key }} </td>
+                <td>{{ key }}</td>
             </tr>
         </table>
 	  {% endif %}
