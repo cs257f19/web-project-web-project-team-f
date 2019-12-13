@@ -31,7 +31,7 @@ def aboutData():
 def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
-        if len(foodsearhced) == 0:
+        if len(foodsearched) == 0:
             result = "You entered nothing."
         while foodsearched[0] == " ":
             foodsearched = foodsearched.replace(foodsearched[0],"")
