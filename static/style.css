@@ -159,6 +159,30 @@ fieldset {
   border-top: 1px solid black;
 }
 
+.fieldset3 {
+  z-index: 1000;
+  font-size: 20px;
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 5px;
+  padding-left: 0px;
+  padding-right: auto;
+  background-color: white;
+}
+.fieldset3 legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+  width:100%;
+}
+.fieldset3 .output {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+.fieldset3 input {
+  margin: .4rem;
+}
+
 input[type=button], input[type=submit], input[type=reset] {
   background-color: var(--nav-background-color);
   color: white;
