@@ -569,6 +569,11 @@ p2 {
 	
 }
 
+#myList ul {
+  list-style-type: none;
+}
+
+
 /* SEARCH FILTER OF LISTS */
 #myBtn {
   display: none;
