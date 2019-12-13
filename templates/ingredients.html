@@ -37,6 +37,7 @@
 	  {% if loop.index == 1 %}
 	  <h5>{{ key }} </h5>
 	{% else %}
+	<div style="overflow-x:auto;">  
         <div id="ingredienttable">
         <table border=1>
             
@@ -47,6 +48,7 @@
             
         </table>
         </div>
+	  </div>
 	  {% endif %}
 	  {% endfor %} 
 
