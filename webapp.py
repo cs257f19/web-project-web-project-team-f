@@ -81,6 +81,8 @@ def getResults():
             allIngredients = {}
             allIngredients[food]=0
             ingredients = ingredients[0]
+            if len(ingredients) == 1:
+                allIngredients[ingredients] = 1
             ingredients = ingredients.split(",")
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
