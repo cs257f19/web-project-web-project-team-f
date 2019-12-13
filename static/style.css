@@ -22,6 +22,10 @@ h5 {
 	margin-bottom: 0px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 #myInput  {
   width: 100%;
   padding: 12px 20px;
@@ -31,12 +35,12 @@ h5 {
   box-sizing: border-box;
 }
 	
-
+#myList2 ul {
+	margin-left:200px;
+	
+}
 
 /* Removes default styling of list  */
-ul {
-  list-style-type: none;
-}
 
 /* FORMS */
 
