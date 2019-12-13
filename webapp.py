@@ -98,8 +98,6 @@ def getResults():
                 
                 if result is True:
                    result =  "WARNING! " + food + " contains the allergen: " + allergen
-                elif result is False:
-                    result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 else:
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
                 result = {result:result}
