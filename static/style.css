@@ -142,6 +142,7 @@ fieldset {
   padding-left: 0px;
   padding-right: auto;
   background-color: white;
+  border-top: 1px solid black;
 }
 .fieldset1 legend {
   background-color: #000;
