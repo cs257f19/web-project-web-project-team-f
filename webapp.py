@@ -33,6 +33,9 @@ def getSearchResults():
         foodsearched = request.form["foodsearch"]
         while foodsearched[0] == " ":
             foodsearched = foodsearched.replace(foodsearched[0],"")
+        if len(foodsearhced) == 0:
+            result = "You entered nothing."
+            return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
             result =  "No food containing " + foodsearched + " was found."
@@ -58,7 +61,6 @@ def getResults():
     
     if request.method == "POST":
         food = request.form["food"]
-       
         if querySelection == "nutritionfacts":
             result = ds.getNutrients(food)
             finalResult = {}
