@@ -6,7 +6,7 @@
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#myList2 li").filter(function() {
+    $("#ingredientList li").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
@@ -58,7 +58,7 @@ $(document).ready(function(){
 	  <h5>{{ key }} </h5>
 	  <input id="myInput" type="text" placeholder="Search ingredients list.."><br>
 	{% else %}
-        <ul id="myList2">
+        <ul id="ingredientList">
 		{% if '(' in key %}
 		{% set list1 = key.split('(') %}
 		{% for rmparenth1 in list1 %}
