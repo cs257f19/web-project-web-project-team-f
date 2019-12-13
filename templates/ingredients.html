@@ -54,35 +54,35 @@ $(document).ready(function(){
   <section class="sect1" id="sect1">
       <h2>Ingredients Results</h2> 
  	  {% for key, value in result.items() %}
-	  {% if loop.index == 1 %}
-	  <h5>{{ key }} </h5>
-	  <input id="inputSearchFilter" type="text" placeholder="Search ingredients list.."><br>
-	{% else %}
-        <ul id="ingredientList">
-		{% if '(' in key %}
-		{% set list1 = key.split('(') %}
-		{% for rmparenth1 in list1 %}
-		<li> {{ rmparenth1 }} </li>
-		{% endfor %}
-		{% elif ')' in key %}
-		{% set list2 = key.split(')') %}
-		{% for rmparenth2 in list2 %}
-		{% if loop.index == 1 %}
-		<li> {{ rmparenth2 }} </li>
-		{% endif %}
-		{% endfor %}
-		{% elif '.' in key %}
-		{% set list3 = key.split('.') %}
-		{% for rmperiod in list3 %}
-		{% if loop.index == 1 %}
-		<li> {{ rmperiod }} </li>
-		{% endif %}
-		{% endfor %}
+	  	{% if loop.index == 1 %}
+	  		<h5>{{ key }} </h5>
+	  		<input id="inputSearchFilter" type="text" placeholder="Search ingredients list.."><br>
 		{% else %}
-		<li>{{ key }}</li>
-		{% endif %}
-        </ul>
-	  {% endif %}
+        		<ul id="ingredientList">
+			{% if '(' in key %}
+				{% set list1 = key.split('(') %}
+				{% for rmparenth1 in list1 %}
+				<li> {{ rmparenth1 }} </li>
+				{% endfor %}
+			{% elif ')' in key %}
+				{% set list2 = key.split(')') %}
+				{% for rmparenth2 in list2 %}
+					{% if loop.index == 1 %}
+						<li> {{ rmparenth2 }} </li>
+					{% endif %}
+				{% endfor %}
+			{% elif '.' in key %}
+				{% set list3 = key.split('.') %}
+				{% for rmperiod in list3 %}
+					{% if loop.index == 1 %}
+						<li> {{ rmperiod }} </li>
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				<li>{{ key }}</li>
+			{% endif %}
+       			</ul>
+	  	{% endif %}
 	  {% endfor %} 
 
   </section>
