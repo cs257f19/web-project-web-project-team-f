@@ -157,14 +157,13 @@ fieldset {
 }
 
 #form2 input[type=submit] {
-   width: 100px;
+    width: 200px;
     margin-left: auto;
-    margin-right: auto;
+    
 }
 
 #form2 input[type=reset] {
-  width: 100px;
-    margin-left: auto;
+  width: 200px;
     margin-right: auto;
 }
 input[type=button], input[type=submit], input[type=reset] {
