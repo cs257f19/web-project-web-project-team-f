@@ -134,7 +134,7 @@ fieldset {
   display: block;
   margin-left: 2px;
   margin-right: 2px;
-  margin-top: 0px;
+  margin-top: 5px;
   padding-left: 0px;
   padding-right: auto;
   background-color: white;
@@ -153,6 +153,10 @@ fieldset {
 }
 .fieldset2 {
   padding-left: 40%;
+}
+
+.fieldset3 {
+  border-top: 1px solid black;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
