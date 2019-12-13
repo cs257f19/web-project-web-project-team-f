@@ -90,6 +90,10 @@ ul {
   margin-right: 20px;
 }
 
+#form2 input[type=submit] {
+  margin-left: 25%;
+}
+
 form.example input[type=search] {
   -webkit-appearance: textfield;
   padding: 10px;
