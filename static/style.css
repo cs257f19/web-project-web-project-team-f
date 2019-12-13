@@ -42,14 +42,12 @@ ul {
 #ingredientList {
   list-style-type: none;
   padding-left: 20px;
-   padding-right: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-right: 20px;
 }
 
 #ingredientList li {
   border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
+  margin-top: 0px; /* Prevent double borders */
   text-align:center;
   background-color: #f6f6f6;
   padding: 12px;
