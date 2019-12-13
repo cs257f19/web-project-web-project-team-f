@@ -15,9 +15,6 @@
 }
 
 
-
-/* Removes default styling of list  */
-
 /* FORMS */
 
 #form1 {
@@ -327,9 +324,15 @@ h6 {
 }
 
 p1 {
+	display: block;
+	text-align: center;
+  	margin-top: 1em;
+  	margin-bottom: 1em;
+  	margin-left: 10em;
+ 	margin-right: 10em;
 	font-size: 15px;
   	color: black;
-  	text-align: center;
+  	
 }
 .sect_header {
   color: white;
