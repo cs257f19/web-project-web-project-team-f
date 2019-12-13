@@ -9,15 +9,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="container"> 
+<div class="container">
   <!-- Navigation -->
-  <header> 
-    <h4 class="logo"> 
+  <header>
+    <h4 class="logo">
 	    <a href="http://perlman.mathcs.carleton.edu:5219">
 		<img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
 		</a>
 	  </h4>
-	       
+
     <nav>
      <ul>
         <li><a href="http://perlman.mathcs.carleton.edu:5219">HOME</a></li>
@@ -40,16 +40,17 @@
   <section class="about" id="about">
     <h2 class="hidden">About Data</h2>
 	  <p class="text_column"><a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database/resource/c929dc84-1516-4ac7-bbb8-c0c191ca8cec" class="button">USDA Branded Food Product Database</a><br>
-		<strong>Our Data Source</strong><br>According to the USDA, their Branded Food Products database
+		<br><headers><strong>Our Data Source</strong></headers><br>
+        According to the USDA, their Branded Food Products database
 	      was created by a Public-Private Partnership aiming to “enhance public health” and “sharing of
-	     open data” of branded foods and private label data. The database includes branded products 
-              listed by Nutrient Database Number (NDB) and each product's corresponding nutritional values,
-	      serving size information, and ingredients list. The database is frequently updated when new
-		information is received and processed. Nutrek uses a BFPD data file that is current as of July 13, 2018.
-		  
+	      open data” of branded foods and private label data. The database includes branded products
+        listed by Nutrient Database Number (NDB) and each product's corresponding nutritional values,
+        serving size information, and ingredients list. The database is frequently updated when new
+		    information is received and processed. Nutrek uses a BFPD data file that is current as of July 13, 2018.
+
 	  </p>
 		<p class="text_column"><a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database/resource/c929dc84-1516-4ac7-bbb8-c0c191ca8cec" class="button">Overview of Dataset</a><br>
-			<strong>Data set files</strong><br>
+			<br><headers><strong>Data set files</strong></headers><br>
 			USDA Branded Food Products Database - ASCII csv file, 07/13/2018<br>
         		BFPD_csv_07132018.zip<br>
        			BFD_Doc.pdf<br>
@@ -60,62 +61,79 @@
         		Nutrients.csv<br>
         		Nutrients file<br>
         		Derivation_Code_Description.csv<br>
-        		Derivations Code Description file<br>
-			<strong>Data formats</strong><br>
+        		Derivations Code Description file<br><br>
+			<headers><strong>Data formats</strong></headers><br>
 			.zip containing .csv files<br>
-	  </p>	
+	  </p>
+
 		<p class="text_column"><a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database/resource/c929dc84-1516-4ac7-bbb8-c0c191ca8cec" class="button">Technical Documentation</a><br>
-        <strong>Terms of Use</strong><br>
-	Data set intended for public use (USDA.gov)<br>
-	<strong> License</strong><br>
-	U.S. Public Domain<br>
-	<strong> Suggested Citation</strong><br>
-        (original article) Kretser, A., Murphy, D., & Starke-Reed, P. (2017). A partnership for public health: USDA branded food products database. Journal of Food Composition and Analysis, 64, 10-12. https://doi.org/10.1016/j.jfca.2017.07.019<br>
-        (dataset) Pehrsson, Pamela R.; Haytowitz, David B.; McKillop, Kyle A.; Moore, G.; Finley, John W.; Fukagawa, Naomi K. (2018) USDA Branded Food Products Database . USDA Agricultural Research Service https://data.nal.usda.gov/dataset/usda-branded-food-products-database<br>
-	  </p>  
+      <br><headers><strong>Terms of Use</strong></headers><br>
+    	Data set intended for public use (USDA.gov)<br><br>
+
+    	<headers><strong> License</strong></headers><br>
+    	U.S. Public Domain<br><br>
+
+    	<headers><strong> Suggested Citation</strong></headers><br>
+            (original article) Kretser, A., Murphy, D., & Starke-Reed, P. (2017).
+            A partnership for public health: USDA branded food products database.
+            Journal of Food Composition and Analysis, 64, 10-12.<br> https://doi.org/10.1016/j.jfca.2017.07.019<br>
+            (dataset) Pehrsson, Pamela R.; Haytowitz, David B.; McKillop, Kyle A.;
+            Moore, G.; Finley, John W.; Fukagawa, Naomi K. (2018) USDA Branded Food Products Database .
+            USDA Agricultural Research Service https://data.nal.usda.gov/dataset/usda-branded-food-products-database<br>
+	  </p>
 	  	</section>
 	<section class="about" id="about">
-		<p class="text_column">
-			<strong>Modification to data</strong><br>
-			Our main commitment is providing more general information on nutrients per serving size, ingredients, and helping those with food allergies stay safe and be informed about what is in the foods they want to eat. We only used the following in our cleaned up data set:<br>
-			- product name <br>
-			- nutrients on the Nutrition Facts Panel per serving size and 100 gram-basis, 100 ml-basis, or fluid oz-basis, ingredient list, (never before captured by USDA)<br>
-			and excluded serving size in grams or milliliters, manufacturer, and date stamp associated with the most current product formulation. Allergens and ingredient breakdown only require ingredients in each product, while nutrient breakdown only involves nutrients per serving amount. The official product name (without manufacturer) is used to identify food product. 
 
-	  </p>	
+    <p class="text_column">
+			<headers><strong>Modification to data</strong></headers><br>
+
+			Our main commitment is providing more general information on nutrients per serving size, ingredients,
+      and helping those with food allergies stay safe and be informed about what is in the foods they want to eat.
+      We only used the following in our cleaned up data set:<br>
+			- product name <br>
+			- nutrients on the Nutrition Facts Panel per serving size and 100 gram-basis,
+      100 ml-basis, or fluid oz-basis, ingredient list, (never before captured by USDA)<br>
+			and excluded serving size in grams or milliliters, manufacturer,
+      and date stamp associated with the most current product formulation.<br>
+      Allergens and ingredient breakdown only require ingredients in each product,
+      while nutrient breakdown only involves nutrients per serving amount. <br>
+      The official product name (without manufacturer) is used to identify food product.
+	  </p>
+
 		<p class="text_column">
-        <strong>Sources</strong><br>
+        <headers><strong>Sources</strong></headers><br>
 	We would like to thank Amy Csizmar Dalal, USDA, and Adobe Inc. (Dreamweaver 2020, AdobeStock, Photoshop) for making this project possible. <br>
 			~Nutrek Creators: Aishee Mukherji, Eric Odoom, Lydia Chau<br>
-	
-	  </p>  
+
+	  </p>
+
 		<p class="text_column">
-		<table> 
-			<tr> <th><strong>About Data: Fast Facts</strong></th></tr>
-		  <tr>
-    			<td>Date Downloaded</td>
+			  <headers><strong>About Data: Fast Facts</strong></headers>
+    <table>
+		  <tr class="spaceUnder">
+    			<td>Date Downloaded:</td>
     			<td>10/08/19</td>
   		  </tr>
-  		<tr>
-    			<td>Publisher</td>
+  		<tr class="spaceUnder">
+    			<td>Publisher:</td>
    		 <td>USDA Agricultural Research Services</td>
   		</tr>
- 		 <tr>
-    		<td>Authors</td>
+ 		 <tr class="spaceUnder">
+    		<td>Authors:</td>
     		<td>Pehrsson, Pamela R.,Haytowitz,<br> David B., McKillop,<br> Kyle A.,<br> Moore, G., Finley,<br> John W.,Fukagawa,<br> Naomi K.</td>
   		</tr>
-  		<tr>
-   		 <td>Region covered</td>
+  		<tr class="spaceUnder">
+   		 <td>Region covered:</td>
    		 <td>United States of America</td>
   		</tr>
 		</table>
-		  
+
 	  </p>
 	  	</section>
 
 
-	
- 
+
+
    <!-- Copyrights Section -->
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
 </div>
