@@ -65,7 +65,7 @@ $(document).ready(function(){
 		<li> {{ x }} </li>
 		{% endfor %}
 		{% elif ')' in key %}
-		{% set list2 = key.split(')') %}
+		{% set list2 = key.split(') ') %}
 		{% for y in list2 %}
 		<li> {{ y }} </li>
 		{% endfor %}
