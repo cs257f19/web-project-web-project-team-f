@@ -39,7 +39,7 @@
     <!-- Nutritional Facts Table (Results of Query)-->
 			{% for key, value in result.items() %}
 			 {% if loop.index == loop.length %}
-			<h2>{{ key }}</h2>
+			<h5>{{ key }}</h5>
 			 {% endif %}
  			{% endfor %}
 	  {% if result|length > 1 %}
