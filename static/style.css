@@ -554,6 +554,7 @@ ul {
 
 #ingredientList ul {
   list-style-type: none;
+  padding-bottom: 10px;
 }
 
 #ingredientList li {
