@@ -80,7 +80,7 @@ ul {
 #form2 {
   position: auto;
   height: 100%;
-  border: 3px solid black;
+  border: none;
   background-color: white;
   margin: auto;
   padding-top: 0px;
@@ -137,7 +137,6 @@ fieldset {
   margin-top: 0px;
   padding-left: 0px;
   padding-right: auto;
-  border: 1px groove;
   background-color: white;
 }
 .fieldset1 legend {
