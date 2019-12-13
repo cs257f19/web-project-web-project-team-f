@@ -162,6 +162,20 @@ input[type=button], input[type=submit], input[type=reset] {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
+.button {
+  background-color: var(--nav-background-color);
+  color: white;
+  border: 2px solid black;
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 2px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: var(--nav-background-hover-color);
   color: white;
