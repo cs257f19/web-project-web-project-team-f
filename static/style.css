@@ -157,11 +157,15 @@ fieldset {
 }
 
 #form2 input[type=submit] {
-  margin:auto;
+   width: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #form2 input[type=reset] {
-  margin:auto;
+  width: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 input[type=button], input[type=submit], input[type=reset] {
   background-color: var(--nav-background-color);
