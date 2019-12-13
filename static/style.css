@@ -540,9 +540,9 @@ p2 {
 
 
 /* INGREDIENTS DISPLAY */
-/* ul {
+ul {
   list-style-type: none;
-} */
+}
 
 #ingredientList {
   list-style-type: none;
@@ -568,11 +568,6 @@ p2 {
   display: block
 	
 }
-
-#myList ul {
-  list-style-type: none;
-}
-
 
 /* SEARCH FILTER OF LISTS */
 #myBtn {
