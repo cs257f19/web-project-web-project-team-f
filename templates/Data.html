@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/static/style1.css">
-    <title>Nutrek</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutrek</title>
+<link href="/static/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-    <div class="container">
-        <a href="http://perlman.mathcs.carleton.edu:5219">
-            <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
-        </a>
-
-        <!-- Navigation menu -->
-        <div class="navbar">
-            <a href="http://perlman.mathcs.carleton.edu:5219">Home</a>
-            <a href="http://perlman.mathcs.carleton.edu:5219/data">About Food Database</a>
-        </div>
-
-   <h3>About Our Database</h3>
-
-      <p3>
+<div class="container"> 
+  <!-- Navigation -->
+  <header> 
+    <h4 class="logo"> 
+	    <a href="http://perlman.mathcs.carleton.edu:5219">
+		<img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
+		</a>
+	  </h4>
+	       
+    <nav>
+      <ul>
+        <li><a href="http://perlman.mathcs.carleton.edu:5219">HOME</a></li>
+        <li><a href="http://perlman.mathcs.carleton.edu:5219/data">ABOUT OUR DATABASE</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Search Section -->
+  <section class="sect3" id="sect3">
+    <span class="background-image" role="img" aria-label="banner image of food"> </span>
+	  <h1>About Our Database</h1>
+  </section>
+  <p3>
         Nutrek generates all reports based on data from the United States Department of Agriculture's (USDA) Branded Food Products Database (BFPD). According to the USDA, their database was created by a Public-Private Partnership aiming to “enhance public health” and “sharing of open data” of branded foods and private label data. The database includes branded products listed by Nutrient Database Number (NDB) and each product's corresponding nutritional values, serving size information, and ingredients list. The database is frequently updated when new information is received and processed. Data used in the BFPD download file is current as of July 13, 2018.<br><br>
 		  <a href="
         https://data.nal.usda.gov/dataset/usda-branded-food-products-database/resource/c929dc84-1516-4ac7-bbb8-c0c191ca8cec
@@ -66,8 +73,28 @@
         (dataset) Pehrsson, Pamela R.; Haytowitz, David B.; McKillop, Kyle A.; Moore, G.; Finley, John W.; Fukagawa, Naomi K. (2018) USDA Branded Food Products Database . USDA Agricultural Research Service https://data.nal.usda.gov/dataset/usda-branded-food-products-database<br />
         <br />
       </p4>
-
-</div
-
-  </body>
+  <!-- About Site Features -->
+  <div class="aboutsite">
+    <div class="thumbnail">
+      <h3 class="stats">Nutrition</h3>
+      <h4>Get the real nutritional facts.</h4>
+      <p>Find out what nutrients are in your food, and how much.</p>
+    </div>
+    <div class="thumbnail">
+      <h3 class="stats">Ingredients</h3>
+      <h4>Know what's in your meal.</h4>
+      <p>See a full list of ingredients that are in a specific food product.</p>
+    </div>
+    <div class="thumbnail">
+      <h3 class="stats">Food Allergies</h3>
+      <h4>Avoid food allergens.</h4>
+      <p>Got food allergies? Find out if a food contains your food allergen.</p>
+    </div>
+  </div>
+  
+   <!-- Copyrights Section -->
+  <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
+</div>
+<!-- Main Container Ends -->
+</body>
 </html>
