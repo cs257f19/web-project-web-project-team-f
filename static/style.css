@@ -86,7 +86,7 @@ ul {
   padding-bottom: 10px;
   float: left;
   margin-left: 25px;
-  margin-right: 25px;
+  margin-right: auto;
 }
 
 #form2 input[type=submit] {
