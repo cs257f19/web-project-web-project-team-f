@@ -14,40 +14,6 @@
   }
 }
 
-ul {
-  list-style-type: none;
-}
-
-#inputSearchFilter  {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size:15px;
-}
-	
-#ingredientList {
-  list-style-type: none;
-  margin-top:0px;
-  margin-bottom:0px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-#ingredientList li {
-  border: 1px solid #ddd;
-  margin: -1px; /* Prevent double borders */
-  text-align:center;
-  background-color: #f6f6f6;
-  padding: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block
-	
-}
 
 
 /* Removes default styling of list  */
@@ -177,6 +143,12 @@ input[type=button], input[type=submit], input[type=reset] {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
+.button:hover {
+  background-color: var(--nav-background-hover-color);
+  color: white;
+}
+
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: var(--nav-background-hover-color);
   color: white;
@@ -229,55 +201,6 @@ input[type=radio]:checked+label {
 
 input[type=radio]+label {
 	padding: 0px;
-}
-
-
-
-
-/* SEARCH RESULTS SCROLLABLE SECTION */
-div.scroll {
-  margin: auto;
-  width: 100%;
-  height: 300px;
-  overflow-x: hidden;
-  overflow-x: auto;
-  text-align: justify;
-}
-div.scroll::-webkit-scrollbar {
-  width: 1em;
-}
-/* Buttons */
-div.scroll::-webkit-scrollbar-button {
-  background-color: #bbbbbb;
-  display: block;
-  border-style: solid;
-  height: 18px;
-  width: 16px;
-}
-/* Up */
-div.scroll::-webkit-scrollbar-button:vertical:decrement {
-  border-width: 0 10px 10px 10px;
-  border-color: transparent transparent #555555 transparent;
-}
-
-div.scroll::-webkit-scrollbar-button:vertical:decrement:hover {
-  border-color: transparent transparent #777777 transparent;
-}
-/* Down */
-div.scroll::-webkit-scrollbar-button:vertical:increment {
-  border-width: 10px 10px 0 10px;
-  border-color: #555555 transparent transparent transparent;
-}
-
-div.scroll::-webkit-scrollbar-button:vertical:increment:hover {
-  border-color: #777777 transparent transparent transparent;
-}
-div.scroll::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-div.scroll::-webkit-scrollbar-thumb {
-  background-color: #515151;
-  outline: 1px solid slategrey;
 }
 
 
@@ -336,7 +259,7 @@ ul li:hover a {
   color: white;
 }
 
-/*Search box in navigation*/
+/* NAVIGATION SEARCH BOX */
 .search-boxY {
   position: absolute;
   top: 4%;
@@ -373,7 +296,7 @@ body {
   font-weight: 200;
 }
 
-/* HEADING STYLES  */
+/* HEADING AND PARAGRAPH STYLES  */
 h1 {
   font-size: 40px;
   color: white;
@@ -460,7 +383,7 @@ p1 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* About Section */
+/* ABOUT SECTION (3 COLUMN DIVIDED) */
 .text_column {
   width: 29%;
   text-align: justify;
@@ -520,29 +443,6 @@ p1 {
   color: #112e51;
   font-size: 18px;
 }
-
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: red;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  border-radius: 4px;
-}
-
-#myBtn:hover {
-  background-color: #555;
-}
-
 
 
 /*COPYRIGHT*/
@@ -612,6 +512,112 @@ p1 {
 #nutritionfacts div.labellight {
   float: left;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* INGREDIENTS DISPLAY */
+ul {
+  list-style-type: none;
+}
+
+#ingredientList {
+  list-style-type: none;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#ingredientList li {
+  border: 1px solid #ddd;
+  margin: -1px; /* Prevent double borders */
+  text-align:center;
+  background-color: #f6f6f6;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+	
+}
+
+/* SEARCH FILTER OF LISTS */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+#inputSearchFilter  {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size:15px;
+}
+
+/* SEARCH RESULTS SCROLLABLE SECTION */
+div.scroll {
+  margin: auto;
+  width: 100%;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: justify;
+}
+div.scroll::-webkit-scrollbar {
+  width: 1em;
+}
+/* Buttons */
+div.scroll::-webkit-scrollbar-button {
+  background-color: #bbbbbb;
+  display: block;
+  border-style: solid;
+  height: 18px;
+  width: 16px;
+}
+/* Up */
+div.scroll::-webkit-scrollbar-button:vertical:decrement {
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #555555 transparent;
+}
+
+div.scroll::-webkit-scrollbar-button:vertical:decrement:hover {
+  border-color: transparent transparent #777777 transparent;
+}
+/* Down */
+div.scroll::-webkit-scrollbar-button:vertical:increment {
+  border-width: 10px 10px 0 10px;
+  border-color: #555555 transparent transparent transparent;
+}
+
+div.scroll::-webkit-scrollbar-button:vertical:increment:hover {
+  border-color: #777777 transparent transparent transparent;
+}
+div.scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+div.scroll::-webkit-scrollbar-thumb {
+  background-color: #515151;
+  outline: 1px solid slategrey;
 }
 
 /*ACCESSIBILITY ON OTHER DEVICES*/
