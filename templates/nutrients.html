@@ -41,6 +41,7 @@
 			<h2>Nutritional Facts:  {{ key }}</h2>
 			 {% endif %}
  			{% endfor %}
+	  {% if result|length > 1 %}
 			<div id="nutritionfacts">
 				<table width="500" cellspacing="0" cellpadding="0">
 					<tbody>
@@ -80,6 +81,7 @@
 					</tbody>
 				</table>
 			</div>
+	{% endif %}
 <script>
 //Get the button
 var mybutton = document.getElementById("myBtn");
