@@ -65,9 +65,11 @@ $(document).ready(function(){
 		<li> {{ x }} </li>
 		{% endfor %}
 		{% elif ')' in key %}
-		{% set list2 = key.split(') ') %}
-		{% for y in list2 %}
+		{% set list2 = key.split(')') %}
+		{% for y in list2 if%}
+		{% if loop.index == 1 %}
 		<li> {{ y }} </li>
+		{% endif %}
 		{% endfor %}
 		{% else %}
 		<li>{{ key }}</li>
