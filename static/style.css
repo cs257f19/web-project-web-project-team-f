@@ -553,7 +553,7 @@ h3 {
 }
 
 #ingredienttable th, td {
-  margin-top:1px;
+  margin-top:0px;
   border:none;
   width:1000px;
 }
