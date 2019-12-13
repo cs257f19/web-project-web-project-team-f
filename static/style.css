@@ -83,7 +83,7 @@ ul {
   border: none;
   background-color: white;
   margin: auto;
-  padding-top: 5px;
+  padding-top: 0px;
   padding-bottom: 10px;
   float: left;
   margin-left: 20px;
@@ -137,7 +137,6 @@ fieldset {
   margin-top: 0px;
   padding-left: 0px;
   padding-right: auto;
-  border-top: 1px solid black;
   background-color: white;
 }
 .fieldset1 legend {
@@ -155,15 +154,16 @@ fieldset {
 .fieldset2 {
   padding-left: 40%;
 }
+
 input[type=button], input[type=submit], input[type=reset] {
   background-color: var(--nav-background-color);
   color: white;
   border: 2px solid black;
+  width: 25%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 30px;
-  margin-left:50%;
   margin: 2px 2px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
