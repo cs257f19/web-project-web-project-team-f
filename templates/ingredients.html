@@ -33,12 +33,11 @@
   <!-- Search Section -->
   <section class="sect1" id="sect1">
       <h2>Ingredients Results</h2> 
-	  <input type="text" id="myInput2" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
  	  {% for key, value in result.items() %}
 	  {% if loop.index == 1 %}
 	  <h5>{{ key }} </h5>
+	  <input type="text" id="myInput2" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 	{% else %}
-	<div style="overflow-x:auto;">  
         <div id="ingredienttable">
         <table id="myTable">
             <tr class="header">
@@ -46,17 +45,8 @@
             </tr>
         </table>
         </div>
-	</div>
 	  {% endif %}
 	  {% endfor %} 
-
-  </section>
-  
-  
-   <!-- Copyrights Section -->
-  <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
-</div>
-<!-- Main Container Ends -->
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
@@ -77,5 +67,13 @@ function myFunction() {
   }
 }
 </script>
+  </section>
+  
+  
+   <!-- Copyrights Section -->
+  <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
+</div>
+<!-- Main Container Ends -->
+
 </body>
 </html>
