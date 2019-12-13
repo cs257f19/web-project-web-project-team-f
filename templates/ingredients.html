@@ -31,8 +31,8 @@
     </nav>
   </header>
   <!-- Search Section -->
-  <section class="sect1" id="sect1">
-      <h2>Ingredients Results</h2>
+<!--   <section class="sect1" id="sect1">
+      <h2>Ingredients Results</h2> -->
 <!-- 	  {% for key, value in result.items() %}
 	  {% if loop.index == 1 %}
 	  <h5>{{ key }} </h5>
@@ -49,6 +49,55 @@
         </div>
 	  {% endif %}
 	  {% endfor %} -->
+	 <section class="sect1" id="sect1">
+	  <h2>Nutrient Breakdown Results</h2><br>
+    <!-- Nutritional Facts Table (Results of Query)-->
+			{% for key, value in result.items() %}
+			 {% if loop.index == loop.length %}
+			<h5>{{ key }}</h5>
+			 {% endif %}
+ 			{% endfor %}
+<!-- 	  {% if result|length > 1 %} -->
+			<div id="Ingredients">
+				<table width="500" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<td align="center" class="header">Ingredients</td>
+						</tr>
+						<tr>
+							<div class="line"></div>
+						</tr>
+						<tr style="height: 7px">
+							<td bgcolor="#000000"></td>
+						</tr>
+						<tr>
+							<td>
+								<div class="line">
+									<div class="label">Ingredient</div>
+								</div>
+								<div style="padding-top: 1px; float: right;" class="labellight">
+									<div class="weight">Index</div>
+								</div>
+							</td>
+						</tr>
+						<!--Outputting data from dictionary-->
+						{% for key, value in result.items() %}
+						{% if loop.index < loop.length %}
+						<tr>
+							<td class="indent">
+								<div class="line">
+									<div class="labellight">{{ key }}
+									</div>
+									<div class="dv">{{value}}</div>
+								</div>
+							</td>
+						</tr>
+						{% endif %}
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+	{% endif %}
   </section>
   
   
