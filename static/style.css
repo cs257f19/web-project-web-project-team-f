@@ -29,7 +29,7 @@ ul {
   list-style-type: none;
 }
 
-#myInput  {
+#inputSearchFilter  {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -39,13 +39,13 @@ ul {
   font-size:15px;
 }
 	
-#myList2 {
-	list-style-type: none;
-        padding: 0;
-        margin: 0;	
+#ingredientList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;	
 }
 
-#myList2 li {
+#ingredientList li {
   border: 1px solid #ddd;
   margin-top: -1px; /* Prevent double borders */
   text-align:center;
@@ -58,7 +58,7 @@ ul {
 	
 }
 
-#myList2 li:hover {
+#ingredientList li:hover {
  background-color: #eee;	
 }
 
@@ -574,21 +574,7 @@ h3 {
   float: left;
   font-family: Arial, Helvetica, sans-serif;
 }
-/* INGREDIENT RESULTS TABLE */
-#ingredienttable {
-  border: 5px solid black;
-  padding: 5px;
-  width: 1000px;
-  margin-left: 200px;
-  margin-top: 5px;
-  font-size: 25px;
-}
 
-#ingredienttable th, td {
-  margin-top:0px;
-  border:none;
-  width:1000px;
-}
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
 @media (max-width: 320px) {
