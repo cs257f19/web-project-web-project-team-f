@@ -39,7 +39,7 @@ $(document).ready(function(){
         <li><a href="http://perlman.mathcs.carleton.edu:5219/data">ABOUT OUR DATABASE</a></li>
       </ul>
       <form class="search-boxY" action="/search" method="POST">
-        <input type="search" name="foodsearch" placeholder="Search for a food..">
+        <input type="search" name="foodsearch" placeholder="Search for a food...">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </nav>
@@ -49,7 +49,7 @@ $(document).ready(function(){
 	<h2>No results for "{{ key }}". Search new food. </h2>
     	<form class="example" action="/search" method="POST">
 		<fieldset>
-			<input type="search" placeholder="Search.." name="foodsearch">
+			<input type="search" placeholder="Search new food..." name="foodsearch">
   			<button type="submit"><i class="fa fa-search"></i></button>
 		</fieldset>	
     	</form>
@@ -61,7 +61,7 @@ $(document).ready(function(){
   {% if result|length > 1 %}
 <form action="/results" id="form2" method="POST">
     <fieldset div class="fieldset1">
-	    <legend><strong>1) Select the best match or narrow down the list by entering key words below. </strong> <input id="inputSearchFilter" type="text" placeholder="Narrow search results.."></legend>
+	    <legend><strong>1) Select the best match or narrow down the list by entering key words below. </strong> <input id="inputSearchFilter" type="text" placeholder="Narrow search results..."></legend>
       <div class="scroll">
 	      
 
