@@ -32,17 +32,23 @@
   </header>
   <!-- Search Section -->
   <section class="sect1" id="sect1">
-      <h2>Ingredients in your food</h2>
+      <h2>Ingredients Results</h2>
+	  {% for key, value in result.items() %}
+	  {% if loop.index == 1 %}
+	  <h5>{{ key }} </h5>
+	{% else %}
         <div id="ingredienttable">
         <table border=1>
-            {% for key, value in result.items() %}
+            
             <tr>
                 <th>{{ key }} </td>
                  
             </tr>
-            {% endfor %}
+            
         </table>
         </div>
+	  {% endif %}
+	  {% endfor %}
   </section>
   
   
