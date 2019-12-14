@@ -115,7 +115,7 @@ input[type=button], input[type=submit], input[type=reset] {
   background-color: var(--nav-background-color);
   color: white;
   border: 2px solid black;
-  width: 100%;
+  width: 75%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
