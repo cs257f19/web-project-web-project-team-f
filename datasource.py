@@ -33,7 +33,7 @@ class Nutrek:
             food - USDA Branded Food Product name of interest
         RETURN:
             a dictionary with pairs of nutrient and amount of that nutrient in the specified food product.
-            If sum of nutrient amounts is 0, no nutrition data available for specified food.
+            Note: If sum of nutrient amounts is 0, no nutrition data available for specified food.
         '''
         if food == "":
             return None
@@ -93,7 +93,8 @@ class Nutrek:
         PARAMETERS:
             food - USDA Branded Food Product name of interest
         RETURN:
-            a list of ingredients in the specified food product 
+            a list of ingredients in the specified food product
+            "No known ingredients" if no ingredients exist for a given food product.
         '''
         if food == "":
             return None
@@ -122,7 +123,8 @@ class Nutrek:
         PARAMETERS:
             food - USDA Branded Food Product name of interest
         RETURN:
-            first food product in database containing/resembling specified food name.
+            food products in database containing/resembling specified food name.
+            if no food product name resembles input food, returns none.
             '''
         if food == "":
             return None
