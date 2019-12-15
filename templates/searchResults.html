@@ -92,8 +92,8 @@ $(document).ready(function(){
     </fieldset>
   </form>
     <script>
-   $('#yesCheck').change(function () {
-    if !(this.checked) {
+   $('#noCheck').change(function () {
+    if (this.checked) {
         $('#yes').prop('required', false);
     } else {
         $('#yes').prop('required', true);
