@@ -86,8 +86,9 @@ ul li:hover a {
 }
 .search-boxY .fa {
   -webkit-appearance: none;
-  padding-top: 6px;
-  padding-bottom: 3px;
+  height:15px;
+  padding-top: 7.5px;
+  padding-bottom: 4px;
   cursor: pointer;
 }
 /* Body */
@@ -385,7 +386,6 @@ input[type=radio] + label {
   float: left;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom:5px;
   color: black;
 }
 .about {
