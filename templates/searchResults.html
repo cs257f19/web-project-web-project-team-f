@@ -20,18 +20,7 @@ $(document).ready(function(){
     		else document.getElementById('ifYes').style.display = 'none';
 		}
 </script>
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
-        $("#yesCheck").click(function() {
-            $("#yes").prop("required", false);
-            $("#yes").prop("disabled", true);
-        });
-        $("#yesCheck").click(function() {
-            $("#yes").prop("required", true);
-            $("#yes").prop("disabled", false);
-            $("#yes").focus();
-        });
-    </script>	
+
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,6 +53,18 @@ $(document).ready(function(){
       <button type="submit"><i class="fa fa-search"></i></button>
     </fieldset>
   </form>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $("#yesCheck").click(function() {
+            $("#yes").prop("required", false);
+            $("#yes").prop("disabled", true);
+        });
+        $("#yesCheck").click(function() {
+            $("#yes").prop("required", true);
+            $("#yes").prop("disabled", false);
+            $("#yes").focus();
+        });
+    </script>	
   {% elif loop.index == 1 %}
   <h2> Search results for "{{value}}" </h2>
   {% endif %}
