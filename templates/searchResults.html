@@ -20,11 +20,18 @@ $(document).ready(function(){
     		else document.getElementById('ifYes').style.display = 'none';
 		}
 </script>
-<script>
-document.getElementById("yesCheck").addEventListener('change', function(){
-    document.getElementById("yes").required = this.checked ;
-})
-</script>	
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $("#yesCheck").click(function() {
+            $("#yes").prop("required", false);
+            $("#yes").prop("disabled", true);
+        });
+        $("#yesCheck").click(function() {
+            $("#yes").prop("required", true);
+            $("#yes").prop("disabled", false);
+            $("#yes").focus();
+        });
+    </script>	
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,7 +94,7 @@ document.getElementById("yesCheck").addEventListener('change', function(){
       <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck" required>
       Food Allergies?
       <div id="ifYes" style="display:none"> Enter Allergen:
-        <input style="font-size:15px;" type="text" id="yes" name="allergen" placeholder="e.g. nut or milk">
+        <input style="font-size:15px;" type="text" name="allergen" id="yes" placeholder="e.g. nut or milk" disabled>
       </div>
     </fieldset>
     <fieldset div class="fieldset1">
