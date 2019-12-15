@@ -101,12 +101,10 @@ def getResults():
                 result = {"You did not enter an allergen.":0}
             else:
                 result = ds.containsAllergen(food, allergen)
-                print(result, "Over here, Aishee")
                 if result is True:
                    result =  "WARNING! " + food + " contains the allergen: " + allergen
                 elif None in [result]:
-                    result = "Here again Mama"
-                    result = {result:result}
+                    result = "We are unable to search for any food allergens in " + food + " since it does not have any ingredients data in the database." 
                     return render_template("allergens.html", result=result)
                 else:
                     result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
