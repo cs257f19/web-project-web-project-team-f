@@ -92,9 +92,13 @@ $(document).ready(function(){
     </fieldset>
   </form>
     <script>
-        document.getElementById("yesCheck").addEventListener('change', function(){
-        document.getElementById("yes").required = this.checked ;
-})
+        $('#yesCheck').change(function () {
+    if(this.checked) {
+        $('#yes').prop('required', true);
+    } else {
+        $('#yes').prop('required', false);
+    }
+});
     </script>	
   {% endif %} 
   <!-- Copyrights Section -->
