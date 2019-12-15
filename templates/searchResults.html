@@ -21,13 +21,9 @@ $(document).ready(function(){
 		}
 </script>
 <script>
-$('#yesCheck').change(function () {
-    if(this.checked) {
-        $('#yes').prop('required', true);
-    } else {
-        $('#yes').prop('required', false);
-    }
-});
+document.getElementById("yesCheck").addEventListener('change', function(){
+    document.getElementById("yes").required = this.checked ;
+})
 </script>	
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,12 +82,12 @@ $('#yesCheck').change(function () {
       <legend><strong>2) What do you want to know about this food?</strong></legend>
       <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required>
       Nutrient Breakdown
-      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck">
+      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck" required>
       Ingredients
-      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck">
+      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck" required>
       Food Allergies?
       <div id="ifYes" style="display:none"> Enter Allergen:
-        <input style="font-size:15px;" type="text" id="yes" name="allergen" placeholder="e.g. nut or milk" required>
+        <input style="font-size:15px;" type="text" id="yes" name="allergen" placeholder="e.g. nut or milk">
       </div>
     </fieldset>
     <fieldset div class="fieldset1">
