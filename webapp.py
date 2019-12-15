@@ -31,11 +31,12 @@ def aboutData():
 def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
+        if foodsearched is None:
+            result = "No food " + foodsearched 
+            result = {result:result}
+            return render_template("searchResults.html", result=result)
         if len(foodsearched) == 0:
             result = "You entered nothing."
-#         while foodsearched[0] == " ":
-#             foodsearched = foodsearched.replace(foodsearched[0],"")
-#             return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
             result =  "No food containing " + foodsearched + " was found."
@@ -73,7 +74,7 @@ def getResults():
                 finalResult[key] = result[key]
             return render_template("nutrients.html", result=finalResult)
         
-        elif querySelection == "ingredients":
+        if querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
             
             if ingredients is None:
