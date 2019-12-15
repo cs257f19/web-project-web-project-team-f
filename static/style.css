@@ -80,7 +80,7 @@ ul li:hover a {
 }
 .search-boxY input[type=search] {
   -webkit-appearance: none;
-  height: 25px;
+  height: 30px;
   padding-left: 10px;
   padding-right: 30px;
 }
