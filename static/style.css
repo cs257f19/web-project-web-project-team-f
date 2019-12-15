@@ -14,9 +14,7 @@
   }
 }
 
-
 /* FORMS */
-
 #form1 {
   border: 1px solid;
   box-shadow: 0px 0px 8px 1px black;
@@ -39,11 +37,9 @@
   margin-left: 30px;
   margin-right: 30px;
 }
-
 #form2 input[type=submit] {
   margin-left: 25%;
 }
-
 form.example input[type=search] {
   -webkit-appearance: textfield;
   padding: 10px;
@@ -76,7 +72,6 @@ form.example::after {
   clear: both;
   display: table;
 }
-
 fieldset {
   border: none;
   width: auto;
@@ -97,9 +92,9 @@ fieldset {
 .fieldset1 legend {
   background-color: #000;
   color: #fff;
-  margin-top:0px;
+  margin-top: 0px;
   padding: 3px 6px;
-  width:100%;
+  width: 100%;
 }
 .fieldset1 .output {
   font: 1rem 'Fira Sans', sans-serif;
@@ -110,7 +105,6 @@ fieldset {
 .fieldset2 {
   padding-left: 40%;
 }
-
 input[type=submit], input[type=reset] {
   background-color: var(--nav-background-color);
   color: white;
@@ -127,12 +121,11 @@ input[type=submit], input[type=reset] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  text-shadow: 0px -1px 0px rgba(0,0,0,.5);
-  -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-  -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
 }
-
 input[type=button] {
   background-color: var(--nav-background-color);
   color: white;
@@ -149,123 +142,56 @@ input[type=button] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  text-shadow: 0px -1px 0px rgba(0,0,0,.5);
-  -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-  -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-}
-
-
-
-
-
-.button {
-    display: inline-block;
-	text-align: center;
- 	width:75%;
-	height:50px;
-	margin-left: 50px;
-	margin-bottom: 5%;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    background-color: #538fbe;
-    font-size: 22px;
-    border: 1px solid #2d6898;
-    background-image: linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
-    background-image: -o-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
-    background-image: -moz-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
-    background-image: -webkit-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
-    background-image: -ms-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
- 
-    background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0, rgb(73,132,180)),
-        color-stop(1, rgb(97,155,203))
-    );
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    text-shadow: 0px -1px 0px rgba(0,0,0,.5);
-    -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-    -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-}
-
-
-.button:hover {
-    background-image: linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
-    background-image: -o-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
-    background-image: -moz-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
-    background-image: -webkit-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
-    background-image: -ms-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
- 
-    background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0, rgb(79,142,191)),
-        color-stop(1, rgb(102,166,214))
-    );
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: var(--nav-background-hover-color);
   color: white;
 }
-
 input[type="radio"] {
-	/* remove standard background appearance */
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	/* create custom radiobutton appearance */
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	margin-bottom: -8px;
-	padding: 4px;
-	/* background-color only for content */
-	background-clip: content-box;
-	border: 2px solid gray;
-	background-color: lightgray;
-	border-radius: 50%;
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: -8px;
+  padding: 4px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 2px solid gray;
+  background-color: lightgray;
+  border-radius: 50%;
 }
-
 input[type=radio]:focus {
-  	border: 2px solid red;
+  border: 2px solid red;
 }
 input[type=radio]:hover {
-  	border: 2px solid blue;
+  border: 2px solid blue;
 }
-
 /* appearance for checked radiobutton */
-
 input[type="radio"]:checked {
-	background-color: blue;
-	border:2px solid black;
+  background-color: blue;
+  border: 2px solid black;
 }
-
-
 /* Centering radiobuttons */
-
 .flex {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
-
-input[type=radio]:checked+label {
-	background-color: blue;
-	color: white;
+input[type=radio]:checked + label {
+  background-color: blue;
+  color: white;
 }
-
-input[type=radio]+label {
-	padding: 0px;
+input[type=radio] + label {
+  padding: 0px;
 }
-
-
 /* CONTAINER */
 .container {
   width: 100%;
@@ -294,8 +220,6 @@ nav {
   width: 50%;
   text-align: center;
 }
-
-
 header nav ul {
   list-style-type: none;
   float: center;
@@ -323,7 +247,6 @@ ul li:hover a {
   background-color: var(--nav-background-hover-color);
   color: white;
 }
-
 /* NAVIGATION SEARCH BOX */
 .search-boxY {
   position: absolute;
@@ -334,21 +257,18 @@ ul li:hover a {
   border-radius: 40px;
   padding: 10px;
 }
-
 .search-boxY input[type=search] {
-	-webkit-appearance: none;
-    height: 25px;
-	padding-left: 10px;
-	padding-right: 30px;
+  -webkit-appearance: none;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 30px;
 }
 .search-boxY .fa {
-	-webkit-appearance: none;
-    padding-top: 6px;
-	padding-bottom: 3px;
-	cursor:pointer;
+  -webkit-appearance: none;
+  padding-top: 6px;
+  padding-bottom: 3px;
+  cursor: pointer;
 }
-
-
 /* Body */
 body {
   font-family: Georgia, serif;
@@ -360,7 +280,6 @@ body {
   font-style: normal;
   font-weight: 200;
 }
-
 /* HEADING AND PARAGRAPH STYLES  */
 h1 {
   font-size: 40px;
@@ -375,51 +294,43 @@ h3 {
   font-size: 35px;
   margin-top: -5px;
 }
-
 h5 {
-	text-align: center;
-	font-size: 25px;
-	margin-top: 0px;
-	margin-bottom: 15px;
-	margin-left: 10%;
-	margin-right: 10%;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
-
 h6 {
   font-size: 40px;
   color: black;
   text-align: center;
   margin-bottom: 1em;
 }
-
 p {
-	color:black;
-
+  color: black;
 }
-
 p1 {
-	display: block;
-	text-align: center;
-  	margin-top: 1em;
-  	margin-bottom: 1em;
-  	margin-left: 20em;
- 	margin-right: 20em;
-	font-size: 20px;
-  	color: black;
-  	
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 20em;
+  margin-right: 20em;
+  font-size: 20px;
+  color: black;
 }
 p2 {
-	display: block;
-	text-align: center;
-  	margin-top: 0em;
-  	margin-bottom: 1em;
-  	margin-left: 10em;
- 	margin-right: 10em;
-	font-size: 15px;
-  	color: black;
-  	
+  display: block;
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 1em;
+  margin-left: 10em;
+  margin-right: 10em;
+  font-size: 15px;
+  color: black;
 }
-
 .sect_header {
   color: white;
   text-align: center;
@@ -429,7 +340,6 @@ p2 {
   margin-left: auto;
   letter-spacing: 4px;
 }
-
 /* Banner and Form Section */
 /* Homepage */
 .sect {
@@ -443,14 +353,12 @@ p2 {
   padding-top: 90px;
   padding-bottom: 90px;
 }
-
 .sect1 {
   font-weight: bold;
   background-color: white;
   padding-top: auto;
   padding-bottom: auto;
 }
-
 .sect3 {
   font-weight: bold;
   background-image: url("AdobeStock_270367156.jpeg");
@@ -530,8 +438,6 @@ p2 {
   color: #112e51;
   font-size: 18px;
 }
-
-
 /*COPYRIGHT*/
 .copyright {
   position: fixed;
@@ -547,14 +453,11 @@ p2 {
   font-size: 12px;
   letter-spacing: 2px;
   border-top-width: 2px;
-  margin-top:5px;
+  margin-top: 5px;
 }
-
 .hidden {
   display: none;
 }
-
-
 /* NUTRITIONAL FACTS LABEL FOR NUTRIENTS.HTML RESULTS PAGE */
 #nutritionfacts {
   background-color: white;
@@ -600,35 +503,29 @@ p2 {
   float: left;
   font-family: Arial, Helvetica, sans-serif;
 }
-
-
 /* INGREDIENTS DISPLAY */
 ul {
   list-style-type: none;
 }
-
 #ingredientList {
   list-style-type: none;
-  margin-top:0px;
-  margin-bottom:5px;
+  margin-top: 0px;
+  margin-bottom: 5px;
   padding-left: 20px;
   padding-right: 20px;
 }
-
 #ingredientList li {
   border: 1px solid #ddd;
   margin: -1px; /* Prevent double borders */
-  margin-bottom:15px;
-  text-align:center;
+  margin-bottom: 15px;
+  text-align: center;
   background-color: #f6f6f6;
   padding: 10px;
   text-decoration: none;
   font-size: 18px;
   color: black;
   display: block
-	
 }
-
 /* SEARCH FILTER OF LISTS */
 #myBtn {
   display: none;
@@ -647,21 +544,18 @@ ul {
   margin-right: 20px;
   border-radius: 4px;
 }
-
 #myBtn:hover {
   background-color: #555;
 }
-
-#inputSearchFilter  {
+#inputSearchFilter {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size:15px;
+  font-size: 15px;
 }
-
 /* SEARCH RESULTS SCROLLABLE SECTION */
 div.scroll {
   margin: auto;
@@ -687,7 +581,6 @@ div.scroll::-webkit-scrollbar-button:vertical:decrement {
   border-width: 0 10px 10px 10px;
   border-color: transparent transparent #555555 transparent;
 }
-
 div.scroll::-webkit-scrollbar-button:vertical:decrement:hover {
   border-color: transparent transparent #777777 transparent;
 }
@@ -696,7 +589,6 @@ div.scroll::-webkit-scrollbar-button:vertical:increment {
   border-width: 10px 10px 0 10px;
   border-color: #555555 transparent transparent transparent;
 }
-
 div.scroll::-webkit-scrollbar-button:vertical:increment:hover {
   border-color: #777777 transparent transparent transparent;
 }
@@ -707,7 +599,6 @@ div.scroll::-webkit-scrollbar-thumb {
   background-color: #515151;
   outline: 1px solid slategrey;
 }
-
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
 @media (max-width: 320px) {
@@ -748,22 +639,21 @@ div.scroll::-webkit-scrollbar-thumb {
   .thumbnail {
     width: 100%;
   }
-  
-  }
-  .banner {
-    background-color: #2D9AB7;
-    background-image: none;
-  }
-  .tagline {
-    margin-top: 20px;
-    line-height: 22px;
-  }
-  .sect_header {
-    padding-left: 10px;
-    padding-right: 10px;
-    line-height: 22px;
-    text-align: center;
-  }
+}
+.banner {
+  background-color: #2D9AB7;
+  background-image: none;
+}
+.tagline {
+  margin-top: 20px;
+  line-height: 22px;
+}
+.sect_header {
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 22px;
+  text-align: center;
+}
 }
 /* Small Tablets */
 @media (min-width: 321px)and (max-width: 767px) {
@@ -812,7 +702,6 @@ div.scroll::-webkit-scrollbar-thumb {
   .thumbnail {
     width: 100%;
   }
-  
   . .thumbnail {
     width: 50%;
   }
