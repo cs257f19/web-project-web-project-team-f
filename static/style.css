@@ -600,6 +600,7 @@ div.scroll::-webkit-scrollbar-thumb {
 .table2 {
   position:relative;
   left:1.5%;
+  padding-left:10px;
 }
 .table2 tr.spaceUnder>td {
   padding-bottom: 1em;
