@@ -47,6 +47,12 @@ $(document).ready(function(){
   <section class="sect1" id="sect1">
     <h2>Ingredients Results</h2>
     {% for key, value in result.items() %}
+    {% if loop.index == loop.length %}
+    <h5>{{ key }}</h5>
+    {% endif %}
+    {% endfor %}
+    {% if result|length > 1 %}
+    {% for key, value in result.items() %}
     {% if loop.index == 1 %}
     <h5>{{ key }} </h5>
     <input id="inputSearchFilter" type="text" placeholder="Search ingredients list...">
@@ -67,7 +73,8 @@ $(document).ready(function(){
       {% endif %}
     </ul>
     {% endif %}
-    {% endfor %} </section>
+    {% endfor %}
+    {% endif %} </section>
   
   <!-- Copyrights Section -->
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
