@@ -18,8 +18,9 @@ $(document).ready(function(){
         		document.getElementById('ifYes').style.display = 'inline-block';
 			$('#yes').prop('required', true);
     		}
-    		else document.getElementById('ifYes').style.display = 'none';
-		$('#yes').prop('required', false);
+    		else {
+			document.getElementById('ifYes').style.display = 'none';
+			$('#yes').prop('required', false);
 		}
 </script>
 
