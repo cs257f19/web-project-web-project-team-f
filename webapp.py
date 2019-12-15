@@ -84,6 +84,7 @@ def getResults():
             allIngredients = {}
             allIngredients[food]=0
             ingredients = ingredients[0]
+            print(ingredients)
 #             if len(ingredients) == 1:
 #                 allIngredients[ingredients] = 1
 #                 return render_template("ingredients.html", result=allIngredients)
