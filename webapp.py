@@ -76,22 +76,24 @@ def getResults():
         
         if querySelection == "ingredients":
             ingredients = ds.getIngredientBreakDown(food)
-            print(ingredients, "Aishee, right here.")
+            
             if ingredients == None:
+                print(ingredients, "Aishee, right here.")
                 result =  "We do not have any data on " + food 
                 result = {result:result}
                 return render_template("ingredients.html", result=result)
-            allIngredients = {}
-            allIngredients[food]=0
-            ingredients = ingredients[0]
-            print(ingredients)
+            else:
+                allIngredients = {}
+                allIngredients[food]=0
+                ingredients = ingredients[0]
+            
 #             if len(ingredients) == 1:
 #                 allIngredients[ingredients] = 1
 #                 return render_template("ingredients.html", result=allIngredients)
-            ingredients = ingredients.split(",")
-            for item,index in enumerate(ingredients):
-                allIngredients[index] = item
-            return render_template("ingredients.html", result=allIngredients)
+               ingredients = ingredients.split(",")
+               for item,index in enumerate(ingredients):
+                   allIngredients[index] = item
+               return render_template("ingredients.html", result=allIngredients)
         
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
