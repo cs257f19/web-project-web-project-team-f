@@ -13,6 +13,16 @@
     box-sizing: border-box;
   }
 }
+#yes {
+  border: 1px solid #333333;
+  border-radius: 4px;
+  background-color: #FAFAFA;
+  height: 30px;
+  width: 250px;
+}
+#yes:focus {
+  border: 1px solid red;
+}
 /* CONTAINER */
 .container {
   width: 100%;
@@ -86,7 +96,7 @@ ul li:hover a {
 }
 .search-boxY .fa {
   -webkit-appearance: none;
-  height:15px;
+  height: 15px;
   padding-top: 7.75px;
   padding-bottom: 1.5px;
   cursor: pointer;
