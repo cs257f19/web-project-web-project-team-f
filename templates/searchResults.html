@@ -92,11 +92,11 @@ $(document).ready(function(){
     </fieldset>
   </form>
     <script>
-   $('#noCheck').change(function () {
-    if (this.checked) {
-        $('#yes').prop('required', false);
-    } else {
+    $('#yesCheck').change(function () {
+    if(this.checked) {
         $('#yes').prop('required', true);
+    } else {
+        $('#yes').prop('required', false);
     }
 });
     </script>	
