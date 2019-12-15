@@ -93,10 +93,10 @@ $(document).ready(function(){
   </form>
     <script>
         $('#yesCheck').change(function () {
-    if(this.checked) {
-        $('#yes').prop('required', true);
+    if($(this).is(':checked') {
+        $('#yes').attr('required');
     } else {
-        $('#yes').prop('required', false);
+        $('#yes').removeAttr('required');
     }
 });
     </script>	
