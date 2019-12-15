@@ -120,6 +120,3 @@ if __name__ == "__main__":
     host = sys.argv[1]
     port = sys.argv[2]
     app.run(host=host, port=5219, debug=True)
-#             if len(ingredients) == 1:
-#                 allIngredients[ingredients] = 1
-#                 return render_template("ingredients.html", result=allIngredients)
