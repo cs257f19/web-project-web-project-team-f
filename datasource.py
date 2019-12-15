@@ -162,9 +162,8 @@ class Nutrek:
         allergen = allergen.upper()
         if ingredients == None:
             return None
-        if None in [ingredients]:
-            return None
-        elif None not in [ingredients]:
+        print(ingredients)
+        else:
             for item in ingredients:
                 if "(" in item:
                     item = item.replace("(", "")
