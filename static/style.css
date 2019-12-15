@@ -395,7 +395,7 @@ input[type=radio] + label {
 }
 /* ABOUT SECTION (3 COLUMN DIVIDED) */
 .text_column {
-  width: 29%;
+  width: 30%;
   text-align: left;
   font-weight: lighter;
   line-height: 25px;
