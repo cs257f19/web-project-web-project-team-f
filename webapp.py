@@ -100,7 +100,7 @@ def getResults():
             if len(allergen) == 0:
                 result = {"You did not enter an allergen.":0}
             
-            else
+            else:
                 result = ds.containsAllergen(food, allergen)
                 if result is True:
                    result =  "WARNING! " + food + " contains the allergen: " + allergen
