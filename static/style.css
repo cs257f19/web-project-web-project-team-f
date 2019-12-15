@@ -597,11 +597,11 @@ div.scroll::-webkit-scrollbar-thumb {
   background-color: #515151;
   outline: 1px solid slategrey;
 }
-table{
+.table2 {
   position:relative;
   left:1.5%;
 }
-tr.spaceUnder>td {
+.table2 tr.spaceUnder>td {
   padding-bottom: 1em;
 }
 headers{
