@@ -160,7 +160,7 @@ class Nutrek:
         ingredients = self.getIngredientBreakDown(food)
         FullIngredientList = []
         allergen = allergen.upper()
-        if ingredients is None:
+        if ingredients == None:
             return None
         if None in [ingredients]:
             return None
