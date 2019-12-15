@@ -7,18 +7,12 @@
 <title>Nutrek: Allergy Results</title>
 <link href="/static/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
 <div class="container"> 
   <!-- Navigation -->
-  <header> 
-    <h4 class="logo"> 
-	    <a href="http://perlman.mathcs.carleton.edu:5219">
-		<img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
-		</a>
-	  </h4>
-	       
+  <header>
+    <h4 class="logo"> <a href="http://perlman.mathcs.carleton.edu:5219"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
     <nav>
       <ul>
         <li><a href="http://perlman.mathcs.carleton.edu:5219">HOME</a></li>
@@ -32,23 +26,18 @@
   </header>
   <!-- Search Section -->
   <section class="sect1" id="sect1">
-	  <h2>Food Allergy Results</h2><br>
-      <!-- Result of query -->
-        {% for key, value in result.items() %}
-        {% if 'WARNING!' in key %}
-        <h5>
-           {{ key }}
-        </h5>
-        {% else %}
-        <h5>
-            {{ key }}
-        </h5>
-        {% endif %}
-        {% endfor %}
-  </section>
+    <h2>Food Allergy Results</h2>
+    <br>
+    <!-- Result of query --> 
+    {% for key, value in result.items() %}
+    {% if 'WARNING!' in key %}
+    <h5> {{ key }} </h5>
+    {% else %}
+    <h5> {{ key }} </h5>
+    {% endif %}
+    {% endfor %} </section>
   
-  
-   <!-- Copyrights Section -->
+  <!-- Copyrights Section -->
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
 </div>
 <!-- Main Container Ends -->

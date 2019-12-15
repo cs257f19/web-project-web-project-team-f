@@ -9,19 +9,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
 <div class="container"> 
-
+  
   <!-- Navigation -->
-  <header> 
-    <h4 class="logo"> 
-	    <a href="http://perlman.mathcs.carleton.edu:5219">
-		<img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
-		</a>
-	  </h4>
-	       
+  <header>
+    <h4 class="logo"> <a href="http://perlman.mathcs.carleton.edu:5219"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
     <nav>
       <ul>
         <li><a href="http://perlman.mathcs.carleton.edu:5219">HOME</a></li>
@@ -35,55 +28,52 @@
   </header>
   <!-- Search Section -->
   <section class="sect1" id="sect1">
-	  <h2>Nutrient Breakdown Results</h2><br>
-    <!-- Nutritional Facts Table (Results of Query)-->
-			{% for key, value in result.items() %}
-			 {% if loop.index == loop.length %}
-			<h5>{{ key }}</h5>
-			 {% endif %}
- 			{% endfor %}
-	  {% if result|length > 1 %}
-			<div id="nutritionfacts">
-				<table width="500" cellspacing="0" cellpadding="0">
-					<tbody>
-						<tr>
-							<td align="center" class="header">Nutrition Facts</td>
-						</tr>
-						<tr>
-							<div class="line"></div>
-						</tr>
-						<tr style="height: 7px">
-							<td bgcolor="#000000"></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="line">
-									<div class="label">Nutrient</div>
-								</div>
-								<div style="padding-top: 1px; float: right;" class="labellight">
-									<div class="weight">Amount Per Serving</div>
-								</div>
-							</td>
-						</tr>
-						<!--Outputting data from dictionary-->
-						{% for key, value in result.items() %}
-						{% if loop.index < loop.length %}
-						<tr>
-							<td class="indent">
-								<div class="line">
-									<div class="labellight">{{ key }}
-									</div>
-									<div class="dv">{{value}}</div>
-								</div>
-							</td>
-						</tr>
-						{% endif %}
-						{% endfor %}
-					</tbody>
-				</table>
-			</div>
-	{% endif %}
-<script>
+    <h2>Nutrient Breakdown Results</h2>
+    <br>
+    <!-- Nutritional Facts Table (Results of Query)--> 
+    {% for key, value in result.items() %}
+    {% if loop.index == loop.length %}
+    <h5>{{ key }}</h5>
+    {% endif %}
+    {% endfor %}
+    {% if result|length > 1 %}
+    <div id="nutritionfacts">
+      <table width="500" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td align="center" class="header">Nutrition Facts</td>
+          </tr>
+          <tr>
+            <div class="line"></div>
+          </tr>
+          <tr style="height: 7px">
+            <td bgcolor="#000000"></td>
+          </tr>
+          <tr>
+            <td><div class="line">
+                <div class="label">Nutrient</div>
+              </div>
+              <div style="padding-top: 1px; float: right;" class="labellight">
+                <div class="weight">Amount Per Serving</div>
+              </div></td>
+          </tr>
+          <!--Outputting data from dictionary-->
+        {% for key, value in result.items() %}
+        {% if loop.index < loop.length %}
+        <tr>
+          <td class="indent"><div class="line">
+              <div class="labellight">{{ key }} </div>
+              <div class="dv">{{value}}</div>
+            </div></td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
+        
+      </table>
+    </div>
+    {% endif %} 
+    <script>
 //Get the button
 var mybutton = document.getElementById("myBtn");
 // When the user scrolls down 20px from the top of the document, show the button
@@ -101,10 +91,10 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-</script>
+</script> 
   </section>
   
-   <!-- Copyrights Section -->
+  <!-- Copyrights Section -->
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
 </div>
 <!-- Main Container Ends -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script>
 $(document).ready(function(){
   $("#inputSearchFilter").on("keyup", function() {
@@ -11,7 +11,7 @@ $(document).ready(function(){
     });
   });
 });
-</script>
+</script> 
 <script type="text/javascript">
 		function yesnoCheck() {
     		if (document.getElementById('yesCheck').checked) {
@@ -26,19 +26,12 @@ $(document).ready(function(){
 <title>Nutrek: Ingredient Results</title>
 <link href="/static/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
-
 <div class="container"> 
   <!-- Navigation -->
-  <header> 
-    <h4 class="logo"> 
-	    <a href="http://perlman.mathcs.carleton.edu:5219">
-		<img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo">
-		</a>
-	  </h4>
-	       
+  <header>
+    <h4 class="logo"> <a href="http://perlman.mathcs.carleton.edu:5219"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
     <nav>
       <ul>
         <li><a href="http://perlman.mathcs.carleton.edu:5219">HOME</a></li>
@@ -52,33 +45,31 @@ $(document).ready(function(){
   </header>
   <!-- Search Section -->
   <section class="sect1" id="sect1">
-      <h2>Ingredients Results</h2> 
- 	  {% for key, value in result.items() %}
-	  	{% if loop.index == 1 %}
-	  		<h5>{{ key }} </h5>
-	  		<input id="inputSearchFilter" type="text" placeholder="Search ingredients list.."><br>
-		{% else %}
-        		<ul id="ingredientList">
-			{% if '(' in key %}
-				{% set x = key.split('(') %}
-				<li>{{ x[0] if x }}</li>
-			{% elif ')' in key %}
-				{% set y = key.split(')') %}
-				<li>{{ y[0] if y }}</li>
-			{% elif '.' in key %}
-				{% set z = key.split('.') %}
-				<li>{{ z[0] if z }}</li>
-			{% else %}
-				<li>{{ key }}</li>
-			{% endif %}
-       			</ul>
-	  	{% endif %}
-	  {% endfor %} 
-
-  </section>
+    <h2>Ingredients Results</h2>
+    {% for key, value in result.items() %}
+    {% if loop.index == 1 %}
+    <h5>{{ key }} </h5>
+    <input id="inputSearchFilter" type="text" placeholder="Search ingredients list..">
+    <br>
+    {% else %}
+    <ul id="ingredientList">
+      {% if '(' in key %}
+      {% set x = key.split('(') %}
+      <li>{{ x[0] if x }}</li>
+      {% elif ')' in key %}
+      {% set y = key.split(')') %}
+      <li>{{ y[0] if y }}</li>
+      {% elif '.' in key %}
+      {% set z = key.split('.') %}
+      <li>{{ z[0] if z }}</li>
+      {% else %}
+      <li>{{ key }}</li>
+      {% endif %}
+    </ul>
+    {% endif %}
+    {% endfor %} </section>
   
-  
-   <!-- Copyrights Section -->
+  <!-- Copyrights Section -->
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
 </div>
 <!-- Main Container Ends -->
