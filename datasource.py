@@ -164,14 +164,15 @@ class Nutrek:
             return None
         if None in [ingredients]:
             return None
-        for item in ingredients:
-            if "(" in item:
-                item = item.replace("(", "")
-            if "," in item:
-                item = item.replace(",", "")
-            if ")" in item:
-                item = item.replace(")","")
-            FullIngredientList.append(item)
+        elif None not in [ingredients]:
+            for item in ingredients:
+                if "(" in item:
+                    item = item.replace("(", "")
+                if "," in item:
+                    item = item.replace(",", "")
+                if ")" in item:
+                    item = item.replace(")","")
+                FullIngredientList.append(item)
         try:
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
