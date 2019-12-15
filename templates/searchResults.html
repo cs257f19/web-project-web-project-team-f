@@ -76,9 +76,9 @@ $(document).ready(function(){
     </fieldset>
     <fieldset div class="fieldset1">
       <legend><strong>2) What do you want to know about this food?</strong></legend>
-      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck" required>
+      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck">
       Nutrient Breakdown
-      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck" required>
+      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck">
       Ingredients
       <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck" required>
       Food Allergies?
@@ -91,17 +91,10 @@ $(document).ready(function(){
       <input type="reset" value="Reset" onclick="javascript:yesnoCheck();">
     </fieldset>
   </form>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
-        $("#yesCheck").click(function() {
-            $("#yes").prop("required", false);
-            $("#yes").prop("disabled", true);
-        });
-        $("#yesCheck").click(function() {
-            $("#yes").prop("required", true);
-            $("#yes").prop("disabled", false);
-            $("#yes").focus();
-        });
+        document.getElementById("yesCheck").addEventListener('change', function(){
+        document.getElementById("yes").required = this.checked ;
+})
     </script>	
   {% endif %} 
   <!-- Copyrights Section -->
