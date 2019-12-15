@@ -104,6 +104,8 @@ class Nutrek:
             query = ("SELECT ingredients_english FROM Nutrek WHERE  food_name LIKE " + str("'%"+food+"%'") +";")
             cursor.execute(query)
             results = cursor.fetchall()
+            if results is None:
+                return None
             results = results[0]
             FullIngredientList = []
             if results is None:
