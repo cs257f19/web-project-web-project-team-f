@@ -78,7 +78,6 @@ def getResults():
             ingredients = ds.getIngredientBreakDown(food)
             
             if ingredients == None:
-                print(ingredients, "Aishee, right here.")
                 result =  "We do not have any data on " + food 
                 result = {result:result}
                 return render_template("ingredients.html", result=result)
@@ -87,7 +86,7 @@ def getResults():
                 allIngredients[food]=0
                 ingredients = ingredients[0]
                 if None in [ingredients]:
-                    result = "Hello Mama.Can you fix this sentence? Kind, regards."
+                    result = food + " does not have any ingredients data in database."
                     result = {result:result}
                     return render_template("ingredients.html", result=result)
                 ingredients = ingredients.split(",")
