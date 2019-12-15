@@ -87,7 +87,7 @@ def getResults():
                 allIngredients[food]=0
                 ingredients = ingredients[0]
                 if None in [ingredients]:
-                    result = "Hello Mama"
+                    result = "Hello Mama.Can you fix this sentence? Kind, regards."
                     result = {result:result}
                     return render_template("ingredients.html", result=result)
                 ingredients = ingredients.split(",")
