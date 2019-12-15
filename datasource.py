@@ -164,7 +164,7 @@ class Nutrek:
             return None
         if None in [ingredients]:
             return None
-        elif "None" not in [ingredients]:
+        elif None not in [ingredients]:
             for item in ingredients:
                 if "(" in item:
                     item = item.replace("(", "")
