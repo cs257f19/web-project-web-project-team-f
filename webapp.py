@@ -86,6 +86,9 @@ def getResults():
                 allIngredients = {}
                 allIngredients[food]=0
                 ingredients = ingredients[0]
+                if None in [ingredients]:
+                    result = {"Nothing here":"Nothing here"}
+                    return render_template("ingredients.html", result=result)
                 ingredients = ingredients.split(",")
                 for item,index in enumerate(ingredients):
                     allIngredients[index] = item
