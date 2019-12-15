@@ -604,11 +604,6 @@ div.scroll::-webkit-scrollbar-thumb {
 .table2 tr.spaceUnder>td {
   padding-bottom: 1em;
 }
-.table2 td, .table2 th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
 
 headers{
   font-size: 23px;
