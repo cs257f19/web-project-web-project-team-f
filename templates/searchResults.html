@@ -24,7 +24,6 @@ $(document).ready(function(){
 		}
 		}
 </script>
-
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,13 +79,13 @@ $(document).ready(function(){
     </fieldset>
     <fieldset div class="fieldset1">
       <legend><strong>2) What do you want to know about this food?</strong></legend>
-      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck">
+      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="nutritionfacts" id="noCheck1">
       Nutrient Breakdown
-      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck">
+      <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="ingredients" id="noCheck2">
       Ingredients
       <input type="radio" onclick="javascript:yesnoCheck();" name="query" value="allergy" id="yesCheck" required>
       Food Allergies?
-      <div id="ifYes" style="display:none"> Enter Allergen:
+      <div id="ifYes" style="display:none"> Enter food you are allergic to:
         <input style="font-size:15px;" type="text" name="allergen" id="yes" placeholder="e.g. nut or milk">
       </div>
     </fieldset>
@@ -95,7 +94,6 @@ $(document).ready(function(){
       <input type="reset" value="Reset" onclick="javascript:yesnoCheck();">
     </fieldset>
   </form>
-
   {% endif %} 
   <!-- Copyrights Section -->
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
