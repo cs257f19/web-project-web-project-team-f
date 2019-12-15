@@ -16,6 +16,7 @@ $(document).ready(function(){
 		function yesnoCheck() {
     		if (document.getElementById('yesCheck').checked) {
         		document.getElementById('ifYes').style.display = 'inline-block';
+			$('#yes').prop('required', true);
     		}
     		else document.getElementById('ifYes').style.display = 'none';
 		}
@@ -91,15 +92,7 @@ $(document).ready(function(){
       <input type="reset" value="Reset" onclick="javascript:yesnoCheck();">
     </fieldset>
   </form>
-    <script>
-    $('#yesCheck').change(function () {
-    if(this.checked) {
-        $('#yes').prop('required', true);
-    } else {
-        $('#yes').prop('required', false);
-    }
-});
-    </script>	
+
   {% endif %} 
   <!-- Copyrights Section -->
   <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
