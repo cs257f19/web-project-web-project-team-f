@@ -13,6 +13,9 @@
     box-sizing: border-box;
   }
 }
+td[colspan="2"] {
+    text-align: center;
+}
 #yes {
   border: 1px solid #333333;
   border-radius: 4px;
