@@ -86,14 +86,10 @@ def getResults():
                 allIngredients = {}
                 allIngredients[food]=0
                 ingredients = ingredients[0]
-            
-#             if len(ingredients) == 1:
-#                 allIngredients[ingredients] = 1
-#                 return render_template("ingredients.html", result=allIngredients)
-               ingredients = ingredients.split(",")
-               for item,index in enumerate(ingredients):
-                   allIngredients[index] = item
-               return render_template("ingredients.html", result=allIngredients)
+                ingredients = ingredients.split(",")
+                for item,index in enumerate(ingredients):
+                    allIngredients[index] = item
+                return render_template("ingredients.html", result=allIngredients)
         
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
@@ -122,3 +118,6 @@ if __name__ == "__main__":
     host = sys.argv[1]
     port = sys.argv[2]
     app.run(host=host, port=5219, debug=True)
+#             if len(ingredients) == 1:
+#                 allIngredients[ingredients] = 1
+#                 return render_template("ingredients.html", result=allIngredients)
