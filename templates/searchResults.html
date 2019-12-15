@@ -21,11 +21,11 @@ $(document).ready(function(){
 		}
 </script>
 <script>
-	$('#yesCheck').change(function () {
-    if($(this).is(':checked') {
-        $('#yes').attr('required');
+$('#yesCheck').change(function () {
+    if(this.checked) {
+        $('#yes').prop('required', true);
     } else {
-        $('#yes').removeAttr('required');
+        $('#yes').prop('required', false);
     }
 });
 </script>
