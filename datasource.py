@@ -107,7 +107,7 @@ class Nutrek:
             results = results[0]
             FullIngredientList = []
             if results is None:
-                return "No known ingredients."
+                return None
             else:
                 for item in results:
                     FullIngredientList.append(item)
