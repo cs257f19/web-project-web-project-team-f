@@ -597,6 +597,18 @@ div.scroll::-webkit-scrollbar-thumb {
   background-color: #515151;
   outline: 1px solid slategrey;
 }
+table{
+  position:relative;
+  left:1.5%;
+}
+tr.spaceUnder>td {
+  padding-bottom: 1em;
+}
+headers{
+  font-size: 23px;
+  color: #013366;
+}
+
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
 @media (max-width: 320px) {
