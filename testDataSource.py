@@ -17,7 +17,7 @@ class DataSourceTester(unittest.TestCase):
 
     def testContainsAllergenFirstInvalidInput(self):
         food2 = "aishee"
-        allergen2 = "Chairs"
+        allergen2 = "Milk"
         result2 = self.nutrek.containsAllergen(food2, allergen2)
         self.assertFalse(result2) 
 
