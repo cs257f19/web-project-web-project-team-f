@@ -81,7 +81,7 @@ def ingredientResults(food):
             ingredients = ingredients.split(",")
             for item,index in enumerate(ingredients):
                 allIngredients[index] = item
-            return result
+            return allIngredients
 
 def allergyResults(food,allergen):
     result = ds.containsAllergen(food, allergen)
