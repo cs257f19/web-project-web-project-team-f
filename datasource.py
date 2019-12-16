@@ -183,6 +183,7 @@ class Nutrek:
                 item = item.upper()
                 FullIngredientList.append(item)
         try:
+            print(FullIngredientList)
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
                     return True
@@ -199,8 +200,8 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-#     print(N.containsAllergen("10 OZ UNIFORM SALMON PORT", "salmon"))
-#     print(N.containsAllergen("100% GINGER IMMUNITY SHOT", "peanuts"))
+#     print(N.containsAllergen("10 OZ UNIFORM SALMON PORT", "salmon")
+    print(N.containsAllergen("granola", "peanut"))
 #     print(N.getFoodAvailable("aishee"))
 #     print(N.getIngredientBreakDown("granola"))
 #     print(N.containsAllergen("",""))
