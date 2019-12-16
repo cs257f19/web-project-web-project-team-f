@@ -87,6 +87,7 @@ def allergyResults(food,allergen):
     result = ds.containsAllergen(food, allergen)
     if result is True:
         result =  "WARNING! " + food + " contains the allergen: " + allergen
+        result = {result:result}
         return result
     elif None in [result]:
         result = "We are unable to search for any food allergens in " + food + " since it does not have any ingredients data in the database."
