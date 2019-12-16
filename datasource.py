@@ -27,6 +27,7 @@ class Nutrek:
         self.connection.close()
     
     def cleanNutrients(self, nutrients):
+        '''remove special characters from final output '''
         result = ""
         for item in nutrients:
             if "(" in item:
@@ -37,6 +38,7 @@ class Nutrek:
         return result
    
     def cleanIngredients(self,ingredients):
+        '''remove special characters from final output '''
         FullIngredientList = []
         for item in ingredients:
             if "(" in item:
