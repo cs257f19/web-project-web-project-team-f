@@ -176,14 +176,14 @@ class Nutrek:
         else:
             FullIngredientList = []
             for item in ingredients:
-            if "(" in item:
-                item = item.replace("(", "")
-            if "," in item:
-                item = item.replace(",", "")
-            if ")" in item:
-                item = item.replace(")","")
-            item = item.upper()
-            FullIngredientList.append(item)
+                if "(" in item:
+                    item = item.replace("(", "")
+                if "," in item:
+                    item = item.replace(",", "")
+                if ")" in item:
+                    item = item.replace(")","")
+                item = item.upper()
+                FullIngredientList.append(item)
         try:
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
