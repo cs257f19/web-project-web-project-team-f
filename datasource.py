@@ -184,7 +184,6 @@ class Nutrek:
                 item = item.upper()
                 FullIngredientList.append(item)
         try:
-            print(FullIngredientList)
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
                     return True
