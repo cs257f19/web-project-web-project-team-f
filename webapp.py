@@ -33,7 +33,7 @@ def getSearchResults():
             return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         print(type(searchresults))
-        if  searchresults == None:
+        if  searchresults is None:
             noresults =  "No results for " + foodsearched + ". Search new food."
             print("hello")
             noresults = {noresults:noresults}
