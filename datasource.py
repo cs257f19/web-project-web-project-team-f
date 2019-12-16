@@ -187,6 +187,7 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
+    print(N.getIngredientBreakDown("10 OZ UNIFORM SALMON PORT"))
 #     print(N.containsAllergen("100% GINGER IMMUNITY SHOT", "peanuts"))
 #     print(N.containsAllergen("milk", "lactose"))
 #     print(N.containsAllergen("fried rice", "oil"))
