@@ -12,7 +12,7 @@ class DataSourceTester(unittest.TestCase):
     '''allergen is in valid food name'''
     def testContainsAllergenBothValidInputs(self):
         food1 = "granola"
-        allergen1 = "peanut"
+        allergen1 = "nut"
         result1 = self.nutrek.containsAllergen(food1, allergen1)
         self.assertTrue(result1)
     
