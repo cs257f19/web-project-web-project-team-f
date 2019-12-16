@@ -33,6 +33,7 @@ def getSearchResults():
             return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
+            print("hey")
             result =  "No food containing " + foodsearched + " was found."
             results = {foodsearched:foodsearched}
             results[result]=result
