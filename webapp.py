@@ -33,6 +33,7 @@ def getSearchResults():
             return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
+            print("hello")
             noresults =  "No results for " + foodsearched + ". Search new food."
             noresults = {noresults:noresults}
             return render_template("searchResults.html", result=noresults)
@@ -45,7 +46,6 @@ def getSearchResults():
         removedDuplicates = {}    
         for key in allProducts:
             if allProducts[key] not in removedDuplicates.values():
-                print("hello")
                 removedDuplicates[key] = allProducts[key] 
         return render_template("searchResults.html", result=removedDuplicates)
 
