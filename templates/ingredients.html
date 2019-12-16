@@ -48,7 +48,7 @@ $(document).ready(function(){
     <h2>Ingredients Results</h2>
     {% for key, value in result.items() %}
     {% if result|length == 1 %}
-    <h5>{{ key }}</h5>
+    <h5>{{ value }}</h5>
     {% endif %}
     {% endfor %}
     {% if result|length > 1 %}
