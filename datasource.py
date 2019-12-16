@@ -165,6 +165,7 @@ class Nutrek:
             return None
         food = food.upper()
         ingredients = self.getIngredientBreakDown(food)
+        print(ingredients)
         allergen = allergen.upper()
         if ingredients == [None]:
             return None 
@@ -198,7 +199,7 @@ def main():
     N.connect(user, password)
 #     print(N.containsAllergen("10 OZ UNIFORM SALMON PORT", "salmon"))
 #     print(N.containsAllergen("100% GINGER IMMUNITY SHOT", "peanuts"))
-    print(N.containsAllergen("granola", "nut"))
+    print(N.containsAllergen("aishee", "nut"))
     print(N.getIngredientBreakDown("granola"))
     print(N.containsAllergen("",""))
 #     print(N.containsAllergen("fried rice", "oil"))
