@@ -58,7 +58,7 @@ $(document).ready(function(){
   </header>
   {% for key, value in result.items()%}
   {% if result|length == 1%}
-  <h2>No results for "{{ key }}". Search new food. </h2>
+  <h2>{{ key }}</h2>
   <form class="example" action="/search" method="POST">
     <fieldset>
       <input type="search" placeholder="Search new food..." name="foodsearch">
