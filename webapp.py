@@ -104,12 +104,15 @@ def getResults():
     if request.method == "POST":
         food = request.form["food"]
         if querySelection == "nutritionfacts":
-            return render_template("nutrients.html", result=nutritionResults(food))
+            result=nutritionResults(food)
+            return render_template("nutrients.html", result=result)
         elif querySelection == "ingredients":
-            return render_template("ingredients.html", result=ingredientResults(food))
+            result=ingredientResults(food)
+            return render_template("ingredients.html", result=result)
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
-            return render_template("allergens.html", result=allergyResults(food,allergen))
+            result = allergyResults(food,allergen)
+            return render_template("allergens.html", result=result)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
