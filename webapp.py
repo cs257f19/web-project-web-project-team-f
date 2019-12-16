@@ -51,6 +51,7 @@ def getSearchResults():
                 removedDuplicates[key] = allProducts[key] 
         return render_template("searchResults.html", result=removedDuplicates)
 
+'''Gets results of getNutrients and returns output result'''
 def nutritionResults(food):
     result = ds.getNutrients(food)
     finalResult = {}
@@ -63,6 +64,7 @@ def nutritionResults(food):
             finalResult[key] = result[key]
         return finalResult
 
+'''Gets results of getIngredientBreakdown and returns output result'''
 def ingredientResults(food):
     ingredients = ds.getIngredientBreakDown(food)
     if ingredients == None:
@@ -83,6 +85,7 @@ def ingredientResults(food):
                 allIngredients[index] = item
             return allIngredients
 
+'''Gets results of containsAllergen and returns output result'''
 def allergyResults(food,allergen):
     result = ds.containsAllergen(food, allergen)
     if result is True:
