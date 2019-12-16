@@ -423,7 +423,7 @@ input[type=radio] + label {
 }
 /* ABOUT SECTION (3 COLUMN DIVIDED) */
 .text_column {
-  width: 30%;
+  width: 50%;
   text-align: left;
   font-weight: lighter;
   line-height: 25px;
@@ -440,6 +440,23 @@ input[type=radio] + label {
   display: inline-block;
   background-color: white;
   margin-top: 0px;
+}
+.table2 {
+  position: relative;
+  left: 1.5%;
+}
+.table2 td {
+  padding-right: 12%;
+}
+.table2 tr.spaceUnder > td {
+  padding-bottom: 1em;
+}
+headers {
+  font-size: 23px;
+  color: #101010;
+}
+td[colspan="2"] {
+    text-align: center;
 }
 /* ABOUT SITE FEATURES (HOME PAGE) */
 .stats {
@@ -499,26 +516,7 @@ input[type=radio] + label {
   border-top-width: 2px;
   margin-top: 5px;
 }
-.hidden {
-  display: none;
-}
-.table2 {
-  position: relative;
-  left: 1.5%;
-}
-.table2 td {
-  padding-right: 12%;
-}
-.table2 tr.spaceUnder > td {
-  padding-bottom: 1em;
-}
-headers {
-  font-size: 23px;
-  color: #101010;
-}
-td[colspan="2"] {
-    text-align: center;
-}
+
 /* NUTRITIONAL FACTS LABEL FOR NUTRIENTS.HTML RESULTS PAGE */
 #nutritionfacts {
   background-color: white;
