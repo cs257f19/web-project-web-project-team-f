@@ -170,6 +170,7 @@ class Nutrek:
                     item = item.replace(",", "")
                 if ")" in item:
                     item = item.replace(")","")
+                item = item.upper()
                 FullIngredientList.append(item)
         try:
             for ingredient in FullIngredientList:
