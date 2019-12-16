@@ -428,8 +428,8 @@ input[type=radio] + label {
   font-weight: lighter;
   line-height: 25px;
   float: left;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-bottom:25px;
   color: black;
 }
