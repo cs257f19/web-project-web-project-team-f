@@ -27,13 +27,10 @@ def aboutData():
 def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
-        if foodsearched is None:
-            print("Hello")
-            result = "No results for " + foodsearched + ". Search new food."
-            result = {result:result}
-            return render_template("searchResults.html", result=result)
         if len(foodsearched) == 0:
             result = "You entered nothing."
+            result = {result:result}
+            return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
             result =  "No food containing " + foodsearched + " was found."
