@@ -28,6 +28,7 @@ def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         if foodsearched is None:
+            print("Hello")
             result = "No results for " + foodsearched + ". Search new food."
             result = {result:result}
             return render_template("searchResults.html", result=result)
