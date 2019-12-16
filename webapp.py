@@ -81,7 +81,6 @@ def getResults():
                 result =  "We do not have any data on " + food 
                 result = {result:result}
                 return render_template("ingredients.html", result=result)
-            if len(in
             else:
                 allIngredients = {}
                 allIngredients[food]=0
