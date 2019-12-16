@@ -38,6 +38,8 @@ class Nutrek:
         return result
    
     def cleanIngredients(self, ingredients):
+        if None in ingredients or ingredients == None or ingredients == [None]:
+            return None 
         FullIngredientList = []
         for item in ingredients:
             if "(" in item:
