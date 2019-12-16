@@ -196,7 +196,7 @@ class Nutrek:
         
         else:
             FullIngredientList = self.cleanIngredients(ingredients)
-            return FullIngredients
+            return FullIngredientList
 #             FullIngredientList = []
 #             for item in ingredients:
 #                 if "(" in item:
