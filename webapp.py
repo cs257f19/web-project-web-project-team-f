@@ -38,7 +38,6 @@ def getSearchResults():
             return render_template("searchResults.html", result=noresults)
         allProducts = {foodsearched:foodsearched}
         for item,index in enumerate(searchresults):
-            print("hello")
             finalProduct = " ".join(index)
             productList = finalProduct.split(" ")
             finalProduct = " ".join(productList) 
@@ -46,6 +45,7 @@ def getSearchResults():
         removedDuplicates = {}    
         for key in allProducts:
             if allProducts[key] not in removedDuplicates.values():
+                print("hello")
                 removedDuplicates[key] = allProducts[key] 
         return render_template("searchResults.html", result=removedDuplicates)
 
