@@ -124,4 +124,4 @@ if __name__ == "__main__":
         exit()
     host = sys.argv[1]
     port = sys.argv[2]
-    app.run(host=host, port=5219, debug=True)
+    app.run(host=host, port=port, debug=True)
