@@ -200,6 +200,7 @@ def main():
 #     print(N.containsAllergen("100% GINGER IMMUNITY SHOT", "peanuts"))
     print(N.containsAllergen("granola", "nut"))
     print(N.getIngredientBreakDown("granola"))
+    print(N.containsAllergen("",""))
 #     print(N.containsAllergen("fried rice", "oil"))
 #     Disconnect from database
 #     N.disconnect()
