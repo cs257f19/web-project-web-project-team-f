@@ -177,6 +177,8 @@ class Nutrek:
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
                     return True
+            if allergen in FullIngredientList:
+                return True
             return False
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
