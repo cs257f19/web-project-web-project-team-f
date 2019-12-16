@@ -28,12 +28,12 @@ def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         if len(foodsearched) == 0:
-            result = "You entered nothing."
+            result = "You did not enter anything."
             result = {result:result}
             return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None or searchresults == []:
-            results =  "No food containing " + foodsearched + " was found."
+            results =  "No results for " + foodsearched + ". Search new food."
             results = {results:results}
             return render_template("searchResults.html", result=results)
         allProducts = {foodsearched:foodsearched}
