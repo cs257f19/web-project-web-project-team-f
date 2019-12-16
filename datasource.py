@@ -203,8 +203,8 @@ def main():
     N.connect(user, password)
 #     print(N.containsAllergen("10 OZ UNIFORM SALMON PORT", "salmon"))
 #     print(N.containsAllergen("100% GINGER IMMUNITY SHOT", "peanuts"))
-      print(N.containsAllergen("granola", "nut"))
-      print(N.getIngredientBreakDown("granola"))
+    print(N.containsAllergen("granola", "nut"))
+    print(N.getIngredientBreakDown("granola"))
 #     print(N.containsAllergen("fried rice", "oil"))
 #     Disconnect from database
 #     N.disconnect()
