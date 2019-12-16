@@ -203,7 +203,7 @@ def main():
     N.connect(user, password)
 #     print(N.containsAllergen("10 OZ UNIFORM SALMON PORT", "salmon")
 #     print(N.containsAllergen("granola", "peanut"))
-    print(N.getFoodAvailable("granola"))
+#     print(N.getFoodAvailable("granola"))
 #     print(N.getIngredientBreakDown("granola"))
 #     print(N.containsAllergen("",""))
 #     print(N.containsAllergen("fried rice", "oil"))
