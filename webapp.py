@@ -28,7 +28,6 @@ def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         if len(foodsearched) == 0:
-            print("enter nothing")
             result = "You entered nothing."
             result = {result:result}
             return render_template("searchResults.html", result=result)
