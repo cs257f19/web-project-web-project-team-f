@@ -47,7 +47,7 @@ $(document).ready(function(){
   <section class="sect1" id="sect1">
     <h2>Ingredients Results</h2>
     {% for key, value in result.items() %}
-    {% if loop.index == loop.length %}
+    {% if result|length == 1 %}
     <h5>{{ key }}</h5>
     {% endif %}
     {% endfor %}
