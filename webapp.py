@@ -28,10 +28,12 @@ def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         if foodsearched is None:
+            print("none")
             result = "No results for " + foodsearched + ". Search new food."
             result = {result:result}
             return render_template("searchResults.html", result=result)
         if len(foodsearched) == 0:
+            print("entered nothing")
             result = "You entered nothing."
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
