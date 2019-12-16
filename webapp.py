@@ -104,7 +104,7 @@ def getResults():
                 print(result)
                 if result is True:
                    result =  "WARNING! " + food + " contains the allergen: " + allergen
-                if None in [result]:
+                elif None in [result]:
                     result = "We are unable to search for any food allergens in " + food + " since it does not have any ingredients data in the database."
                     result = {result:result}
                     return render_template("allergens.html", result=result)
