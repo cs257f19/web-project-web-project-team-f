@@ -30,11 +30,7 @@
     <br>
     <!-- Result of query --> 
     {% for key, value in result.items() %}
-    {% if 'WARNING!' in key %}
     <h5> {{ key }} </h5>
-    {% else %}
-    <h5> {{ key }} </h5>
-    {% endif %}
     {% endfor %} </section>
   
   <!-- Copyrights Section -->
