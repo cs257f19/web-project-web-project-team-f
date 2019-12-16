@@ -90,7 +90,8 @@ def getResults():
                     result = {result:result}
                     return render_template("ingredients.html", result=result)
                 ingredients = ingredients.split(",")
-                ingredients = ingredients[:len(ingredients)-2]
+                if len(ingredients) > 1:
+                    ingredients = ingredients[:len(ingredients)-2]
                 for item,index in enumerate(ingredients):
                     allIngredients[index] = item
                 return render_template("ingredients.html", result=allIngredients)
