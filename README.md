@@ -11,8 +11,7 @@ Contents:
 
 
 Known Issues: 
-1. [Errno 98]: Address already in use. This error implies that another person may be using our port number but this is not always true. Solution: Exit perlman and re-run. 
-2. On rare occassions, every food search yields 'food is not in our database'. This is solved by cutting the connection and reconnecting to perlman. 
+1. On rare occassions, every food search yields 'food is not in our database'. This is solved by cutting the connection and reconnecting to perlman. 
 
 Drawbacks of Dataset:
-1. There is inconsistent use of punctuation and/or separating characters (e.g. ,) in .csv cells within in USDA dataset (BFPD_csv_07132018.zip). We handled the “cleaning” special characters out of the dataset in HTML so backend processes were unaffected; however, output in View was clean. We removed instances of "(",")", and ","; however, there are an infinite number of special characters to account for, so an occasional special character may appear in ingredients list.
+1. There is inconsistent use of punctuation and/or separating characters (e.g. ,) in .csv cells within in USDA dataset (BFPD_csv_07132018.zip). We handled the “cleaning” special characters out of the dataset in HTML so backend processes were unaffected; however, output in View was clean. We removed instances of "(",")", and ","; however, there are an unknown number of special characters to account for, so an occasional special character may appear in ingredients list.
