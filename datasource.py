@@ -36,20 +36,6 @@ class Nutrek:
                item = item.replace(")","")
             result += item + " "
         return result
-   
-    def cleanIngredients(self,ingredients):
-        '''remove special characters from final output '''
-        FullIngredientList = []
-        for item in ingredients:
-            if "(" in item:
-               item = item.replace("(", "")
-            if "," in item:
-               item = item.replace(",", "")
-            if ")" in item:
-               item = item.replace(")","")
-            item = item.upper()
-            FullIngredientList.append(item)
-        return FullIngredientList
         
     def getNutrients(self, food):
         '''
@@ -178,12 +164,21 @@ class Nutrek:
             return None
         food = food.upper()
         ingredients = self.getIngredientBreakDown(food)
-#         FullIngredientList = []
+        FullIngredientList = []
         allergen = allergen.upper()
         if ingredients == [None]:
             return None 
         else:
-            FullIngredientsList = self.cleanIngredients(ingredients)
+            for item in ingredients:
+                if "(" in item:
+                    item = item.replace("(", "")
+                if "," in item:
+                    item = item.replace(",", "")
+                if ")" in item:
+                    item = item.replace(")","")
+                item = item.upper()
+                FullIngredientList.append(item)
+#             FullIngredientsList = self.cleanIngredients(ingredients)
         try:
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
