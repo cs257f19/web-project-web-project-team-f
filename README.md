@@ -14,4 +14,4 @@ Known Issues:
 1. On rare occassions, every food search yields 'food is not in our database'. This is solved by cutting the connection and reconnecting to perlman. 
 
 Drawbacks of Dataset:
-1. There is inconsistent use of punctuation and/or separating characters (e.g. ,) in .csv cells within in USDA dataset (BFPD_csv_07132018.zip). We handled the “cleaning” special characters out of the dataset in HTML so backend processes were unaffected; however, output in View was clean. We removed instances of "(",")", and ","; however, there are an unknown number of special characters to account for, so an occasional special character may appear in ingredients list.
+1. There is inconsistent use of punctuation and/or separating characters (e.g. ,) in .csv cells within in USDA dataset (BFPD_csv_07132018.zip). We handled the “cleaning” special characters out of the dataset in HTML so backend processes were unaffected; however, output in View was clean. We removed instances of "(",")", and ","; however, there is an unknown number of special characters to account for, so an occasional special character may appear in ingredients list.
