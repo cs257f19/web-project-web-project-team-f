@@ -63,7 +63,7 @@ def nutritionResults(food):
             finalResult[key] = result[key]
         return finalResult
 
-def ingredientResults():
+def ingredientResults(food):
     ingredients = ds.getIngredientBreakDown(food)
     if ingredients == None:
         result =  "We do not have any data on " + food 
