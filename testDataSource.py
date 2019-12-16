@@ -31,7 +31,7 @@ class DataSourceTester(unittest.TestCase):
         food4 = "aishee"
         allergen4 = "helicopter"
         result4 = self.nutrek.containsAllergen(food4, allergen4)
-        self.assertIsNone(result4)
+        self.assertFalse(result4)
 
     def testcontainsAllergenFirstEmptyInput(self):
         food5 = ""
