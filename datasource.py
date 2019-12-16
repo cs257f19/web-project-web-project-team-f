@@ -25,7 +25,30 @@ class Nutrek:
         Breaks the connection to the database
         '''
         self.connection.close()
-
+    
+    def cleanNutrients(self, nutrients):
+        result = ""
+        for item in nutrients:
+            if "(" in item:
+               item = item.replace("(", "")
+            if ")" in item:
+               item = item.replace(")","")
+            result += item + " "
+        return result
+   
+    def cleanIngredients(self,ingredients):
+        FullIngredientList = []
+        for item in ingredients:
+            if "(" in item:
+               item = item.replace("(", "")
+            if "," in item:
+               item = item.replace(",", "")
+            if ")" in item:
+               item = item.replace(")","")
+            item = item.upper()
+            FullIngredientList.append(item)
+        return FullIngredientList
+        
     def getNutrients(self, food):
         '''
         Returns all nutrients and the amount of each nutrient in a specified food product
@@ -73,13 +96,7 @@ class Nutrek:
             if sum(proportionsList) == 0:
                 return None
             foodName = allFood[0]
-            result = ""
-            for item in foodName:
-                    if "(" in item:
-                        item = item.replace("(", "")
-                    if ")" in item:
-                        item = item.replace(")","")
-                    result += item + " "
+            result = self.cleanNutrients(foodName)
             nutrientDictionary[result] =  0 
             return nutrientDictionary
 
@@ -164,16 +181,7 @@ class Nutrek:
         if ingredients == [None]:
             return None 
         else:
-            for item in ingredients:
-                if "(" in item:
-                    item = item.replace("(", "")
-                if "," in item:
-                    item = item.replace(",", "")
-                if ")" in item:
-                    item = item.replace(")","")
-                item = item.upper()
-                FullIngredientList.append(item)
-                print(FullIngredientList)
+            FullIngredientsList = self.cleanIngredients(ingredients)
         try:
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
@@ -191,7 +199,7 @@ def main():
     # Connect to the database
     N = Nutrek()
     N.connect(user, password)
-    print(N.containsAllergen("10 OZ UNIFORM SALMON PORT", "salmon"))
+#     print(N.containsAllergen("10 OZ UNIFORM SALMON PORT", "salmon"))
 #     print(N.containsAllergen("100% GINGER IMMUNITY SHOT", "peanuts"))
 #     print(N.containsAllergen("milk", "lactose"))
 #     print(N.containsAllergen("fried rice", "oil"))
