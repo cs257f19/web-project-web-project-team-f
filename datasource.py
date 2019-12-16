@@ -94,7 +94,7 @@ class Nutrek:
             food - USDA Branded Food Product name of interest
         RETURN:
             a list of ingredients in the specified food product
-            "No known ingredients" if no ingredients exist for a given food product.
+            None if no ingredients exist for a given food product or food does not exist.
         '''
         if food == "":
             return None
@@ -151,8 +151,9 @@ class Nutrek:
             food - USDA Branded Food Product name of interest
             allergen - an ingredient that could cause allergic reaction if an ingredient within food
         RETURN:
-            True if specified food contains allergen in its ingredient and
-            false if food is missing allergen as ingredient.
+            True if specified food contains allergen in its ingredient.
+            False if food is missing allergen as ingredient.
+            None if food does not exist or no ingredients in database.
         '''
         if food == "" or allergen == "":
             return None
