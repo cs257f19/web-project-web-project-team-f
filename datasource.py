@@ -144,6 +144,7 @@ class Nutrek:
             results = cursor.fetchall()
             if results is None:
                 return None
+            results = sorted(results)
             return results
 
         except Exception as e:
