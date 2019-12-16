@@ -37,27 +37,6 @@ class Nutrek:
             result += item + " "
         return result
    
-    def cleanIngredients(self, ingredients):
-        FullIngredientList = []
-        for item in ingredients:
-            if "(" in item:
-                item = item.replace("(", "")
-            if "," in item:
-                item = item.replace(",", "")
-            if ")" in item:
-                item = item.replace(")","")
-            item = item.upper()
-            FullIngredientList.append(item)
-        try:
-            for ingredient in FullIngredientList:
-                if allergen in ingredient:
-                    return True
-            if allergen in FullIngredientList:
-                return True
-            return False
-        except Exception as e:
-            print ("Something went wrong when executing the query: ", e)
-            return None
         
     def getNutrients(self, food):
         '''
@@ -195,30 +174,26 @@ class Nutrek:
             return None 
         
         else:
-            FullIngredientList = self.cleanIngredients(ingredients)
-            if FullIngredientList == None:
-                return False 
-            return FullIngredientList
-#             FullIngredientList = []
-#             for item in ingredients:
-#                 if "(" in item:
-#                     item = item.replace("(", "")
-#                 if "," in item:
-#                     item = item.replace(",", "")
-#                 if ")" in item:
-#                     item = item.replace(")","")
-#                 item = item.upper()
-#                 FullIngredientList.append(item)
-#         try:
-#             for ingredient in FullIngredientList:
-#                 if allergen in ingredient:
-#                     return True
-#             if allergen in FullIngredientList:
-#                 return True
-#             return False
-#         except Exception as e:
-#             print ("Something went wrong when executing the query: ", e)
-#             return None
+            FullIngredientList = []
+            for item in ingredients:
+                if "(" in item:
+                    item = item.replace("(", "")
+                if "," in item:
+                    item = item.replace(",", "")
+                if ")" in item:
+                    item = item.replace(")","")
+                item = item.upper()
+                FullIngredientList.append(item)
+        try:
+            for ingredient in FullIngredientList:
+                if allergen in ingredient:
+                    return True
+            if allergen in FullIngredientList:
+                return True
+            return False
+        except Exception as e:
+            print ("Something went wrong when executing the query: ", e)
+            return None
 
 def main():
     user = "odoome"
