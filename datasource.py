@@ -196,6 +196,8 @@ class Nutrek:
         
         else:
             FullIngredientList = self.cleanIngredients(ingredients)
+            if FullIngredientList == None:
+                return False 
             return FullIngredientList
 #             FullIngredientList = []
 #             for item in ingredients:
