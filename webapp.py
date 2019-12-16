@@ -4,9 +4,6 @@ import json
 import sys
 import datasource
 
-# Command Line: python3 webapp.py perlman.mathcs.carleton.edu 5219
-
-
 '''Connect to database'''
 ds = datasource.Nutrek()
 user = "odoome"
@@ -24,7 +21,6 @@ def home():
 @app.route("/data", methods = ["POST", "GET"])
 def aboutData():
     return render_template("Data.html")
-
 
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/search", methods = ["POST", "GET"])
@@ -55,68 +51,70 @@ def getSearchResults():
                 removedDuplicates[key] = allProducts[key] 
         return render_template("searchResults.html", result=removedDuplicates)
 
+def nutritionResults(food):
+    result = ds.getNutrients(food)
+    finalResult = {}
+    if result is None:
+        result = food + " does not have any nutritional data in database."
+        result = {result:result}
+        return result
+    else:
+        for key in result:
+            finalResult[key] = result[key]
+        return finalResult
+
+def ingredientResults():
+    ingredients = ds.getIngredientBreakDown(food)
+    if ingredients == None:
+        result =  "We do not have any data on " + food 
+        result = {result:result}
+        return result
+    else:
+        allIngredients = {}
+        allIngredients[food]=0
+        ingredients = ingredients[0]
+        if None in [ingredients]:
+            result = food + " does not have any ingredients data in database."
+            result = {result:result}
+            return result
+        else:
+            ingredients = ingredients.split(",")
+            for item,index in enumerate(ingredients):
+                allIngredients[index] = item
+            return result
+
+def allergyResults(food,allergen):
+    result = ds.containsAllergen(food, allergen)
+    if result is True:
+        result =  "WARNING! " + food + " contains the allergen: " + allergen
+        return result
+    elif None in [result]:
+        result = "We are unable to search for any food allergens in " + food + " since it does not have any ingredients data in the database."
+        result = {result:result}
+        return result
+    else:
+        result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
+        result = {result:result}
+        return result
+
 '''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
 def getResults():
     querySelection = request.form["query"]
-    
     if request.method == "POST":
         food = request.form["food"]
         if querySelection == "nutritionfacts":
-            result = ds.getNutrients(food)
-            finalResult = {}
-            if result is None:
-               result = food + " does not have any nutritional data in database."
-               result = {result:result}
-               return render_template("nutrients.html", result=result)
-            
-            for key in result:
-                finalResult[key] = result[key]
-            return render_template("nutrients.html", result=finalResult)
-        
-        if querySelection == "ingredients":
-            ingredients = ds.getIngredientBreakDown(food)
-            
-            if ingredients == None:
-                result =  "We do not have any data on " + food 
-                result = {result:result}
-                return render_template("ingredients.html", result=result)
-            else:
-                allIngredients = {}
-                allIngredients[food]=0
-                ingredients = ingredients[0]
-                if None in [ingredients]:
-                    result = food + " does not have any ingredients data in database."
-                    result = {result:result}
-                    return render_template("ingredients.html", result=result)
-                ingredients = ingredients.split(",")
-                for item,index in enumerate(ingredients):
-                    allIngredients[index] = item
-                return render_template("ingredients.html", result=allIngredients)
-        
+            return render_template("nutrients.html", result=nutritionResults(food))
+        elif querySelection == "ingredients":
+            return render_template("ingredients.html", result=ingredientResults(food))
         elif querySelection == "allergy":
             allergen = request.form["allergen"]
-            
-            if len(allergen) == 0:
-                result = {"You did not enter an allergen.":0}
-            else:
-                result = ds.containsAllergen(food, allergen)
-                if result is True:
-                   result =  "WARNING! " + food + " contains the allergen: " + allergen
-                elif None in [result]:
-                    result = "We are unable to search for any food allergens in " + food + " since it does not have any ingredients data in the database."
-                    result = {result:result}
-                    return render_template("allergens.html", result=result)
-                else:
-                    result =  "No known " + allergen + " allergen in " + food + " according to USDA Food database."
-                result = {result:result}
-            return render_template("allergens.html", result=result)
+            return render_template("allergens.html", result=allergyResults(food,allergen))
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
-
     host = sys.argv[1]
     port = sys.argv[2]
     app.run(host=host, port=5219, debug=True)
