@@ -37,19 +37,11 @@ class Nutrek:
             result += item + " "
         return result
    
-    def cleanIngredients(self, ingredients):
-        print(ingredients)
-        FullIngredientList = []
-        for item in ingredients:
-            if "(" in item:
-                item = item.replace("(", "")
-            if "," in item:
-                item = item.replace(",", "")
-            if ")" in item:
-                item = item.replace(")","")
-            item = item.upper()
-            FullIngredientList.append(item)
-        return FullIngredientList
+#     def cleanIngredients(self, ingredients):
+#         print(ingredients)
+#         FullIngredientList = []
+      
+#         return FullIngredientList
         
     def getNutrients(self, food):
         '''
@@ -182,7 +174,16 @@ class Nutrek:
         if ingredients == [None]:
             return None 
         else:
-            FullIngredientList = self.cleanIngredients(ingredients)
+            FullIngredientList = []
+            for item in ingredients:
+            if "(" in item:
+                item = item.replace("(", "")
+            if "," in item:
+                item = item.replace(",", "")
+            if ")" in item:
+                item = item.replace(")","")
+            item = item.upper()
+            FullIngredientList.append(item)
         try:
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
