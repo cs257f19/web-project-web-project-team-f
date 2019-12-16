@@ -172,10 +172,14 @@ class Nutrek:
                     item = item.replace(")","")
                 FullIngredientList.append(item)
         try:
-            for ingredient in FullIngredientList:
-                if allergen in ingredient:
-                    return True
-            return False
+            if allergen in FullIngredientList:
+                return True
+            else:
+                return False
+#             for ingredient in FullIngredientList:
+#                 if allergen in ingredient:
+#                     return True
+#             return False
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
