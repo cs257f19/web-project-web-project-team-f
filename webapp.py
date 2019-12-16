@@ -33,10 +33,9 @@ def getSearchResults():
             return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
         if  searchresults is None:
-            result =  "No food containing " + foodsearched + " was found."
-            results = {foodsearched:foodsearched}
-            results[result]=result
-            return render_template("searchResults.html", result=results)
+            noresults =  "No results for " + foodsearched + ". Search new food."
+            noresults = {noresults:noresults}
+            return render_template("searchResults.html", result=noresults)
         allProducts = {foodsearched:foodsearched}
         for item,index in enumerate(searchresults):
             finalProduct = " ".join(index)
