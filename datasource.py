@@ -171,6 +171,7 @@ class Nutrek:
         allergen = allergen.upper()
         if ingredients == [None]:
             return None 
+        print(ingredients)
         else:
             FullIngredientList = []
             for item in ingredients:
