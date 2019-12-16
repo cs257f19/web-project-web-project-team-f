@@ -13,19 +13,7 @@
     box-sizing: border-box;
   }
 }
-td[colspan="2"] {
-    text-align: center;
-}
-#yes {
-  border: 1px solid #333333;
-  border-radius: 4px;
-  background-color: #FAFAFA;
-  height: 30px;
-  width: 250px;
-}
-#yes:focus {
-  border: 1px solid red;
-}
+
 /* CONTAINER */
 .container {
   width: 100%;
@@ -282,6 +270,8 @@ input[type=submit], input[type=reset] {
 }
 input[type=button] {
   background-color: var(--nav-background-color);
+  position: relative;
+  left:12%;
   color: white;
   border: 2px solid black;
   width: 250px;
@@ -306,6 +296,34 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: var(--nav-background-hover-color);
   color: white;
 }
+
+input[type=button1] {
+  background-color: var(--nav-background-color);
+  color: white;
+  border: 2px solid black;
+  width: 250px;
+  height:50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 2px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+}
+input[type=button1]:hover, input[type=submit]:hover, input[type=reset]:hover {
+  background-color: var(--nav-background-hover-color);
+  color: white;
+}
+
 input[type="radio"] {
   /* remove standard background appearance */
   -webkit-appearance: none;
@@ -345,6 +363,16 @@ input[type=radio]:checked + label {
 }
 input[type=radio] + label {
   padding: 0px;
+}
+#yes {
+  border: 1px solid #333333;
+  border-radius: 4px;
+  background-color: #FAFAFA;
+  height: 30px;
+  width: 250px;
+}
+#yes:focus {
+  border: 1px solid red;
 }
 .sect_header {
   color: white;
@@ -473,6 +501,23 @@ input[type=radio] + label {
 }
 .hidden {
   display: none;
+}
+.table2 {
+  position: relative;
+  left: 1.5%;
+}
+.table2 td {
+  padding-right: 12%;
+}
+.table2 tr.spaceUnder > td {
+  padding-bottom: 1em;
+}
+headers {
+  font-size: 23px;
+  color: #101010;
+}
+td[colspan="2"] {
+    text-align: center;
 }
 /* NUTRITIONAL FACTS LABEL FOR NUTRIENTS.HTML RESULTS PAGE */
 #nutritionfacts {
@@ -615,20 +660,7 @@ div.scroll::-webkit-scrollbar-thumb {
   background-color: #515151;
   outline: 1px solid slategrey;
 }
-.table2 {
-  position: relative;
-  left: 1.5%;
-}
-.table2 td {
-  padding-right: 12%;
-}
-.table2 tr.spaceUnder > td {
-  padding-bottom: 1em;
-}
-headers {
-  font-size: 23px;
-  color: #101010;
-}
+
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
 @media (max-width: 320px) {
@@ -726,6 +758,7 @@ headers {
   .thumbnail {
     width: 50%;
   }
+
   .text_column {
     width: 100%;
     margin-top: 0px;
