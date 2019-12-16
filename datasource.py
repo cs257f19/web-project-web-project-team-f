@@ -181,7 +181,7 @@ class Nutrek:
         if ingredients == [None]:
             return None 
         else:
-            FullIngredientsList = self.cleanIngredients(ingredients)
+            FullIngredientList = self.cleanIngredients(ingredients)
         try:
             for ingredient in FullIngredientList:
                 if allergen in ingredient:
