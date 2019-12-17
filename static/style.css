@@ -17,13 +17,12 @@
 .moveimage {
     position: relative;
     top: 5px;
-    margin-left: 1px;
+    float:left;
 }
 .tooltip {
   position: relative;
   display: inline-block;
 }
-
 .tooltip .tooltiptext {
   visibility: hidden;
   width: auto;
