@@ -57,9 +57,6 @@ class Nutrek:
              item = item.upper()
              FullIngredientList.append(item)
          return FullIngredientList
-    def cleanInput(self,food):
-        food = food.upper()
-        food = food.replace("'","''")
    
         
     def getNutrients(self, food):
@@ -73,8 +70,8 @@ class Nutrek:
         '''
         if food == "":
             return None
-        inputFood = food
-        food = self.cleanInput(food)
+        food = food.upper()
+        food = food.replace("'","''")
         nutrientList = ["Ash (g)", "Biotin (mcg)", "Caffeine (mg)", "Calcium (mg)", "Carbohydrate by difference (g)", "Carbohydrate other (g)", "Cholesterol (mg)",
         "Chromium (mcg)", "Copper (mg)", "Fatty acids total monounsaturated (g)", "Fatty acids total polyunsaturated (g)", "Fatty acids total saturated (g)", "Fatty acids total trans (g)",
         "Fiber insoluble (g)", "Fiber soluble (g)", "Fiber total dietary (g)", "Folic acid (mcg)", "Iodine (mcg)", "Iron (mg)", "Lactose (g)",
@@ -97,7 +94,7 @@ class Nutrek:
             for j in results2[0]:
                 results.append(j)
             resultsLength = len(results)
-            allFood = self.getFoodAvailable(inputFood)
+            allFood = self.getFoodAvailable(food)
             if resultsLength == 0 :
                 return None
             nutrientDictionary = {}
@@ -129,7 +126,8 @@ class Nutrek:
         '''
         if food == "":
             return None
-        food = self.cleanInput(food)
+        food = food.upper()
+        food = food.replace("'","''")
         try:
             cursor = self.connection.cursor()
             query = ("SELECT ingredients_english FROM Nutrek WHERE  food_name LIKE " + str("'%"+food+"%'") +";")
@@ -173,7 +171,8 @@ class Nutrek:
             '''
         if food == "":
             return None
-        food = self.cleanInput(food)
+        food = food.upper()
+        food = food.replace("'","''")
         try:
             cursor = self.connection.cursor()
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
@@ -201,13 +200,15 @@ class Nutrek:
         '''
         if food == "" or allergen == "":
             return None
+        food = food.upper()
         foodList = self.getFoodAvailable(food)
         if foodList == []:
             return None 
         ingredients = self.getIngredientBreakDown(food)
         allergen = allergen.upper()
         if ingredients == [None]:
-            return None
+            return None 
+        
         else:
             FullIngredientList = []
             FullIngredientList = self.cleanIngredients(ingredients)
