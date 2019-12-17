@@ -54,7 +54,7 @@ $(document).ready(function(){
     {% if result|length > 1 %}
     {% for key, value in result.items() %}
     {% if loop.index == 1 %}
-    <h5>{{ key }} </h5>
+    <h5>{{ key }}</h5>
     <input id="inputSearchFilter" type="text" placeholder="Search ingredients list...">
     <br>
     {% else %}
