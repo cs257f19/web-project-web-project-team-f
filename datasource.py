@@ -170,7 +170,7 @@ class Nutrek:
         if food == "":
             return None
         food = food.upper()
-        food = food.replace("'","\'")
+        food = food.replace("'","''")
         print(food)
         try:
             cursor = self.connection.cursor()
