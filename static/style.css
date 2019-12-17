@@ -13,7 +13,6 @@
     box-sizing: border-box;
   }
 }
-
 /* CONTAINER */
 .container {
   width: 100%;
@@ -135,12 +134,12 @@ p {
   color: black;
 }
 p1 {
-  display: block;
+  display: inline-block;
   text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
-  margin-left: 20em;
-  margin-right: 20em;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
   font-size: 20px;
   color: black;
 }
@@ -251,7 +250,7 @@ input[type=submit], input[type=reset] {
   color: white;
   border: 2px solid black;
   width: 25%;
-  height:50px;
+  height: 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -271,11 +270,11 @@ input[type=submit], input[type=reset] {
 input[type=button] {
   background-color: var(--nav-background-color);
   position: relative;
-  left:12%;
+  left: 12%;
   color: white;
   border: 2px solid black;
   width: 250px;
-  height:50px;
+  height: 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -296,13 +295,12 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: var(--nav-background-hover-color);
   color: white;
 }
-
 input[type=button1] {
   background-color: var(--nav-background-color);
   color: white;
   border: 2px solid black;
   width: 250px;
-  height:50px;
+  height: 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -323,7 +321,6 @@ input[type=button1]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: var(--nav-background-hover-color);
   color: white;
 }
-
 input[type="radio"] {
   /* remove standard background appearance */
   -webkit-appearance: none;
@@ -375,13 +372,14 @@ input[type=radio] + label {
   border: 1px solid red;
 }
 .sect_header {
-  color: white;
+  color: black;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 125px;
   margin-right: auto;
-  margin-bottom: 0px;
+  margin-bottom: 1em;
   margin-left: auto;
   letter-spacing: 4px;
+  font-size: 40px;
 }
 /* Banner and Form Section */
 /* Homepage */
@@ -412,6 +410,8 @@ input[type=radio] + label {
   background-size: cover;
   padding-top: 25px;
   padding-bottom: 25px;
+  background-position: center center;
+
 }
 .tagline {
   text-align: center;
@@ -422,17 +422,6 @@ input[type=radio] + label {
   letter-spacing: 1px;
 }
 /* ABOUT SECTION (3 COLUMN DIVIDED) */
-.text_column {
-  width: 50%;
-  text-align: left;
-  font-weight: lighter;
-  line-height: 25px;
-  float: left;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin-bottom:25px;
-  color: black;
-}
 .about {
   padding-left: 25px;
   padding-right: 25px;
@@ -443,26 +432,75 @@ input[type=radio] + label {
 }
 .table2 {
   position: relative;
-  left: 1.5%;
+  width:100%;
+  margin-top: 2.5%;
 }
-.table2 td {
-  padding-right: 12%;
+.table2 td, .table2 th {
+  border: 1px solid black;
+  padding: 8px;
+  width:auto;
 }
+.table2 th {
+  background-color:#005a9b;
+  color: white;
+}
+.table2 tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
 .table2 tr.spaceUnder > td {
   padding-bottom: 1em;
 }
-headers {
-  font-size: 23px;
+/* Header/Logo Title */
+col_header {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  margin-top: 0%;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
   color: #101010;
+  font-size: 25px;
+  font-weight: bold;
 }
-td[colspan="2"] {
-    text-align: center;
+.column input {
+  margin-left: 15%;
+  margin-bottom: 6%;
+  margin-top: 2.5%;
+  display: inline-block;
+  text-align: center;
+}
+.column p {
+  text-align: left;
+  font-size: auto;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 44%;
+  padding: 10px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+  font-weight: lighter;
+  line-height: 25px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 /* ABOUT SITE FEATURES (HOME PAGE) */
 .stats {
   color: black;
   margin-bottom: 5px;
 }
+
 .aboutsite {
   clear: both;
   display: inline-block;
@@ -490,6 +528,16 @@ td[colspan="2"] {
   color: #004080;
   font-size: 20px;
 }
+.aboutsite .thumbnail h5 {
+  width: 100%;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  color:#1C2A43;
+  font-size: 23px;
+  text-shadow: 0px 1px .5px lightgray;
+}
 .aboutsite .thumbnail p {
   width: 100%;
   margin-top: 0px;
@@ -516,7 +564,6 @@ td[colspan="2"] {
   border-top-width: 2px;
   margin-top: 5px;
 }
-
 /* NUTRITIONAL FACTS LABEL FOR NUTRIENTS.HTML RESULTS PAGE */
 #nutritionfacts {
   background-color: white;
@@ -658,7 +705,6 @@ div.scroll::-webkit-scrollbar-thumb {
   background-color: #515151;
   outline: 1px solid slategrey;
 }
-
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
 @media (max-width: 320px) {
@@ -688,9 +734,8 @@ div.scroll::-webkit-scrollbar-thumb {
     width: 100%;
     text-align: center;
   }
-  .text_column {
+  .column {
     width: 100%;
-    text-align: justify;
     padding-top: 0px;
     padding-right: 0px;
     padding-bottom: 10px;
@@ -700,6 +745,7 @@ div.scroll::-webkit-scrollbar-thumb {
     width: 100%;
   }
 }
+
 /* Small Tablets */
 @media (min-width: 321px)and (max-width: 767px) {
   .logo {
@@ -736,12 +782,12 @@ div.scroll::-webkit-scrollbar-thumb {
     padding-top: 8px;
     padding-bottom: 8px;
   }
-  .text_column {
+  .column {
     width: 100%;
     text-align: left;
     padding-top: 0px;
     padding-right: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
     padding-left: 0px;
   }
   .thumbnail {
@@ -750,14 +796,13 @@ div.scroll::-webkit-scrollbar-thumb {
 }
 /* Small Desktops */
 @media (min-width: 768px) and (max-width: 1096px) {
-  .text_column {
+  .column {
     width: 100%;
   }
   .thumbnail {
     width: 50%;
   }
-
-  .text_column {
+  .column {
     width: 100%;
     margin-top: 0px;
     margin-right: 0px;
