@@ -48,7 +48,6 @@ def getSearchResults():
                 removedDuplicates[key] = allProducts[key] 
         if len(removedDuplicates)==1: # if food searched was exact match to a single food
             removedDuplicates["foodsearched"] = foodsearched
-        print(len(removedDuplicates))
         return render_template("searchResults.html", result=removedDuplicates)
 
 def nutritionResults(food):
