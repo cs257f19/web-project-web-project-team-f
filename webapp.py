@@ -4,9 +4,6 @@ import json
 import sys
 import datasource
 import string
-printable = string.ascii_letters + string.digits + string.punctuation + ' '
-def hex_escape(s):
-    return ''.join(c if c in printable else r'\x{0:02x}'.format(ord(c)) for c in s)
 
 '''Connect to database'''
 ds = datasource.Nutrek()
@@ -32,9 +29,6 @@ def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         print(foodsearched.isprintable())
-        foodsearched = hex_escape(foodsearched)
-        print(foodsearched.isprintable())
-        print(foodsearched)
         if len(foodsearched) == 0:
             result = "No results. You did not enter anything."
             result = {result:result}
