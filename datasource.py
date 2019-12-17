@@ -52,6 +52,8 @@ class Nutrek:
                 item = item.replace("[","")
              if "*" in item:
                 item = item.replace("*","")
+             if "." in item:
+                item = item.replace(".","")
              item = item.upper()
              FullIngredientList.append(item)
          return FullIngredientList
@@ -146,7 +148,9 @@ class Nutrek:
                     if "[" in item:
                         item = item.replace("[","")
                     if "*" in item:
-                        item = item.replace("*","")                   
+                        item = item.replace("*","")
+                    if "." in item:
+                        item = item.replace(".","")
                     FullIngredientList.append(item)
             return FullIngredientList
 
