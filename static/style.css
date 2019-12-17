@@ -92,9 +92,6 @@ ul li:hover a {
   padding-bottom: 1.5px;
   cursor: pointer;
 }
-.search-boxY .fa:hover {
-  background-color:lightgray;
-}
 /* Body */
 body {
   font-family: Georgia, serif;
