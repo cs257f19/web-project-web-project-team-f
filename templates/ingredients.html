@@ -63,13 +63,13 @@ $(document).ready(function(){
       {% set x = key.split('(') %}
       <li>{{ x[0] if x }}</li>
       {% elif '[' in key %}
-      {% set b = key.split('(') %}
+      {% set b = key.split('[') %}
       <li>{{ b[0] if x }}</li>
       {% elif ')' in key %}
       {% set y = key.split(')') %}
       <li>{{ y[0] if y }}</li>
       {% elif ']' in key %}
-      {% set c = key.split('(') %}
+      {% set c = key.split(']') %}
       <li>{{ c[0] if c }}</li>
       {% elif '.' in key %}
       {% set z = key.split('.') %}
