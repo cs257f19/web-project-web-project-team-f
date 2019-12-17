@@ -50,6 +50,7 @@ def getSearchResults():
             exactSearch = {foodsearched:foodsearched}
             for key in removedDuplicates:
                 exactSearch[key]=removedDuplicates[key]
+                exactSearch[key]=removedDuplicates[key]
             print(len(exactSearch))
             return render_template("searchResults.html", result=exactSearch)
         return render_template("searchResults.html", result=removedDuplicates)
