@@ -23,7 +23,15 @@ def aboutData():
   
 @app.route("/search", methods = ["POST", "GET"])
 def getSearchResults():
-    '''Translates HTML form data into a database query and then into a results page'''
+    '''
+    Translates HTML form data into database query getFoodAvailable
+    and then renders into search results page
+    PARAMETERS:
+            none
+    RETURN:
+            renders getFoodAvailable foods output to searchResults.html
+            outputs message in dictionary stating if food does not exist or food search was blank 
+    '''
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         if len(foodsearched) == 0:
@@ -50,7 +58,14 @@ def getSearchResults():
         return render_template("searchResults.html", result=removedDuplicates)
 
 def nutritionResults(food):
-    '''Gets results of getNutrients and returns output result'''
+    '''
+    Gets results of getNutrient method and returns dict with HTML ready output result
+    PARAMETERS:
+            food - user searched food
+    RETURN:
+            dictionary containing (nutrient, amount) pairs if nutrient data available
+            or one key,value pair stating if there is no nutrition data for food
+    '''
     result = ds.getNutrients(food)
     finalResult = {}
     if result is None:
@@ -63,7 +78,15 @@ def nutritionResults(food):
         return finalResult
 
 def ingredientResults(food):
-    '''Gets results of getIngredientBreakdown and returns output result'''
+    '''
+    Gets results of getIngredientBreakdown and returns dict with HTML ready output result
+    PARAMETERS:
+            food - user searched food
+    RETURN:
+            dictionary containing ingredients if ingredient data available.
+            message (in key) stating if there is no ingredient data available for food
+            message (in key) stating if food does not exist.
+    '''
     ingredients = ds.getIngredientBreakDown(food)
     if ingredients == None:
         result =  "We do not have any data on " + food 
@@ -84,7 +107,16 @@ def ingredientResults(food):
             return allIngredients
 
 def allergyResults(food,allergen):
-    '''Gets results of containsAllergen and returns output result'''
+    '''
+    Gets results of containsAllergen and returns dict with HTML ready output result
+    PARAMETERS:
+            food - user searched food
+            allergen - user searched food allergen
+    RETURN:
+            dictionary containing warning message if allergen in food. 
+            message (in key) stating if there is no ingredient data, so no allergen search possible.
+            message (in key) stating if allergen is not in food.
+    '''
     result = ds.containsAllergen(food, allergen)
     if result is True:
         result =  "WARNING! " + food + " contains the allergen: " + allergen
@@ -101,7 +133,16 @@ def allergyResults(food,allergen):
 
 @app.route("/results", methods = ["POST", "GET"])
 def getResults():
-    '''Translates HTML form data into a database query and then into a results page'''
+    '''
+    Translates HTML form data into a database query and then renders
+    into respective HTML results page to display in browser
+    PARAMETERS:
+            none
+    RETURN:
+            renders nutrition output to nutrients.html if user selects radio button with id nutritionfacts
+            renders ingredient output to ingredients.html if user selects radio button with id ingredients
+            renders food allergy output to allergens.html if user selects radio button with id allery
+    '''
     querySelection = request.form["query"]
     if request.method == "POST":
         food = request.form["food"]
