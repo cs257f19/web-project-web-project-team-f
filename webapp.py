@@ -22,9 +22,9 @@ def home():
 def aboutData():
     return render_template("Data.html")
 
-'''Translates HTML form data into a database query and then into a results page'''
 @app.route("/search", methods = ["POST", "GET"])
 def getSearchResults():
+    '''Translates HTML form data into a database query and then into a results page'''
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         if len(foodsearched) == 0:
@@ -48,8 +48,8 @@ def getSearchResults():
                 removedDuplicates[key] = allProducts[key] 
         return render_template("searchResults.html", result=removedDuplicates)
 
-'''Gets results of getNutrients and returns output result'''
 def nutritionResults(food):
+    '''Gets results of getNutrients and returns output result'''
     result = ds.getNutrients(food)
     finalResult = {}
     if result is None:
@@ -61,8 +61,8 @@ def nutritionResults(food):
             finalResult[key] = result[key]
         return finalResult
 
-'''Gets results of getIngredientBreakdown and returns output result'''
 def ingredientResults(food):
+    '''Gets results of getIngredientBreakdown and returns output result'''
     ingredients = ds.getIngredientBreakDown(food)
     if ingredients == None:
         result =  "We do not have any data on " + food 
@@ -82,8 +82,8 @@ def ingredientResults(food):
                 allIngredients[index] = item
             return allIngredients
 
-'''Gets results of containsAllergen and returns output result'''
 def allergyResults(food,allergen):
+    '''Gets results of containsAllergen and returns output result'''
     result = ds.containsAllergen(food, allergen)
     if result is True:
         result =  "WARNING! " + food + " contains the allergen: " + allergen
@@ -98,9 +98,9 @@ def allergyResults(food,allergen):
         result = {result:result}
         return result
 
-'''Translates HTML form data into a database query and then into a results page'''
 @app.route("/results", methods = ["POST", "GET"])
 def getResults():
+    '''Translates HTML form data into a database query and then into a results page'''
     querySelection = request.form["query"]
     if request.method == "POST":
         food = request.form["food"]
