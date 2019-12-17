@@ -62,6 +62,7 @@ $(document).ready(function(){
       {% if '(' in key %}
       {% set x = key.split('(') %}
       <li>{{ x[0] if x }}</li>
+      <li>{{ x[1] if x }}</li>
       {% elif ')' in key %}
       {% set y = key.split(')') %}
       <li>{{ y[0] if y }}</li>
