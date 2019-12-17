@@ -70,6 +70,7 @@ $(document).ready(function(){
       {% if '.' in key %}
       {% set z = key.split('.') %}
       <li>{{ z[0] if z }}</li>
+      {% endif %}
       {% if '*' in key %}
       {% set a = key.split('*') %}
       <li>{{ a[0] if a }}</li>
