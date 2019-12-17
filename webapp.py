@@ -28,7 +28,6 @@ def getSearchResults():
     '''Translates HTML form data into a database query and then into a results page'''
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
-        print(foodsearched.isprintable())
         if len(foodsearched) == 0:
             result = "No results. You did not enter anything."
             result = {result:result}
