@@ -161,7 +161,7 @@ class Nutrek:
             print ("Something went wrong when executing the query: ", e)
             return None
    
-   def hex_escape(s):
+    def hex_escape(s):
         return ''.join(c if c in printable else r'\x{0:02x}'.format(ord(c)) for c in s)
 
     def getFoodAvailable(self, food):
