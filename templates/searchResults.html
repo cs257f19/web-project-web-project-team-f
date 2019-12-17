@@ -57,7 +57,7 @@ $(document).ready(function(){
     </nav>
   </header>
   {% for key, value in result.items()%}
-  {% if result|length == 1 and "No results" in key %}
+  {% if result|length == 1 %}
   <h2>{{ key }}</h2>
   <form class="example" action="/search" method="POST">
     <fieldset>
@@ -70,14 +70,15 @@ $(document).ready(function(){
   {% endif %}
   {% endfor %}
   
-  {% if result|length > 1 or "No results" not in key %}
+  {% if result|length > 1 %}
   <form action="/results" id="form2" method="POST">
     <fieldset div class="fieldset1">
       <legend><strong>1) Select the best match or narrow down the list by entering key words below. </strong>
       <input id="inputSearchFilter" type="text" placeholder="Narrow search results...">
       </legend>
-      <div class="scroll"> {% for key, value in result.items() %}
-        {% if loop.index > 1 or result|length == 1 %}
+      <div class="scroll"> 
+       {% for key, value in result.items() %}
+        {% if loop.index > 1 %}
         <ul id="myList">
           <li>
             <input type="radio" name="food" value="{{ value }}" required>
