@@ -137,6 +137,16 @@ class Nutrek:
                 return None
             else:
                 for item in results:
+                    if "(" in item:
+                       item = item.replace("(", "")
+                    if ")" in item:
+                        item = item.replace(")","")
+                    if "]" in item:
+                        item = item.replace("]","")
+                    if "[" in item:
+                        item = item.replace("[","")
+                    if "*" in item:
+                        item = item.replace("*","")                   
                     FullIngredientList.append(item)
             return FullIngredientList
 
