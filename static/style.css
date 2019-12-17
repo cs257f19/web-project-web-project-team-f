@@ -171,13 +171,15 @@ p3 {
         0 0 50px 40px orange;
 }
 p4 {
+  display: block;
+  text-align: center;
   font-size:15px;
   color:black;
   text-align: left;
+  margin-left: 10em;
+  margin-right: 10em;
   margin-top: auto;
   margin-bottom: 15px;
-  margin-left: 100px;
-  margin-right: 100px;
 }
 /* FORMS */
 #form1 {
