@@ -28,7 +28,7 @@ def getSearchResults():
     if request.method == "POST":
         foodsearched = request.form["foodsearch"]
         if len(foodsearched) == 0:
-            result = "You did not enter anything."
+            result = "No results. You did not enter anything."
             result = {result:result}
             return render_template("searchResults.html", result=result)
         searchresults = ds.getFoodAvailable(foodsearched)
