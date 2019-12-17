@@ -25,7 +25,9 @@ class Nutrek:
         Breaks the connection to the database
         '''
         self.connection.close()
+        
     def cleanInput(self, food):
+        '''allows queries to process non-printable apostrophe and makes food uppercase'''
         food = food.upper()
         food = food.replace("'","''")
         return food
@@ -74,6 +76,7 @@ class Nutrek:
         '''
         if food == "":
             return None
+        rawInputFood = food
         food = self.cleanInput(food)
         nutrientList = ["Ash (g)", "Biotin (mcg)", "Caffeine (mg)", "Calcium (mg)", "Carbohydrate by difference (g)", "Carbohydrate other (g)", "Cholesterol (mg)",
         "Chromium (mcg)", "Copper (mg)", "Fatty acids total monounsaturated (g)", "Fatty acids total polyunsaturated (g)", "Fatty acids total saturated (g)", "Fatty acids total trans (g)",
@@ -97,7 +100,7 @@ class Nutrek:
             for j in results2[0]:
                 results.append(j)
             resultsLength = len(results)
-            allFood = self.getFoodAvailable(food)
+            allFood = self.getFoodAvailable(rawInputFood)
             if resultsLength == 0 :
                 return None
             nutrientDictionary = {}
@@ -201,7 +204,6 @@ class Nutrek:
         '''
         if food == "" or allergen == "":
             return None
-        food = self.cleanInput(food)
         foodList = self.getFoodAvailable(food)
         if foodList == []:
             return None 
