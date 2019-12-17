@@ -166,8 +166,8 @@ p3 {
   margin-left: 45%;
   box-shadow:
         0 0 10px 5px white,
-        0 0 10px 5px red,
-        0 0 10px 50px orange;
+        0 0 15px 10px red,
+        0 0 20px 15px orange;
 }
 p4 {
   display: block;
