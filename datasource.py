@@ -1,14 +1,11 @@
 import psycopg2
 import getpass
 import random
-import string
 
 class Nutrek:
     '''
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
-    printable = string.ascii_letters + string.digits + string.punctuation + ' '
-
 
     def connect(self, user, password):
         '''
@@ -160,9 +157,6 @@ class Nutrek:
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
-   
-    def hex_escape(s):
-        return ''.join(c if c in printable else r'\x{0:02x}'.format(ord(c)) for c in s)
 
     def getFoodAvailable(self, food):
         '''
@@ -176,8 +170,7 @@ class Nutrek:
         if food == "":
             return None
         food = food.upper()
-        print(food)
-        food = hex_escape(food)
+        food = food.replace("'","/'")
         print(food)
         try:
             cursor = self.connection.cursor()
