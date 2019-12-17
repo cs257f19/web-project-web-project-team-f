@@ -7,6 +7,7 @@ class Nutrek:
     '''
     Nutrek executes all of the queries on the database
     and formats the data to send back to the front end'''
+    printable = string.ascii_letters + string.digits + string.punctuation + ' '
 
 
     def connect(self, user, password):
@@ -160,7 +161,6 @@ class Nutrek:
             print ("Something went wrong when executing the query: ", e)
             return None
    
-   printable = string.ascii_letters + string.digits + string.punctuation + ' '
    def hex_escape(s):
         return ''.join(c if c in printable else r'\x{0:02x}'.format(ord(c)) for c in s)
 
