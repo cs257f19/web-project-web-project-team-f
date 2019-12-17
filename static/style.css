@@ -14,6 +14,15 @@
   }
 }
 
+.warning {
+  font-size:150px;
+  color:black;
+  background-color:yellow;
+  -webkit-border-radius: 100%; 
+  -moz-border-radius: 100%; 
+  border-radius: 100%;
+  margin-left:50%;
+}
 /* CONTAINER */
 .container {
   width: 100%;
@@ -737,15 +746,7 @@ div.scroll::-webkit-scrollbar-thumb {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-.warning {
-  font-size:150px;
-  color:black;
-  background-color:yellow;
-  -webkit-border-radius: 100%; 
-  -moz-border-radius: 100%; 
-  border-radius: 100%;
-  margin-left:50%;
-}
+
 
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
