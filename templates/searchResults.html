@@ -57,7 +57,7 @@ $(document).ready(function(){
     </nav>
   </header>
   {% for key, value in result.items()%}
-  {% if result|length == 1%}
+  {% if result|length == 1 and "No results" in key %}
   <h2>{{ key }}</h2>
   <form class="example" action="/search" method="POST">
     <fieldset>
