@@ -42,6 +42,7 @@ def getSearchResults():
             productList = finalProduct.split(" ")
             finalProduct = " ".join(productList) 
             allProducts[item] = finalProduct 
+        print(len(allProducts))
         removedDuplicates = {}    
         for key in allProducts:
             if allProducts[key] not in removedDuplicates.values():
