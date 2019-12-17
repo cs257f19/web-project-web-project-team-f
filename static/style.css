@@ -14,10 +14,9 @@
   }
 }
 
-.moveimage
-{
+.moveimage {
     position: relative;
-    top: 3px;
+    top: 5px;
 }
 .tooltip {
   position: relative;
