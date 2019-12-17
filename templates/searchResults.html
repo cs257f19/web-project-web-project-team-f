@@ -77,7 +77,7 @@ $(document).ready(function(){
       <input id="inputSearchFilter" type="text" placeholder="Narrow search results...">
       </legend>
       <div class="scroll"> {% for key, value in result.items() %}
-        {% if loop.index > 1 %}
+        {% if loop.index > 1 or result|length == 1 %}
         <ul id="myList">
           <li>
             <input type="radio" name="food" value="{{ value }}" required>
