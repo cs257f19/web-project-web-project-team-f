@@ -170,6 +170,15 @@ p3 {
         0 0 100px 60px #f0f, /* middle magenta */
         0 0 140px 90px #0ff; /* outer cyan */
 }
+p4 {
+  font-size:15px;
+  color:black;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 /* FORMS */
 #form1 {
   border: 1px solid;
