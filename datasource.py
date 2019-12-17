@@ -62,7 +62,7 @@ class Nutrek:
     def cleanIngredients(self,ingredients):
         FullIngredientList = []
         for item in ingredients:
-            item = self.cleanIngredientsHelper(self,item)
+            item = self.cleanIngredientsHelper(item)
             if "," in item:
                 item = item.replace(",","")
                 item = item.upper()
