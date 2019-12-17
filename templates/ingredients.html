@@ -60,22 +60,17 @@ $(document).ready(function(){
     {% else %}
     <ul id="ingredientList">
       {% if '(' in key %}
-      {% set x = key.split('(') %}
-      <li>{{ x[0] if x }}</li>
+      <li>{{ key|replace("(", "") }}</li>
       {% elif ')' in key %}
-      {% set y = key.split(')') %}
-      <li>{{ y[0] if y }}</li>
-      {% elif '.' in key %}
-      {% set z = key.split('.') %}
-      <li>{{ z[0] if z }}</li>
+      <li>{{ key|replace(")", "") }}</li>
+      {% elif '.' in key %}    
+      <li>{{ key|replace(".", "") }}</li>
       {% elif '*' in key %}
       <li>{{ key|replace("*", "") }}</li>
       {% elif '[' in key %}
-      {% set b = key.split('[') %}
-      <li>{{ b[0] if b }}</li>
+      <li>{{ key|replace("[", "") }}</li>
       {% elif ']' in key %}
-      {% set c = key.split('[') %}
-      <li>{{ c[0] if c }}</li>
+      <li>{{ key|replace("]", "") }}</li>
       {% else %}
       <li>{{ key }}</li>
       {% endif %}
