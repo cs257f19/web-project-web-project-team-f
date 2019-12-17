@@ -47,6 +47,7 @@ def getSearchResults():
             if allProducts[key] not in removedDuplicates.values():
                 removedDuplicates[key] = allProducts[key] 
         if len(removedDuplicates)==1:
+            print("hey")
             removedDuplicates[foodsearched] = foodsearched
         return render_template("searchResults.html", result=removedDuplicates)
 
