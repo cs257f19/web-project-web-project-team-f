@@ -48,7 +48,7 @@ $(document).ready(function(){
     <h2>Ingredients Results</h2>
     {% for key, value in result.items() %}
     {% if result|length == 1 %}
-    <h5>{{ value }}</h5>
+    <h5>{{ key }}</h5>
     {% endif %}
     {% endfor %}
     {% if result|length > 1 %}
@@ -60,17 +60,14 @@ $(document).ready(function(){
     {% else %}
     <ul id="ingredientList">
       {% if '(' in key %}
-      <li>{{ key|replace("(", "") }}</li>
+      {% set x = key.split('(') %}
+      <li>{{ x[0] if x }}</li>
       {% elif ')' in key %}
-      <li>{{ key|replace(")", "") }}</li>
-      {% elif '.' in key %}    
-      <li>{{ key|replace(".", "") }}</li>
-      {% elif '*' in key %}
-      <li>{{ key|replace("*", "") }}</li>
-      {% elif '[' in key %}
-      <li>{{ key|replace("[", "") }}</li>
-      {% elif ']' in key %}
-      <li>{{ key|replace("]", "") }}</li>
+      {% set y = key.split(')') %}
+      <li>{{ y[0] if y }}</li>
+      {% elif '.' in key %}
+      {% set z = key.split('.') %}
+      <li>{{ z[0] if z }}</li>
       {% else %}
       <li>{{ key }}</li>
       {% endif %}
