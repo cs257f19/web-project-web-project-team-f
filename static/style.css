@@ -173,11 +173,11 @@ p3 {
 p4 {
   font-size:15px;
   color:black;
-  text-align: center;
+  text-align: left;
   margin-top: auto;
   margin-bottom: 15px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 /* FORMS */
 #form1 {
