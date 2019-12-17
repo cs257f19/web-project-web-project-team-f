@@ -13,39 +13,7 @@
     box-sizing: border-box;
   }
 }
-.cite {
-    display:none;
-}
-.moveimage {
-    position: relative;
-    top: 5px;
-    margin-left:-5px;
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: auto;
-  font-size: 12px;
-  background-color: #f2f2f2;
-  color: black;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px;
-}
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
 /* CONTAINER */
 .container {
   width: 100%;
@@ -738,6 +706,38 @@ div.scroll::-webkit-scrollbar-thumb {
   background-color: #515151;
   outline: 1px solid slategrey;
 }
+.cite {
+    display:none;
+}
+.moveimage {
+    position: relative;
+    top: 5px;
+    margin-left:-5px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  font-size: 12px;
+  background-color: #f2f2f2;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
 @media (max-width: 320px) {
