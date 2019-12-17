@@ -48,8 +48,10 @@ def getSearchResults():
                 removedDuplicates[key] = allProducts[key] 
         print(len(removedDuplicates))
         if len(removedDuplicates)==1:
-            removedDupllicates[key]=removedDuplicates[key]
-            return render_template("searchResults.html", result=removedDuplicates)
+            exactSearch = {foodsearched:foodsearched}
+            for key in removedDuplicates:
+                exactSearch[key]=removedDuplicates[key]
+            return render_template("searchResults.html", result=exactSearch)
         return render_template("searchResults.html", result=removedDuplicates)
 
 def nutritionResults(food):
