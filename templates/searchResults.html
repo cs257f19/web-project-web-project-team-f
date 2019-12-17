@@ -36,7 +36,6 @@ $(document).ready(function(){
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<div class="cite"><a href="https://icons8.com/icon/76/info">Info icon by Icons8</a></div>
 <title>Nutrek: Search Results</title>
 <link href="/static/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -63,7 +62,7 @@ $(document).ready(function(){
   <form class="example" action="/search" method="POST">
     <fieldset>
       <input type="search" placeholder="Search new food..." name="foodsearch">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
     </fieldset>
   </form>
   {% elif loop.index == 1 %}
@@ -100,6 +99,7 @@ $(document).ready(function(){
         <div class="tooltip"><img class="moveimage" src="https://img.icons8.com/metro/26/000000/info.png" alt="img description: Tooltip info icon"><span class="tooltiptext"> Common food allergens: "nut","peanut","egg","wheat","fish",etc. <br>
           Note: try "milk","lactase", or "lactose" for Lactose Intolerance </span> </div>
       </div>
+    <div class="cite"><a href="https://icons8.com/icon/76/info">Info icon by Icons8</a></div>
     </fieldset>
     <fieldset div class="fieldset1">
       <input type="submit" value="Submit">
