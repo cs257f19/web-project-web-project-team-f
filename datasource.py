@@ -27,13 +27,17 @@ class Nutrek:
         self.connection.close()
         
     def cleanInput(self, food):
-        '''allows queries to process non-printable apostrophe and makes food uppercase'''
+        '''
+        returns uppercase food with printable apostrophe for valid query processing
+        '''
         food = food.upper()
         food = food.replace("'","''")
         return food
     
     def cleanNutrients(self, nutrients):
-        '''remove special characters from final output '''
+        '''
+        removes special characters from final nutrient output
+        '''
         result = ""
         for item in nutrients:
             if "(" in item:
@@ -42,7 +46,11 @@ class Nutrek:
                item = item.replace(")","")
             result += item + " "
         return result
+        
     def cleanIngredientsHelper(self,item):
+        '''
+        removes special characters (except commas) from a string
+        '''
         if "(" in item:
             item = item.replace("(", "")
         if ")" in item:
@@ -66,6 +74,9 @@ class Nutrek:
         return item
    
     def cleanIngredients(self,ingredients):
+        '''
+        removes special characters from final ingredients output
+        '''
         FullIngredientList = []
         for item in ingredients:
             item = self.cleanIngredientsHelper(item)
