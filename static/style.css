@@ -14,7 +14,7 @@
   }
 }
 
-.warning {
+p3 {
   font-size:150px;
   color:black;
   background-color:yellow;
@@ -22,7 +22,6 @@
   -moz-border-radius: 100%; 
   border-radius: 100%;
   text-align: center;
-  font-size: 25px;
   margin-top: auto;
   margin-bottom: 15px;
   margin-left: 10%;
