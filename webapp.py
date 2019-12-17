@@ -3,7 +3,6 @@ from flask import render_template, request
 import json
 import sys
 import datasource
-import string
 
 '''Connect to database'''
 ds = datasource.Nutrek()
@@ -13,7 +12,6 @@ ds.connect(user, password)
 
 app = flask.Flask(__name__)
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
-
 
 @app.route("/", methods = ["POST", "GET"])
 def home():
