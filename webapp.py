@@ -46,11 +46,11 @@ def getSearchResults():
         for key in allProducts:
             if allProducts[key] not in removedDuplicates.values():
                 removedDuplicates[key] = allProducts[key] 
-        print(len(removedDuplicates))
         if len(removedDuplicates)==1:
             exactSearch = {foodsearched:foodsearched}
             for key in removedDuplicates:
                 exactSearch[key]=removedDuplicates[key]
+            print(len(exactSearch))
             return render_template("searchResults.html", result=exactSearch)
         return render_template("searchResults.html", result=removedDuplicates)
 
