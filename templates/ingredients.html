@@ -64,7 +64,7 @@ $(document).ready(function(){
       <li>{{ x[0] if x }}</li>
       {% elif '[' in key %}
       {% set b = key.split('[') %}
-      <li>{{ b[0] if x }}</li>
+      <li>{{ b[1] if x }}</li>
       {% elif ')' in key %}
       {% set y = key.split(')') %}
       <li>{{ y[0] if y }}</li>
