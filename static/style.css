@@ -93,7 +93,7 @@ ul li:hover a {
   cursor: pointer;
 }
 .search-boxY .fa:hover {
-  color:lightgray;
+  background-color:lightgray;
 }
 /* Body */
 body {
