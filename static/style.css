@@ -166,9 +166,9 @@ p3 {
   margin-bottom: 15px;
   margin-left: 45%;
   box-shadow:
-        0 0 60px 30px #fff,  /* inner white */
-        0 0 100px 60px #f0f, /* middle magenta */
-        0 0 140px 90px #0ff; /* outer cyan */
+        0 0 40px 20px white,
+        0 0 50px 40px red,
+        0 0 70px 60px orange;
 }
 p4 {
   font-size:15px;
