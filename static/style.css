@@ -13,7 +13,9 @@
     box-sizing: border-box;
   }
 }
-
+.cite {
+    display:none;
+}
 .moveimage {
     position: relative;
     top: 5px;
