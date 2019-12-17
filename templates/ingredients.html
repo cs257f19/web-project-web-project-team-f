@@ -71,6 +71,12 @@ $(document).ready(function(){
       {% elif '*' in key %}
       {% set a = key.split('*') %}
       <li>{{ a[0] if a }}</li>
+      {% elif '[' in key %}
+      {% set b = key.split('[') %}
+      <li>{{ b[0] if b }}</li>
+      {% elif ']' in key %}
+      {% set c = key.split('[') %}
+      <li>{{ c[0] if c }}</li>
       {% else %}
       <li>{{ key }}</li>
       {% endif %}
