@@ -1,6 +1,8 @@
 import psycopg2
 import getpass
 import random
+import string
+
 class Nutrek:
     '''
     Nutrek executes all of the queries on the database
@@ -157,6 +159,10 @@ class Nutrek:
         except Exception as e:
             print ("Something went wrong when executing the query: ", e)
             return None
+   
+   printable = string.ascii_letters + string.digits + string.punctuation + ' '
+   def hex_escape(s):
+        return ''.join(c if c in printable else r'\x{0:02x}'.format(ord(c)) for c in s)
 
     def getFoodAvailable(self, food):
         '''
