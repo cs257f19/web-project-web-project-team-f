@@ -42,11 +42,14 @@ def getSearchResults():
             productList = finalProduct.split(" ")
             finalProduct = " ".join(productList) 
             allProducts[item] = finalProduct 
-        print(len(allProducts))
         removedDuplicates = {}    
         for key in allProducts:
             if allProducts[key] not in removedDuplicates.values():
                 removedDuplicates[key] = allProducts[key] 
+        print(len(removedDuplicates))
+        if len(removedDuplicates)==2:
+            removedDupllicates[key]=removedDupllicates[key]
+            return render_template("searchResults.html", result=removedDuplicates)
         return render_template("searchResults.html", result=removedDuplicates)
 
 def nutritionResults(food):
