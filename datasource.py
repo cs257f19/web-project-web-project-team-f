@@ -61,6 +61,8 @@ class Nutrek:
             item = item.replace("CONTAINS 2% OR LESS OF: ","")
         if " CONTAINS ONE OR MORE OF THE FOLLOWING:" in item:
             item = item.replace(" CONTAINS ONE OR MORE OF THE FOLLOWING:","")
+        if "and/or " in item:
+            item = item.replace("and/or ","")
         return item
    
     def cleanIngredients(self,ingredients):
