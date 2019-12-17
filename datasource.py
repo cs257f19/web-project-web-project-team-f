@@ -25,6 +25,10 @@ class Nutrek:
         Breaks the connection to the database
         '''
         self.connection.close()
+    def cleanInput(self, food):
+        food = food.upper()
+        food = food.replace("'","''")
+        return food
     
     def cleanNutrients(self, nutrients):
         '''remove special characters from final output '''
@@ -70,8 +74,7 @@ class Nutrek:
         '''
         if food == "":
             return None
-        food = food.upper()
-        food = food.replace("'","''")
+        food = self.cleanInput(food)
         nutrientList = ["Ash (g)", "Biotin (mcg)", "Caffeine (mg)", "Calcium (mg)", "Carbohydrate by difference (g)", "Carbohydrate other (g)", "Cholesterol (mg)",
         "Chromium (mcg)", "Copper (mg)", "Fatty acids total monounsaturated (g)", "Fatty acids total polyunsaturated (g)", "Fatty acids total saturated (g)", "Fatty acids total trans (g)",
         "Fiber insoluble (g)", "Fiber soluble (g)", "Fiber total dietary (g)", "Folic acid (mcg)", "Iodine (mcg)", "Iron (mg)", "Lactose (g)",
@@ -126,8 +129,7 @@ class Nutrek:
         '''
         if food == "":
             return None
-        food = food.upper()
-        food = food.replace("'","''")
+        food = self.cleanInput(food)
         try:
             cursor = self.connection.cursor()
             query = ("SELECT ingredients_english FROM Nutrek WHERE  food_name LIKE " + str("'%"+food+"%'") +";")
@@ -171,8 +173,7 @@ class Nutrek:
             '''
         if food == "":
             return None
-        food = food.upper()
-        food = food.replace("'","''")
+        food = self.cleanInput(food)
         try:
             cursor = self.connection.cursor()
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
@@ -200,7 +201,7 @@ class Nutrek:
         '''
         if food == "" or allergen == "":
             return None
-        food = food.upper()
+        food = self.cleanInput(food)
         foodList = self.getFoodAvailable(food)
         if foodList == []:
             return None 
