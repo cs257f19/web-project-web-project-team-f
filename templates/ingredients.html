@@ -62,21 +62,21 @@ $(document).ready(function(){
       {% if '(' in key %}
       {% set x = key.split('(') %}
       <li>{{ x[0] if x }}</li>
-      {% elif '[' in key %}
-      {% set b = key.split('[') %}
+<!--       {% elif '[' in key %}
+      {% set b = key.split('[') %} -->
       <li>{{ b[0] if b }}</li>
       {% elif ')' in key %}
       {% set y = key.split(')') %}
       <li>{{ y[0] if y }}</li>
-      {% elif ']' in key %}
-      {% set c = key.split(']') %}
+<!--       {% elif ']' in key %}
+      {% set c = key.split(']') %} -->
       <li>{{ c[0] if c }}</li>
       {% elif '.' in key %}
       {% set z = key.split('.') %}
       <li>{{ z[0] if z }}</li>
-      {% elif '*' in key %}
+<!--       {% elif '*' in key %}
       {% set a = key.split('*') %}
-      <li>{{ a[0] if a }}</li>
+      <li>{{ a[0] if a }}</li> -->
       {% else %}
       <li>{{ key }}</li>
       {% endif %}
