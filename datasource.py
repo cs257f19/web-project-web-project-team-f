@@ -126,6 +126,7 @@ class Nutrek:
         if food == "":
             return None
         food = food.upper()
+        food = food.replace("'","''")
         try:
             cursor = self.connection.cursor()
             query = ("SELECT ingredients_english FROM Nutrek WHERE  food_name LIKE " + str("'%"+food+"%'") +";")
@@ -171,7 +172,6 @@ class Nutrek:
             return None
         food = food.upper()
         food = food.replace("'","''")
-        print(food)
         try:
             cursor = self.connection.cursor()
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
