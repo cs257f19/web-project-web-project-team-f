@@ -176,6 +176,7 @@ class Nutrek:
         if food == "":
             return None
         food = food.upper()
+        print(food)
         try:
             cursor = self.connection.cursor()
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
