@@ -51,14 +51,16 @@ class Nutrek:
             item = item.replace("]","")
         if "[" in item:
             item = item.replace("[","")
-        if "LESS THAN 2% OF:" in item:
-            item = item.replace("LESS THAN 2% OF:", "")
         if "*" in item:
             item = item.replace("*","")
         if "." in item:
             item = item.replace(".","")
+        if "LESS THAN 2% OF:" in item:
+            item = item.replace("LESS THAN 2% OF:", "")
         if "CONTAINS 2% OR LESS OF: " in item:
             item = item.replace("CONTAINS 2% OR LESS OF: ","")
+        if " CONTAINS ONE OR MORE OF THE FOLLOWING:" in item:
+            item = item.replace(" CONTAINS ONE OR MORE OF THE FOLLOWING:","")
         return item
    
     def cleanIngredients(self,ingredients):
