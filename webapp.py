@@ -3,6 +3,10 @@ from flask import render_template, request
 import json
 import sys
 import datasource
+import string
+printable = string.ascii_letters + string.digits + string.punctuation + ' '
+def hex_escape(s):
+    return ''.join(c if c in printable else r'\x{0:02x}'.format(ord(c)) for c in s)
 
 '''Connect to database'''
 ds = datasource.Nutrek()
@@ -21,7 +25,7 @@ def home():
 @app.route("/data", methods = ["POST", "GET"])
 def aboutData():
     return render_template("Data.html")
-
+  
 @app.route("/search", methods = ["POST", "GET"])
 def getSearchResults():
     '''Translates HTML form data into a database query and then into a results page'''
