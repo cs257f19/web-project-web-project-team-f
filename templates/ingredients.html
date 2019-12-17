@@ -59,6 +59,7 @@ $(document).ready(function(){
     <br>
     {% else %}
     <ul id="ingredientList">
+      {{ key|replace("*", "") }}
       {% if '(' in key %}
       {% set x = key.split('(') %}
       <li>{{ x[0] if x }}</li>
