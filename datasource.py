@@ -71,6 +71,7 @@ class Nutrek:
         if food == "":
             return None
         food = food.upper()
+        food = food.replace("'","''")
         nutrientList = ["Ash (g)", "Biotin (mcg)", "Caffeine (mg)", "Calcium (mg)", "Carbohydrate by difference (g)", "Carbohydrate other (g)", "Cholesterol (mg)",
         "Chromium (mcg)", "Copper (mg)", "Fatty acids total monounsaturated (g)", "Fatty acids total polyunsaturated (g)", "Fatty acids total saturated (g)", "Fatty acids total trans (g)",
         "Fiber insoluble (g)", "Fiber soluble (g)", "Fiber total dietary (g)", "Folic acid (mcg)", "Iodine (mcg)", "Iron (mg)", "Lactose (g)",
