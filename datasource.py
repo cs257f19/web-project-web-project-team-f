@@ -177,6 +177,8 @@ class Nutrek:
             return None
         food = food.upper()
         print(food)
+        food = hex_escape(food)
+        print(food)
         try:
             cursor = self.connection.cursor()
             query = ("SELECT food_name FROM Nutrek WHERE food_name LIKE " + str("'%"+food+"%'") +";")
