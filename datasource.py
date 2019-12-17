@@ -42,29 +42,32 @@ class Nutrek:
                item = item.replace(")","")
             result += item + " "
         return result
+    def cleanIngredientsHelper(self,item):
+        if "(" in item:
+            item = item.replace("(", "")
+        if ")" in item:
+            item = item.replace(")","")
+        if "]" in item:
+            item = item.replace("]","")
+        if "[" in item:
+            item = item.replace("[","")
+        if "LESS THAN 2% OF:" in item:
+            item = item.replace("LESS THAN 2% OF:", "")
+        if "*" in item:
+            item = item.replace("*","")
+        if "." in item:
+            item = item.replace(".","")
+        return item
    
     def cleanIngredients(self,ingredients):
-         FullIngredientList = []
-         for item in ingredients:
-             if "(" in item:
-                item = item.replace("(", "")
-             if "," in item:
-                item = item.replace(",", "")
-             if ")" in item:
-                item = item.replace(")","")
-             if "]" in item:
-                item = item.replace("]","")
-             if "[" in item:
-                item = item.replace("[","")
-             if "LESS THAN 2% OF:" in item:
-                item = item.replace("LESS THAN 2% OF:", "")
-             if "*" in item:
-                item = item.replace("*","")
-             if "." in item:
-                item = item.replace(".","")
-             item = item.upper()
-             FullIngredientList.append(item)
-         return FullIngredientList
+        FullIngredientList = []
+        for item in ingredients:
+            item = self.cleanIngredientsHelper(self,item)
+            if "," in item:
+                item = item.replace(",","")
+                item = item.upper()
+            FullIngredientList.append(item)
+        return FullIngredientList
    
         
     def getNutrients(self, food):
@@ -147,21 +150,9 @@ class Nutrek:
             if results is None:
                 return None
             else:
+                self.cleanIngredients(results)
                 for item in results:
-                    if "(" in item:
-                       item = item.replace("(", "")
-                    if ")" in item:
-                        item = item.replace(")","")
-                    if "]" in item:
-                        item = item.replace("]","")
-                    if "[" in item:
-                        item = item.replace("[","")
-                    if "LESS THAN 2% OF:" in item:
-                        item = item.replace("LESS THAN 2% OF:", "")
-                    if "*" in item:
-                        item = item.replace("*","")
-                    if "." in item:
-                        item = item.replace(".","")
+                    item = self.cleanIngredientsHelper(item)
                     FullIngredientList.append(item)
             return FullIngredientList
 
