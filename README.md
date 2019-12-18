@@ -8,7 +8,7 @@ Contents:
 - UserStories: directory, contains all your team's user stories
 - static: directory, contains style.css (CSS file), Adobe Stock images, and Nutrek logo used for site
 - templates: directory, contains frontend code nutrek.html (Home), Data.html (About Data), searchResults.html (search results page), and three results pages: allergens.html (Food Allegen), ingredients.html (Ingredient List), and nutrients.html (Nutrition Breakdown)
-Note: Data.html has search bar in navigation, so more appropriate in templates.
+Note: Data.html is dynamic with search bar in navigation, so it is located in templates.
 
 Drawbacks of Dataset:
 1. There is inconsistent use of punctuation and/or separating characters (e.g. ,) in .csv cells within in USDA dataset (BFPD_csv_07132018.zip). We stripped the text clean of only the most common interfering special characters in the ingredients list (i.e. comma, (,),[,],.,and * ). 
