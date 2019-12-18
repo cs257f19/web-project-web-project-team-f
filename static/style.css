@@ -80,6 +80,7 @@ ul li:hover a {
 }
 .search-boxY input[type=search] {
   -webkit-appearance: none;
+  font-family: Arial; 
   height: auto;
   width: 250px;
   font-size: 20px;
