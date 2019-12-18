@@ -19,17 +19,18 @@
             <li><a href="/">HOME</a></li>
             <li><a href="/data">ABOUT OUR DATA</a></li>
           </ul>
+          <!-- Search Bar in Navigation -->
           <form class="search-boxY" action="/search" method="POST">
             <input type="search" name="foodsearch" placeholder="Search for a food...">
             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
           </form>
         </nav>
       </header>
-      <!-- Search Section -->
+      <!-- Nutrient Breakdown Results Section -->
       <section class="sect1" id="sect1">
         <h2>Nutrient Breakdown Results</h2>
         <br>
-        <!-- Nutritional Facts Table (Results of Query)--> 
+        <!-- Nutritional Facts Table --> 
         {% for key, value in result.items() %}
         {% if loop.index == loop.length %}
         <h5>{{ key }}</h5>
@@ -76,9 +77,9 @@
         </div>
         {% endif %} 
         <script>
-          //Get the button
+          // Get the button
           var mybutton = document.getElementById("myBtn");
-          // When the user scrolls down 20px from the top of the document, show the button
+          // When the user scrolls down more than 0px from the top of the document, show button
           window.onscroll = function() {scrollFunction()};
           function scrollFunction() {
             if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
@@ -88,7 +89,7 @@
             }
           }
           
-          // When the user clicks on the button, scroll to the top of the document
+          // When the user clicks on myBtn, scroll to the top of the document
           function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
