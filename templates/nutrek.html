@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nutrek</title>
-<link href="/static/style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<div class="container"> 
-  <!-- Navigation -->
-  <header>
-    <h4 class="logo"> <a href="/"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
-    <nav>
-      <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="/data">ABOUT OUR DATA</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- Search Section -->
-  <section class="sect" id="sect"> <span class="background-image" role="img" aria-label="banner image of food"> </span>
-    <form class="example" action="/search" id="form1" method="POST">
-      <h1>What's in your food? Enter food name below.</h1>
-      <fieldset>
-        <input type="search" placeholder="Enter food name..." name="foodsearch" autofocus="autofocus">
-        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </fieldset>
-    </form>
-  </section>
-  
-  <!-- About Site Features -->
-  <div class="aboutsite">
-    <div class="thumbnail">
-      <h3 class="stats">Nutrition</h3>
-      <h4>Get the real nutritional facts.</h4>
-      <p>Find out what nutrients are in your food, and how much.</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nutrek</title>
+    <link href="/static/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation -->
+      <header>
+        <h4 class="logo"> <a href="/"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
+        <nav>
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/data">ABOUT OUR DATA</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Search Section -->
+      <section class="sect" id="sect">
+        <span class="background-image" role="img" aria-label="banner image of food"> </span>
+        <form class="example" action="/search" id="form1" method="POST">
+          <h1>What's in your food? Enter food name below.</h1>
+          <fieldset>
+            <input type="search" placeholder="Enter food name..." name="foodsearch" autofocus="autofocus">
+            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </fieldset>
+        </form>
+      </section>
+      <!-- About Site Features -->
+      <div class="aboutsite">
+        <div class="thumbnail">
+          <h3 class="stats">Nutrition</h3>
+          <h4>Get the real nutritional facts.</h4>
+          <p>Find out what nutrients are in your food, and how much.</p>
+        </div>
+        <div class="thumbnail">
+          <h3 class="stats">Ingredients</h3>
+          <h4>Know what's in your meal.</h4>
+          <p>See a full list of ingredients that are in a specific food product.</p>
+        </div>
+        <div class="thumbnail">
+          <h3 class="stats">Food Allergies</h3>
+          <h4>Avoid food allergens.</h4>
+          <p>Got food allergies? Find out if a food contains your food allergen.</p>
+        </div>
+      </div>
+      <!-- Copyrights Section -->
+      <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
     </div>
-    <div class="thumbnail">
-      <h3 class="stats">Ingredients</h3>
-      <h4>Know what's in your meal.</h4>
-      <p>See a full list of ingredients that are in a specific food product.</p>
-    </div>
-    <div class="thumbnail">
-      <h3 class="stats">Food Allergies</h3>
-      <h4>Avoid food allergens.</h4>
-      <p>Got food allergies? Find out if a food contains your food allergen.</p>
-    </div>
-  </div>
-  
-  <!-- Copyrights Section -->
-  <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
-</div>
-<!-- Main Container Ends -->
-</body>
+    <!-- Main Container Ends -->
+  </body>
 </html>
