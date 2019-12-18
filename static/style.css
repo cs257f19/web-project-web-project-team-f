@@ -80,16 +80,17 @@ ul li:hover a {
 }
 .search-boxY input[type=search] {
   -webkit-appearance: none;
-  height: 30px;
-  padding-left: 20px;
-  padding-right: 100px;
+  height: auto;
+  width: 250px;
+  font-size: 20px;
 }
 .search-boxY .fa {
   -webkit-appearance: none;
-  height: 15px;
-  padding-top: 8px;
-  padding-bottom: 2px;
+  height: auto;
+  font-size: 20px;
   cursor: pointer;
+  padding-bottom: 1px;
+  padding-top: 3px;
 }
 /* Body */
 body {
