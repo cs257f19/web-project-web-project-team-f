@@ -1,182 +1,186 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nutrek: About Data</title>
-<link href="/static/style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<div class="container"> 
-  <!-- Navigation -->
-  <header>
-    <h4 class="logo"> <a href="/"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
-    <nav>
-      <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="/data">ABOUT OUR DATA</a></li>
-      </ul>
-      <form class="search-boxY" action="/search" method="POST">
-        <input type="search" name="foodsearch" placeholder="Search for a food...">
-        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </form>
-    </nav>
-  </header>
-  <!-- Search Section -->
-  <section class="sect3" id="sect3"> <span class="background-image" role="img" aria-label="banner image of food"> </span>
-    <div class="sect_header">About Our Data</div>
-    <p1>Nutrek generates all its reports based on the United States Department of Agriculture's (USDA) Branded Food Products Database (BFPD).</p1>
-  </section>
-  <!-- About Data -->
-  <div class="aboutsite">
-    <div class="thumbnail">
-      <h3 class="stats">239,084</h3>
-      <h5>Total Food Products</h5>
-    </div>
-    <div class="thumbnail">
-      <h3 class="stats">76,827</h3>
-      <h5>Foods with Nutritional Facts</h5>
-    </div>
-    <div class="thumbnail">
-      <h3 class="stats">236,540</h3>
-      <h5>Foods with Ingredient Lists</h5>
-    </div>
-  </div>
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="row">
-      <div class="column">
-        <col_header>About Our Data Source</col_header>
-        <p>According to the USDA, their Branded Food Products database was created by a Public-Private Partnership aiming to “enhance public health” and “sharing of open data” of branded foods and private label data. The database includes branded products listed by Nutrient Database Number (NDB) and each product's corresponding nutritional values, serving size information, and ingredients list. The database is frequently updated when new
-          information is received and processed. Nutrek uses a BFPD data file that is current as of July 13, 2018.</p>
-        <a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database/resource/c929dc84-1516-4ac7-bbb8-c0c191ca8cec">
-        <input type="button" value="USDA Data Source" />
-        </a>
-        <hr>
-        <col_header>Dataset Files</col_header>
-        <p>All .csv files used to create database were in the zip file 
-          "USDA Branded Food Products Database - ASCII csv file, 07/13/2018".
-          Each product has 8-digit Nutrient Database number that uniquely identifies 
-          a food item and links to Nutrients file, Products file and Serving Size file.</p>
-        <table class="table2">
-          <tr class="spaceUnder">
-            <th><strong>File Name</strong></th>
-            <th><strong>Description</strong></th>
-          </tr>
-          <tr class="spaceUnder">
-            <td>BFPD_Doc.pdf</td>
-            <td>Documentation and overview of dataset.</td>
-          </tr>
-          <tr class="spaceUnder">
-            <td>Products.csv</td>
-            <td>Products file: a list of US branded food product names, manufacturers, and ingredients in product.</td>
-          </tr>
-          <tr class="spaceUnder">
-            <td>Nutrients.csv</td>
-            <td>Nutrients file: Lists amount of nutrient/food component in 100 g, edible portion as calculated from the amount per serving value on the Nutrition Facts Panel by manufacturer.</td>
-          </tr>
-          <tr class="spaceUnder">
-            <td>Derivation_Code _Description.csv</td>
-            <td>Derivations Code Description File: Describes how nutrients per serving size were calculated for each food in Nutrients file.</td>
-          </tr>
-          <tr class="spaceUnder">
-            <td>Serving_size.csv</td>
-            <td>Serving size File: Weight of the specified serving</td>
-          </tr>
-        </table>
-        <a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database">
-        <input type="button" value="Dataset Overview" />
-        </a>
-        <hr>
-        <col_header>Fast Facts About Dataset</col_header>
-        <table class="table2">
-          <tr class="spaceUnder">
-            <th><strong>Fact</strong></th>
-            <th><strong>Description</strong></th>
-          </tr>
-          <tr class="spaceUnder">
-            <td>Date Downloaded </td>
-            <td>10/08/19<br></td>
-          </tr>
-          <tr class="spaceUnder">
-            <td>Publisher </td>
-            <td>USDA Agricultural Research Services<br></td>
-          </tr>
-          <tr class="spaceUnder">
-            <td>Authors </td>
-            <td>Pehrsson, Pamela R.,Haytowitz,<br>
-              David B., McKillop,<br>
-              Kyle A.,<br>
-              Moore, G., Finley,<br>
-              John W.,Fukagawa,<br>
-              Naomi K.<br></td>
-          </tr>
-          <tr class="spaceUnder">
-            <td>Region covered</td>
-            <td>United States of America<br></td>
-          </tr>
-        </table>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nutrek: About Data</title>
+    <link href="/static/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation -->
+      <header>
+        <h4 class="logo"> <a href="/"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
+        <nav>
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/data">ABOUT OUR DATA</a></li>
+          </ul>
+          <form class="search-boxY" action="/search" method="POST">
+            <input type="search" name="foodsearch" placeholder="Search for a food...">
+            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+        </nav>
+      </header>
+      <!-- Search Section -->
+      <section class="sect3" id="sect3">
+        <span class="background-image" role="img" aria-label="banner image of food"> </span>
+        <div class="sect_header">About Our Data</div>
+        <p1>Nutrek generates all its reports based on the United States Department of Agriculture's (USDA) Branded Food Products Database (BFPD).</p1>
+      </section>
+      <!-- About Data -->
+      <div class="aboutsite">
+        <div class="thumbnail">
+          <h3 class="stats">239,084</h3>
+          <h5>Total Food Products</h5>
+        </div>
+        <div class="thumbnail">
+          <h3 class="stats">76,827</h3>
+          <h5>Foods with Nutritional Facts</h5>
+        </div>
+        <div class="thumbnail">
+          <h3 class="stats">236,540</h3>
+          <h5>Foods with Ingredient Lists</h5>
+        </div>
       </div>
-      <div class="column">
-        <col_header>Modifications to Dataset</col_header>
-        Our main commitment is providing more general information on nutrients per serving size, ingredients,
-        and helping those with food allergies stay safe by staying informed about what is in the foods they want to eat. Thus, 
-        our database only required product name/identifier and corresponding nutritional facts and ingredients (which would be 
-        searched to find food allergens).<br>
-        We consolidated the following fields in our database:<br>
-        <li style="list-style-type:square">product name and generic descriptor</li>
-        <li style="list-style-type:square">nutrients on the Nutrition Facts Panel per serving size and 100 gram-basis, 100 ml-basis, or fluid oz-basis</li>
-        We excluded:<br>
-        <li style="list-style-type:square">serving size in grams or milliliters</li>
-        <li style="list-style-type:square">manufacturer</li>
-        <li style="list-style-type:square">date stamps.</li>
-        Our features that search for food allergens or list ingredients in a food product solely rely on product
-        name and its ingredients field. The nutritional facts only requires nutrients USDA calculates as the amount
-        in 100 g, edible portion. This value is calculated from the amount per serving value on the Nutrition Facts
-        Panel supplied by the data provider or manufacturer. Finally, product names are used to identify food products.<br>
-        <hr>
-        <col_header>A Note to Our Users</col_header>
-        All our webpages are responsive and web accessible. In terms of data, due to inconsistencies
-        the data entries, we have cleaned ingredient lists of some of the most common special characters
-        to improve your reading experience. However, you may occasionally see a special character unaccounted for,
-        which is simply the way the data is entered.Bear in mind, the USDA dataset has duplicate ingredients in each
-        ingredient cell, which we have chose to keep since a duplicate ingredient is really a smaller ingredient in a larger 
-        food ingredient. Finally, out of 239084 food products in database, USDA has no nutritional data on 162257 
-        foods and no ingredients data on 2544 foods. So if you encounter a few foods without nutritional data, 
-        don't panic! You will evenutally find something with nutritional data.
-        <hr>
-        <col_header>Terms of Use</col_header>
-        Data set intended for public use (USDA.gov)<br>
-        <p><strong>License: </strong> U.S. Public Domain</p>
-        <a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database/resource/ba794c4e-1288-4e63-ae45-8cc50d9cbd52">
-        <input type="button" value="Technical Documentation" />
-        </a>
-        <hr>
-        <col_header>Citation</col_header>
-        <p>(original article) Kretser, A., Murphy, D., and Starke-Reed, P. (2017).
-          A partnership for public health: USDA branded food products database.
-          Journal of Food Composition and Analysis, 64, 10-12.<br>
-          <a href="https://doi.org/10.1016/j.jfca.2017.07.019">https://doi.org/10.1016/j.jfca.2017.07.019</a><br>
-          <br>
-          (dataset) Pehrsson, Pamela R.; Haytowitz, David B.; McKillop, Kyle A.;
-          Moore, G.; Finley, John W.; Fukagawa, Naomi K. (2018) USDA Branded Food Products Database.
-          USDA Agricultural Research Service. <br>
-          <a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database">https://data.nal.usda.gov/dataset/usda-branded-food-products-database</a><br>
-          <br>
-        </p>
-        <hr>
-        <col_header>Acknowledgements</col_header>
-        <br>
-        We would like to thank Dr. Amy Csizmar Dalal, the USDA, Adobe Inc. (Dreamweaver 2020, AdobeStock, Photoshop), w3schools.com, and icons8.com for making this project possible. <br>
-        ~Nutrek Creators: Aishee Mukherji, Eric Odoom, Lydia Chau </div>
+      <!-- About -->
+      <section class="about" id="about">
+        <div class="row">
+          <div class="column">
+            <col_header>About Our Data Source</col_header>
+            <p>According to the USDA, their Branded Food Products database was created by a Public-Private Partnership aiming to “enhance public health” and “sharing of open data” of branded foods and private label data. The database includes branded products listed by Nutrient Database Number (NDB) and each product's corresponding nutritional values, serving size information, and ingredients list. The database is frequently updated when new
+              information is received and processed. Nutrek uses a BFPD data file that is current as of July 13, 2018.
+            </p>
+            <a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database/resource/c929dc84-1516-4ac7-bbb8-c0c191ca8cec">
+            <input type="button" value="USDA Data Source" />
+            </a>
+            <hr>
+            <col_header>Dataset Files</col_header>
+            <p>All .csv files used to create database were in the zip file 
+              "USDA Branded Food Products Database - ASCII csv file, 07/13/2018".
+              Each product has 8-digit Nutrient Database number that uniquely identifies 
+              a food item and links to Nutrients file, Products file and Serving Size file.
+            </p>
+            <table class="table2">
+              <tr class="spaceUnder">
+                <th><strong>File Name</strong></th>
+                <th><strong>Description</strong></th>
+              </tr>
+              <tr class="spaceUnder">
+                <td>BFPD_Doc.pdf</td>
+                <td>Documentation and overview of dataset.</td>
+              </tr>
+              <tr class="spaceUnder">
+                <td>Products.csv</td>
+                <td>Products file: a list of US branded food product names, manufacturers, and ingredients in product.</td>
+              </tr>
+              <tr class="spaceUnder">
+                <td>Nutrients.csv</td>
+                <td>Nutrients file: Lists amount of nutrient/food component in 100 g, edible portion as calculated from the amount per serving value on the Nutrition Facts Panel by manufacturer.</td>
+              </tr>
+              <tr class="spaceUnder">
+                <td>Derivation_Code _Description.csv</td>
+                <td>Derivations Code Description File: Describes how nutrients per serving size were calculated for each food in Nutrients file.</td>
+              </tr>
+              <tr class="spaceUnder">
+                <td>Serving_size.csv</td>
+                <td>Serving size File: Weight of the specified serving</td>
+              </tr>
+            </table>
+            <a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database">
+            <input type="button" value="Dataset Overview" />
+            </a>
+            <hr>
+            <col_header>Fast Facts About Dataset</col_header>
+            <table class="table2">
+              <tr class="spaceUnder">
+                <th><strong>Fact</strong></th>
+                <th><strong>Description</strong></th>
+              </tr>
+              <tr class="spaceUnder">
+                <td>Date Downloaded </td>
+                <td>10/08/19<br></td>
+              </tr>
+              <tr class="spaceUnder">
+                <td>Publisher </td>
+                <td>USDA Agricultural Research Services<br></td>
+              </tr>
+              <tr class="spaceUnder">
+                <td>Authors </td>
+                <td>Pehrsson, Pamela R.,Haytowitz,<br>
+                  David B., McKillop,<br>
+                  Kyle A.,<br>
+                  Moore, G., Finley,<br>
+                  John W.,Fukagawa,<br>
+                  Naomi K.<br>
+                </td>
+              </tr>
+              <tr class="spaceUnder">
+                <td>Region covered</td>
+                <td>United States of America<br></td>
+              </tr>
+            </table>
+          </div>
+          <div class="column">
+            <col_header>Modifications to Dataset</col_header>
+            Our main commitment is providing more general information on nutrients per serving size, ingredients,
+            and helping those with food allergies stay safe by staying informed about what is in the foods they want to eat. Thus, 
+            our database only required product name/identifier and corresponding nutritional facts and ingredients (which would be 
+            searched to find food allergens).<br>
+            We consolidated the following fields in our database:<br>
+            <li style="list-style-type:square">product name and generic descriptor</li>
+            <li style="list-style-type:square">nutrients on the Nutrition Facts Panel per serving size and 100 gram-basis, 100 ml-basis, or fluid oz-basis</li>
+            We excluded:<br>
+            <li style="list-style-type:square">serving size in grams or milliliters</li>
+            <li style="list-style-type:square">manufacturer</li>
+            <li style="list-style-type:square">date stamps.</li>
+            Our features that search for food allergens or list ingredients in a food product solely rely on product
+            name and its ingredients field. The nutritional facts only requires nutrients USDA calculates as the amount
+            in 100 g, edible portion. This value is calculated from the amount per serving value on the Nutrition Facts
+            Panel supplied by the data provider or manufacturer. Finally, product names are used to identify food products.<br>
+            <hr>
+            <col_header>A Note to Our Users</col_header>
+            All our webpages are responsive and web accessible. In terms of data, due to inconsistencies
+            the data entries, we have cleaned ingredient lists of some of the most common special characters
+            to improve your reading experience. However, you may occasionally see a special character unaccounted for,
+            which is simply the way the data is entered.Bear in mind, the USDA dataset has duplicate ingredients in each
+            ingredient cell, which we have chose to keep since a duplicate ingredient is really a smaller ingredient in a larger 
+            food ingredient. Finally, out of 239084 food products in database, USDA has no nutritional data on 162257 
+            foods and no ingredients data on 2544 foods. So if you encounter a few foods without nutritional data, 
+            don't panic! You will evenutally find something with nutritional data.
+            <hr>
+            <col_header>Terms of Use</col_header>
+            Data set intended for public use (USDA.gov)<br>
+            <p><strong>License: </strong> U.S. Public Domain</p>
+            <a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database/resource/ba794c4e-1288-4e63-ae45-8cc50d9cbd52">
+            <input type="button" value="Technical Documentation" />
+            </a>
+            <hr>
+            <col_header>Citation</col_header>
+            <p>(original article) Kretser, A., Murphy, D., and Starke-Reed, P. (2017).
+              A partnership for public health: USDA branded food products database.
+              Journal of Food Composition and Analysis, 64, 10-12.<br>
+              <a href="https://doi.org/10.1016/j.jfca.2017.07.019">https://doi.org/10.1016/j.jfca.2017.07.019</a><br>
+              <br>
+              (dataset) Pehrsson, Pamela R.; Haytowitz, David B.; McKillop, Kyle A.;
+              Moore, G.; Finley, John W.; Fukagawa, Naomi K. (2018) USDA Branded Food Products Database.
+              USDA Agricultural Research Service. <br>
+              <a href="https://data.nal.usda.gov/dataset/usda-branded-food-products-database">https://data.nal.usda.gov/dataset/usda-branded-food-products-database</a><br>
+              <br>
+            </p>
+            <hr>
+            <col_header>Acknowledgements</col_header>
+            <br>
+            We would like to thank Dr. Amy Csizmar Dalal, the USDA, Adobe Inc. (Dreamweaver 2020, AdobeStock, Photoshop), w3schools.com, and icons8.com for making this project possible. <br>
+            ~Nutrek Creators: Aishee Mukherji, Eric Odoom, Lydia Chau 
+          </div>
+        </div>
+      </section>
+      <!-- Copyrights Section -->
+      <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
     </div>
-  </section>
-  
-  <!-- Copyrights Section -->
-  <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
-</div>
-<!-- Main Container Ends -->
-</body>
+    <!-- Main Container Ends -->
+  </body>
 </html>
