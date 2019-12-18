@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nutrek: Allergy Results</title>
-<link href="/static/style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<div class="container"> 
-  <!-- Navigation -->
-  <header>
-    <h4 class="logo"> <a href="http://perlman.mathcs.carleton.edu:5219"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
-    <nav>
-      <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="/data">ABOUT OUR DATA</a></li>
-      </ul>
-      <form class="search-boxY" action="/search" method="POST">
-        <input type="search" name="foodsearch" placeholder="Search for a food...">
-        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </form>
-    </nav>
-  </header>
-  <!-- Search Section -->
-  <section class="sect1" id="sect1">
-    <h2>Food Allergy Results</h2>
-    <br>
-    <!-- Result of query --> 
-    {% for key, value in result.items() %}
-    <h5>{{ key }}</h5>
-    {% if "WARNING!" in key %}
-    <br>
-    <br>
-    <p3>&#9888;</p3>
-    <br>
-    <br>
-    <p4>
-      Symptoms of food allergies usually appear from within a few minutes
-      to 2 hours after a person has eaten the food to which they are allergic.
-      If you think that you or someone you know has sustained injury or illness that
-      you believe is associated with having eaten a food (including those with food
-      allergies and celiac disease), please contact your healthcare provider immediately.
-      Persons with a known food allergy who begin experiencing symptoms while or after eating a
-      food should initiate treatment immediately, and go to a nearby emergency room if symptoms 
-      progress.
-    </p4>
-    {% endif %}
-    {% endfor %} 
-  </section>
-  
-  <!-- Copyrights Section -->
-  <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
-</div>
-<!-- Main Container Ends -->
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nutrek: Allergy Results</title>
+    <link href="/static/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation -->
+      <header>
+        <h4 class="logo"> <a href="http://perlman.mathcs.carleton.edu:5219"> <img width="100" height="100" src="/static/Nutrek.png" alt="img description: Nutrek Site Logo"> </a> </h4>
+        <nav>
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/data">ABOUT OUR DATA</a></li>
+          </ul>
+          <form class="search-boxY" action="/search" method="POST">
+            <input type="search" name="foodsearch" placeholder="Search for a food...">
+            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+        </nav>
+      </header>
+      <!-- Search Section -->
+      <section class="sect1" id="sect1">
+        <h2>Food Allergy Results</h2>
+        <br>
+        <!-- Result of query --> 
+        {% for key, value in result.items() %}
+        <h5>{{ key }}</h5>
+        {% if "WARNING!" in key %}
+        <br>
+        <br>
+        <p3>&#9888;</p3>
+        <br>
+        <br>
+        <p4>
+          Symptoms of food allergies usually appear from within a few minutes
+          to 2 hours after a person has eaten the food to which they are allergic.
+          If you think that you or someone you know has sustained injury or illness that
+          you believe is associated with having eaten a food (including those with food
+          allergies and celiac disease), please contact your healthcare provider immediately.
+          Persons with a known food allergy who begin experiencing symptoms while or after eating a
+          food should initiate treatment immediately, and go to a nearby emergency room if symptoms 
+          progress.
+        </p4>
+        {% endif %}
+        {% endfor %} 
+      </section>
+      <!-- Copyrights Section -->
+      <div class="copyright">&copy;2019 <strong>Nutrek </strong> All rights reserved</div>
+    </div>
+    <!-- Main Container Ends -->
+  </body>
 </html>
