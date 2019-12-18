@@ -756,6 +756,10 @@ div.scroll::-webkit-scrollbar-thumb {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+.bullet li {
+	list-style-type:square;
+}
+
 /*ACCESSIBILITY ON OTHER DEVICES*/
 /* Mobile */
 @media (max-width: 320px) {
