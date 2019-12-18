@@ -395,9 +395,6 @@ input[type=radio] + label {
 #yes:focus {
   border: 1px solid red;
 }
-#yes input[type="text"] {
-  font-size:15px;
-}
 .sect_header {
   color: black;
   text-align: center;
